@@ -4,6 +4,13 @@
   "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/home",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

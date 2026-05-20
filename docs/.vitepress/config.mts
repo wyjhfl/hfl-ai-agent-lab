@@ -205,7 +205,7 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   base: '/',
   cleanUrls: true,
-  ignoreDeadLinks: true,
+  ignoreDeadLinks: false,
   lastUpdated: true,
   
   sitemap: {
