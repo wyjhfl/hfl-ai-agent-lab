@@ -1,9 +1,30 @@
 # 项目 B 一分钟介绍
 
-我做的是一个面向运营中台的多 Agent Copilot 系统。
+> 当前页面为项目 B 面试表达预留入口，正式内容将在项目 B 文档完成后补充。
 
-它的核心目标不是简单聊天，而是把运营人员的自然语言需求转化为可控、可审计、可确认的业务执行流程。
+## 当前状态
 
-系统使用 LangGraph 设计状态机，由 Supervisor Agent 负责任务理解和调度，Data Analyst Agent 负责数据分析与 NL2SQL，Tool Executor Agent 负责业务工具调用，Risk Reviewer Agent 负责高风险操作审查，并通过 Human-in-the-loop 保证关键操作必须经过人工确认。
+本阶段暂不展开项目 B 的完整面试表达。
 
-这个项目主要展示我在 AI Agent 系统设计、多 Agent 编排、工具调用、风险控制和后端工程化方面的能力。
+## 后续将补充
+
+- 项目 B 一分钟介绍
+- 项目 B 三分钟介绍
+- 技术架构讲法
+- 核心难点回答
+- Agent 分工说明
+- LangGraph 状态机说明
+- Human-in-the-loop 设计说明
+- 简历 bullet 描述
+
+## 暂不展开的内容
+
+以下内容将在项目 B 正式文档完成后再补充：
+
+- 项目背景
+- 业务场景
+- Agent 角色设计
+- LangGraph 执行流程
+- 工具调用链路
+- 风险审查机制
+- Trace / Evaluation 机制
