@@ -111,3 +111,8 @@ Tool Calling 是 AI Agent 工程中最基础也最重要的能力之一。后续
 可以这样表达：
 
 > Tool Calling 是 Agent 系统的核心能力。我的理解是，工具不是简单地"调一下 API"，而是需要设计完整的注册、选择、执行、结果回填和错误处理链路。工具描述的质量直接影响模型的选择准确率，所以我会特别关注工具的命名、描述和参数定义。另外，模型生成的参数不能直接信任，必须经过校验才能执行。Tool Calling 的本质是把"决策"和"执行"分离——模型只负责表达意图，真正的操作由外部系统在安全边界内完成。
+
+## 相关链接
+
+- 相关工程化笔记：[API 安全与工具权限控制](/note/Engineering/api-security)、[MCP Server 工程化](/note/Engineering/mcp-server)
+- 相关面试题库：[LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview)

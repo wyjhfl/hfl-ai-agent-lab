@@ -67,6 +67,27 @@ RAG 让模型能结合外部知识回答问题，Tool Calling 让模型能调用
 
 最后补齐 Production Engineering（部署、监控、成本）、Trace / Evaluation（评测、回归测试）、以及面试题库的表达训练。
 
+## 三大模块联动
+
+站点由三个核心模块组成，分别解决学习、落地和表达三个问题：
+
+- **学习路线**负责回答：学什么、按什么顺序学
+- **工程化笔记**负责回答：怎么落地、怎么部署、怎么评估
+- **面试题库**负责回答：怎么表达、怎么回答追问
+
+三者不是孤立的，而是"学 → 做 → 答"的闭环。学完一个主题后，到工程化笔记看怎么落地，再到面试题库练怎么表达。
+
+| 学习主题 | 学习路线 | 工程化笔记 | 面试题库 |
+|---|---|---|---|
+| Agent 基础 | [Agent 基础](/note/AI-Agent/agent-basic) | [Agent Trace](/note/Engineering/agent-trace) | [Agent 面试题](/note/AI-Interview/agent-interview) |
+| Prompt Engineering | [Prompt Engineering](/note/AI-Agent/prompt-engineering) | [上线检查清单](/note/Engineering/production-checklist) | [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) |
+| RAG | [RAG 基础](/note/AI-Agent/rag) | [RAG 工程化](/note/Engineering/rag-engineering) | [RAG 面试题](/note/AI-Interview/rag-interview) |
+| Tool Calling | [Tool Calling](/note/AI-Agent/tool-calling) | [API 安全](/note/Engineering/api-security)、[MCP Server](/note/Engineering/mcp-server) | [LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview) |
+| LangGraph | [LangGraph](/note/AI-Agent/langgraph) | [Agent Trace](/note/Engineering/agent-trace) | [LangChain / LangGraph 面试题](/note/AI-Interview/langchain-interview) |
+| Multi-Agent | [Multi-Agent](/note/AI-Agent/multi-agent) | [Agent Trace](/note/Engineering/agent-trace) | [Agent 面试题](/note/AI-Interview/agent-interview) |
+| Evaluation | [Trace 与 Evaluation](/note/AI-Agent/evaluation) | [Evaluation Pipeline](/note/Engineering/eval-pipeline) | [Agent 面试题](/note/AI-Interview/agent-interview) |
+| Production | [Production Engineering](/note/AI-Agent/production) | [上线检查清单](/note/Engineering/production-checklist) | [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) |
+
 ## 当前状态
 
 当前已完成第一轮学习路线整理，11 个阶段的框架已建立。其中 Agent Runtime 和 Memory / Persistence 暂时关联到 Agent 基础页面，后续会补充独立页面。Guardrails 暂时关联到 Human-in-the-loop 页面，后续会补充独立的安全审查专题。

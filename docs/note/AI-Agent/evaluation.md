@@ -150,3 +150,8 @@ Trace 与 Evaluation 是 Agent 系统从 Demo 走向工程化的关键能力。�
 可以这样表达：
 
 > Agent 项目不能只看能不能跑通，还要看执行过程是否可追踪、结果是否可评估。我会为每次执行生成 Trace，记录完整的输入输出、关键决策摘要和工具调用细节。然后通过自动评测监控整体质量，人工抽样发现自动评测遗漏的问题。每次优化后用回归测试确保没有引入新问题。失败样本是最宝贵的优化资源——每个失败案例都应该被分析、归类，转化为具体的优化行动。
+
+## 相关链接
+
+- 相关工程化笔记：[Evaluation Pipeline](/note/Engineering/eval-pipeline)、[Agent Trace 执行轨迹](/note/Engineering/agent-trace)
+- 相关面试题库：[Agent 面试题](/note/AI-Interview/agent-interview)

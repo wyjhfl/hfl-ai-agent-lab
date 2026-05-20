@@ -45,3 +45,19 @@
 | LangChain / LangGraph 面试题 | 4 道 |
 
 本轮内容为 HFL AI Agent Lab 原创整理，参考公开面试题方向，但不复制外站正文。
+
+## 如何配合学习路线和工程化笔记复习
+
+不要只背题。建议按照以下路径复习：
+
+1. **先看学习路线理解概念** — 知道这个技术是什么、为什么需要
+2. **再看工程化笔记理解落地** — 知道在真实项目中怎么设计和实现
+3. **最后看面试题库练表达** — 知道怎么用简洁的语言回答面试官
+
+| 面试题分类 | 推荐先读 | 推荐工程化补充 |
+|---|---|---|
+| [Agent 面试题](/note/AI-Interview/agent-interview) | [Agent 基础](/note/AI-Agent/agent-basic)、[Multi-Agent](/note/AI-Agent/multi-agent)、[Evaluation](/note/AI-Agent/evaluation) | [Agent Trace](/note/Engineering/agent-trace)、[Evaluation Pipeline](/note/Engineering/eval-pipeline) |
+| [RAG 面试题](/note/AI-Interview/rag-interview) | [RAG](/note/AI-Agent/rag) | [RAG 工程化](/note/Engineering/rag-engineering)、[向量数据库](/note/Engineering/vector-database) |
+| [LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview) | [Tool Calling](/note/AI-Agent/tool-calling) | [API 安全](/note/Engineering/api-security)、[MCP Server](/note/Engineering/mcp-server) |
+| [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) | [Production Engineering](/note/AI-Agent/production) | [Docker 部署](/note/Engineering/docker-deploy)、[可观测性](/note/Engineering/observability)、[上线检查清单](/note/Engineering/production-checklist) |
+| [LangChain / LangGraph 面试题](/note/AI-Interview/langchain-interview) | [LangGraph](/note/AI-Agent/langgraph)、[Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | [Agent Trace](/note/Engineering/agent-trace)、[Evaluation Pipeline](/note/Engineering/eval-pipeline) |

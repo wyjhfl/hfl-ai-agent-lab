@@ -138,3 +138,8 @@ Multi-Agent 是复杂 Agent 系统的核心架构模式。后续在项目 B 中�
 可以这样表达：
 
 > 多 Agent 不是把多个 Prompt 拼在一起。我的理解是，多 Agent 需要明确的职责拆分、状态共享机制、调度策略和结果整合方式。我采用 Supervisor 模式，让 Supervisor 负责理解意图和调度任务，每个执行 Agent 只负责自己的领域。这样做的好处是职责清晰、每个 Agent 的 Prompt 更聚焦、输出更可靠。但多 Agent 也有代价——协调成本增加、状态管理变复杂、调试难度上升。所以需要 Trace 机制来记录每个 Agent 的执行过程，方便定位问题。
+
+## 相关链接
+
+- 相关工程化笔记：[Agent Trace 执行轨迹](/note/Engineering/agent-trace)
+- 相关面试题库：[Agent 面试题](/note/AI-Interview/agent-interview)

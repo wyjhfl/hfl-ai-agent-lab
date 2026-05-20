@@ -20,3 +20,8 @@
 ## 面试表达
 
 待补充。
+
+## 相关链接
+
+- 相关工程化笔记：[AI Agent 上线检查清单](/note/Engineering/production-checklist)、[日志与可观测性](/note/Engineering/observability)、[Docker 部署](/note/Engineering/docker-deploy)
+- 相关面试题库：[大模型工程面试题](/note/AI-Interview/llm-engineering-interview)

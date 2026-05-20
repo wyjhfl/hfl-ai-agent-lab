@@ -132,3 +132,8 @@ LangGraph 是多 Agent 系统编排的核心工具。后续在项目 B 中会用
 可以这样表达：
 
 > 我用 LangGraph 把 Agent 的执行过程显式建模为状态机。每个节点是一个处理单元——可以是 Agent 推理、工具调用或人工确认。边定义流转条件，状态在节点间传递。这样做的好处是流程可控、可调试、可暂停。相比让模型自由生成多步推理，状态机的方式更适合有明确业务流程的场景。另外，LangGraph 的 Checkpoint 机制支持断点恢复和 Human-in-the-loop，这对于需要人工审批的高风险操作非常重要。
+
+## 相关链接
+
+- 相关工程化笔记：[Agent Trace 执行轨迹](/note/Engineering/agent-trace)、[Evaluation Pipeline](/note/Engineering/eval-pipeline)
+- 相关面试题库：[LangChain / LangGraph 面试题](/note/AI-Interview/langchain-interview)

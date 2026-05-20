@@ -49,7 +49,7 @@ features:
 
   - icon: 📌
     title: 当前建设阶段
-    details: v1.8 阶段：工程化笔记第二轮扩展完成。新增异步任务、API 安全、Agent Trace、Evaluation Pipeline、MCP Server 和上线检查清单，进一步补齐 AI Agent 工程落地能力，项目 B 保持占位。
+    details: v1.9 阶段：学习路线、工程化笔记、面试题库互链完成。站点已形成"学什么、怎么做、怎么答"的知识闭环，项目 B 保持占位。
     link: /about
     linkText: 了解更多 →
 ---

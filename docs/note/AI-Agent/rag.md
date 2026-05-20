@@ -20,3 +20,8 @@
 ## 面试表达
 
 待补充。
+
+## 相关链接
+
+- 相关工程化笔记：[RAG 工程化](/note/Engineering/rag-engineering)、[向量数据库](/note/Engineering/vector-database)
+- 相关面试题库：[RAG 面试题](/note/AI-Interview/rag-interview)

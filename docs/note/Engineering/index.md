@@ -71,6 +71,19 @@ AI Agent 项目不能只停留在模型调用和 Prompt 层面，还需要具备
 - 能复现问题
 - 能评估质量
 
+## 和学习路线、面试题库的关系
+
+工程化笔记不是孤立的后端笔记，而是承接 AI Agent 学习路线，并服务面试表达。学习路线告诉你"学什么"，工程化笔记告诉你"怎么做"，面试题库告诉你"怎么答"。
+
+| 工程化主题 | 对应学习路线 | 对应面试题库 |
+|---|---|---|
+| [RAG 工程化](/note/Engineering/rag-engineering) | [RAG](/note/AI-Agent/rag) | [RAG 面试题](/note/AI-Interview/rag-interview) |
+| [API 安全与工具权限](/note/Engineering/api-security) | [Tool Calling](/note/AI-Agent/tool-calling) | [LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview) |
+| [Agent Trace](/note/Engineering/agent-trace) | [Evaluation](/note/AI-Agent/evaluation)、[LangGraph](/note/AI-Agent/langgraph) | [Agent 面试题](/note/AI-Interview/agent-interview)、[LangChain / LangGraph 面试题](/note/AI-Interview/langchain-interview) |
+| [Evaluation Pipeline](/note/Engineering/eval-pipeline) | [Evaluation](/note/AI-Agent/evaluation) | [Agent 面试题](/note/AI-Interview/agent-interview) |
+| [MCP Server](/note/Engineering/mcp-server) | [Tool Calling](/note/AI-Agent/tool-calling) | [LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview) |
+| [上线检查清单](/note/Engineering/production-checklist) | [Production Engineering](/note/AI-Agent/production) | [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) |
+
 ## 学习原则
 
 不要只做一次性 Demo，要把每个模块都按真实项目要求沉淀：
