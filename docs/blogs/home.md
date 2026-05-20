@@ -36,10 +36,10 @@ features:
     linkText: 工程笔记 →
 
   - icon: 🎯
-    title: AI Agent 面试题库
-    details: 覆盖 Agent、RAG、LLM 工具调用、大模型工程、LangChain/LangGraph 五大方向的高频面试题与标准回答。
+    title: 面试题库
+    details: 系统整理 Agent、RAG、LLM 工具调用、大模型工程、LangChain / LangGraph 高频面试题，已完成第一轮原创题解。
     link: /note/AI-Interview/
-    linkText: 面试题库 →
+    linkText: 查看题库 →
 
   - icon: 🚀
     title: 项目实战
