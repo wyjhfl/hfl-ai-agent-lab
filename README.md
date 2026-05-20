@@ -28,7 +28,7 @@ HFL AI Agent Lab 是围绕 AI Agent、Multi-Agent、LangGraph、RAG、LLM 应用
 | AI 编程工具 | Claude Code、Codex、AI Coding Workflow |
 | 工程化笔记 | FastAPI、RAG 工程化、Docker 部署、可观测性 |
 | 项目实战 | 项目 A（RAG 工单系统）已预留，项目 B（多 Agent Copilot）当前仅保留入口 |
-| 面试表达 | 项目讲法、技术问答、简历描述模板 |
+| 面试题库 | Agent / RAG / LLM 工具 / 大模型工程 / LangChain 高频面试题 |
 
 ## 当前阶段
 
@@ -45,6 +45,7 @@ HFL AI Agent Lab 是围绕 AI Agent、Multi-Agent、LangGraph、RAG、LLM 应用
 - v0.9：源码拆解栏目质量提升完成
 - v1.0：网站导航、搜索、外链和公开访问体验检查完成
 - v1.1-v1.4 修正版：Agent 拆解历史对话素材第一轮整理完成
+- v1.5：AI Agent 面试题库模块改造完成
 
 ## 已完成内容
 
@@ -88,7 +89,7 @@ docs/
 │   ├── Source-Reading/
 │   ├── Engineering/
 │   ├── AI-Tools/
-│   └── Interview/
+│   └── AI-Interview/
 ├── .vitepress/
 └── public/
 

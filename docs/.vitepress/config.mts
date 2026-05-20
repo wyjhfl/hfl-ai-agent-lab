@@ -247,7 +247,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       { text: '项目实战', link: '/projects' },
       { text: '工程笔记', link: '/note/Engineering/' },
       { text: 'AI 工具', link: '/note/AI-Tools/' },
-      { text: '面试表达', link: '/note/Interview/' },
+      { text: '面试题库', link: '/note/AI-Interview/' },
       { text: '关于我', link: '/about' },
       { text: 'GitHub', link: 'https://github.com/wyjhfl' },
     ],
@@ -310,17 +310,16 @@ export default defineConfigWithTheme<ThemeConfig>({
         },
       ],
 
-      '/note/Interview/': [
+      '/note/AI-Interview/': [
         {
-          text: '面试表达',
+          text: 'AI Agent 面试题库',
           items: [
-            { text: '面试表达总览', link: '/note/Interview/' },
-            { text: '项目 B 一分钟介绍', link: '/note/Interview/project-b-one-minute' },
-            { text: '项目 B 深挖版', link: '/note/Interview/project-b-deep-dive' },
-            { text: 'Multi-Agent 问答', link: '/note/Interview/multi-agent-qa' },
-            { text: 'LangGraph 问答', link: '/note/Interview/langgraph-qa' },
-            { text: 'RAG 问答', link: '/note/Interview/rag-qa' },
-            { text: '简历描述模板', link: '/note/Interview/resume-bullets' },
+            { text: '题库总览', link: '/note/AI-Interview/' },
+            { text: 'Agent 面试题', link: '/note/AI-Interview/agent-interview' },
+            { text: 'RAG 面试题', link: '/note/AI-Interview/rag-interview' },
+            { text: 'LLM 工具调用面试题', link: '/note/AI-Interview/llm-tools-interview' },
+            { text: '大模型工程面试题', link: '/note/AI-Interview/llm-engineering-interview' },
+            { text: 'LangChain / LangGraph 面试题', link: '/note/AI-Interview/langchain-interview' },
           ],
         },
       ],

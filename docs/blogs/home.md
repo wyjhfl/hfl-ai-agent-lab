@@ -36,10 +36,10 @@ features:
     linkText: 工程笔记 →
 
   - icon: 🎯
-    title: 面试表达
-    details: 把项目能力转化为简历描述、面试讲法、架构解释和技术难点表达。
-    link: /note/Interview/
-    linkText: 面试表达 →
+    title: AI Agent 面试题库
+    details: 覆盖 Agent、RAG、LLM 工具调用、大模型工程、LangChain/LangGraph 五大方向的高频面试题与标准回答。
+    link: /note/AI-Interview/
+    linkText: 面试题库 →
 
   - icon: 🚀
     title: 项目实战
@@ -49,7 +49,7 @@ features:
 
   - icon: 📌
     title: 当前建设阶段
-    details: v1.1-v1.4 修正版：Agent 拆解历史对话素材第一轮整理完成。Hermes Agent、Harness Engineering、OpenClaw 已根据已提供 raw 素材整理为正式拆解文档；未提供 raw 的内容保持原占位，项目 B 保持占位。
+    details: v1.5：AI Agent 面试题库模块改造完成。原「面试表达」模块重构为覆盖 Agent / RAG / LLM 工具 / 大模型工程 / LangChain 五大方向的面试题库；旧内容已归档至 archive/interview-expression/。
     link: /about
     linkText: 了解更多 →
 ---
