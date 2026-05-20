@@ -1,281 +1,369 @@
 # OpenClaw 架构拆解
 
-## 项目定位
+## 1. 项目定位
 
-OpenClaw 在本知识库中被作为复杂 Agent 系统分层、多 Agent 协作、工具抽象、状态流转和安全边界的学习对象。
+OpenClaw 的核心不是"接一个大模型聊天"，而是：
 
-拆解 OpenClaw 时，重点不是一开始陷入所有源码细节，而是先理解整体结构：系统分几层、Agent 如何协作、工具如何接入、状态如何流转、任务如何结束。这些是任何复杂 Agent 系统都需要解决的架构问题。
+> 用 Gateway 统一接入多渠道消息，用 Agent Runtime 执行任务，用 Workspace/Memory 承载长期状态，用 Tools/Skills/Plugins 扩展能力，再用 Session/Queue/Sandbox/Security 控制可靠性和风险。
 
-## 架构总览
+它的架构可以压缩成：
 
-从复杂 Agent 系统角度，OpenClaw 可以拆成以下模块。这些是当前拆解视角，不代表已经确认真实源码类名：
+```
+OpenClaw =
+  Gateway 控制面
+  + Channel 多渠道接入
+  + Routing 路由决策
+  + Session 会话状态
+  + Agent Runtime 推理执行
+  + Workspace 长期上下文
+  + Memory 长期记忆
+  + Tools 工具执行
+  + Skills 行为说明
+  + Plugins 能力扩展
+  + Sandbox / Approval / Security 安全约束
+```
 
-- **Gateway**：统一接入入口，接收外部请求
-- **Channel**：不同接入来源的适配层（API、CLI、消息队列等）
-- **Session**：会话和上下文管理
-- **Agent Runtime**：任务执行核心，驱动 Agent 完成任务
-- **Workspace**：任务执行空间，提供隔离的工作环境
-- **Memory**：历史信息与长期上下文
-- **Skills**：能力封装，定义 Agent 可以做什么
-- **Tools**：工具调用，执行具体操作
-- **Plugins**：扩展机制，接入外部能力
-- **Compaction**：上下文压缩，在有限窗口内保留关键信息
-- **Security**：权限和安全边界控制
-- **Evaluation**：执行质量评估和反馈
+OpenClaw 的形态更接近"Personal AI OS"，而不是聊天工具。它使用一个长期运行的 Gateway 管理 WhatsApp、Telegram、Slack、Discord、Signal、iMessage、WebChat 等消息表面，CLI、Web UI、macOS app 等控制端通过 WebSocket 连接 Gateway。
 
-## 核心运行链路
-
-OpenClaw 的核心运行链路可以描述为以下流程：
-
-1. **外部请求进入 Gateway**：用户通过 API、CLI 或消息队列提交请求
-2. **Channel 处理不同接入来源**：把不同格式的请求统一为内部格式
-3. **Session 维护会话上下文**：关联历史对话、用户信息、任务状态
-4. **Agent Runtime 接管任务**：Agent 接收任务，开始执行
-5. **Workspace 提供任务工作区**：为任务创建隔离的执行环境
-6. **Memory 提供历史上下文**：从记忆中检索相关信息，注入当前上下文
-7. **Skills / Tools 执行能力调用**：根据任务需要，调用具体的技能或工具
-8. **Plugins 扩展外部能力**：通过插件接入外部服务和能力
-9. **Compaction 压缩上下文**：当上下文过长时，压缩历史信息，保留关键内容
-10. **Security 控制权限边界**：检查操作是否在权限范围内
-11. **Evaluation 记录质量反馈**：评估执行结果，记录反馈信息
-
-这个流程体现了复杂 Agent 系统的核心挑战：如何在多层架构中协调多个模块，同时保证安全和质量。
-
-## 关键模块拆解
+## 2. 整体架构
 
 ### Gateway
 
-Gateway 是系统的统一接入入口。重点关注：
-
-- 支持哪些接入方式：REST API、WebSocket、CLI、消息队列
-- 请求如何校验和认证
-- 请求如何转化为内部任务对象
-- 是否支持限流和熔断
-
-Gateway 的设计决定了系统的接入能力。好的 Gateway 应该让不同的接入方式都能使用相同的内部逻辑。
+Gateway 是 OpenClaw 的中心，而不是模型是中心。Gateway 负责多渠道消息接入、WebSocket API、事件推送、健康检查、设备连接、节点连接、Session 管理入口、Agent 调度入口、Channel 生命周期管理。Gateway 暴露 typed WebSocket API，校验 inbound frames，并发出 `agent`、`chat`、`presence`、`health`、`heartbeat`、`cron` 等事件。
 
 ### Channel
 
-Channel 是不同接入来源的适配层。重点关注：
+不同接入来源的适配层。OpenClaw 支持 WhatsApp、Telegram、Slack、Discord、Signal、iMessage、WebChat、Email、SMS、DingTalk、Feishu、WeCom、Weixin、Webhook、API Server 等渠道。Channel Plugin 负责解析不同平台的消息格式，统一为内部 MessageEvent。
 
-- 有哪些 Channel：API Channel、CLI Channel、消息 Channel
-- Channel 如何把外部格式转化为内部格式
-- Channel 如何处理响应格式的差异
-- 新增 Channel 是否需要修改核心代码
+### Routing
 
-Channel 的存在让系统能够支持多种接入方式，而不需要为每种方式写一套独立逻辑。
+OpenClaw 的路由是确定性的，不是模型自己决定"我该交给谁"。路由规则基于 channel、account、peer、guild、team、role 等信息做确定性匹配。优先级为：精确 peer 匹配 > thread 继承 > Discord guild+roles > Discord guild > Slack team > accountId > channel 通配 > default agent。
 
 ### Session
 
-Session 负责会话和上下文管理。重点关注：
-
-- 会话如何创建和销毁
-- 上下文如何在多轮对话中保持
-- 会话状态如何持久化
-- 多个 Agent 之间如何共享会话
-
-Session 管理是多轮对话的基础。没有 Session，Agent 就无法记住之前的对话内容。
+Session 负责会话和上下文管理。Session transcript 存在 `~/.openclaw/agents/<agentId>/sessions/<SessionId>.jsonl`。Queue mode 为 `steer` 时，新的 inbound message 会注入当前 run；`followup` 或 `collect` 时，会等当前 turn 结束后再开始新 turn。
 
 ### Agent Runtime
 
-Agent Runtime 是任务执行的核心。重点关注：
-
-- Agent 如何定义和注册
-- Agent 之间如何协作
-- 是否有 Supervisor 或 Planner
-- 调度逻辑在哪里
-- Agent 的执行循环是什么样的
-
-Agent Runtime 的设计决定了系统能支持多复杂的任务。简单的 Agent Runtime 只支持单 Agent，复杂的可以支持多 Agent 协作。
+Agent Runtime 是任务执行核心。它使用一个 agent workspace 作为工具和上下文的唯一工作目录，并注入 AGENTS.md、SOUL.md、TOOLS.md、BOOTSTRAP.md、IDENTITY.md、USER.md 等文件。这些文件决定 agent 的操作指令、人格边界、工具说明、身份和用户画像。
 
 ### Workspace
 
-Workspace 提供任务执行的隔离环境。重点关注：
-
-- 每个任务是否有独立的工作空间
-- 工作空间包含哪些内容：文件、状态、配置
-- 工作空间如何创建和销毁
-- 多个任务之间是否隔离
-
-Workspace 的隔离性很重要。一个任务的执行不应该影响其他任务，也不应该污染全局状态。
+每个 Agent 有自己的 workspace，包含 AGENTS.md（操作指令）、SOUL.md（人格边界）、TOOLS.md（工具说明）、USER.md（用户画像）、MEMORY.md（长期记忆）、memory/YYYY-MM-DD.md（每日记录）、skills/（技能目录）。
 
 ### Memory
 
-Memory 负责历史信息和长期上下文。重点关注：
+OpenClaw 通过普通 Markdown 文件保存记忆。MEMORY.md 用于长期事实、偏好和决策，memory/YYYY-MM-DD.md 用于每日记录。模型只"记住"保存到磁盘的内容，没有隐藏状态。Session、Memory、Compaction 三层分离：Session 保存原始会话，Memory 保存长期价值，Compaction 压缩模型可见上下文。
 
-- 短期记忆和长期记忆如何区分
-- 记忆如何存储和检索
-- 记忆如何注入当前上下文
-- 记忆是否有容量限制
+### Tools
 
-Memory 的设计决定了 Agent 能记住多少历史信息。好的 Memory 设计应该让 Agent 在需要时找到相关信息，而不是把所有历史都塞进上下文。
+Agent 生成文本之外的动作都通过 tools 完成，例如读文件、运行命令、浏览网页、发送消息和操作设备。每个 Agent 可以有不同的 tool policy，通过 allow/deny 列表控制。
 
-### Skills / Tools
+### Skills
 
-Skills 和 Tools 是 Agent 的能力封装。重点关注：
-
-- Skill 和 Tool 的区别是什么
-- 如何注册新的 Skill 或 Tool
-- 参数如何结构化
-- 结果如何标准化
-- 是否支持错误处理
-
-能力封装的标准化是系统可扩展性的基础。统一的接口让新的能力可以快速接入。
+Skills 是指导模型如何完成任务的说明。Skill 文件夹中的 SKILL.md 会进入模型上下文，能改变 Agent 行为。OpenClaw 可以 mid-session 刷新 skills。
 
 ### Plugins
 
-Plugins 是系统的扩展机制。重点关注：
-
-- 插件如何注册和加载
-- 插件如何接入外部服务
-- 插件的生命周期管理
-- 插件之间的依赖关系
-
-Plugins 让系统能够灵活扩展，而不需要修改核心代码。
+Plugin 是进程内代码，与 Gateway 在同一个进程里运行，不是 sandboxed。插件通过 central registry 注册 provider、channel、tool、skill、speech、web search、media 等能力。插件系统分为 manifest discovery、enablement validation、runtime loading、surface consumption 四层。
 
 ### Compaction
 
-Compaction 负责上下文压缩。重点关注：
-
-- 什么时候触发压缩
-- 压缩策略是什么：摘要、截断、选择性保留
-- 压缩后如何保证关键信息不丢失
-- 压缩是否可逆
-
-Compaction 是长对话场景的必备能力。没有 Compaction，上下文窗口会被历史信息占满，Agent 无法处理新信息。
+上下文压缩机制，在长对话中保留目标、关键证据、已完成步骤和下一步计划，防止上下文溢出导致任务中断。
 
 ### Security
 
-Security 负责权限和安全边界。重点关注：
+安全不是靠一句"不要做坏事"的 Prompt，而是靠访问控制、工具策略、沙箱、审批、隔离、审计共同组成防线。安全思路是 identity first、scope next、model last——先决定谁能触发 bot，再决定 bot 能在哪里行动，最后才考虑模型，因为要假设模型可能被操纵。
 
-- 权限如何定义和检查
-- 哪些操作需要授权
-- 安全边界如何隔离
-- 审计日志如何记录
+### Multi-Agent
 
-安全边界应该前置，而不是事后补救。每个操作在执行前都应该检查是否在权限范围内。
+多 Agent 不是"多个模型一起聊天"，而是"多个隔离的大脑，根据路由规则接收不同来源的消息，并拥有各自的 workspace、session、工具策略和身份边界"。AgentId = 哪个 Agent / 哪个大脑，SessionKey = 这个 Agent 下的哪段会话上下文。
 
-### Evaluation
+## 3. 核心运行链路
 
-Evaluation 负责执行质量评估。重点关注：
+### 单 Agent 消息处理流程
 
-- 是否有自动评测
-- 是否有人工评审
-- 评测结果如何反馈到系统
-- 是否有评测集管理
+```
+外部消息
+  ↓
+Channel Plugin 解析平台消息
+  ↓
+Gateway inbound pipeline
+  ↓
+Routing Resolver 确定 agentId
+  ↓
+加载 Agent 定义（workspace、sessionStore、model config、tool policy）
+  ↓
+生成 sessionKey（agent:<agentId>:<channel>:<scope>:<id>）
+  ↓
+进入 Agent 的 session queue
+  ↓
+加载 workspace 文件（AGENTS.md、SOUL.md、USER.md、MEMORY.md、skills）
+  ↓
+使用 Agent 的 tool policy / model / sandbox
+  ↓
+Agent Runtime 执行（model/tool loop）
+  ↓
+回复回原 channel
+```
 
-Evaluation 是质量闭环的核心。没有 Evaluation，系统就无法知道自己的输出质量如何。
+### 多 Agent 路由流程
 
-## 关键设计思想
+```
+外部消息
+  ↓
+Channel Plugin
+  ↓
+Gateway
+  ↓
+Routing Resolver
+  ├─ peer binding?
+  ├─ thread parent binding?
+  ├─ guild + role?
+  ├─ team?
+  ├─ accountId?
+  ├─ channel wildcard?
+  └─ default agent?
+  ↓
+Resolved Agent
+  ├─ agentId
+  ├─ workspace
+  ├─ sessionStore
+  ├─ model config
+  ├─ tool policy
+  ├─ sandbox policy
+  └─ identity
+  ↓
+SessionKey → Agent Runtime → Reply
+```
 
-### 系统分层
+### 安全流程
 
-把复杂 Agent 系统拆成多个层次，每个层次职责明确：
+```
+外部消息
+  ↓
+Channel Access Control（pairing、allowlist、requireMention）
+  ↓
+Gateway（local bind、auth token）
+  ↓
+Routing（agentId、sessionKey、per-agent policy）
+  ↓
+Agent Runtime（prompt guardrails、memory/skills/tools context）
+  ↓
+Tool Call → Tool Policy（allow/deny、fs.workspaceOnly、exec.security）
+  ↓
+Approval（ask always / allowlist / exact context）
+  ↓
+Sandbox（Docker / SSH / OpenShell、workspaceAccess none/ro/rw）
+  ↓
+Execution → Logs / Transcript / Audit
+```
 
-- 接入层（Gateway + Channel）：处理外部请求
-- 会话层（Session）：管理上下文
-- 执行层（Agent Runtime + Workspace）：执行任务
-- 能力层（Skills + Tools + Plugins）：提供能力
-- 基础设施层（Memory + Compaction + Security + Evaluation）：提供基础服务
+## 4. 关键模块拆解
 
-分层的好处是每个模块只负责自己的职责，扩展时不需要修改其他层的代码。
+### Gateway
 
-### Agent 职责边界
+**职责：** 统一接入入口，管理多渠道消息、WebSocket API、事件推送、设备连接、Session 管理、Agent 调度。
 
-每个 Agent 只负责一个明确职责，不要让一个 Agent 做所有事。多个 Agent 之间通过明确的接口协作，而不是自由对话。
+**输入：** 多渠道消息（WhatsApp、Telegram、Slack、Discord 等）。
 
-职责边界的好处是：
+**输出：** 统一的 MessageEvent，分发给对应 Agent。
 
-- 每个 Agent 可以独立测试
-- Agent 可以被替换而不影响其他模块
-- 系统行为更容易预测
+**关键设计：** Gateway 是控制面和 policy surface。Gateway 配置支持热更新，大多数字段可以无停机热应用（agent、agents、models、routing、bindings、session、messages、tools、skills 等），而 gateway.*、plugins 等底层基础设施变更需要重启。
 
-### 工具调用标准化
+**可迁移点：** 多 Agent 项目不要一开始就让前端直接调用某个 Agent，应该有一个类似 Gateway 的中枢层，统一接收任务、鉴权、日志、路由、状态管理、推送执行过程。
 
-工具调用结果标准化，包含：
+### Channel
 
-- 成功/失败标记
-- 结果数据
-- 错误信息
-- 执行时间
+**职责：** 不同接入来源的适配层，把不同平台的消息格式统一为内部 MessageEvent。
 
-标准化的结果让 Agent 能够统一处理不同工具的返回值。
+**输入：** 各平台原始消息。
 
-### 状态对象串联流程
+**输出：** 统一的 MessageEvent。
 
-使用状态对象串联多步骤任务，所有 Agent 共享同一个状态对象。状态对象包含：
+**关键设计：** Channel Access Control 控制谁能 DM bot、哪些群能触发 bot、群里是否必须 @ bot、是否使用 allowlist。原则是默认 pairing、群聊 requireMention、关键群聊 allowlist、多人环境 DM 隔离。
 
-- 任务上下文
-- 执行阶段
-- 中间结果
-- 错误信息
+**可迁移点：** 不同来源的任务请求应该有统一的接入层，而不是每种来源写一套独立逻辑。
 
-状态对象是多 Agent 协作的基础。没有共享状态，不同 Agent 之间无法协调。
+### Routing
 
-### 执行轨迹保留
+**职责：** 确定性路由，根据 channel、account、peer、guild、team、role 等信息选择 Agent。
 
-为调试和评测保留执行轨迹，记录：
+**输入：** MessageEvent 中的路由信息。
 
-- 关键决策摘要
-- 工具调用记录
-- 状态变化记录
-- 执行轨迹
+**输出：** agentId。
 
-执行轨迹是调试和优化的基础。没有执行轨迹，出了问题就无法定位原因。
+**关键设计：** 路由是确定性的，不是 LLM 决定。优先级为精确 peer 匹配 > thread 继承 > Discord guild+roles > Slack team > accountId > channel 通配 > default agent。"越具体越优先"。
 
-### 安全边界前置
+**可迁移点：** 多 Agent 路由不要一开始就完全交给 LLM。先做规则化、可测试的路由，LLM 可以参与意图识别，但最终路由必须落到结构化状态里。
 
-安全边界应该在执行前检查，而不是事后补救：
+### Session
 
-- 操作前检查权限
-- 调用前检查参数
-- 输出前检查内容
-- 访问前检查范围
+**职责：** 会话和上下文管理，控制并发和消息顺序。
 
-安全边界前置可以防止很多问题，比事后修补更可靠。
+**输入：** 消息和 agentId。
 
-### 避免多个 Agent 自由对话
+**输出：** 会话上下文。
 
-多个 Agent 自由对话会导致流程失控。应该用调度机制控制流转顺序：
+**关键设计：** SessionKey 是 routing/context selection，不是 per-user auth boundary。Queue mode 控制消息并发：steer 模式新消息注入当前 run，followup/collect 模式等当前 turn 结束。
 
-- 明确谁调用谁
-- 明确调用顺序
-- 明确返回条件
-- 明确超时处理
+**可迁移点：** 项目必须有 task_id、session_id、agent_run_id、trace_id，同一个业务任务的执行链路要串行可追踪。
 
-调度机制让多 Agent 协作变得可控可预测。
+### Agent Runtime
 
-## 可迁移到自己项目的设计
+**职责：** 任务执行核心，使用 workspace 驱动。
 
-从 OpenClaw 中可以迁移以下设计到自己的项目：
+**输入：** 会话消息、workspace 文件。
 
-- **清晰分层**：把系统拆成接入层、执行层、能力层、基础设施层，每个层次职责明确
-- **职责单一**：每个 Agent 只负责一个明确职责，不要让一个 Agent 做所有事
-- **状态串联**：使用状态对象串联多步骤任务，所有 Agent 共享同一个状态对象
-- **工具标准化**：工具调用结果标准化，包含成功/失败标记、结果数据、错误信息
-- **执行轨迹保留**：为调试和评测保留执行轨迹，记录关键决策摘要和状态变化
-- **流程可控**：避免多个 Agent 自由对话导致流程失控，用调度机制控制流转顺序
-- **安全边界前置**：每个操作在执行前都应该检查是否在权限范围内
-- **上下文压缩**：长对话场景需要压缩策略，在有限窗口内保留关键信息
+**输出：** Agent 响应。
 
-## 面试表达
+**关键设计：** Agent Runtime 使用 workspace 作为工具和上下文的唯一工作目录，注入 AGENTS.md、SOUL.md、TOOLS.md、BOOTSTRAP.md、IDENTITY.md、USER.md 等文件。代码负责运行机制，Workspace 负责 Agent 个性和长期状态。
+
+**可迁移点：** 给每个 Agent 设计自己的 workspace，每个 Agent 不只是"名字不同"，而是有独立的角色、记忆、工具边界和任务风格。
+
+### Workspace
+
+**职责：** 每个 Agent 的独立工作空间，承载人格、规则、记忆、技能。
+
+**输入：** Agent 配置。
+
+**输出：** Agent 运行时上下文。
+
+**关键设计：** Workspace 文件化，包含 AGENTS.md（操作指令）、SOUL.md（人格边界）、TOOLS.md（工具说明）、USER.md（用户画像）、MEMORY.md（长期记忆）、skills/（技能目录）。可读、可改、可备份、可迁移、可审计、可版本管理。
+
+**可迁移点：** 不要把所有 prompt 写死在代码里，把 Agent 角色、工具约束、长期记忆做成可配置的 workspace。
+
+### Memory
+
+**职责：** 长期记忆管理，与 Session 分离。
+
+**输入：** 对话过程中的事实、偏好、经验。
+
+**输出：** 结构化的记忆文件。
+
+**关键设计：** MEMORY.md 用于长期事实、偏好和决策，memory/YYYY-MM-DD.md 用于每日记录。模型只"记住"保存到磁盘的内容，没有隐藏状态。Session（原始对话历史）、Memory（提炼后的长期知识）、Compaction（压缩模型可见上下文）三层分离。
+
+**可迁移点：** 区分 session history、long-term memory、daily operational notes 和 RAG knowledge base。不要把所有聊天记录都丢进向量库当成记忆。
+
+### Tools / Skills / Plugins
+
+**职责：** 三层能力体系。Tool = 能做什么，Skill = 怎么做，Plugin = 怎么接入能力。
+
+**输入：** Agent 能力需求。
+
+**输出：** 执行结果。
+
+**关键设计：**
+
+- Tool：具体执行动作（读文件、执行命令、发消息）
+- Skill：任务方法论和流程说明（SKILL.md 进入模型上下文，能改变 Agent 行为）
+- Plugin：进程内代码，通过 central registry 注册 provider、channel、tool、skill 等能力
+
+Plugin 有风险等级：Skill 是 prompt/文档层风险，Tool 是可执行动作风险，Plugin 是进程内代码风险（可能直接影响 Gateway runtime）。
+
+**可迁移点：** Agent 不直接 import 数据库，Agent 调用 Tool，Tool 由 Plugin 注册，Skill 告诉 Agent 如何正确使用 Tool。
+
+### Security
+
+**职责：** 8 层安全防线。
+
+**输入：** 安全策略配置。
+
+**输出：** 安全执行环境。
+
+**关键设计：**
+
+安全防线 8 层：
+
+1. Gateway Auth：谁能连接 Gateway 控制面
+2. Channel Access Control：谁能通过消息渠道触发 Agent
+3. Routing / Session Isolation：消息进入哪个 Agent，上下文是否隔离
+4. Tool Policy：Agent 能调用哪些工具
+5. Exec Approval：执行命令前是否需要人类批准
+6. Sandbox：工具执行在宿主机还是隔离环境
+7. Plugin / Skill Trust：插件和技能是否可信
+8. Logging / Audit / Incident Response：出事后能否追踪
+
+核心思想：Prompt 规则只是软约束，不能替代硬边界。真正的防护来自工具权限、审批、沙箱、审计。
+
+**可迁移点：** 每个 Agent 独立 workspace、独立 tool policy，高危动作必须审批，所有外部输入都视为不可信，不让模型直接碰生产权限，日志必须可追踪。
+
+### Multi-Agent
+
+**职责：** 多 Agent 隔离和协作。
+
+**输入：** 多个 Agent 配置和路由规则。
+
+**输出：** 隔离的多 Agent 运行环境。
+
+**关键设计：**
+
+多 Agent 隔离边界三层：
+
+1. Workspace 隔离：每个 Agent 有自己的 AGENTS.md、SOUL.md、USER.md、MEMORY.md、skills
+2. Session 隔离：每个 Agent 有自己的 sessions.json 和 transcript jsonl
+3. Tool / Credential 隔离：每个 Agent 可以有不同工具权限、auth store、sandbox
+
+Delegate 是多 Agent 的组织化扩展：它拥有自己的身份、凭据、workspace、sessions 和明确授权，不能冒充人类，只能在 standing orders、tool policy、sandbox 和 audit trail 约束下代表 principal 工作。
+
+Broadcast Groups 支持同一个 peer 在满足触发条件后让多个 Agent 同时运行。
+
+**可迁移点：** 多 Agent 系统不要先追求"智能调度"，先做好确定性路由、隔离 workspace、隔离 session、隔离工具权限。
+
+## 5. 架构设计亮点
+
+### Gateway 是中心，不是模型是中心
+
+很多 Agent 项目一上来就把重点放在 LLM、Prompt、Tool Calling，但 OpenClaw 的核心入口是 Gateway。这让系统更像"系统"，而不是几个 Agent 脚本拼起来。
+
+### 确定性路由优先，LLM 决策后置
+
+路由由系统规则决定，模型不负责选择 channel，也不负责决定消息应该发给谁。第一版必须可控、可解释、可测试。
+
+### Workspace 文件化，让 Agent 可审查、可迁移、可训练
+
+用文件承载 Agent 行为和长期上下文，可读、可改、可备份、可迁移、可审计、可版本管理。
+
+### Session、Memory、Compaction 三层分离
+
+不把"聊天记录""长期记忆""上下文压缩"混在一起。Session 保存原始会话，Memory 保存长期价值，Compaction 压缩模型可见上下文。
+
+### Plugin 不是工具集合，而是能力所有权边界
+
+插件是能力拥有者，系统消费的是能力契约。不是随便 import 一个文件，而是通过 central registry 注册能力。
+
+### 安全是产品架构的一部分
+
+安全不是事后补丁，而是贯穿 Gateway、Channel、Tool、Plugin、Sandbox、Approval。Prompt guardrails 只是软指导，硬约束来自 tool policy、exec approvals、sandboxing、channel allowlists。
+
+## 6. 可迁移到个人项目的设计
+
+- **Gateway 思想**：做一个 Agent Control Plane，统一接收任务、鉴权、日志、路由、状态管理、推送执行过程
+- **确定性路由**：多 Agent 不靠随机协作，靠确定性编排。LLM 可以参与意图识别，但最终路由必须落到结构化状态里
+- **Workspace 文件化**：给每个 Agent 独立角色配置，每个 Agent 有自己的 AGENTS.md、TOOLS.md、MEMORY.md
+- **Memory 分层**：区分 RAG 知识库、Session History、Business Memory、Run Summary
+- **Tools / Skills / Plugins 分层**：Agent 不直接 import 数据库，Agent 调用 Tool，Tool 由 Plugin 注册，Skill 告诉 Agent 如何正确使用 Tool
+- **安全分级**：查询指标（自动执行）→ 生成分析报告（自动执行）→ 生成活动方案（自动生成草案）→ 创建运营任务（需要确认）→ 发送用户通知（必须审批）→ 修改预算（必须审批）→ 删除数据（禁止）
+- **Session / Queue 思想**：任务状态必须可恢复，每一步都写入数据库，形成可审计的执行链路
+- **Delegate 思想**：高风险 Agent 必须有身份边界，不同 Agent 有不同权限集
+
+## 7. 面试表达
 
 ### 表达一：系统分层
 
-> 我在拆解 OpenClaw 时，重点关注它如何把复杂 Agent 系统拆成多个层次。我的理解是，多 Agent 项目不能只是多个角色的 Prompt 拼接，而应该有明确的调度逻辑、状态流转、工具接口和结果评估机制。系统分层的好处是每个模块只负责自己的职责，扩展时不需要修改核心代码。这种设计思路可以直接迁移到自己的项目中。
+> 我在拆解 OpenClaw 时，重点关注它如何把复杂 Agent 系统拆成多个层次。OpenClaw 的核心不是模型，而是 Gateway + Runtime + Workspace + Tools 的系统化组合。Gateway 是中心，统一接入多渠道消息；Agent Runtime 使用 workspace 驱动，每个 Agent 有独立的人格、规则、记忆和工具边界；Routing 是确定性的，不是让 LLM 随便决定；Session、Memory、Compaction 三层分离，避免把聊天记录、长期记忆和上下文压缩混在一起。这种分层设计让系统更像"操作系统"，而不是几个 Agent 脚本拼起来。
 
-### 表达二：多 Agent 协作
+### 表达二：多 Agent 与安全
 
-> OpenClaw 给我最大的启发是多 Agent 协作的调度机制。多个 Agent 自由对话会导致流程失控，所以需要用调度机制控制流转顺序：明确谁调用谁、明确调用顺序、明确返回条件。同时，所有 Agent 共享同一个状态对象，通过状态流转串联整个任务。这种设计让多 Agent 协作变得可控可预测，而不是依赖 Agent 之间的"默契"。
+> OpenClaw 给我最大的启发是多 Agent 的隔离设计和安全边界。多 Agent 不是多个聊天角色，而是多个隔离的 workspace、session、memory、tool policy。每个 Agent 有自己的身份、凭据、工具权限，路由由确定性规则决定。安全方面，OpenClaw 的思路是 identity first、scope next、model last——先决定谁能触发 bot，再决定 bot 能在哪里行动，最后才考虑模型，因为要假设模型可能被操纵。Prompt 规则只是软约束，真正的防护来自工具权限、审批、沙箱和审计。这套设计思路可以直接迁移到自己的多 Agent 项目中。
 
-## 当前限制与 TODO
+## 8. 后续 TODO
 
-当前页面还没有补充真实源码文件路径和关键调用链。后续需要结合实际仓库继续补齐：
-
-- 真实源码文件路径
-- 关键类名和函数名
-- 核心调用链
-- Gateway 的具体实现
-- Agent 调度的具体逻辑
-- Compaction 的具体策略
-- Security 的具体实现
+- 待补充 OpenClaw 的真实源码文件路径和关键函数
+- 待补充 Gateway 的 WebSocket API 实现细节
+- 待补充 Routing Resolver 的匹配逻辑源码
+- 待补充 Agent Runtime 的 workspace 加载流程
+- 待补充 Sandbox 的 Docker/SSH/OpenShell 实现
+- 待补充 Plugin 的 manifest discovery 和 runtime loading 流程
+- 待补充 Compaction 的具体压缩策略
+- 待补充 Delegate 的身份和凭据管理实现
