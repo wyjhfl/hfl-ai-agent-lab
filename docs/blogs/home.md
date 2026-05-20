@@ -18,26 +18,20 @@ hero:
 
 features:
   - icon: 🤖
-    title: AI Agent 工程
-    details: 系统记录 Agent Loop、Tool Calling、Planning、Memory、Reflection 等核心能力，从概念到工程落地。
+    title: AI Agent 学习路线
+    details: 从 Agent 基础概念到 Tool Calling、Planning、Memory、Reflection，系统梳理 AI Agent 技术体系。
     link: /note/AI-Agent/
     linkText: 查看路线 →
 
   - icon: 🧩
-    title: 多 Agent 项目实战
-    details: 以运营中台多 Agent Copilot 为主线，沉淀从意图识别、任务规划、工具执行到人工审批的完整链路。
-    link: /projects
-    linkText: 查看项目 →
-
-  - icon: 📚
-    title: 源码拆解
-    details: 拆解 Hermes Agent、Harness Engineering、OpenClaw 等项目，提炼可迁移到自己项目中的架构设计。
+    title: Agent 源码拆解
+    details: 拆解 Hermes Agent、Harness Engineering、OpenClaw 等开源项目，提炼可迁移的架构设计。
     link: /note/Source-Reading/
     linkText: 阅读拆解 →
 
   - icon: 🛠️
     title: 工程化笔记
-    details: 记录 FastAPI、数据库、RAG 工程化、部署、日志、可观测性等 AI 应用落地所需能力。
+    details: 记录 FastAPI、数据库、RAG 工程化、Docker 部署、日志可观测性等 AI 应用落地所需能力。
     link: /note/Engineering/
     linkText: 工程笔记 →
 
@@ -48,8 +42,14 @@ features:
     linkText: 面试表达 →
 
   - icon: 🚀
-    title: 求职作品集
-    details: 通过项目文档、源码拆解、技术路线和工程笔记展示 AI 大模型应用开发能力。
+    title: 项目实战
+    details: 项目 A（RAG 工单系统）已上线，项目 B（多 Agent Copilot）当前为预留入口，后续逐步展开。
+    link: /projects
+    linkText: 查看项目 →
+
+  - icon: 📋
+    title: 当前建设阶段
+    details: v0.3.2 阶段：公开展示页面优化中。非项目 B 内容已填充初稿，项目 B 保持占位。
     link: /about
-    linkText: 关于我 →
+    linkText: 了解更多 →
 ---

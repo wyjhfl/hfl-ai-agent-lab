@@ -3,11 +3,13 @@ layout: page
 sidebar: false
 ---
 
-# 关于我
+# 关于 HFL AI Agent Lab
 
-我是 HFL，目前专注于 AI 大模型应用开发、AI Agent 工程化和多 Agent 项目实践。
+## 这个网站是什么
 
-## 当前方向
+HFL AI Agent Lab 是一个 AI Agent 工程知识库、多 Agent 项目展示站和求职作品集。这里系统沉淀 AI Agent、Multi-Agent、LangGraph、RAG、LLM 应用工程和后端工程化相关内容。
+
+## 当前关注方向
 
 - AI Agent
 - Multi-Agent
@@ -16,24 +18,28 @@ sidebar: false
 - Tool Calling
 - LLM 应用工程
 - 后端工程化
+- Trace / Evaluation
 
-## 我正在构建什么
+## 当前阶段
 
-我正在搭建一套面向求职展示的 AI Agent 工程知识库，核心包括：
+- v0.1：站点基础改造完成
+- v0.2：知识库骨架完成
+- v0.3-lite：非项目 B 内容初稿完成
+- v0.3.1：旧内容隔离完成
+- v0.3.2：公开展示页面优化中
 
-1. AI Agent 学习路线
-2. Agent 开源项目源码拆解
-3. 业务型多 Agent 项目实战
-4. 工程化笔记
-5. 面试表达与简历沉淀
+## 为什么搭建这个站
 
-## 网站目标
+- 系统沉淀 AI Agent 学习路线，从基础概念到工程落地
+- 记录开源项目源码拆解，提炼可迁移的架构设计
+- 整理工程化笔记，覆盖 FastAPI、RAG、Docker、可观测性等方向
+- 将项目能力转化为面试表达和简历描述
+- 形成长期可维护的技术作品集
 
-这个网站不是普通博客，而是我的 AI Agent 工程能力展示站。
+## 后续计划
 
-我希望通过它证明：
-
-- 我能系统学习 AI Agent 技术体系
-- 我能拆解优秀开源项目源码
-- 我能设计和实现业务型多 Agent 系统
-- 我能把项目沉淀成文档、架构和面试表达
+- 完善 AI Agent 学习路线内容
+- 完善源码拆解深度分析
+- 完善工程化笔记
+- 后续再展开项目 B（运营中台多 Agent Copilot）
+- 部署到 Vercel 后作为公开展示入口
