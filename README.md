@@ -1,60 +1,97 @@
 # HFL AI Agent Lab
 
-AI Agent 工程知识库 · 多 Agent 项目展示 · 求职作品集
+**AI Agent 工程知识库 · 多 Agent 项目展示 · 求职作品集**
+
+![VitePress](https://img.shields.io/badge/VitePress-1.6-blue)
+![Vue](https://img.shields.io/badge/Vue-3.5-green)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8)
+![Markdown](https://img.shields.io/badge/Markdown-Content-555)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel-000)
+![Build](https://img.shields.io/badge/Build-Passing-brightgreen)
+
+**在线访问：** [https://hfl-ai-agent-lab.vercel.app](https://hfl-ai-agent-lab.vercel.app) ｜ [备用入口 /home](https://hfl-ai-agent-lab.vercel.app/home)
+
+---
 
 ## 项目定位
 
-这是我的个人技术知识库和项目展示站，主要用于沉淀 AI Agent、Multi-Agent、LangGraph、RAG、LLM 应用工程和后端工程化相关内容。
+HFL AI Agent Lab 是围绕 AI Agent、Multi-Agent、LangGraph、RAG、LLM 应用工程和后端工程化搭建的个人知识库与作品集站点。
 
-## 线上访问
+目标是系统沉淀 AI Agent 工程能力，将学习路线、源码拆解、工程化笔记和项目实战整合为一个可公开展示的技术作品集。
 
-- 首页：https://hfl-ai-agent-lab.vercel.app
-- 首页（备用）：https://hfl-ai-agent-lab.vercel.app/home
+## 核心模块
+
+| 模块 | 内容 |
+|------|------|
+| AI Agent 学习路线 | Agent 基础、Prompt Engineering、Tool Calling、LangGraph、Multi-Agent、Evaluation |
+| Agent 源码拆解 | Hermes Agent、Harness Engineering、OpenClaw |
+| 工程化笔记 | FastAPI、RAG 工程化、Docker 部署、可观测性 |
+| 项目实战 | 项目 A（RAG 工单系统）已预留，项目 B（多 Agent Copilot）当前仅保留入口 |
+| 面试表达 | 项目讲法、技术问答、简历描述模板 |
 
 ## 当前阶段
 
-- v0.1：完成站点基础改造
-- v0.2：完成知识库骨架
-- v0.3-lite：完成非项目 B 内容初稿，项目 B 仅保留占位
-- v0.3.1：旧内容隔离与公开展示准备
+- v0.1：站点基础改造完成
+- v0.2：知识库骨架完成
+- v0.3-lite：非项目 B 内容初稿完成，项目 B 仅保留占位
+- v0.3.1：旧内容隔离与公开展示准备完成
 - v0.3.2：公开展示页面优化完成
 - v0.4：Vercel 部署上线完成
 - v0.5：线上展示体验基础优化完成
+- v0.6：AI Agent 核心知识文章打磨完成
+- v0.7：工程化笔记质量提升完成
+- v0.8：GitHub README 与网站首页展示优化中
 
-## 内容模块
+## 已完成内容
 
-- AI Agent 学习路线
-- Agent 源码拆解
-- 项目实战
-- 工程化笔记
-- 面试表达
-- 求职作品集
+- AI Agent 学习路线基础内容
+- Prompt Engineering 完整文章
+- Tool Calling 完整文章
+- LangGraph 完整文章
+- Multi-Agent 完整文章
+- Evaluation 完整文章
+- FastAPI 工程化笔记
+- RAG 工程化笔记
+- Docker 部署笔记
+- Observability 可观测性笔记
+- 项目 B 占位页面
+- Vercel 部署上线
 
-## 目录结构
+## 项目 B 当前状态
 
-```
-docs/
-  index.md             # 首页（根路径 /）
-  note/
-    AI-Agent/          # AI Agent 学习路线与核心概念
-    Source-Reading/    # 开源项目源码拆解
-    Engineering/       # 工程化笔记（FastAPI、RAG、Docker 等）
-    Interview/         # 面试表达与简历描述
-  blogs/
-    projects/          # 项目实战详情页
-    home.md            # 首页（备用路径 /home）
-    about.md           # 关于页面
-    projects.md        # 项目总览页
-archive/               # 旧内容归档，不参与站点主线展示
-```
+项目 B 当前只保留入口和路线占位，暂不展开正式架构和实现细节。后续版本将逐步补充 Agent 分工、状态机设计、工具调用链路和 Trace 机制。
 
 ## 技术栈
 
-- VitePress
-- Vue
-- Tailwind CSS
-- Markdown
-- Vercel
+- **VitePress** — 静态站点生成
+- **Vue 3** — 前端框架
+- **Tailwind CSS** — 样式
+- **Markdown** — 内容编写
+- **Vercel** — 部署与托管
+- **Node.js** — 构建运行时
+
+## 目录结构
+
+```text
+docs/
+├── blogs/
+│   ├── home.md
+│   ├── about.md
+│   ├── projects.md
+│   └── projects/
+├── note/
+│   ├── AI-Agent/
+│   ├── Source-Reading/
+│   ├── Engineering/
+│   └── Interview/
+├── .vitepress/
+└── public/
+
+archive/
+└── old-content/
+```
+
+`archive/` 为旧内容归档，不参与站点主线展示。
 
 ## 本地开发
 
@@ -63,7 +100,7 @@ npm install
 npm run docs:dev
 ```
 
-## 构建
+## 构建与预览
 
 ```bash
 npm run docs:build
@@ -74,9 +111,9 @@ npm run docs:preview
 
 推荐使用 Vercel 部署。
 
-Vercel 项目配置：
-
-- Install Command: `npm install`
-- Build Command: `npm run docs:build`
-- Output Directory: `docs/.vitepress/dist`
-- Node.js Version: 20 或 22
+| 配置项 | 值 |
+|--------|-----|
+| Install Command | `npm install` |
+| Build Command | `npm run docs:build` |
+| Output Directory | `docs/.vitepress/dist` |
+| Node.js Version | 20 或 22 |

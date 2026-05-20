@@ -49,7 +49,7 @@ features:
 
   - icon: 📋
     title: 当前建设阶段
-    details: v0.5 阶段：线上展示体验基础优化完成。根路径访问、死链检查、SEO 基础信息和部署说明已完成，项目 B 保持占位。
+    details: v0.8 阶段：GitHub README 与网站首页展示优化中。核心知识文章和工程化笔记已打磨完成，项目 B 保持占位。
     link: /about
     linkText: 了解更多 →
 ---
