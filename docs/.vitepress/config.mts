@@ -1,5 +1,3 @@
-import { generateSidebar } from 'vitepress-sidebar'
-
 import { defineConfigWithTheme, type DefaultTheme } from 'vitepress'
 
 interface GiscusThemeConfig {
@@ -191,24 +189,18 @@ function sanitizeNoteMarkdown(content: string): string {
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
-  title: '小八',
-  description: '小八博客 - 技术学习与实践分享，AI、全栈开发、工程化笔记',
+  title: 'HFL AI Agent Lab',
+  description: 'AI Agent 工程知识库 · 多 Agent 项目展示 · 求职作品集',
   srcDir: '.',
   srcExclude: ['.obsidian/**', 'local/**', 'self/**'],
   rewrites: {
     'blogs/:path(.*)': ':path',
   },
   head: [
-    ['link', { rel: 'icon', href: '/xiaoba-logo.png' }],
     ['meta', { name: 'theme-color', content: '#0ea5e9' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: '小八博客 - 技术学习与实践' }],
-    ['meta', { property: 'og:description', content: '记录 AI、全栈开发、工程化等技术学习历程' }],
-    ['meta', { property: 'og:image', content: '/xiaoba-logo.png' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-    ['link', { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' }],
+    ['meta', { property: 'og:title', content: 'HFL AI Agent Lab' }],
+    ['meta', { property: 'og:description', content: 'AI Agent 工程知识库 · 多 Agent 项目展示 · 求职作品集' }],
   ],
 
   base: '/',
@@ -217,11 +209,11 @@ export default defineConfigWithTheme<ThemeConfig>({
   lastUpdated: true,
   
   sitemap: {
-    hostname: 'https://xioaba.blog',
+    hostname: 'https://hfl-ai-agent-lab.vercel.app',
   },
 
   themeConfig: {
-    logo: '/xiaoba-logo.png',
+    logo: false,
     outline: {
       level: 'deep',
       label: '目录',
@@ -246,105 +238,91 @@ export default defineConfigWithTheme<ThemeConfig>({
         }
       }
     },
-    giscus: {
-      repo: 'ikunycj/xiaoba.blog',
-      // Fill these IDs from https://giscus.app/ after enabling GitHub Discussions.
-      repoId: 'R_kgDONgF0HQ',
-      category: 'General',
-      categoryId: 'DIC_kwDONgF0Hc4C4YOS',
-      mapping: 'pathname',
-      term: '',
-      strict: '0',
-      reactionsEnabled: '1',
-      emitMetadata: '0',
-      inputPosition: 'bottom',
-      lang: 'zh-CN',
-      lightTheme: 'light',
-      darkTheme: 'dark_dimmed',
-      loading: 'lazy',
-    },
+    // giscus 暂时关闭，v0.5 再接入自己的 GitHub Discussions
+    // giscus: { ... },
     nav: [
-      { text: '🏠 首页', link: '/home' },
-      { text: '📝 博客', link: '/blog/index' },
-      { 
-        text: '📚 笔记', 
-        items: [
-          { text: '笔记首页', link: '/note/' },
-          { text: 'AI 学习', link: '/note/AI/' },
-          { text: '编程语言', link: '/note/编程语言/' },
-          { text: '软件工程', link: '/note/软件工程/' },
-          { text: '计算机基础', link: '/note/计算机知识/' },
-          { text: '开发工具', link: '/note/工具/' },
-        ]
-      },
-      {
-        text: '🎯 分享',
-        items: [
-          { text: '分享推荐', link: '/share' },
-          { text: '博客建站', link: '/share/blogbuild/choose' },
-          { text: '效率工具', link: '/share/tools' },
-          { text: '山大资源', link: '/share/sdu' },
-        ],
-      },
-      { text: '💼 项目', link: '/projects' },
-      { 
-        text: '🔗 友链',
-        items: [
-          { text: 'GitHub', link: 'https://github.com/ikunycj' },
-          { text: 'actionAgent 项目', link: 'https://github.com/ikunycj/actionAgent' },
-        ]
-      },
+      { text: '首页', link: '/home' },
+      { text: '学习路线', link: '/note/AI-Agent/' },
+      { text: '源码拆解', link: '/note/Source-Reading/' },
+      { text: '项目实战', link: '/projects' },
+      { text: '工程笔记', link: '/note/Engineering/' },
+      { text: '面试表达', link: '/note/Interview/' },
+      { text: '关于我', link: '/about' },
+      { text: 'GitHub', link: 'https://github.com/wyjhfl' },
     ],
-    sidebar: generateSidebar([
-      {
-        documentRootPath: '/docs/note/AI',
-        scanStartPath: '/',
-        resolvePath: '/note/AI/',
-        useTitleFromFileHeading: true,
-        excludePattern: ['do-not-include.md', 'index.md'],
-        collapsed: true,
-        sortMenusByFrontmatterOrder: true,
-        sortMenusOrderByDescending: false,
-        capitalizeFirst: true,
-      },
-      {
-        documentRootPath: '/docs/note',
-        scanStartPath: '/',
-        resolvePath: '/note/',
-        useTitleFromFileHeading: true,
-        excludePattern: ['do-not-include.md', 'index.md', 'AI/**'],
-        collapsed: true,
-        sortMenusByFrontmatterOrder: true,
-        sortMenusOrderByDescending: false,
-        capitalizeFirst: true,
-      },
-      {
-        documentRootPath: '/docs/blogs/share/blogbuild',
-        scanStartPath: '/',
-        resolvePath: '/share/blogbuild/',
-        useTitleFromFileHeading: true,
-        collapsed: true,
-        sortMenusByFrontmatterOrder: true,
-      },
-      {
-        documentRootPath: '/docs/blogs/share/sdu',
-        scanStartPath: '/',
-        resolvePath: '/share/sdu/',
-        useTitleFromFileHeading: true,
-        collapsed: true,
-        sortMenusByFrontmatterOrder: true,
-      },
-    ]),
+    sidebar: {
+      '/note/AI-Agent/': [
+        {
+          text: 'AI Agent 学习路线',
+          items: [
+            { text: '路线总览', link: '/note/AI-Agent/' },
+            { text: 'Agent 基础', link: '/note/AI-Agent/agent-basic' },
+            { text: 'Prompt Engineering', link: '/note/AI-Agent/prompt-engineering' },
+            { text: 'RAG 基础', link: '/note/AI-Agent/rag' },
+            { text: 'Tool Calling', link: '/note/AI-Agent/tool-calling' },
+            { text: 'LangGraph 状态机', link: '/note/AI-Agent/langgraph' },
+            { text: 'Multi-Agent 架构', link: '/note/AI-Agent/multi-agent' },
+            { text: 'Human-in-the-loop', link: '/note/AI-Agent/human-in-the-loop' },
+            { text: 'Trace 与 Evaluation', link: '/note/AI-Agent/evaluation' },
+            { text: 'Production Engineering', link: '/note/AI-Agent/production' },
+          ],
+        },
+      ],
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/ikunycj' }],
+      '/note/Source-Reading/': [
+        {
+          text: 'Agent 源码拆解',
+          items: [
+            { text: '源码拆解总览', link: '/note/Source-Reading/' },
+            { text: 'Hermes Agent', link: '/note/Source-Reading/hermes-agent' },
+            { text: 'Harness Engineering', link: '/note/Source-Reading/harness-engineering' },
+            { text: 'OpenClaw', link: '/note/Source-Reading/openclaw' },
+          ],
+        },
+      ],
+
+      '/note/Engineering/': [
+        {
+          text: '工程化笔记',
+          items: [
+            { text: '工程化总览', link: '/note/Engineering/' },
+            { text: 'FastAPI 后端接口', link: '/note/Engineering/fastapi' },
+            { text: '数据库设计', link: '/note/Engineering/database' },
+            { text: 'RAG 工程化', link: '/note/Engineering/rag-engineering' },
+            { text: '向量数据库', link: '/note/Engineering/vector-database' },
+            { text: 'Docker 部署', link: '/note/Engineering/docker-deploy' },
+            { text: '日志与可观测性', link: '/note/Engineering/observability' },
+          ],
+        },
+      ],
+
+      '/note/Interview/': [
+        {
+          text: '面试表达',
+          items: [
+            { text: '面试表达总览', link: '/note/Interview/' },
+            { text: '项目 B 一分钟介绍', link: '/note/Interview/project-b-one-minute' },
+            { text: '项目 B 深挖版', link: '/note/Interview/project-b-deep-dive' },
+            { text: 'Multi-Agent 问答', link: '/note/Interview/multi-agent-qa' },
+            { text: 'LangGraph 问答', link: '/note/Interview/langgraph-qa' },
+            { text: 'RAG 问答', link: '/note/Interview/rag-qa' },
+            { text: '简历描述模板', link: '/note/Interview/resume-bullets' },
+          ],
+        },
+      ],
+    },
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/wyjhfl' }
+    ],
 
     footer: {
-      message: 'xiaoba blog',
-      copyright: 'Copyright © 2023-2026 xiaoba.my',
+      message: 'HFL AI Agent Lab',
+      copyright: 'Copyright © 2026 HFL',
     },
 
     editLink: {
-      pattern: 'https://github.com/ikunycj/xiaoba.blog/tree/master/docs/:path',
+      pattern: 'https://github.com/wyjhfl/hfl-ai-agent-lab/tree/master/docs/:path',
       text: '欢迎一起完善文档',
     },
 

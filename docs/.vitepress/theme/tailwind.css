@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ========== 小八主题配色 ========== */
+/* ========== 主题配色 ========== */
 :root {
   /* 主色调 - 温柔粉蓝 */
   --xb-primary: #FFB7C5;

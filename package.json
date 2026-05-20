@@ -1,4 +1,5 @@
 {
+  "name": "hfl-ai-agent-lab",
   "type": "module",
   "scripts": {
     "blog:index": "node scripts/generate-blog-index.mjs",
