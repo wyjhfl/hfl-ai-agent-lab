@@ -49,7 +49,7 @@ features:
 
   - icon: 📌
     title: 当前建设阶段
-    details: v0.9 阶段：源码拆解栏目质量提升完成。Hermes Agent、Harness Engineering、OpenClaw 已整理为可信的源码阅读路线和观察框架，项目 B 保持占位。
+    details: v1.0 阶段：网站导航、搜索、外链和公开访问体验检查完成。站点已上线，AI Agent 核心知识、工程化笔记和源码阅读框架已完成首轮整理，项目 B 保持占位。
     link: /about
     linkText: 了解更多 →
 ---
