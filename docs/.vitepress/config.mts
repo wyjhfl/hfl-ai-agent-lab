@@ -246,6 +246,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       { text: '源码拆解', link: '/note/Source-Reading/' },
       { text: '项目实战', link: '/projects' },
       { text: '工程笔记', link: '/note/Engineering/' },
+      { text: 'AI 工具', link: '/note/AI-Tools/' },
       { text: '面试表达', link: '/note/Interview/' },
       { text: '关于我', link: '/about' },
       { text: 'GitHub', link: 'https://github.com/wyjhfl' },
@@ -277,6 +278,7 @@ export default defineConfigWithTheme<ThemeConfig>({
             { text: 'Hermes Agent', link: '/note/Source-Reading/hermes-agent' },
             { text: 'Harness Engineering', link: '/note/Source-Reading/harness-engineering' },
             { text: 'OpenClaw', link: '/note/Source-Reading/openclaw' },
+            { text: '拆解内容导入计划', link: '/note/Source-Reading/import-plan' },
           ],
         },
       ],
@@ -292,6 +294,18 @@ export default defineConfigWithTheme<ThemeConfig>({
             { text: '向量数据库', link: '/note/Engineering/vector-database' },
             { text: 'Docker 部署', link: '/note/Engineering/docker-deploy' },
             { text: '日志与可观测性', link: '/note/Engineering/observability' },
+          ],
+        },
+      ],
+
+      '/note/AI-Tools/': [
+        {
+          text: 'AI 编程工具',
+          items: [
+            { text: 'AI 工具总览', link: '/note/AI-Tools/' },
+            { text: 'Claude Code 拆解', link: '/note/AI-Tools/claude-code' },
+            { text: 'Codex 拆解', link: '/note/AI-Tools/codex' },
+            { text: 'AI Coding Workflow', link: '/note/AI-Tools/ai-coding-workflow' },
           ],
         },
       ],

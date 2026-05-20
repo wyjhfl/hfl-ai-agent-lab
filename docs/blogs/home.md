@@ -49,7 +49,7 @@ features:
 
   - icon: 📌
     title: 当前建设阶段
-    details: v1.0 阶段：网站导航、搜索、外链和公开访问体验检查完成。站点已上线，AI Agent 核心知识、工程化笔记和源码阅读框架已完成首轮整理，项目 B 保持占位。
+    details: v1.1-v1.4 阶段：Agent 拆解内容集中导入完成。Hermes Agent、Harness Engineering、OpenClaw 已扩写为正式源码拆解初稿，AI 工具栏目已新增 Claude Code、Codex 与 AI Coding Workflow 内容入口，项目 B 保持占位。
     link: /about
     linkText: 了解更多 →
 ---
