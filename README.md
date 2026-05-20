@@ -41,6 +41,7 @@ HFL AI Agent Lab 是围绕 AI Agent、Multi-Agent、LangGraph、RAG、LLM 应用
 - v0.6：AI Agent 核心知识文章打磨完成
 - v0.7：工程化笔记质量提升完成
 - v0.8：GitHub README 与网站首页展示优化完成
+- v0.9：源码拆解栏目质量提升完成
 
 ## 已完成内容
 

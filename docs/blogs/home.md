@@ -49,7 +49,7 @@ features:
 
   - icon: 📌
     title: 当前建设阶段
-    details: v0.8 阶段：GitHub README 与网站首页展示优化完成。核心知识文章和工程化笔记已完成首轮打磨，项目 B 保持占位。
+    details: v0.9 阶段：源码拆解栏目质量提升完成。Hermes Agent、Harness Engineering、OpenClaw 已整理为可信的源码阅读路线和观察框架，项目 B 保持占位。
     link: /about
     linkText: 了解更多 →
 ---
