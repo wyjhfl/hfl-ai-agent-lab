@@ -49,7 +49,7 @@ features:
 
   - icon: 📌
     title: 当前建设阶段
-    details: v1.7 阶段：AI Agent 学习路线总览升级完成。学习路线已从知识点列表升级为工程学习地图，并和工程化笔记、面试题库建立关联，项目 B 保持占位。
+    details: v1.8 阶段：工程化笔记第二轮扩展完成。新增异步任务、API 安全、Agent Trace、Evaluation Pipeline、MCP Server 和上线检查清单，进一步补齐 AI Agent 工程落地能力，项目 B 保持占位。
     link: /about
     linkText: 了解更多 →
 ---

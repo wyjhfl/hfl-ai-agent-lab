@@ -38,6 +38,7 @@ HFL AI Agent Lab 是一个 AI Agent 工程知识库、多 Agent 项目展示站�
 - v1.5：AI Agent 面试题库模块改造完成
 - v1.6：AI Agent 面试题库第一轮原创题解完成
 - v1.7：AI Agent 学习路线总览升级完成
+- v1.8：工程化笔记第二轮扩展完成
 
 ## 为什么搭建这个站
 
