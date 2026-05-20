@@ -49,7 +49,7 @@ features:
 
   - icon: 📌
     title: 当前建设阶段
-    details: v1.5：AI Agent 面试题库模块改造完成。原「面试表达」模块重构为覆盖 Agent / RAG / LLM 工具 / 大模型工程 / LangChain 五大方向的面试题库；旧内容已归档至 archive/interview-expression/。
+    details: v1.6 阶段：AI Agent 面试题库第一轮原创题解完成。面试题库已覆盖 Agent、RAG、LLM 工具调用、大模型工程、LangChain / LangGraph 五类方向的首批题解，项目 B 保持占位。
     link: /about
     linkText: 了解更多 →
 ---
