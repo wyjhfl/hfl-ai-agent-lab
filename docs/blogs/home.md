@@ -43,13 +43,13 @@ features:
 
   - icon: 🚀
     title: 项目实战
-    details: 项目 A（RAG 工单系统）已上线，项目 B（多 Agent Copilot）当前为预留入口，后续逐步展开。
+    details: 项目 A（RAG 工单系统）已预留入口，项目 B（多 Agent Copilot）当前为预留入口，后续逐步展开。
     link: /projects
     linkText: 查看项目 →
 
-  - icon: 📋
+  - icon: 📌
     title: 当前建设阶段
-    details: v0.8 阶段：GitHub README 与网站首页展示优化中。核心知识文章和工程化笔记已打磨完成，项目 B 保持占位。
+    details: v0.8 阶段：GitHub README 与网站首页展示优化完成。核心知识文章和工程化笔记已完成首轮打磨，项目 B 保持占位。
     link: /about
     linkText: 了解更多 →
 ---

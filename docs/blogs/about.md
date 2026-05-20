@@ -31,7 +31,7 @@ HFL AI Agent Lab 是一个 AI Agent 工程知识库、多 Agent 项目展示站�
 - v0.5：线上展示体验基础优化完成
 - v0.6：AI Agent 核心知识文章打磨完成
 - v0.7：工程化笔记质量提升完成
-- v0.8：GitHub README 与网站首页展示优化中
+- v0.8：GitHub README 与网站首页展示优化完成
 
 ## 为什么搭建这个站
 
