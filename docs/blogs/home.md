@@ -49,7 +49,7 @@ features:
 
   - icon: 📌
     title: 当前建设阶段
-    details: v1.6 阶段：AI Agent 面试题库第一轮原创题解完成。面试题库已覆盖 Agent、RAG、LLM 工具调用、大模型工程、LangChain / LangGraph 五类方向的首批题解，项目 B 保持占位。
+    details: v1.7 阶段：AI Agent 学习路线总览升级完成。学习路线已从知识点列表升级为工程学习地图，并和工程化笔记、面试题库建立关联，项目 B 保持占位。
     link: /about
     linkText: 了解更多 →
 ---

@@ -1,102 +1,72 @@
-# AI Agent 学习路线
+# AI Agent 工程学习路线
 
-这里是 HFL AI Agent Lab 的核心学习路线，用于系统沉淀 AI Agent、Multi-Agent、LangGraph、RAG 和 LLM 应用工程能力。
+## 这个模块解决什么问题
 
-## 学习目标
+这个模块负责回答三个问题：
 
-这个模块不是为了堆概念，而是为了建立一套能支撑项目开发和面试表达的知识体系。
+1. **学什么** — AI Agent 工程需要掌握哪些知识
+2. **按什么顺序学** — 从基础到工程化的学习路径
+3. **学到什么程度** — 每个阶段的学习目标和验收标准
 
-最终目标是：
+它不是概念百科，而是一张工程学习地图，把零散的知识点串联成可执行的学习路径。
 
-> 能够设计、实现、解释一个可控、可审计、可扩展的 AI Agent 工程系统。
+## 学习地图
 
-## 学习主线
+| 阶段 | 学习主题 | 对应文章 | 学习目标 |
+|---|---|---|---|
+| 1 | LLM 应用基础 | [Agent 基础](/note/AI-Agent/agent-basic) | 理解 LLM 调用形态、上下文窗口、模型能力边界 |
+| 2 | Prompt Engineering | [Prompt Engineering](/note/AI-Agent/prompt-engineering) | 掌握 Prompt 设计原则、结构化输出、Few-shot 技巧 |
+| 3 | RAG | [RAG 基础](/note/AI-Agent/rag) | 理解检索增强生成的完整链路和工程化要点 |
+| 4 | Tool Calling | [Tool Calling](/note/AI-Agent/tool-calling) | 理解工具注册、参数生成、工具选择、结果回填 |
+| 5 | Agent Runtime | [Agent 基础](/note/AI-Agent/agent-basic)（后续补充独立页面） | 理解 Agent 运行时循环、状态管理、工具编排 |
+| 6 | Memory / Persistence | [Agent 基础](/note/AI-Agent/agent-basic)（后续补充独立页面） | 理解短期/中期/长期记忆和持久化策略 |
+| 7 | LangGraph 状态机 | [LangGraph 状态机](/note/AI-Agent/langgraph) | 掌握 State、Node、Edge、Checkpoint 的设计和使用 |
+| 8 | Multi-Agent / Handoff | [Multi-Agent 架构](/note/AI-Agent/multi-agent) | 理解多 Agent 协作模式、调度策略、结果整合 |
+| 9 | Guardrails / Human Approval | [Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | 理解人工审核节点设计、权限控制、安全审查 |
+| 10 | Trace / Evaluation | [Trace 与 Evaluation](/note/AI-Agent/evaluation) | 理解 Trace 记录、自动评测、失败样本沉淀 |
+| 11 | Production Engineering | [Production Engineering](/note/AI-Agent/production) | 理解部署、监控、成本控制、Prompt 管理 |
 
-### 第一阶段：LLM 应用基础
+## 和工程化笔记的关系
 
-理解大模型应用的基本形态：
+学习路线关注"学什么"，工程化笔记关注"怎么做"。两者互为补充。
 
-- Prompt
-- Chat Completion
-- Function Calling
-- 上下文窗口
-- 输出结构化
-- 模型能力边界
+| 学习主题 | 对应工程化笔记 |
+|---|---|
+| RAG | [RAG 工程化](/note/Engineering/rag-engineering)、[向量数据库](/note/Engineering/vector-database) |
+| Tool Calling | API 安全、MCP Server（后续补充） |
+| LangGraph / Multi-Agent | Agent Trace、Eval Pipeline（后续补充） |
+| Production Engineering | [FastAPI](/note/Engineering/fastapi)、[Docker 部署](/note/Engineering/docker-deploy)、[可观测性](/note/Engineering/observability) |
 
-### 第二阶段：RAG 工程化
+## 和面试题库的关系
 
-理解如何让模型结合外部知识回答问题：
+学习路线建立知识体系，面试题库检验表达能力。学完一个主题后，可以通过对应面试题验证理解深度。
 
-- 文档解析
-- 文本切分
-- 向量化
-- 检索
-- 重排序
-- 引用来源
-- 检索评估
+| 学习主题 | 对应面试题 |
+|---|---|
+| Agent 基础 | [Agent 面试题](/note/AI-Interview/agent-interview) |
+| RAG | [RAG 面试题](/note/AI-Interview/rag-interview) |
+| Tool Calling | [LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview) |
+| LangGraph | [LangChain / LangGraph 面试题](/note/AI-Interview/langchain-interview) |
+| Production Engineering | [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) |
 
-### 第三阶段：Tool Calling
+## 推荐学习顺序
 
-理解 Agent 如何调用外部工具：
+**第一阶段：建立 LLM 应用基础**
 
-- 工具定义
-- 参数生成
-- 工具选择
-- 工具执行
-- 结果回填
-- 错误处理
+先理解 LLM 调用的基本形态（Chat Completion、Function Calling、上下文窗口），再学习 Prompt Engineering 的设计原则。这是所有后续内容的基础。
 
-### 第四阶段：Agent Loop
+**第二阶段：学习 RAG 和 Tool Calling**
 
-理解 Agent 的核心运行循环：
+RAG 让模型能结合外部知识回答问题，Tool Calling 让模型能调用外部工具执行操作。这两个是 Agent 的核心能力前置。
 
-- Observation
-- Thought
-- Action
-- Tool Result
-- Reflection
-- Final Answer
+**第三阶段：进入 Agent / Multi-Agent / LangGraph**
 
-### 第五阶段：LangGraph 状态机
+在理解 RAG 和 Tool Calling 的基础上，学习 Agent 的运行时循环、状态机编排、多 Agent 协作。这是 Agent 工程的核心内容。
 
-理解如何用状态机约束 Agent 执行流程：
+**第四阶段：补工程化、评测和面试表达**
 
-- State
-- Node
-- Edge
-- Conditional Edge
-- Checkpoint
-- Human-in-the-loop
+最后补齐 Production Engineering（部署、监控、成本）、Trace / Evaluation（评测、回归测试）、以及面试题库的表达训练。
 
-### 第六阶段：Multi-Agent
+## 当前状态
 
-理解多个 Agent 如何协作：
-
-- 角色拆分
-- 调度机制
-- 状态共享
-- 工具权限
-- 风险审查
-- 结果整合
-
-### 第七阶段：Evaluation
-
-理解如何判断 Agent 是否可靠：
-
-- Trace
-- 自动评测
-- 人工评审
-- 失败样本
-- 质量指标
-- 回归测试
-
-## 学习原则
-
-学习 AI Agent 不应该只停留在 Prompt 层面，而应该逐步深入到：
-
-- 架构设计
-- 状态管理
-- 工具调用
-- 工程部署
-- 质量评估
-- 面试表达
+当前已完成第一轮学习路线整理，11 个阶段的框架已建立。其中 Agent Runtime 和 Memory / Persistence 暂时关联到 Agent 基础页面，后续会补充独立页面。Guardrails 暂时关联到 Human-in-the-loop 页面，后续会补充独立的安全审查专题。
