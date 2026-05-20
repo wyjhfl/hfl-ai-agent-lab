@@ -66,6 +66,9 @@ npm run docs:preview
 
 推荐使用 Vercel 部署。
 
-构建命令：`npm run docs:build`
+Vercel 项目配置：
 
-输出目录：`docs/.vitepress/dist`
+- Install Command: `npm install`
+- Build Command: `npm run docs:build`
+- Output Directory: `docs/.vitepress/dist`
+- Node.js Version: 20 或 22
