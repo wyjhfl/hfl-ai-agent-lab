@@ -41,6 +41,10 @@ HFL AI Agent Lab 是围绕 AI Agent、RAG、Tool Calling、LangGraph、Multi-Age
 | AI 工具 | Claude Code、Codex、AI Coding Workflow |
 | 项目实战 | 项目 A / 项目 B 入口预留 |
 
+## 推荐专题
+
+- [从 RAG 到生产级 Agent Harness 的工程化学习路线](https://hfl-ai-agent-lab.vercel.app/blogs/topics/rag-to-agent-harness)
+
 ## 推荐阅读路径
 
 | 目标 | 推荐路径 |
@@ -82,6 +86,7 @@ HFL AI Agent Lab 是围绕 AI Agent、RAG、Tool Calling、LangGraph、Multi-Age
 - v1.8：工程化笔记第二轮扩展完成
 - v1.9：学习路线、工程化笔记、面试题库互链完成
 - v2.0：GitHub README 与网站页面装饰优化完成
+- v2.1：博客专题《从 RAG 到生产级 Agent Harness 的工程化学习路线》完成
 
 ## 技术栈
 

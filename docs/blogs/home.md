@@ -19,7 +19,7 @@ hero:
 features:
   - icon: 🤖
     title: AI Agent 学习路线
-    details: 从 Agent 基础到 Tool Calling、LangGraph、Multi-Agent、Evaluation，11 个阶段的工程学习地图。
+    details: 从 Agent 基础到 Tool Calling、LangGraph、Multi-Agent、Evaluation，11 个阶段的工程学习地图。专题文章《从 RAG 到 Agent Harness》已发布。
     link: /note/AI-Agent/
     linkText: 查看路线 →
 
@@ -49,7 +49,7 @@ features:
 
   - icon: 📌
     title: 当前建设阶段
-    details: v2.0 阶段：GitHub README 与网站页面装饰优化完成。站点已形成"学什么、怎么做、怎么答"的知识闭环，项目 B 保持占位。
+    details: v2.1 阶段：新增博客专题《从 RAG 到生产级 Agent Harness 的工程化学习路线》。站点开始把学习路线、工程化笔记、源码拆解和面试题库串成专题内容，项目 B 保持占位。
     link: /about
     linkText: 了解更多 →
 ---
