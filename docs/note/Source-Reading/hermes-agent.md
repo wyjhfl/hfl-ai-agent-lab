@@ -365,3 +365,7 @@ Agent 不稳定不是异常，而是常态。Hermes 的主循环里有大量错�
 - 待补充 Session Storage 的表结构和查询逻辑
 - 待补充 Gateway 的平台适配器实现细节
 - 待补充 Multi-Agent / Kanban / Delegate 的源码实现
+
+## 进阶阅读
+
+- [Hermes Agent 高级用法与进阶玩法](/note/Source-Reading/hermes-agent-advanced) — 子代理驱动开发、Kanban 多代理协作、TDD、预提交审查、MCP、Cron、Skills、安全控制、TUI、Worktree 与跨平台网关

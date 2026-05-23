@@ -276,6 +276,7 @@ export default defineConfigWithTheme<ThemeConfig>({
           items: [
             { text: '源码拆解总览', link: '/note/Source-Reading/' },
             { text: 'Hermes Agent', link: '/note/Source-Reading/hermes-agent' },
+            { text: 'Hermes Agent 高级玩法', link: '/note/Source-Reading/hermes-agent-advanced' },
             { text: 'Harness Engineering', link: '/note/Source-Reading/harness-engineering' },
             { text: 'OpenClaw', link: '/note/Source-Reading/openclaw' },
             { text: '拆解内容导入计划', link: '/note/Source-Reading/import-plan' },
