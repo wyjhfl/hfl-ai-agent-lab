@@ -50,6 +50,6 @@ features:
   - icon: 📌
     title: 当前建设阶段
     details: v2.3 阶段：Hermes Agent 高级用法与进阶玩法专题完成。新增子代理驱动开发、Kanban 多代理协作、TDD、预提交审查、MCP、Cron、Skills、安全控制、TUI、Worktree 与跨平台网关等高级能力整理，项目 B 保持占位。
-    link: /blogs/topics/rag-to-agent-harness
-    linkText: 阅读专题 →
+    link: /note/Source-Reading/hermes-agent-advanced
+    linkText: 阅读 Hermes 高级玩法 →
 ---
