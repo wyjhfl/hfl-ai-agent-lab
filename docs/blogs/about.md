@@ -29,7 +29,7 @@ AI Agent 不只是 Prompt 或多个角色聊天。真正可落地的 Agent 系�
 | 模块 | 说明 |
 |---|---|
 | [AI Agent 学习路线](/note/AI-Agent/) | 回答“学什么、按什么顺序学、学到什么程度” |
-| [专题文章](/blogs/topics/) | 把学习路线、源码拆解和工程化笔记串成长文专题 |
+| [专题文章](/topics/) | 把学习路线、源码拆解和工程化笔记串成长文专题 |
 | [源码拆解](/note/Source-Reading/) | 拆解 Hermes Agent、Harness Engineering、OpenClaw 等项目 |
 | [工程化笔记](/note/Engineering/) | 记录 FastAPI、RAG、Trace、MCP、Docker、上线检查等工程能力 |
 | [面试题库](/note/AI-Interview/) | 将技术理解整理成面试标准回答、追问和工程化表达 |

@@ -11,7 +11,7 @@ hero:
       link: /note/AI-Agent/
     - theme: alt
       text: 阅读专题
-      link: /blogs/topics/
+      link: /topics/
     - theme: alt
       text: 查看面试题库
       link: /note/AI-Interview/
@@ -26,7 +26,7 @@ features:
   - icon: "TOPIC"
     title: 专题文章
     details: 用长文串联学习路线、工程化笔记和源码拆解，已整理 RAG 到 Agent Harness、Hermes 高级玩法、OpenClaw 架构拆解等专题。
-    link: /blogs/topics/
+    link: /topics/
     linkText: 阅读专题 →
 
   - icon: "SRC"

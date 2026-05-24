@@ -8,7 +8,7 @@
 
 [在线访问](https://hfl-ai-agent-lab.vercel.app/home) ·
 [学习路线](https://hfl-ai-agent-lab.vercel.app/note/AI-Agent/) ·
-[专题文章](https://hfl-ai-agent-lab.vercel.app/blogs/topics/) ·
+[专题文章](https://hfl-ai-agent-lab.vercel.app/topics/) ·
 [源码拆解](https://hfl-ai-agent-lab.vercel.app/note/Source-Reading/) ·
 [面试题库](https://hfl-ai-agent-lab.vercel.app/note/AI-Interview/)
 
@@ -43,9 +43,9 @@ HFL AI Agent Lab 是一个围绕 AI Agent 工程能力建设的个人知识库�
 
 ## 代表内容
 
-- [从 RAG 到生产级 Agent Harness 的工程化学习路线](https://hfl-ai-agent-lab.vercel.app/blogs/topics/rag-to-agent-harness)
+- [从 RAG 到生产级 Agent Harness 的工程化学习路线](https://hfl-ai-agent-lab.vercel.app/topics/rag-to-agent-harness)
 - [Hermes Agent 高级用法与进阶玩法](https://hfl-ai-agent-lab.vercel.app/note/Source-Reading/hermes-agent-advanced)
-- [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](https://hfl-ai-agent-lab.vercel.app/blogs/topics/openclaw-architecture)
+- [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](https://hfl-ai-agent-lab.vercel.app/topics/openclaw-architecture)
 - [AI Agent 面试题库](https://hfl-ai-agent-lab.vercel.app/note/AI-Interview/)
 
 ## 在线访问
@@ -68,9 +68,9 @@ HFL AI Agent Lab 是一个围绕 AI Agent 工程能力建设的个人知识库�
 
 | 专题 | 说明 |
 |---|---|
-| [从 RAG 到生产级 Agent Harness 的工程化学习路线](https://hfl-ai-agent-lab.vercel.app/blogs/topics/rag-to-agent-harness) | 梳理 RAG、Tool Calling、Memory、Agent Harness、Multi-Agent、Eval、Trace、Safety、Deploy |
+| [从 RAG 到生产级 Agent Harness 的工程化学习路线](https://hfl-ai-agent-lab.vercel.app/topics/rag-to-agent-harness) | 梳理 RAG、Tool Calling、Memory、Agent Harness、Multi-Agent、Eval、Trace、Safety、Deploy |
 | [Hermes Agent 高级用法与进阶玩法](https://hfl-ai-agent-lab.vercel.app/note/Source-Reading/hermes-agent-advanced) | 整理子代理驱动开发、Kanban、多代理协作、TDD、MCP、Cron、Skills、安全控制等高级能力 |
-| [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](https://hfl-ai-agent-lab.vercel.app/blogs/topics/openclaw-architecture) | 从 Gateway、Channel、Session、Agent Runtime、Workspace、Memory、Tools、Security、Evaluation 理解复杂 Agent 系统 |
+| [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](https://hfl-ai-agent-lab.vercel.app/topics/openclaw-architecture) | 从 Gateway、Channel、Session、Agent Runtime、Workspace、Memory、Tools、Security、Evaluation 理解复杂 Agent 系统 |
 
 ## 推荐阅读路径
 

@@ -370,4 +370,4 @@ Broadcast Groups 支持同一个 peer 在满足触发条件后让多个 Agent �
 
 ## 专题阅读
 
-- [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/blogs/topics/openclaw-architecture)
+- [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/topics/openclaw-architecture)

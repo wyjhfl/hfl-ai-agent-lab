@@ -4,17 +4,17 @@
 
 ## 推荐阅读顺序
 
-1. [从 RAG 到生产级 Agent Harness 的工程化学习路线](/blogs/topics/rag-to-agent-harness)
+1. [从 RAG 到生产级 Agent Harness 的工程化学习路线](/topics/rag-to-agent-harness)
 2. [Hermes Agent 高级用法与进阶玩法](/note/Source-Reading/hermes-agent-advanced)
-3. [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/blogs/topics/openclaw-architecture)
+3. [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/topics/openclaw-architecture)
 
 ## 当前专题
 
 | 专题 | 内容 | 适合读者 |
 |---|---|---|
-| [从 RAG 到生产级 Agent Harness 的工程化学习路线](/blogs/topics/rag-to-agent-harness) | 整理从 RAG、Tool Calling、Memory、Agent Harness 到 Eval、Trace、Deploy 的工程学习路线。 | 想建立 AI Agent 工程学习地图的人 |
+| [从 RAG 到生产级 Agent Harness 的工程化学习路线](/topics/rag-to-agent-harness) | 整理从 RAG、Tool Calling、Memory、Agent Harness 到 Eval、Trace、Deploy 的工程学习路线。 | 想建立 AI Agent 工程学习地图的人 |
 | [Hermes Agent 高级用法与进阶玩法](/note/Source-Reading/hermes-agent-advanced) | 整理子代理驱动开发、Kanban、多代理协作、TDD、MCP、Cron、Skills、安全控制等高级能力。 | 想理解 Agent Harness 高级能力的人 |
-| [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/blogs/topics/openclaw-architecture) | 从 Gateway、Channel、Session、Agent Runtime、Workspace、Memory、Tools、Security、Evaluation 等角度理解复杂 Agent 系统分层。 | 想学习复杂 Agent 系统架构拆分的人 |
+| [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/topics/openclaw-architecture) | 从 Gateway、Channel、Session、Agent Runtime、Workspace、Memory、Tools、Security、Evaluation 等角度理解复杂 Agent 系统分层。 | 想学习复杂 Agent 系统架构拆分的人 |
 
 ## 如何配合站内内容阅读
 

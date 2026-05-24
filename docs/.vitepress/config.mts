@@ -243,7 +243,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     nav: [
       { text: '首页', link: '/home' },
       { text: '学习路线', link: '/note/AI-Agent/' },
-      { text: '专题文章', link: '/blogs/topics/' },
+      { text: '专题文章', link: '/topics/' },
       { text: '源码拆解', link: '/note/Source-Reading/' },
       { text: '工程笔记', link: '/note/Engineering/' },
       { text: '面试题库', link: '/note/AI-Interview/' },
