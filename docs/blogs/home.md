@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: HFL AI Agent Lab
-  text: AI Agent 工程作品集
-  tagline: 学什么 · 怎么做 · 怎么答 — 从学习路线、工程化笔记、源码拆解到面试题库的 AI Agent 作品站
+  text: AI Agent 工程知识库 · 项目作品集
+  tagline: 围绕 RAG、Tool Calling、LangGraph、Multi-Agent、MCP、Evaluation，沉淀从学习路线到工程落地的 AI Agent 能力体系。
   actions:
     - theme: brand
       text: 进入学习路线
@@ -13,11 +13,11 @@ hero:
       text: 阅读专题
       link: /blogs/topics/
     - theme: alt
-      text: 面试题库
+      text: 查看面试题库
       link: /note/AI-Interview/
 
 features:
-  - icon: "🤖"
+  - icon: "🧭"
     title: AI Agent 学习路线
     details: 从 Agent 基础到 RAG、Tool Calling、LangGraph、Multi-Agent、Evaluation，建立 11 个阶段的工程学习地图。
     link: /note/AI-Agent/
@@ -30,7 +30,7 @@ features:
     linkText: 阅读专题 →
 
   - icon: "🧩"
-    title: Agent 源码拆解
+    title: 源码拆解
     details: 拆解 Hermes Agent、Harness Engineering、OpenClaw，提炼 Gateway、Runtime、Workspace、Memory、Tools、Security 等架构设计。
     link: /note/Source-Reading/
     linkText: 阅读拆解 →

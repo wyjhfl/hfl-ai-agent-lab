@@ -1,118 +1,95 @@
+<div align="center">
+
 # HFL AI Agent Lab
 
-<!-- multiline-format-refresh -->
+**AI Agent 工程知识库 · 面试题库 · 源码拆解 · 项目作品集**
 
-<p align="center">
-  <strong>HFL AI Agent Lab</strong><br/>
-  AI Agent 工程知识库 · 面试题库 · 项目展示站
-</p>
+从学习路线、工程化笔记、源码拆解到面试题库，系统沉淀 AI Agent / RAG / Multi-Agent / LangGraph / MCP / Evaluation 等方向的工程能力。
 
-<p align="center">
-  <a href="https://hfl-ai-agent-lab.vercel.app">在线访问</a>
-  ·
-  <a href="https://hfl-ai-agent-lab.vercel.app/home">备用入口</a>
-</p>
+[在线访问](https://hfl-ai-agent-lab.vercel.app/home) ·
+[学习路线](https://hfl-ai-agent-lab.vercel.app/note/AI-Agent/) ·
+[专题文章](https://hfl-ai-agent-lab.vercel.app/blogs/topics/) ·
+[源码拆解](https://hfl-ai-agent-lab.vercel.app/note/Source-Reading/) ·
+[面试题库](https://hfl-ai-agent-lab.vercel.app/note/AI-Interview/)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/VitePress-1.6-blue" alt="VitePress" />
-  <img src="https://img.shields.io/badge/Vue-3.5-green" alt="Vue" />
-  <img src="https://img.shields.io/badge/Markdown-Content-555" alt="Markdown" />
-  <img src="https://img.shields.io/badge/Deploy-Vercel-000" alt="Vercel" />
-  <img src="https://img.shields.io/badge/Build-Passing-brightgreen" alt="Build" />
-</p>
+![VitePress](https://img.shields.io/badge/VitePress-Docs-646CFF)
+![AI Agent](https://img.shields.io/badge/AI%20Agent-Lab-7C3AED)
+![RAG](https://img.shields.io/badge/RAG-Engineering-0EA5E9)
+![Status](https://img.shields.io/badge/status-building-22C55E)
 
----
+</div>
 
 ## 项目定位
 
-HFL AI Agent Lab 是围绕 AI Agent、RAG、Tool Calling、LangGraph、Multi-Agent、工程化落地和面试题库构建的个人知识库与作品集站点。
+HFL AI Agent Lab 是一个围绕 AI Agent 工程能力建设的个人知识库和作品集站点。
 
-目标是系统沉淀 AI Agent 工程能力，将学习路线、工程化笔记、面试题库、源码拆解和项目实战整合为一个可公开展示的技术作品集。
+它不是单纯的学习笔记，而是把 AI Agent 学习路线、工程化实践、源码拆解、面试题库和项目实战统一沉淀到一个可持续维护的网站中。
 
 ## 项目亮点
 
-- 形成“学什么、怎么做、怎么答”的 AI Agent 工程学习闭环
-- 覆盖 RAG、Tool Calling、LangGraph、Multi-Agent、Agent Harness、Evaluation、Trace、Production 等方向
-- 整理 Hermes Agent、Harness Engineering、OpenClaw 等 Agent 工程项目拆解
-- 沉淀原创面试题库，把技术理解转化为面试表达
-- 面向 AI Agent 工程岗位准备，可作为 GitHub / 简历 / 个人网站展示入口
+- 系统化整理 AI Agent 学习路线：从 RAG、Tool Calling 到 Multi-Agent、Evaluation、Production。
+- 持续沉淀工程化笔记：FastAPI、Docker、Agent Trace、MCP Server、异步任务、上线检查清单。
+- 拆解真实 Agent 项目：Hermes Agent、Harness Engineering、OpenClaw。
+- 建设面试题库：覆盖 Agent、RAG、工具调用、大模型工程、LangChain / LangGraph。
+- 对接项目实战：项目 A RAG 工单系统、项目 B 多 Agent Copilot 逐步展开。
+- 适合作为 AI Agent 开发 / 大模型应用开发方向的求职作品集。
 
 ## 在线访问
 
-- 首页：https://hfl-ai-agent-lab.vercel.app
-- 备用入口：https://hfl-ai-agent-lab.vercel.app/home
+- 站点首页：https://hfl-ai-agent-lab.vercel.app/home
+- GitHub 仓库：https://github.com/wyjhfl/hfl-ai-agent-lab
 
 ## 核心模块
 
 | 模块 | 内容 | 入口 |
 |---|---|---|
-| 学习路线 | AI Agent、RAG、Tool Calling、LangGraph、Multi-Agent、Evaluation | [查看路线](https://hfl-ai-agent-lab.vercel.app/note/AI-Agent/) |
-| 工程化笔记 | FastAPI、RAG 工程化、Docker、可观测性、MCP Server、上线检查清单 | [工程笔记](https://hfl-ai-agent-lab.vercel.app/note/Engineering/) |
-| 面试题库 | Agent、RAG、LLM 工具调用、大模型工程、LangChain / LangGraph | [面试题库](https://hfl-ai-agent-lab.vercel.app/note/AI-Interview/) |
-| 源码拆解 | Hermes Agent、Harness Engineering、OpenClaw | [源码拆解](https://hfl-ai-agent-lab.vercel.app/note/Source-Reading/) |
-| AI 工具 | Claude Code、Codex、AI Coding Workflow | [AI 工具](https://hfl-ai-agent-lab.vercel.app/note/AI-Tools/) |
-| 项目实战 | 项目 A / 项目 B 入口预留 | [项目实战](https://hfl-ai-agent-lab.vercel.app/projects) |
+| AI Agent 学习路线 | Agent 基础、RAG、Tool Calling、Multi-Agent、Evaluation、Production | [./docs/note/AI-Agent/](./docs/note/AI-Agent/) |
+| 专题文章 | RAG 到 Agent Harness、OpenClaw 架构拆解等长文专题 | [./docs/blogs/topics/](./docs/blogs/topics/) |
+| 源码拆解 | Hermes Agent、Harness Engineering、OpenClaw | [./docs/note/Source-Reading/](./docs/note/Source-Reading/) |
+| 工程化笔记 | FastAPI、Docker、Trace、MCP、异步任务、上线检查 | [./docs/note/Engineering/](./docs/note/Engineering/) |
+| 面试题库 | Agent、RAG、工具调用、大模型工程、LangChain / LangGraph | [./docs/note/AI-Interview/](./docs/note/AI-Interview/) |
+| 项目实战 | 项目 A、项目 B 展示入口 | [./docs/blogs/projects.md](./docs/blogs/projects.md) |
 
 ## 推荐专题
 
-| 专题 | 适合阅读场景 |
+| 专题 | 说明 |
 |---|---|
-| [从 RAG 到生产级 Agent Harness 的工程化学习路线](https://hfl-ai-agent-lab.vercel.app/blogs/topics/rag-to-agent-harness) | 想系统理解 RAG → Tool Calling → Agent Harness → Eval / Trace / Deploy 的学习路径 |
-| [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](https://hfl-ai-agent-lab.vercel.app/blogs/topics/openclaw-architecture) | 想理解复杂 Agent 系统的 Gateway、Session、Runtime、Tools、Security、Evaluation 分层 |
-| [Hermes Agent 高级用法与进阶玩法](https://hfl-ai-agent-lab.vercel.app/note/Source-Reading/hermes-agent-advanced) | 想学习子代理驱动开发、Kanban 多代理协作、TDD、MCP、Cron、Skills、Worktree 等高级能力 |
+| [从 RAG 到生产级 Agent Harness 的工程化学习路线](https://hfl-ai-agent-lab.vercel.app/blogs/topics/rag-to-agent-harness) | 梳理 RAG、Tool Calling、Memory、Agent Harness、Multi-Agent、Eval、Trace、Safety、Deploy |
+| [Hermes Agent 高级用法与进阶玩法](https://hfl-ai-agent-lab.vercel.app/note/Source-Reading/hermes-agent-advanced) | 整理子代理驱动开发、Kanban、多代理协作、TDD、MCP、Cron、Skills、安全控制等高级能力 |
+| [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](https://hfl-ai-agent-lab.vercel.app/blogs/topics/openclaw-architecture) | 从 Gateway、Channel、Session、Agent Runtime、Workspace、Memory、Tools、Security、Evaluation 理解复杂 Agent 系统 |
 
 ## 推荐阅读路径
 
-| 目标 | 推荐路径 |
+| 目标 | 阅读路径 |
 |---|---|
-| 系统学习 AI Agent | 学习路线 → Agent 基础 → Tool Calling → LangGraph → Multi-Agent |
-| 学工程落地 | 工程化笔记 → FastAPI → RAG 工程化 → Agent Trace → Production Checklist |
-| 准备面试 | 面试题库 → Agent 面试题 → RAG 面试题 → LLM 工具调用面试题 |
-| 看源码拆解 | 源码拆解 → Hermes Agent → Harness Engineering → OpenClaw |
+| 系统学习 AI Agent | AI Agent 学习路线 → 工程化笔记 → 专题文章 |
+| 准备面试 | 面试题库 → 工程化笔记 → 源码拆解 |
+| 做项目 | 项目实战 → RAG 工程化 → Agent Trace → Evaluation |
+| 读源码 | Source-Reading → Hermes Agent → OpenClaw → Harness Engineering |
 
 ## 当前内容完成度
 
 | 方向 | 状态 |
 |---|---|
-| 学习路线 | 已完成第一轮工程学习地图 |
-| 工程化笔记 | 已完成第二轮扩展 |
+| 学习路线 | 已形成 AI Agent 工程学习主线 |
+| 工程化笔记 | 已扩展 FastAPI、RAG、Trace、MCP、异步任务、上线检查等方向 |
 | 面试题库 | 已完成第一轮原创题解 |
-| 源码拆解 | 已导入 Hermes / Harness / OpenClaw 第一轮正文 |
-| AI 工具 | 已建立 Claude Code / Codex / Workflow 入口 |
-| 项目实战 | 项目 A / 项目 B 当前保持预留 |
+| 源码拆解 | 已覆盖 Hermes Agent / Harness Engineering / OpenClaw |
+| 专题文章 | 已开始沉淀 RAG → Agent Harness、OpenClaw 架构等长文专题 |
+| 项目实战 | 项目 A / 项目 B 保持逐步展开 |
 
-## 当前阶段
+## 项目实战
 
-- v0.1：站点基础改造完成
-- v0.2：知识库骨架完成
-- v0.3-lite：非项目 B 内容初稿完成，项目 B 仅保留占位
-- v0.3.1：旧内容隔离与公开展示准备完成
-- v0.3.2：公开展示页面优化完成
-- v0.4：Vercel 部署上线完成
-- v0.5：线上展示体验基础优化完成
-- v0.6：AI Agent 核心知识文章打磨完成
-- v0.7：工程化笔记质量提升完成
-- v0.8：GitHub README 与网站首页展示优化完成
-- v0.9：源码拆解栏目质量提升完成
-- v1.0：网站导航、搜索、外链和公开访问体验检查完成
-- v1.1-v1.4 修正版：Agent 拆解历史对话素材第一轮整理完成
-- v1.5：AI Agent 面试题库模块改造完成
-- v1.6：AI Agent 面试题库第一轮原创题解完成
-- v1.7：AI Agent 学习路线总览升级完成
-- v1.8：工程化笔记第二轮扩展完成
-- v1.9：学习路线、工程化笔记、面试题库互链完成
-- v2.0：GitHub README 与网站页面装饰优化完成
-- v2.1：博客专题《从 RAG 到生产级 Agent Harness 的工程化学习路线》完成
-- v2.3：Hermes Agent 高级用法与进阶玩法专题完成
-- v2.4：OpenClaw 架构拆解专题完成
+- **项目 A：RAG 工单系统** — 作为 RAG 工程化项目入口，重点验证文档解析、检索、引用、质量评估和工单生成链路。
+- **项目 B：多 Agent 运营中台 Copilot** — 当前保持占位，不在本轮展开，后续用于承载 Multi-Agent、权限、Trace、Evaluation 等工程能力。
 
 ## 技术栈
 
-- **VitePress** — 静态站点生成
-- **Vue 3** — 前端框架
-- **Markdown** — 内容编写
-- **Vercel** — 部署与托管
-- **Node.js** — 构建运行时
+- **VitePress** — 文档站与作品集站点生成
+- **Markdown** — 内容沉淀与结构化写作
+- **TypeScript** — 站点配置与主题扩展
+- **Vercel** — 站点部署与托管
+- **AI Agent / RAG / Multi-Agent / MCP / Evaluation** — 内容主线与工程方向
 
 ## 本地开发
 
@@ -138,3 +115,32 @@ npm run docs:preview
 | Build Command | `npm run docs:build` |
 | Output Directory | `docs/.vitepress/dist` |
 | Node.js Version | 20 或 22 |
+
+<details>
+<summary>建设记录</summary>
+
+- v0.1：站点基础改造完成
+- v0.2：知识库骨架完成
+- v0.3-lite：非项目 B 内容初稿完成，项目 B 仅保留占位
+- v0.3.1：旧内容隔离与公开展示准备完成
+- v0.3.2：公开展示页面优化完成
+- v0.4：Vercel 部署上线完成
+- v0.5：线上展示体验基础优化完成
+- v0.6：AI Agent 核心知识文章打磨完成
+- v0.7：工程化笔记质量提升完成
+- v0.8：GitHub README 与网站首页展示优化完成
+- v0.9：源码拆解栏目质量提升完成
+- v1.0：网站导航、搜索、外链和公开访问体验检查完成
+- v1.1-v1.4 修正版：Agent 拆解历史对话素材第一轮整理完成
+- v1.5：AI Agent 面试题库模块改造完成
+- v1.6：AI Agent 面试题库第一轮原创题解完成
+- v1.7：AI Agent 学习路线总览升级完成
+- v1.8：工程化笔记第二轮扩展完成
+- v1.9：学习路线、工程化笔记、面试题库互链完成
+- v2.0：GitHub README 与网站页面装饰优化完成
+- v2.1：博客专题《从 RAG 到生产级 Agent Harness 的工程化学习路线》完成
+- v2.3：Hermes Agent 高级用法与进阶玩法专题完成
+- v2.4：OpenClaw 架构拆解专题完成
+- v2.6：README 与首页 UI 作品集风格优化
+
+</details>
