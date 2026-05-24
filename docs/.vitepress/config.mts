@@ -248,7 +248,13 @@ export default defineConfigWithTheme<ThemeConfig>({
       { text: '工程笔记', link: '/note/Engineering/' },
       { text: '面试题库', link: '/note/AI-Interview/' },
       { text: '项目实战', link: '/projects' },
-      { text: '关于我', link: '/about' },
+      {
+        text: '更多',
+        items: [
+          { text: 'AI 工具', link: '/note/AI-Tools/' },
+          { text: '关于我', link: '/about' },
+        ],
+      },
       { text: 'GitHub', link: 'https://github.com/wyjhfl' },
     ],
     sidebar: {
