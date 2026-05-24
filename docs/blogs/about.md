@@ -43,6 +43,7 @@ HFL AI Agent Lab 是一个 AI Agent 工程知识库、多 Agent 项目展示站�
 - v2.0：GitHub README 与网站页面装饰优化完成
 - v2.1：博客专题《从 RAG 到生产级 Agent Harness 的工程化学习路线》完成
 - v2.3：Hermes Agent 高级用法与进阶玩法专题完成
+- v2.4：OpenClaw 架构拆解专题完成
 
 ## 为什么搭建这个站
 

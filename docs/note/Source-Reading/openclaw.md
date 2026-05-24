@@ -367,3 +367,7 @@ Broadcast Groups 支持同一个 peer 在满足触发条件后让多个 Agent �
 - 待补充 Plugin 的 manifest discovery 和 runtime loading 流程
 - 待补充 Compaction 的具体压缩策略
 - 待补充 Delegate 的身份和凭据管理实现
+
+## 专题阅读
+
+- [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/blogs/topics/openclaw-architecture)

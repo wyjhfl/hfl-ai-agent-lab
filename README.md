@@ -44,6 +44,7 @@ HFL AI Agent Lab 是围绕 AI Agent、RAG、Tool Calling、LangGraph、Multi-Age
 ## 推荐专题
 
 - [从 RAG 到生产级 Agent Harness 的工程化学习路线](https://hfl-ai-agent-lab.vercel.app/blogs/topics/rag-to-agent-harness)
+- [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](https://hfl-ai-agent-lab.vercel.app/blogs/topics/openclaw-architecture)
 
 ## 推荐阅读路径
 
@@ -88,6 +89,7 @@ HFL AI Agent Lab 是围绕 AI Agent、RAG、Tool Calling、LangGraph、Multi-Age
 - v2.0：GitHub README 与网站页面装饰优化完成
 - v2.1：博客专题《从 RAG 到生产级 Agent Harness 的工程化学习路线》完成
 - v2.3：Hermes Agent 高级用法与进阶玩法专题完成
+- v2.4：OpenClaw 架构拆解专题完成
 
 ## 技术栈
 
