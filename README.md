@@ -1,3 +1,5 @@
+# HFL AI Agent Lab
+
 <p align="center">
   <strong>HFL AI Agent Lab</strong><br/>
   AI Agent 工程知识库 · 面试题库 · 项目展示站
@@ -129,7 +131,7 @@ npm run docs:preview
 推荐使用 Vercel 部署。
 
 | 配置项 | 值 |
-|--------|-----|
+|---|---|
 | Install Command | `npm install` |
 | Build Command | `npm run docs:build` |
 | Output Directory | `docs/.vitepress/dist` |
