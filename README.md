@@ -116,8 +116,10 @@ npm run docs:preview
 | Output Directory | `docs/.vitepress/dist` |
 | Node.js Version | 20 或 22 |
 
+## 建设记录
+
 <details>
-<summary>建设记录</summary>
+<summary>展开查看版本记录</summary>
 
 - v0.1：站点基础改造完成
 - v0.2：知识库骨架完成
