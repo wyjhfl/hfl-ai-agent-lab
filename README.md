@@ -1,5 +1,7 @@
 # HFL AI Agent Lab
 
+<!-- multiline-format-refresh -->
+
 <p align="center">
   <strong>HFL AI Agent Lab</strong><br/>
   AI Agent 工程知识库 · 面试题库 · 项目展示站

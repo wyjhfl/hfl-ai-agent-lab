@@ -1,5 +1,7 @@
 # OpenClaw 架构拆解：复杂 Agent 系统怎么分层
 
+<!-- multiline-format-refresh -->
+
 ## 1. 为什么要拆 OpenClaw
 
 OpenClaw 适合作为复杂 Agent 系统分层设计的学习对象。它不是一个简单的聊天 Demo，而是围绕多入口接入、会话管理、Agent Runtime、工具抽象、上下文管理、安全边界和评估闭环构建的工程系统。
