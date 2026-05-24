@@ -243,11 +243,11 @@ export default defineConfigWithTheme<ThemeConfig>({
     nav: [
       { text: '首页', link: '/home' },
       { text: '学习路线', link: '/note/AI-Agent/' },
+      { text: '专题文章', link: '/blogs/topics/' },
       { text: '源码拆解', link: '/note/Source-Reading/' },
-      { text: '项目实战', link: '/projects' },
       { text: '工程笔记', link: '/note/Engineering/' },
-      { text: 'AI 工具', link: '/note/AI-Tools/' },
       { text: '面试题库', link: '/note/AI-Interview/' },
+      { text: '项目实战', link: '/projects' },
       { text: '关于我', link: '/about' },
       { text: 'GitHub', link: 'https://github.com/wyjhfl' },
     ],

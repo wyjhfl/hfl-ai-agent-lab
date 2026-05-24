@@ -34,6 +34,20 @@ HFL AI Agent Lab 是一个围绕 AI Agent 工程能力建设的个人知识库�
 - 对接项目实战：项目 A RAG 工单系统、项目 B 多 Agent Copilot 逐步展开。
 - 适合作为 AI Agent 开发 / 大模型应用开发方向的求职作品集。
 
+## 适合谁阅读
+
+- 正在系统学习 AI Agent 工程的同学
+- 准备 AI Agent / 大模型应用开发岗位面试的人
+- 想了解 RAG、Tool Calling、Multi-Agent、Evaluation 工程化的人
+- 想参考个人技术作品集结构的人
+
+## 代表内容
+
+- [从 RAG 到生产级 Agent Harness 的工程化学习路线](https://hfl-ai-agent-lab.vercel.app/blogs/topics/rag-to-agent-harness)
+- [Hermes Agent 高级用法与进阶玩法](https://hfl-ai-agent-lab.vercel.app/note/Source-Reading/hermes-agent-advanced)
+- [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](https://hfl-ai-agent-lab.vercel.app/blogs/topics/openclaw-architecture)
+- [AI Agent 面试题库](https://hfl-ai-agent-lab.vercel.app/note/AI-Interview/)
+
 ## 在线访问
 
 - 站点首页：https://hfl-ai-agent-lab.vercel.app/home

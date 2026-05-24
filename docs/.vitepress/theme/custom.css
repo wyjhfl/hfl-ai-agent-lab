@@ -91,21 +91,44 @@
   letter-spacing: -0.02em;
 }
 
+.VPFeature .title {
+  letter-spacing: -0.02em;
+}
+
+.VPFeature .details {
+  line-height: 1.75;
+}
+
 .VPNavBarTitle .title {
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
+.vp-doc h2 {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
 .vp-doc table {
-  display: table;
+  display: block;
   width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.vp-doc th {
+  background: var(--vp-c-bg-soft);
+  font-weight: 700;
 }
 
 .vp-doc th,
 .vp-doc td {
   vertical-align: top;
+  padding: 10px 14px;
 }
 
-.vp-doc h2 {
-  margin-top: 40px;
+.vp-doc div[class*="language-"] {
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
 }

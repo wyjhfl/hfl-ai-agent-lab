@@ -5,22 +5,55 @@ sidebar: false
 
 # 关于 HFL AI Agent Lab
 
-## 这个网站是什么
+## 我在构建什么
 
-HFL AI Agent Lab 是一个 AI Agent 工程知识库、多 Agent 项目展示站和求职作品集。这里系统沉淀 AI Agent、Multi-Agent、LangGraph、RAG、LLM 应用工程和后端工程化相关内容。
+HFL AI Agent Lab 是一个面向 AI Agent 工程方向的个人知识库、项目展示站和求职作品集。
 
-## 当前关注方向
+它的目标不是单纯记录零散学习笔记，而是把 AI Agent 学习路线、工程化笔记、源码拆解、专题文章、面试题库和项目实战组织成一个可持续维护的技术作品集。
 
-- AI Agent
-- Multi-Agent
-- LangGraph
-- RAG
-- Tool Calling
-- LLM 应用工程
-- 后端工程化
-- Trace / Evaluation
+## 为什么关注 AI Agent 工程
 
-## 当前阶段
+AI Agent 不只是 Prompt 或多个角色聊天。真正可落地的 Agent 系统需要同时处理：
+
+- RAG 与外部知识连接
+- Tool Calling 与工具权限
+- LangGraph / Multi-Agent 的流程编排
+- Trace / Evaluation 的质量闭环
+- API 安全、异步任务、部署和可观测性
+- 面试中能讲清楚的工程边界和架构取舍
+
+这个网站就是围绕这些能力逐步沉淀的。
+
+## 当前内容地图
+
+| 模块 | 说明 |
+|---|---|
+| [AI Agent 学习路线](/note/AI-Agent/) | 回答“学什么、按什么顺序学、学到什么程度” |
+| [专题文章](/blogs/topics/) | 把学习路线、源码拆解和工程化笔记串成长文专题 |
+| [源码拆解](/note/Source-Reading/) | 拆解 Hermes Agent、Harness Engineering、OpenClaw 等项目 |
+| [工程化笔记](/note/Engineering/) | 记录 FastAPI、RAG、Trace、MCP、Docker、上线检查等工程能力 |
+| [面试题库](/note/AI-Interview/) | 将技术理解整理成面试标准回答、追问和工程化表达 |
+| [项目实战](/projects) | 项目 A / 项目 B 的展示入口，项目 B 当前保持占位 |
+
+## 适合谁阅读
+
+- 正在系统学习 AI Agent 工程的同学
+- 准备 AI Agent / 大模型应用开发岗位面试的人
+- 想理解 RAG、Tool Calling、Multi-Agent、Evaluation 工程化的人
+- 想参考个人技术作品集结构的人
+
+## 后续计划
+
+- 持续完善 AI Agent 学习路线内容
+- 继续扩展专题文章和源码拆解深度
+- 补齐工程化笔记中的安全、评测、部署和可观测性内容
+- 后续再展开项目 B（运营中台多 Agent Copilot）
+- 让站点逐步成为可放入简历和 GitHub 主页的公开技术作品集
+
+## 建设记录
+
+<details>
+<summary>展开查看阶段记录</summary>
 
 - v0.1：站点基础改造完成
 - v0.2：知识库骨架完成
@@ -44,19 +77,6 @@ HFL AI Agent Lab 是一个 AI Agent 工程知识库、多 Agent 项目展示站�
 - v2.1：博客专题《从 RAG 到生产级 Agent Harness 的工程化学习路线》完成
 - v2.3：Hermes Agent 高级用法与进阶玩法专题完成
 - v2.4：OpenClaw 架构拆解专题完成
+- v2.6：README 与首页 UI 作品集风格优化
 
-## 为什么搭建这个站
-
-- 系统沉淀 AI Agent 学习路线，从基础概念到工程落地
-- 记录开源项目源码拆解，提炼可迁移的架构设计
-- 整理工程化笔记，覆盖 FastAPI、RAG、Docker、可观测性等方向
-- 将项目能力转化为面试表达和简历描述
-- 形成长期可维护的技术作品集
-
-## 后续计划
-
-- 完善 AI Agent 学习路线内容
-- 完善源码拆解深度分析
-- 完善工程化笔记
-- 后续再展开项目 B（运营中台多 Agent Copilot）
-- 继续完善核心内容质量，让站点逐步成为可放入简历和 GitHub 主页的公开技术作品集
+</details>
