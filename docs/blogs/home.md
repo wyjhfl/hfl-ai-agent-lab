@@ -23,6 +23,12 @@ features:
     link: /note/AI-Agent/
     linkText: 查看路线 →
 
+  - icon: "📚"
+    title: 专题文章
+    details: 用长文串联学习路线、工程化笔记和源码拆解，已整理 RAG 到 Agent Harness、OpenClaw 架构拆解等专题。
+    link: /blogs/topics/
+    linkText: 阅读专题 →
+
   - icon: "🧩"
     title: Agent 源码拆解
     details: 拆解 Hermes Agent、Harness Engineering、OpenClaw，提炼 Gateway、Runtime、Workspace、Memory、Tools、Security 等架构设计。
@@ -46,10 +52,4 @@ features:
     details: 项目 A（RAG 工单系统）与项目 B（多 Agent Copilot）入口已预留，后续在保持可控范围内逐步展开。
     link: /projects
     linkText: 查看项目 →
-
-  - icon: "📌"
-    title: 当前建设阶段
-    details: v2.4 阶段：OpenClaw 架构拆解专题完成。新增复杂 Agent 系统分层专题，围绕 Gateway、Channel、Session、Agent Runtime、Workspace、Memory、Tools、Security 与 Evaluation 梳理生产级 Agent 系统设计，项目 B 保持占位。
-    link: /blogs/topics/openclaw-architecture
-    linkText: 阅读 OpenClaw 专题 →
 ---

@@ -25,6 +25,14 @@ HFL AI Agent Lab 是围绕 AI Agent、RAG、Tool Calling、LangGraph、Multi-Age
 
 目标是系统沉淀 AI Agent 工程能力，将学习路线、工程化笔记、面试题库、源码拆解和项目实战整合为一个可公开展示的技术作品集。
 
+## 项目亮点
+
+- 形成“学什么、怎么做、怎么答”的 AI Agent 工程学习闭环
+- 覆盖 RAG、Tool Calling、LangGraph、Multi-Agent、Agent Harness、Evaluation、Trace、Production 等方向
+- 整理 Hermes Agent、Harness Engineering、OpenClaw 等 Agent 工程项目拆解
+- 沉淀原创面试题库，把技术理解转化为面试表达
+- 面向 AI Agent 工程岗位准备，可作为 GitHub / 简历 / 个人网站展示入口
+
 ## 在线访问
 
 - 首页：https://hfl-ai-agent-lab.vercel.app
@@ -32,19 +40,22 @@ HFL AI Agent Lab 是围绕 AI Agent、RAG、Tool Calling、LangGraph、Multi-Age
 
 ## 核心模块
 
-| 模块 | 内容 |
-|---|---|
-| 学习路线 | AI Agent、RAG、Tool Calling、LangGraph、Multi-Agent、Evaluation |
-| 工程化笔记 | FastAPI、RAG 工程化、Docker、可观测性、MCP Server、上线检查清单 |
-| 面试题库 | Agent、RAG、LLM 工具调用、大模型工程、LangChain / LangGraph |
-| 源码拆解 | Hermes Agent、Harness Engineering、OpenClaw |
-| AI 工具 | Claude Code、Codex、AI Coding Workflow |
-| 项目实战 | 项目 A / 项目 B 入口预留 |
+| 模块 | 内容 | 入口 |
+|---|---|---|
+| 学习路线 | AI Agent、RAG、Tool Calling、LangGraph、Multi-Agent、Evaluation | [查看路线](https://hfl-ai-agent-lab.vercel.app/note/AI-Agent/) |
+| 工程化笔记 | FastAPI、RAG 工程化、Docker、可观测性、MCP Server、上线检查清单 | [工程笔记](https://hfl-ai-agent-lab.vercel.app/note/Engineering/) |
+| 面试题库 | Agent、RAG、LLM 工具调用、大模型工程、LangChain / LangGraph | [面试题库](https://hfl-ai-agent-lab.vercel.app/note/AI-Interview/) |
+| 源码拆解 | Hermes Agent、Harness Engineering、OpenClaw | [源码拆解](https://hfl-ai-agent-lab.vercel.app/note/Source-Reading/) |
+| AI 工具 | Claude Code、Codex、AI Coding Workflow | [AI 工具](https://hfl-ai-agent-lab.vercel.app/note/AI-Tools/) |
+| 项目实战 | 项目 A / 项目 B 入口预留 | [项目实战](https://hfl-ai-agent-lab.vercel.app/projects) |
 
 ## 推荐专题
 
-- [从 RAG 到生产级 Agent Harness 的工程化学习路线](https://hfl-ai-agent-lab.vercel.app/blogs/topics/rag-to-agent-harness)
-- [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](https://hfl-ai-agent-lab.vercel.app/blogs/topics/openclaw-architecture)
+| 专题 | 适合阅读场景 |
+|---|---|
+| [从 RAG 到生产级 Agent Harness 的工程化学习路线](https://hfl-ai-agent-lab.vercel.app/blogs/topics/rag-to-agent-harness) | 想系统理解 RAG → Tool Calling → Agent Harness → Eval / Trace / Deploy 的学习路径 |
+| [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](https://hfl-ai-agent-lab.vercel.app/blogs/topics/openclaw-architecture) | 想理解复杂 Agent 系统的 Gateway、Session、Runtime、Tools、Security、Evaluation 分层 |
+| [Hermes Agent 高级用法与进阶玩法](https://hfl-ai-agent-lab.vercel.app/note/Source-Reading/hermes-agent-advanced) | 想学习子代理驱动开发、Kanban 多代理协作、TDD、MCP、Cron、Skills、Worktree 等高级能力 |
 
 ## 推荐阅读路径
 
