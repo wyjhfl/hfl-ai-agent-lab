@@ -3,9 +3,12 @@
     <section class="lab-hero-panel">
       <div class="lab-hero-copy">
         <p class="lab-eyebrow">AI Agent Engineering Lab</p>
-        <h2>把 AI Agent 学习、源码拆解和项目实战组织成一套工程系统。</h2>
+        <h2 class="lab-hero-title">
+          <span>构建 AI Agent</span>
+          <span>工程知识体系</span>
+        </h2>
         <p class="lab-hero-desc">
-          这里不是普通笔记站，而是一个面向求职和长期复盘的 Agent 工程实验室：从 RAG、工具调用、编排、评测到部署，把知识沉淀成能讲清、能复用、能展示的能力资产。
+          从学习路线、源码拆解到项目实战，沉淀 RAG、工具调用、编排、评测与部署经验，让知识真正变成可复盘、可展示、可迁移的工程能力。
         </p>
         <div class="lab-action-row">
           <a class="lab-primary-link" href="/projects">查看项目作品</a>
