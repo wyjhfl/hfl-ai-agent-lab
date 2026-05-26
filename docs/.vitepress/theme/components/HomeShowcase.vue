@@ -1,51 +1,111 @@
 <template>
-  <div class="home-showcase">
-    <section class="showcase-hero-card">
-      <div>
-        <p class="showcase-eyebrow">AI Agent Engineering Portfolio</p>
-        <h2>把零散学习整理成可复用的工程能力</h2>
-        <p>
-          这个站点不是单纯的笔记堆叠，而是围绕「学习路线 → 工程实践 → 源码拆解 → 面试表达 → 项目作品」组织内容，方便持续复盘和对外展示。
+  <div class="home-lab-shell">
+    <section class="lab-hero-panel">
+      <div class="lab-hero-copy">
+        <p class="lab-eyebrow">AI Agent Engineering Lab</p>
+        <h2>把 AI Agent 学习、源码拆解和项目实战组织成一套工程系统。</h2>
+        <p class="lab-hero-desc">
+          这里不是普通笔记站，而是一个面向求职和长期复盘的 Agent 工程实验室：从 RAG、工具调用、编排、评测到部署，把知识沉淀成能讲清、能复用、能展示的能力资产。
         </p>
+        <div class="lab-action-row">
+          <a class="lab-primary-link" href="/projects">查看项目作品</a>
+          <a class="lab-secondary-link" href="/note/AI-Agent/">进入学习路线</a>
+        </div>
       </div>
-      <div class="showcase-stats" aria-label="站点内容统计">
-        <span><strong>11</strong>学习阶段</span>
-        <span><strong>5</strong>面试方向</span>
-        <span><strong>2</strong>项目主线</span>
+
+      <div class="agent-console" aria-label="Agent 工程能力面板">
+        <div class="console-topbar">
+          <span></span>
+          <span></span>
+          <span></span>
+          <strong>agent-runtime.trace</strong>
+        </div>
+        <div class="console-grid">
+          <div class="console-card active">
+            <small>Input</small>
+            <strong>User Task</strong>
+            <span>需求理解 / 约束识别</span>
+          </div>
+          <div class="console-card">
+            <small>Retrieve</small>
+            <strong>RAG</strong>
+            <span>知识检索 / 引用生成</span>
+          </div>
+          <div class="console-card">
+            <small>Act</small>
+            <strong>Tools</strong>
+            <span>函数调用 / 权限边界</span>
+          </div>
+          <div class="console-card">
+            <small>Memory</small>
+            <strong>Context</strong>
+            <span>状态管理 / 历史沉淀</span>
+          </div>
+          <div class="console-card">
+            <small>Verify</small>
+            <strong>Eval</strong>
+            <span>质量评测 / Trace 复盘</span>
+          </div>
+          <div class="console-card success">
+            <small>Ship</small>
+            <strong>Deploy</strong>
+            <span>上线检查 / 可观测性</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="bento-grid" aria-label="推荐阅读路径">
-      <a class="bento-card bento-card-large" href="/note/AI-Agent/">
-        <span class="bento-kicker">Learning Path</span>
-        <h3>系统学习 AI Agent</h3>
-        <p>从 Agent 基础出发，逐步进入 RAG、工具调用、状态机、多 Agent、评测和生产工程。</p>
-        <em>AI Agent 路线 → 工程笔记 → 专题长文</em>
-      </a>
+    <section class="lab-metrics" aria-label="站点内容概览">
+      <div>
+        <strong>11</strong>
+        <span>学习阶段</span>
+      </div>
+      <div>
+        <strong>46+</strong>
+        <span>公开文章</span>
+      </div>
+      <div>
+        <strong>5</strong>
+        <span>面试方向</span>
+      </div>
+      <div>
+        <strong>2</strong>
+        <span>项目主线</span>
+      </div>
+    </section>
 
-      <a class="bento-card" href="/note/AI-Interview/">
-        <span class="bento-kicker">Interview</span>
-        <h3>准备大模型应用面试</h3>
-        <p>把 Agent、RAG、工具调用、LangGraph 的知识整理成可回答、可追问的题解。</p>
-      </a>
-
-      <a class="bento-card" href="/note/Source-Reading/">
-        <span class="bento-kicker">Source Reading</span>
-        <h3>拆解真实 Agent 项目</h3>
-        <p>从 Hermes、OpenClaw 等项目中提炼架构分层、运行时、工具和安全边界。</p>
-      </a>
-
-      <a class="bento-card" href="/projects">
-        <span class="bento-kicker">Projects</span>
-        <h3>沉淀可展示作品</h3>
-        <p>围绕 RAG 工单系统和多 Agent Copilot，逐步补齐工程设计、实现路径和复盘材料。</p>
-      </a>
-
-      <a class="bento-card bento-card-accent" href="/topics/rag-to-agent-harness">
-        <span class="bento-kicker">Featured</span>
-        <h3>从 RAG 到生产级 Agent Harness</h3>
-        <p>用一篇长文串起检索、工具、记忆、编排、评测、可观测性和部署。</p>
-      </a>
+    <section class="lab-section">
+      <div class="lab-section-heading">
+        <p class="lab-eyebrow">Capability Map</p>
+        <h2>围绕 Agent 工程能力组织内容</h2>
+      </div>
+      <div class="lab-card-grid">
+        <a class="lab-card lab-card-wide" href="/note/AI-Agent/">
+          <span>01 / Learning Path</span>
+          <h3>系统学习 AI Agent</h3>
+          <p>从 Agent 基础、Prompt、RAG、Tool Calling 到 Multi-Agent、Evaluation、Production，形成工程学习地图。</p>
+        </a>
+        <a class="lab-card" href="/note/Engineering/">
+          <span>02 / Engineering</span>
+          <h3>工程化笔记</h3>
+          <p>FastAPI、Docker、Trace、MCP、异步任务、API 安全和上线检查清单。</p>
+        </a>
+        <a class="lab-card" href="/note/Source-Reading/">
+          <span>03 / Source Reading</span>
+          <h3>源码拆解</h3>
+          <p>拆解 Hermes、OpenClaw 和 Agent Harness，提炼复杂系统分层。</p>
+        </a>
+        <a class="lab-card" href="/note/AI-Interview/">
+          <span>04 / Interview</span>
+          <h3>面试题库</h3>
+          <p>把 Agent、RAG、工具调用和 LangGraph 整理成可表达的题解框架。</p>
+        </a>
+        <a class="lab-card lab-card-accent" href="/topics/rag-to-agent-harness">
+          <span>Featured Topic</span>
+          <h3>从 RAG 到生产级 Agent Harness</h3>
+          <p>串起检索、工具、记忆、编排、评测、可观测性和部署。</p>
+        </a>
+      </div>
     </section>
   </div>
 </template>
