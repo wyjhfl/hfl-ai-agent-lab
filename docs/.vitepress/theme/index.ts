@@ -9,6 +9,7 @@ import Mycomponent from './components/Mycomponent.vue'
 import GiscusComments from './components/GiscusComments.vue'
 import ReadingProgress from './components/ReadingProgress.vue'
 import BackToTop from './components/BackToTop.vue'
+import HomeShowcase from './components/HomeShowcase.vue'
 
 export default {
   extends: DefaultTheme,
@@ -20,5 +21,6 @@ export default {
     }),
   enhanceApp({ app }) {
     app.component('MyComponent', Mycomponent)
+    app.component('HomeShowcase', HomeShowcase)
   },
 } satisfies Theme
