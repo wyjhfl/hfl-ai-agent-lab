@@ -48,7 +48,7 @@ Collection 不要随便建，要考虑以下因素：
 - 查询场景。
 
 | Collection | 场景 |
-|---|---|
+| --- | --- |
 | `kb_chunks` | 通用知识库 Chunk |
 | `ticket_docs` | 工单文档 |
 | `product_manuals` | 产品手册 |
@@ -65,7 +65,7 @@ Embedding model 是 Collection 设计的重要因素。不同 Embedding 模型�
 向量库中的 metadata 至少应包含：
 
 | 字段 | 作用 |
-|---|---|
+| --- | --- |
 | `document_id` | 回到原始文档 |
 | `chunk_id` | 定位具体 Chunk |
 | `source_uri` | 返回来源链接或来源标识 |
