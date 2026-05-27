@@ -439,6 +439,80 @@
   letter-spacing: -0.045em;
 }
 
+.lab-section-desc {
+  max-width: 680px;
+  margin: 12px 0 0;
+  color: var(--vp-c-text-2);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.lab-audience-section {
+  margin: 0 0 44px;
+}
+
+.lab-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lab-audience-card {
+  min-height: 230px;
+  padding: 24px;
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(34, 211, 238, 0.13), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(248, 250, 252, 0.68));
+  color: inherit;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.dark .lab-audience-card {
+  border-color: rgba(125, 211, 252, 0.16);
+  background:
+    radial-gradient(circle at 16% 0%, rgba(34, 211, 238, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.54));
+}
+
+.lab-audience-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(34, 211, 238, 0.42);
+  box-shadow: 0 28px 70px rgba(37, 99, 235, 0.14);
+  text-decoration: none;
+}
+
+.lab-audience-card span {
+  color: var(--vp-c-brand-1);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lab-audience-card h3 {
+  margin: 14px 0 0;
+  color: var(--vp-c-text-1);
+  font-size: 24px;
+  line-height: 1.22;
+  letter-spacing: -0.035em;
+}
+
+.lab-audience-card p {
+  margin: 14px 0 0;
+  color: var(--vp-c-text-2);
+  line-height: 1.8;
+}
+
+.lab-audience-card strong {
+  display: inline-flex;
+  margin-top: 20px;
+  color: var(--vp-c-brand-1);
+  font-size: 14px;
+}
+
 .lab-card-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -512,6 +586,7 @@
   }
 
   .lab-card-grid,
+  .lab-audience-grid,
   .lab-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -534,6 +609,7 @@
 
   .console-grid,
   .lab-card-grid,
+  .lab-audience-grid,
   .lab-metrics {
     grid-template-columns: 1fr;
   }

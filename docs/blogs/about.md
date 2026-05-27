@@ -32,7 +32,8 @@ AI Agent 不只是 Prompt 或多个角色聊天。真正可落地的 Agent 系�
 | [专题文章](/topics/) | 把学习路线、源码拆解和工程化笔记串成长文专题 |
 | [源码拆解](/note/Source-Reading/) | 拆解 Hermes Agent、Harness Engineering、OpenClaw 等项目 |
 | [工程化笔记](/note/Engineering/) | 记录 FastAPI、RAG、Trace、MCP、Docker、上线检查等工程能力 |
-| [面试题库](/note/AI-Interview/) | 将技术理解整理成面试标准回答、追问和工程化表达 |
+| [面试题库](/note/AI-Interview/) | 将技术理解整理成通用技术题、标准回答和追问框架 |
+| [项目面试表达](/note/Interview/) | 将项目实践整理成简历描述、一分钟介绍、深挖回答和项目追问 |
 | [项目实战](/projects) | 项目 A / 项目 B 的展示入口，项目 B 当前保持占位 |
 
 ## 适合谁阅读

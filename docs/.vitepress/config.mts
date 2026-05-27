@@ -252,6 +252,7 @@ export default defineConfigWithTheme<ThemeConfig>({
         text: '更多',
         items: [
           { text: 'AI 工具', link: '/note/AI-Tools/' },
+          { text: '项目面试表达', link: '/note/Interview/' },
           { text: '关于我', link: '/about' },
         ],
       },
@@ -323,6 +324,21 @@ export default defineConfigWithTheme<ThemeConfig>({
             { text: 'Claude Code 拆解', link: '/note/AI-Tools/claude-code' },
             { text: 'Codex 拆解', link: '/note/AI-Tools/codex' },
             { text: 'AI Coding Workflow', link: '/note/AI-Tools/ai-coding-workflow' },
+          ],
+        },
+      ],
+
+      '/note/Interview/': [
+        {
+          text: '项目面试表达',
+          items: [
+            { text: '表达总览', link: '/note/Interview/' },
+            { text: '项目 B 一分钟介绍', link: '/note/Interview/project-b-one-minute' },
+            { text: '项目 B 深挖版', link: '/note/Interview/project-b-deep-dive' },
+            { text: '简历描述模板', link: '/note/Interview/resume-bullets' },
+            { text: 'RAG 设计问答', link: '/note/Interview/rag-qa' },
+            { text: 'Multi-Agent 设计问答', link: '/note/Interview/multi-agent-qa' },
+            { text: 'LangGraph 设计问答', link: '/note/Interview/langgraph-qa' },
           ],
         },
       ],

@@ -60,11 +60,11 @@
 
     <section class="lab-metrics" aria-label="站点内容概览">
       <div>
-        <strong>11</strong>
+        <strong>12</strong>
         <span>学习阶段</span>
       </div>
       <div>
-        <strong>46+</strong>
+        <strong>50+</strong>
         <span>公开文章</span>
       </div>
       <div>
@@ -74,6 +74,34 @@
       <div>
         <strong>2</strong>
         <span>项目主线</span>
+      </div>
+    </section>
+
+    <section class="lab-section lab-audience-section">
+      <div class="lab-section-heading">
+        <p class="lab-eyebrow">Start Here</p>
+        <h2>按你的目标选择入口</h2>
+        <p class="lab-section-desc">不是把所有内容堆给读者，而是让不同角色直接进入最有价值的路径。</p>
+      </div>
+      <div class="lab-audience-grid">
+        <a class="lab-audience-card" href="/projects">
+          <span>For Interviewers</span>
+          <h3>我是面试官 / 招聘方</h3>
+          <p>优先看项目实战、源码拆解和项目面试表达，快速判断工程能力与表达深度。</p>
+          <strong>查看项目作品 →</strong>
+        </a>
+        <a class="lab-audience-card" href="/note/AI-Agent/">
+          <span>For Learners</span>
+          <h3>我是学习者</h3>
+          <p>从 AI Agent 学习路线开始，按 RAG、Tool Calling、Runtime、Harness、Evaluation 逐步推进。</p>
+          <strong>进入学习路线 →</strong>
+        </a>
+        <a class="lab-audience-card" href="/note/Engineering/">
+          <span>For Builders</span>
+          <h3>我是同行开发者</h3>
+          <p>直接看工程化笔记、MCP、Trace、Eval、Hook 机制和源码拆解，关注可落地方案。</p>
+          <strong>阅读工程笔记 →</strong>
+        </a>
       </div>
     </section>
 
