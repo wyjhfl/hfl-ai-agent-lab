@@ -85,5 +85,6 @@ AI Agent 不只是 Prompt 或多个角色聊天。真正可落地的 Agent 系�
 - v3.1：面试表达专题第一批完成，新增 Agent 系统设计面试题、RAG 项目面试表达、多 Agent 项目面试表达三篇专题
 - v3.2：专题入口重组与阅读路径优化完成，将专题页按 Engineering、AI Agent 核心概念、AI 工具工作流、面试表达、源码与架构进行分组，并补充推荐阅读路径
 - v3.3：源码与架构横向对比专题完成，新增 Hermes vs OpenClaw、Agent Runtime 横向对比、Tool System 横向对比三篇专题
+- v3.4：Engineering 工程化专题第二批完成，新增 FastAPI 到 Agent Backend、Agent 数据库设计、Docker 部署工程化三篇专题
 
 </details>

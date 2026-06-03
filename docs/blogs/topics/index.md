@@ -24,6 +24,9 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | [RAG 工程化：从文档到可评估答案](/topics/rag-engineering-system) | 从文档解析、Chunk、Embedding、检索、Rerank、引用和评测理解生产级 RAG。 | 想做 RAG 项目、理解 RAG 工程全链路的人 |
 | [Agent Trace：如何让 Agent 执行过程可观测](/topics/agent-trace-observability) | 用 Run、Step、Tool Call、状态变化和错误事件记录 Agent 的完整执行轨迹。 | 想让 Agent 系统可调试、可审计、可优化的人 |
 | [Evaluation Pipeline：Agent 效果怎么评估](/topics/evaluation-pipeline) | 从测试集、指标、自动评测、人工抽检、版本对比和失败样本库构建评测闭环。 | 想系统化评估 Agent / RAG 效果的人 |
+| [FastAPI 到 Agent Backend：接口层怎么设计](/topics/fastapi-agent-backend) | 从路由、Schema、Service、Worker、Trace、Evaluation 和权限理解 Agent 后端接口层。 | 想把 Agent / RAG 做成后端服务的学习者 |
+| [Agent 数据库设计：状态、证据与执行记录](/topics/agent-database-design) | 用 Task、Run、Step、Tool Call、Document、Chunk、Trace、Evaluation 建模 Agent 系统数据。 | 想理解 Agent 数据建模的学习者 |
+| [Docker 部署工程化：从本地 Demo 到可上线服务](/topics/docker-agent-deployment) | 从 API、Worker、数据库、Redis、向量库、健康检查、日志和回滚理解部署闭环。 | 想把 Demo 部署成服务的学习者 |
 
 ---
 

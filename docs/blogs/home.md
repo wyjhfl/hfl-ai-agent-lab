@@ -25,7 +25,7 @@ features:
 
   - icon: "02"
     title: 专题文章
-    details: 专题页已按 Engineering、Agent 核心概念、AI 工具工作流、面试表达、源码与架构分组，并提供推荐阅读路径。源码与架构专题新增横向对比内容，覆盖 Hermes vs OpenClaw、Agent Runtime 职责边界、Tool / Skill / Plugin / MCP / Hook 的工程边界。
+    details: 专题页已按 Engineering、Agent 核心概念、AI 工具工作流、面试表达、源码与架构分组，并提供推荐阅读路径。Engineering 专题进一步补齐后端接口层、数据库建模和 Docker 部署，形成从 API → 数据 → 部署的工程链路。
     link: /topics/
     linkText: 阅读专题 →
 
