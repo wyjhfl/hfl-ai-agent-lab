@@ -43,7 +43,7 @@ features:
 
   - icon: "05"
     title: 面试题库
-    details: 围绕 Agent、RAG、LLM 工具调用、大模型工程、LangChain / LangGraph 五大方向，整理原创题解和答题框架。
+    details: 围绕 Agent、RAG、LLM 工具调用、大模型工程、LangChain / LangGraph 五大方向，整理原创题解和答题框架，并延伸 Agent 系统设计、RAG 项目表达、多 Agent 项目表达等面试专题。
     link: /note/AI-Interview/
     linkText: 查看题库 →
 

@@ -29,6 +29,9 @@
 | [Claude Code 实战工作流：从需求拆解到可提交修改](/topics/claude-code-workflow) | 把 Claude Code 纳入工程流程：任务单设计、范围限定、检查命令、diff 审查、安全提交。 | 想用 AI 编程助手做工程化开发的人 |
 | [AI 编程审查清单：提交前必须检查的 10 件事](/topics/ai-coding-review-checklist) | 修改范围、whitespace、构建、行数、禁止内容、表格格式、提交范围、commit message 等审查要点。 | 想避免 AI 产出质量失控的人 |
 | [如何避免 AI 误提交和假验证](/topics/avoid-ai-miscommit-fake-verification) | 识别误提交和假验证的原因，建立白名单提交、完整输出验证、多轮审查的安全提交流程。 | 想安全使用 AI 编程助手的人 |
+| [Agent 系统设计面试题：如何讲清楚一个生产级 Agent](/topics/agent-system-design-interview) | 从 Runtime、Tool、Memory / State、Trace、Evaluation 和 Security 讲清楚生产级 Agent 系统设计。 | 准备 Agent 系统设计面试的人 |
+| [RAG 项目面试表达：如何讲清楚从文档到答案的工程链路](/topics/rag-project-interview) | 把 RAG 从文档解析、Chunk、Embedding、检索、Rerank、引用和评测讲成完整工程链路。 | 准备 RAG 项目面试的人 |
+| [多 Agent 项目面试表达：不要只讲多角色聊天](/topics/multi-agent-interview) | 围绕任务分派、共享状态、工具权限、Trace、结果聚合和评测表达多 Agent 协作系统。 | 准备多 Agent 项目面试的人 |
 
 ## 如何配合站内内容阅读
 
