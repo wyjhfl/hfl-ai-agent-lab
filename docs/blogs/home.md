@@ -25,7 +25,7 @@ features:
 
   - icon: "02"
     title: 专题文章
-    details: 用长文串联学习路线、工程化笔记和源码拆解，沉淀 RAG 工程化、Agent Trace、Evaluation Pipeline、RAG 到 Agent Harness、OpenClaw 架构拆解、Agent Runtime、Tool Calling 工程化、Memory 与 State、Claude Code 工作流、AI 编程审查等主题。
+    details: 专题页已按 Engineering、Agent 核心概念、AI 工具工作流、面试表达、源码与架构分组，并提供推荐阅读路径，覆盖 RAG 工程化、Agent Trace、Evaluation Pipeline、Runtime、Tool Calling、Memory、Claude Code 工作流、面试表达等主题。
     link: /topics/
     linkText: 阅读专题 →
 

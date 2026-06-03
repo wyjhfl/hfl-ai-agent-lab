@@ -162,5 +162,6 @@ npm run docs:preview
 - v2.9：AI Agent 核心概念专题第一批完成，新增 Agent Runtime、Tool Calling、Memory 与 State 三篇专题
 - v3.0：AI 工具工作流专题第一批完成，新增 Claude Code 实战工作流、AI 编程审查清单、避免 AI 误提交和假验证三篇专题
 - v3.1：面试表达专题第一批完成，新增 Agent 系统设计面试题、RAG 项目面试表达、多 Agent 项目面试表达三篇专题
+- v3.2：专题入口重组与阅读路径优化完成，将专题页按 Engineering、AI Agent 核心概念、AI 工具工作流、面试表达、源码与架构进行分组，并补充推荐阅读路径
 
 </details>

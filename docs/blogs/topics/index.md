@@ -1,43 +1,80 @@
 # 博客专题
 
-这里整理 HFL AI Agent Lab 中适合对外传播的长文专题。专题文章用于把学习路线、工程化笔记、源码拆解和面试题库串起来，帮助读者从单点知识过渡到完整工程理解。
+HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码拆解、AI 工具工作流和面试题库串起来。读者可以按自己的目标选择阅读路径：先建立概念，再补工程实践，再做面试表达，最后回到项目设计。
 
-## 推荐阅读顺序
+---
 
-1. [RAG 工程化：从文档到可评估答案](/topics/rag-engineering-system)
-2. [Agent Trace：如何让 Agent 执行过程可观测](/topics/agent-trace-observability)
-3. [Evaluation Pipeline：Agent 效果怎么评估](/topics/evaluation-pipeline)
-4. [从 RAG 到生产级 Agent Harness 的工程化学习路线](/topics/rag-to-agent-harness)
-5. [Hermes Agent 高级用法与进阶玩法](/note/Source-Reading/hermes-agent-advanced)
-6. [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/topics/openclaw-architecture)
-7. [Hook 机制为什么是 Agent Harness 最重要的资产](/topics/agent-harness-hooks)
+## 推荐阅读路径
 
-## 当前专题
+| 目标 | 推荐路径 |
+|---|---|
+| 零基础建立 Agent 工程认知 | AI Agent 核心概念专题 → Engineering 工程化专题 → 面试表达专题 |
+| 想做 RAG 项目 | [RAG 项目面试表达](/topics/rag-project-interview) → [RAG 工程化](/topics/rag-engineering-system) → Evaluation / Trace 相关内容 |
+| 想做生产级 Agent | [Agent Runtime](/topics/agent-runtime-explained) → [Tool Calling](/topics/tool-calling-engineering) → [Memory 与 State](/topics/memory-state-agent) → [Trace](/topics/agent-trace-observability) → [Evaluation](/topics/evaluation-pipeline) |
+| 想准备面试 | [Agent 系统设计面试题](/topics/agent-system-design-interview) → [RAG 项目面试表达](/topics/rag-project-interview) → [多 Agent 项目面试表达](/topics/multi-agent-interview) |
+| 想学习 AI 编程协作 | [Claude Code 实战工作流](/topics/claude-code-workflow) → [AI 编程审查清单](/topics/ai-coding-review-checklist) → [避免 AI 误提交和假验证](/topics/avoid-ai-miscommit-fake-verification) |
+| 想看源码和架构 | [Hermes Agent](/note/Source-Reading/hermes-agent-advanced) / [OpenClaw](/topics/openclaw-architecture) / [Hook 机制](/topics/agent-harness-hooks) 相关专题 |
 
-| 专题 | 内容 | 适合读者 |
+---
+
+## Engineering 工程化专题
+
+| 专题 | 解决的问题 | 适合读者 |
 |---|---|---|
-| [RAG 工程化：从文档到可评估答案](/topics/rag-engineering-system) | 从文档解析、Chunk、Embedding、检索、重排、引用、评测和失败样本库理解生产级 RAG。 | 想做 RAG 项目、理解 RAG 工程全链路的人 |
+| [RAG 工程化：从文档到可评估答案](/topics/rag-engineering-system) | 从文档解析、Chunk、Embedding、检索、Rerank、引用和评测理解生产级 RAG。 | 想做 RAG 项目、理解 RAG 工程全链路的人 |
 | [Agent Trace：如何让 Agent 执行过程可观测](/topics/agent-trace-observability) | 用 Run、Step、Tool Call、状态变化和错误事件记录 Agent 的完整执行轨迹。 | 想让 Agent 系统可调试、可审计、可优化的人 |
 | [Evaluation Pipeline：Agent 效果怎么评估](/topics/evaluation-pipeline) | 从测试集、指标、自动评测、人工抽检、版本对比和失败样本库构建评测闭环。 | 想系统化评估 Agent / RAG 效果的人 |
-| [从 RAG 到生产级 Agent Harness 的工程化学习路线](/topics/rag-to-agent-harness) | 整理从 RAG、Tool Calling、Memory、Agent Harness 到 Eval、Trace、Deploy 的工程学习路线。 | 想建立 AI Agent 工程学习地图的人 |
-| [Hermes Agent 高级用法与进阶玩法](/note/Source-Reading/hermes-agent-advanced) | 整理子代理驱动开发、Kanban、多代理协作、TDD、MCP、Cron、Skills、安全控制等高级能力。 | 想理解 Agent Harness 高级能力的人 |
-| [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/topics/openclaw-architecture) | 从 Gateway、Channel、Session、Agent Runtime、Workspace、Memory、Tools、Security、Evaluation 等角度理解复杂 Agent 系统分层。 | 想学习复杂 Agent 系统架构拆分的人 |
-| [Hook 机制为什么是 Agent Harness 最重要的资产](/topics/agent-harness-hooks) | 从唯一真相源、MCP 工具边界和 Hook 治理层三个角度，整理 Agent Harness 的规则落地方式。 | 想把 Agent 从 Prompt Demo 推向可控系统的人 |
-| [Agent Runtime 是什么：Agent 真正开始工作的执行引擎](/topics/agent-runtime-explained) | 解释 Runtime 如何组织模型调用、工具调用、状态推进、错误处理、Trace 与结果生成。 | 想理解 Agent 任务执行引擎的人 |
-| [Tool Calling 工程化：不只是函数调用](/topics/tool-calling-engineering) | 从工具 Schema、参数校验、权限控制、错误处理、Trace 和安全审计理解工具调用工程化。 | 想把工具调用从 Demo 推向生产级的人 |
-| [Memory 与 State：Agent 不只是记住聊天记录](/topics/memory-state-agent) | 区分 Session、Context、Memory、State 与 Trace，理解长任务和多 Agent 的状态管理。 | 想理解 Agent 记忆与状态管理的人 |
-| [Claude Code 实战工作流：从需求拆解到可提交修改](/topics/claude-code-workflow) | 把 Claude Code 纳入工程流程：任务单设计、范围限定、检查命令、diff 审查、安全提交。 | 想用 AI 编程助手做工程化开发的人 |
-| [AI 编程审查清单：提交前必须检查的 10 件事](/topics/ai-coding-review-checklist) | 修改范围、whitespace、构建、行数、禁止内容、表格格式、提交范围、commit message 等审查要点。 | 想避免 AI 产出质量失控的人 |
-| [如何避免 AI 误提交和假验证](/topics/avoid-ai-miscommit-fake-verification) | 识别误提交和假验证的原因，建立白名单提交、完整输出验证、多轮审查的安全提交流程。 | 想安全使用 AI 编程助手的人 |
-| [Agent 系统设计面试题：如何讲清楚一个生产级 Agent](/topics/agent-system-design-interview) | 从 Runtime、Tool、Memory / State、Trace、Evaluation 和 Security 讲清楚生产级 Agent 系统设计。 | 准备 Agent 系统设计面试的人 |
+
+---
+
+## AI Agent 核心概念专题
+
+| 专题 | 解决的问题 | 适合读者 |
+|---|---|---|
+| [Agent Runtime 是什么：Agent 真正开始工作的执行引擎](/topics/agent-runtime-explained) | 理解 Agent 的任务执行引擎，包括模型调用、工具调度、状态推进和结果生成。 | 想理解 Agent 任务执行引擎的人 |
+| [Tool Calling 工程化：不只是函数调用](/topics/tool-calling-engineering) | 理解工具 Schema、参数校验、权限控制、错误处理、Trace 和安全审计。 | 想把工具调用从 Demo 推向生产级的人 |
+| [Memory 与 State：Agent 不只是记住聊天记录](/topics/memory-state-agent) | 区分 Session、Context、Memory、State 和 Trace，理解长任务和多 Agent 的状态管理。 | 想理解 Agent 记忆与状态管理的人 |
+
+---
+
+## AI 工具工作流专题
+
+| 专题 | 解决的问题 | 适合读者 |
+|---|---|---|
+| [Claude Code 实战工作流：从需求拆解到可提交修改](/topics/claude-code-workflow) | 把 Claude Code 纳入工程流程：任务单设计、范围限定、检查命令、限定提交和输出总结。 | 想用 AI 编程助手做工程化开发的人 |
+| [AI 编程审查清单：提交前必须检查的 10 件事](/topics/ai-coding-review-checklist) | 从文件范围、内容质量、Markdown 格式、构建结果、Git 状态、远端状态审查 AI 输出。 | 想避免 AI 产出质量失控的人 |
+| [如何避免 AI 误提交和假验证](/topics/avoid-ai-miscommit-fake-verification) | 用文件白名单、暂存区检查、构建日志、commit hash 和远端核对降低风险。 | 想安全使用 AI 编程助手的人 |
+
+---
+
+## 面试表达专题
+
+| 专题 | 解决的问题 | 适合读者 |
+|---|---|---|
+| [Agent 系统设计面试题：如何讲清楚一个生产级 Agent](/topics/agent-system-design-interview) | 从 Runtime、Tool、Memory / State、Trace、Evaluation、Security 讲清楚生产级 Agent 系统设计。 | 准备 Agent 系统设计面试的人 |
 | [RAG 项目面试表达：如何讲清楚从文档到答案的工程链路](/topics/rag-project-interview) | 把 RAG 从文档解析、Chunk、Embedding、检索、Rerank、引用和评测讲成完整工程链路。 | 准备 RAG 项目面试的人 |
-| [多 Agent 项目面试表达：不要只讲多角色聊天](/topics/multi-agent-interview) | 围绕任务分派、共享状态、工具权限、Trace、结果聚合和评测表达多 Agent 协作系统。 | 准备多 Agent 项目面试的人 |
+| [多 Agent 项目面试表达：不要只讲多角色聊天](/topics/multi-agent-interview) | 避免"多角色聊天"，围绕任务分派、状态共享、工具权限、Trace、结果聚合和评测表达。 | 准备多 Agent 项目面试的人 |
+
+---
+
+## 源码与架构专题
+
+| 专题 | 解决的问题 | 适合读者 |
+|---|---|---|
+| [从 RAG 到生产级 Agent Harness 的工程化学习路线](/topics/rag-to-agent-harness) | 建立从 RAG、Tool Calling、Memory、Trace、Evaluation 到 Deploy 的工程路线。 | 想建立 AI Agent 工程学习地图的人 |
+| [Hermes Agent 高级用法与进阶玩法](/note/Source-Reading/hermes-agent-advanced) | 理解子代理驱动开发、Kanban、多代理协作、TDD、MCP、Cron、Skills 和安全控制。 | 想理解 Agent Harness 高级能力的人 |
+| [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/topics/openclaw-architecture) | 理解 Gateway、Channel、Session、Runtime、Workspace、Memory、Tools、Security 和 Evaluation。 | 想学习复杂 Agent 系统架构拆分的人 |
+| [Hook 机制为什么是 Agent Harness 最重要的资产](/topics/agent-harness-hooks) | 理解 Agent Harness 如何通过规则、工具边界和治理层变得可控。 | 想把 Agent 从 Prompt Demo 推向可控系统的人 |
+
+---
 
 ## 如何配合站内内容阅读
 
 | 阅读目标 | 建议路径 |
 |---|---|
-| 建立学习主线 | [AI Agent 学习路线](/note/AI-Agent/) → 专题文章 → 工程化笔记 |
-| 学工程落地 | [工程化笔记](/note/Engineering/) → RAG / Trace / Evaluation / Production 专题 |
-| 准备面试 | [面试题库](/note/AI-Interview/) → 专题文章 → 源码拆解 |
-| 看架构设计 | [源码拆解](/note/Source-Reading/) → Hermes / OpenClaw / Harness Engineering |
+| 建立学习主线 | [AI Agent 学习路线](/note/AI-Agent/) → AI Agent 核心概念专题 → Engineering 工程化专题 |
+| 学工程落地 | [工程化笔记](/note/Engineering/) → RAG 工程化 / Agent Trace / Evaluation Pipeline 专题 |
+| 准备面试 | [面试题库](/note/AI-Interview/) → 面试表达专题 → 源码与架构专题 |
+| 看架构设计 | [源码拆解](/note/Source-Reading/) → Hermes / OpenClaw / Hook 机制专题 |
+| 学 AI 编程协作 | [AI 工具笔记](/note/AI-Tools/) → AI 工具工作流专题 |
+| 规划个人项目 | [项目实战](/projects) → Engineering 工程化专题 → 面试表达专题 |
