@@ -25,7 +25,7 @@ features:
 
   - icon: "02"
     title: 专题文章
-    details: 专题页已按 Engineering、Agent 核心概念、AI 工具工作流、面试表达、源码与架构分组，并提供推荐阅读路径，覆盖 RAG 工程化、Agent Trace、Evaluation Pipeline、Runtime、Tool Calling、Memory、Claude Code 工作流、面试表达等主题。
+    details: 专题页已按 Engineering、Agent 核心概念、AI 工具工作流、面试表达、源码与架构分组，并提供推荐阅读路径。源码与架构专题新增横向对比内容，覆盖 Hermes vs OpenClaw、Agent Runtime 职责边界、Tool / Skill / Plugin / MCP / Hook 的工程边界。
     link: /topics/
     linkText: 阅读专题 →
 

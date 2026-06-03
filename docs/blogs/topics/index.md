@@ -65,6 +65,9 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | [Hermes Agent 高级用法与进阶玩法](/note/Source-Reading/hermes-agent-advanced) | 理解子代理驱动开发、Kanban、多代理协作、TDD、MCP、Cron、Skills 和安全控制。 | 想理解 Agent Harness 高级能力的人 |
 | [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/topics/openclaw-architecture) | 理解 Gateway、Channel、Session、Runtime、Workspace、Memory、Tools、Security 和 Evaluation。 | 想学习复杂 Agent 系统架构拆分的人 |
 | [Hook 机制为什么是 Agent Harness 最重要的资产](/topics/agent-harness-hooks) | 理解 Agent Harness 如何通过规则、工具边界和治理层变得可控。 | 想把 Agent 从 Prompt Demo 推向可控系统的人 |
+| [Hermes vs OpenClaw：Agent 架构差异怎么理解](/topics/hermes-vs-openclaw) | 横向比较 Hermes 与 OpenClaw 在系统定位、任务组织、Runtime、Tool、Workspace、Memory、安全和评测上的差异。 | 想从源码阅读进入架构抽象的学习者 |
+| [Agent Runtime 横向对比：任务执行引擎到底负责什么](/topics/agent-runtime-comparison) | 比较简单 Agent Loop、Workflow 和生产级 Agent Runtime 的职责边界。 | 想设计 Agent 执行引擎的学习者 |
+| [Tool System 横向对比：Tool、Skill、Plugin、MCP、Hook 到底怎么区分](/topics/tool-system-comparison) | 区分执行能力、能力封装、扩展机制、标准协议和治理入口。 | 想理解 Agent 工具系统边界的学习者 |
 
 ---
 
