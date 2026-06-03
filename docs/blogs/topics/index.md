@@ -23,6 +23,9 @@
 | [Hermes Agent 高级用法与进阶玩法](/note/Source-Reading/hermes-agent-advanced) | 整理子代理驱动开发、Kanban、多代理协作、TDD、MCP、Cron、Skills、安全控制等高级能力。 | 想理解 Agent Harness 高级能力的人 |
 | [OpenClaw 架构拆解：复杂 Agent 系统怎么分层](/topics/openclaw-architecture) | 从 Gateway、Channel、Session、Agent Runtime、Workspace、Memory、Tools、Security、Evaluation 等角度理解复杂 Agent 系统分层。 | 想学习复杂 Agent 系统架构拆分的人 |
 | [Hook 机制为什么是 Agent Harness 最重要的资产](/topics/agent-harness-hooks) | 从唯一真相源、MCP 工具边界和 Hook 治理层三个角度，整理 Agent Harness 的规则落地方式。 | 想把 Agent 从 Prompt Demo 推向可控系统的人 |
+| [Agent Runtime 是什么：Agent 真正开始工作的执行引擎](/topics/agent-runtime-explained) | 解释 Runtime 如何组织模型调用、工具调用、状态推进、错误处理、Trace 与结果生成。 | 想理解 Agent 任务执行引擎的人 |
+| [Tool Calling 工程化：不只是函数调用](/topics/tool-calling-engineering) | 从工具 Schema、参数校验、权限控制、错误处理、Trace 和安全审计理解工具调用工程化。 | 想把工具调用从 Demo 推向生产级的人 |
+| [Memory 与 State：Agent 不只是记住聊天记录](/topics/memory-state-agent) | 区分 Session、Context、Memory、State 与 Trace，理解长任务和多 Agent 的状态管理。 | 想理解 Agent 记忆与状态管理的人 |
 
 ## 如何配合站内内容阅读
 

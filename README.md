@@ -159,5 +159,6 @@ npm run docs:preview
 - v2.4：OpenClaw 架构拆解专题完成
 - v2.6：README 与首页 UI 作品集风格优化
 - v2.8：Engineering 博客专题第一批完成，新增 RAG 工程化、Agent Trace、Evaluation Pipeline 三篇专题
+- v2.9：AI Agent 核心概念专题第一批完成，新增 Agent Runtime、Tool Calling、Memory 与 State 三篇专题
 
 </details>

@@ -25,7 +25,7 @@ features:
 
   - icon: "02"
     title: 专题文章
-    details: 用长文串联学习路线、工程化笔记和源码拆解，沉淀 RAG 工程化、Agent Trace、Evaluation Pipeline、RAG 到 Agent Harness、OpenClaw 架构拆解等主题。
+    details: 用长文串联学习路线、工程化笔记和源码拆解，沉淀 RAG 工程化、Agent Trace、Evaluation Pipeline、RAG 到 Agent Harness、OpenClaw 架构拆解、Agent Runtime、Tool Calling 工程化、Memory 与 State 等主题。
     link: /topics/
     linkText: 阅读专题 →
 
