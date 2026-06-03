@@ -89,7 +89,7 @@ HFL AI Agent Lab 是一个围绕 AI Agent 工程能力建设的个人知识库�
 | 工程化笔记 | 已扩展 FastAPI、RAG、Trace、MCP、异步任务、上线检查等方向 |
 | 面试题库 | 已完成第一轮原创题解 |
 | 源码拆解 | 已覆盖 Hermes Agent / Harness Engineering / OpenClaw |
-| 专题文章 | 已开始沉淀 RAG → Agent Harness、OpenClaw 架构等长文专题 |
+| 专题文章 | 已沉淀 RAG 工程化、Agent Trace、Evaluation Pipeline、RAG → Agent Harness、OpenClaw 架构等长文专题 |
 | 项目实战 | 项目 A / 项目 B 保持逐步展开 |
 
 ## 项目实战
@@ -158,5 +158,6 @@ npm run docs:preview
 - v2.3：Hermes Agent 高级用法与进阶玩法专题完成
 - v2.4：OpenClaw 架构拆解专题完成
 - v2.6：README 与首页 UI 作品集风格优化
+- v2.8：Engineering 博客专题第一批完成，新增 RAG 工程化、Agent Trace、Evaluation Pipeline 三篇专题
 
 </details>
