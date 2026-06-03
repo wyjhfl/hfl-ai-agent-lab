@@ -26,6 +26,9 @@
 | [Agent Runtime 是什么：Agent 真正开始工作的执行引擎](/topics/agent-runtime-explained) | 解释 Runtime 如何组织模型调用、工具调用、状态推进、错误处理、Trace 与结果生成。 | 想理解 Agent 任务执行引擎的人 |
 | [Tool Calling 工程化：不只是函数调用](/topics/tool-calling-engineering) | 从工具 Schema、参数校验、权限控制、错误处理、Trace 和安全审计理解工具调用工程化。 | 想把工具调用从 Demo 推向生产级的人 |
 | [Memory 与 State：Agent 不只是记住聊天记录](/topics/memory-state-agent) | 区分 Session、Context、Memory、State 与 Trace，理解长任务和多 Agent 的状态管理。 | 想理解 Agent 记忆与状态管理的人 |
+| [Claude Code 实战工作流：从需求拆解到可提交修改](/topics/claude-code-workflow) | 把 Claude Code 纳入工程流程：任务单设计、范围限定、检查命令、diff 审查、安全提交。 | 想用 AI 编程助手做工程化开发的人 |
+| [AI 编程审查清单：提交前必须检查的 10 件事](/topics/ai-coding-review-checklist) | 修改范围、whitespace、构建、行数、禁止内容、表格格式、提交范围、commit message 等审查要点。 | 想避免 AI 产出质量失控的人 |
+| [如何避免 AI 误提交和假验证](/topics/avoid-ai-miscommit-fake-verification) | 识别误提交和假验证的原因，建立白名单提交、完整输出验证、多轮审查的安全提交流程。 | 想安全使用 AI 编程助手的人 |
 
 ## 如何配合站内内容阅读
 

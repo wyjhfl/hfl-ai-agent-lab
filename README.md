@@ -160,5 +160,6 @@ npm run docs:preview
 - v2.6：README 与首页 UI 作品集风格优化
 - v2.8：Engineering 博客专题第一批完成，新增 RAG 工程化、Agent Trace、Evaluation Pipeline 三篇专题
 - v2.9：AI Agent 核心概念专题第一批完成，新增 Agent Runtime、Tool Calling、Memory 与 State 三篇专题
+- v3.0：AI 工具工作流专题第一批完成，新增 Claude Code 实战工作流、AI 编程审查清单、避免 AI 误提交和假验证三篇专题
 
 </details>
