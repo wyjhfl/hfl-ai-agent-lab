@@ -314,6 +314,8 @@ export default defineConfigWithTheme<ThemeConfig>({
             { text: '数据库设计', link: '/note/Engineering/database' },
             { text: 'RAG 工程化', link: '/note/Engineering/rag-engineering' },
             { text: '向量数据库', link: '/note/Engineering/vector-database' },
+            { text: 'GraphRAG 工程化', link: '/note/Engineering/graphrag-engineering' },
+            { text: '企业 RAG 权限与多租户', link: '/note/Engineering/enterprise-rag-permission-multitenancy' },
             { text: 'Docker 部署', link: '/note/Engineering/docker-deploy' },
             { text: '日志与可观测性', link: '/note/Engineering/observability' },
             { text: '异步任务与长任务处理', link: '/note/Engineering/async-task' },

@@ -10,6 +10,7 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 |---|---|
 | 零基础建立 Agent 工程认知 | AI Agent 核心概念专题 → [Agent 开发 Playbook](/topics/agent-development-playbook) → Engineering 工程化专题 → 面试表达专题 |
 | 想做 RAG 项目 | [RAG 项目面试表达](/topics/rag-project-interview) → [RAG 工程化](/topics/rag-engineering-system) → Evaluation / Trace 相关内容 |
+| 想做高级知识库 | [GraphRAG 工程化](/note/Engineering/graphrag-engineering) → [企业 RAG 权限与多租户](/note/Engineering/enterprise-rag-permission-multitenancy) → [向量检索选型](/topics/vector-search-selection) |
 | 想做生产级 Agent | [Agent 开发 Playbook](/topics/agent-development-playbook) → [Agent Runtime](/topics/agent-runtime-explained) → [Context Engineering](/note/AI-Agent/context-engineering) → [Trace](/topics/agent-trace-observability) → [Evaluation](/topics/evaluation-pipeline) |
 | 想准备面试 | [Agent 系统设计面试题](/topics/agent-system-design-interview) → [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) → [RAG 项目面试表达](/topics/rag-project-interview) → [多 Agent 项目面试表达](/topics/multi-agent-interview) |
 | 想优化线上 Agent | [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization) → [多模型路由与 A/B 实验](/note/Engineering/model-routing-ab-testing) → [Agent 生产运维 Runbook](/note/Engineering/agent-production-ops-runbook) |
@@ -18,6 +19,7 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | 想整理求职作品集 | [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap) → [项目实战](/projects) → [简历描述模板](/note/Interview/resume-bullets) |
 | 想 30 天准备面试 | [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan) → [AI Agent 项目包装](/topics/ai-agent-project-packaging) → [AI Agent 面试题库](/note/AI-Interview/) |
 | 想找项目选题 | [AI Agent 项目选题库](/topics/ai-agent-project-ideas) → [Agent 开发 Playbook](/topics/agent-development-playbook) → [生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
+| 想做商业化产品 | [Agent SaaS 产品化](/topics/agent-saas-productization) → [Agent UI 产品化设计](/topics/agent-ui-product-design) → [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization) |
 
 ---
 
@@ -40,10 +42,13 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization) | 从调用账本、模型路由、Prompt 瘦身、缓存、批处理、降级和并发优化线上成本与 p95 延迟。 | 想让大模型应用跑得起、跑得稳的人 |
 | [多模型路由与 A/B 实验](/note/Engineering/model-routing-ab-testing) | 把模型选择变成可配置、可评测、可灰度、可回滚的路由策略和实验体系。 | 想治理多模型上线和切换风险的人 |
 | [向量检索选型：Embedding、Hybrid Search、Rerank 和 Metadata Filter](/topics/vector-search-selection) | 从 Dense/Sparse、混合检索、权限过滤、重排和评测设计完整检索链路。 | 想提升 RAG 召回质量的人 |
+| [GraphRAG 工程化：当普通向量检索不够用](/note/Engineering/graphrag-engineering) | 用实体、关系、子图、社区摘要和证据回溯补足普通 RAG 的多跳关系能力。 | 想做复杂知识关系检索的人 |
+| [企业知识库权限与多租户 RAG](/note/Engineering/enterprise-rag-permission-multitenancy) | 把 tenant、ACL、metadata filter、缓存失效和 GraphRAG 权限隔离纳入检索链路。 | 想做企业级知识库的人 |
 | [Agent 数据库设计：状态、证据与执行记录](/topics/agent-database-design) | 用 Task、Run、Step、Tool Call、Document、Chunk、Trace、Evaluation 建模 Agent 系统数据。 | 想理解 Agent 数据建模的学习者 |
 | [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery) | 设计状态机、幂等键、重试分类、断点续跑、补偿和人工介入，让长任务失败后能继续。 | 想做可靠长任务 Agent 的人 |
 | [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission) | 从工具风险分级、参数校验、文件/网络/命令沙箱、审批和 MCP 权限审计控制工具调用风险。 | 想把 Tool Calling 安全落地的人 |
 | [Agent UI 产品化设计：不要只做一个聊天框](/topics/agent-ui-product-design) | 设计任务面板、证据面板、工具调用审批、反馈和失败重跑，让 Agent 可控可解释。 | 想把 Agent 做成真实产品的人 |
+| [Agent SaaS 产品化：从个人 Demo 到可卖的产品](/topics/agent-saas-productization) | 从多租户、额度计费、团队权限、onboarding、产品指标和运营后台理解 Agent 商业化。 | 想把 Agent 项目做成产品的人 |
 | [AI Agent 反馈闭环](/note/Engineering/agent-feedback-loop) | 将用户反馈关联 Trace、Prompt、模型、检索和工具调用，转化为评测样本与迭代队列。 | 想让线上反馈驱动持续改进的人 |
 | [LLM-as-Judge 与 Rubric 评测](/note/Engineering/llm-as-judge-rubric-eval) | 设计可解释评分维度、Judge 校准、pairwise/pointwise 对比和自动评测门禁。 | 想让自动评测更可信的人 |
 | [合成数据与对抗评测集](/note/Engineering/synthetic-adversarial-eval-data) | 用合成样本覆盖 Prompt Injection、越权、工具错误、冲突证据和无答案拒答等边界。 | 想系统提升评测覆盖的人 |
@@ -66,6 +71,8 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | [Tool Calling 工程化：不只是函数调用](/topics/tool-calling-engineering) | 理解工具 Schema、参数校验、权限控制、错误处理、Trace 和安全审计。 | 想把工具调用从 Demo 推向生产级的人 |
 | [Realtime Voice Agent](/note/AI-Agent/realtime-voice-agent) | 理解低延迟语音输入输出、打断处理、多轮状态、工具调用和语音安全边界。 | 想做实时语音 Agent 的人 |
 | [Browser / Computer Use Agent](/note/AI-Agent/browser-computer-use-agent) | 理解让 Agent 操作 GUI、浏览器、截图、DOM 和高风险动作审批的工程边界。 | 想做浏览器/电脑控制 Agent 的人 |
+| [Code Agent 工程化：让 AI 写代码不能只靠聊天框](/topics/code-agent-engineering) | 把 AI 编程纳入任务澄清、仓库检查、计划、编辑、测试、diff review、提交和安全流程。 | 想做代码智能体或 AI 编程工具的人 |
+| [数据分析 Agent：从自然语言到 SQL、图表和洞察](/topics/data-analysis-agent) | 设计语义层、SQL 校验、权限过滤、图表推荐、洞察生成和分析 Trace。 | 想做数据智能分析项目的人 |
 | [Memory 与 State：Agent 不只是记住聊天记录](/topics/memory-state-agent) | 区分 Session、Context、Memory、State 和 Trace，理解长任务和多 Agent 的状态管理。 | 想理解 Agent 记忆与状态管理的人 |
 | [长期记忆系统设计](/note/AI-Agent/long-term-memory) | 设计用户偏好、项目事实、记忆候选、证据校验、检索和遗忘机制。 | 想构建长期个性化 Agent 的人 |
 
@@ -76,6 +83,7 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | 专题 | 解决的问题 | 适合读者 |
 |---|---|---|
 | [Claude Code 实战工作流：从需求拆解到可提交修改](/topics/claude-code-workflow) | 把 Claude Code 纳入工程流程：任务单设计、范围限定、检查命令、限定提交和输出总结。 | 想用 AI 编程助手做工程化开发的人 |
+| [Code Agent 工程化](/topics/code-agent-engineering) | 系统整理 Code Agent 的仓库检查、编辑边界、测试验证、提交规范和安全风险。 | 想把 AI 写代码做成可靠流程的人 |
 | [Skills 编写：把一次性提示词沉淀成可复用工作流](/note/AI-Tools/skill-authoring) | 用 `SKILL.md`、脚本、参考资料和验收标准沉淀博客写作、项目推进、简历整理等重复流程。 | 想让 AI 协作流程稳定复用的人 |
 | [AI 编程审查清单：提交前必须检查的 10 件事](/topics/ai-coding-review-checklist) | 从文件范围、内容质量、Markdown 格式、构建结果、Git 状态、远端状态审查 AI 输出。 | 想避免 AI 产出质量失控的人 |
 | [如何避免 AI 误提交和假验证](/topics/avoid-ai-miscommit-fake-verification) | 用文件白名单、暂存区检查、构建日志、commit hash 和远端核对降低风险。 | 想安全使用 AI 编程助手的人 |

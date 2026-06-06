@@ -61,6 +61,9 @@
 - [简历描述模板](/note/Interview/resume-bullets)
 - [AI Agent 项目包装：简历、作品集和面试讲法](/topics/ai-agent-project-packaging)
 - [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan)
+- [数据分析 Agent 项目方向](/topics/data-analysis-agent)
+- [Agent SaaS 产品化项目方向](/topics/agent-saas-productization)
+- [Code Agent 工程化项目方向](/topics/code-agent-engineering)
 - [RAG 设计问答](/note/Interview/rag-qa)
 - [Multi-Agent 设计问答](/note/Interview/multi-agent-qa)
 - [LangGraph 设计问答](/note/Interview/langgraph-qa)
@@ -84,3 +87,5 @@
 3. 最后回到 [AI Agent 面试题库](/note/AI-Interview/)，准备技术追问。
 
 如果距离面试时间较近，可以直接按 [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan) 执行，每周分别覆盖 Agent 基础、RAG、生产级工程和项目表达。
+
+如果需要补充作品集项目方向，可以优先从 [数据分析 Agent](/topics/data-analysis-agent)、[Code Agent 工程化](/topics/code-agent-engineering)、[Agent SaaS 产品化](/topics/agent-saas-productization) 中选择一个，分别对应数据智能、AI 编程工具和商业化产品能力。

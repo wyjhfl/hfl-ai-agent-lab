@@ -27,6 +27,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 数据存储层 | 用户、任务、文档、工具调用、Trace、评测结果 | 保存业务状态和运行证据，让系统可追踪、可恢复、可评估 |
 | RAG 检索层 | 文档解析、Chunk、Embedding、Hybrid Search、Rerank、引用溯源 | 让模型基于外部知识回答，并能解释答案来源 |
 | 向量数据库层 | Collection、Metadata、索引、过滤查询、增量更新 | 支撑高质量召回、权限过滤、引用定位和检索性能优化 |
+| GraphRAG 层 | 实体、关系、子图、社区摘要、路径检索 | 支撑多跳关系、全局结构和复杂知识推理 |
+| 企业权限层 | tenant、workspace、ACL、metadata filter、缓存隔离 | 防止企业知识库和多租户 RAG 检索泄漏数据 |
 | 异步任务层 | 任务队列、Worker、状态机、超时、重试、幂等 | 处理文档入库、长时间 Agent 执行、批量评测等耗时任务 |
 | 失败恢复层 | 状态机、幂等键、断点续跑、补偿、人工介入 | 让长任务在模型、工具、服务失败后能安全恢复 |
 | 工具权限层 | 工具注册、参数校验、权限控制、审批、审计 | 控制 Agent 能调用什么工具、在什么条件下调用、如何追责 |
@@ -56,23 +58,25 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 7. Database：设计任务、文档、Trace、评测等数据模型。
 8. RAG Engineering：构建知识检索链路。
 9. Vector Database：管理向量数据和检索性能。
-10. Async Task：处理长任务和并发。
-11. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
-12. API Security：控制工具权限和高风险操作。
-13. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
-14. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
-15. Agent Trace：记录 Agent 执行过程。
-16. Evaluation Pipeline：评估系统效果。
-17. Eval Dataset：沉淀 smoke、regression 和失败样本。
-18. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
-19. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
-20. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
-21. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
-22. MCP Server：标准化外部工具接入。
-23. Skills：把重复工作流沉淀成可复用操作手册。
-24. Docker Deploy：部署和运维。
-25. Production Ops Runbook：上线后巡检、报警、止血和复盘。
-26. Production Checklist：上线前检查。
+10. GraphRAG：在需要复杂关系推理时引入实体、关系和子图检索。
+11. Enterprise RAG Permission：把 tenant、ACL、metadata filter 和缓存隔离放进检索链路。
+12. Async Task：处理长任务和并发。
+13. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
+14. API Security：控制工具权限和高风险操作。
+15. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
+16. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
+17. Agent Trace：记录 Agent 执行过程。
+18. Evaluation Pipeline：评估系统效果。
+19. Eval Dataset：沉淀 smoke、regression 和失败样本。
+20. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
+21. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
+22. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
+23. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
+24. MCP Server：标准化外部工具接入。
+25. Skills：把重复工作流沉淀成可复用操作手册。
+26. Docker Deploy：部署和运维。
+27. Production Ops Runbook：上线后巡检、报警、止血和复盘。
+28. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -148,6 +152,8 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [数据库设计：从业务数据到 Agent 运行记录](/note/Engineering/database)
 - [RAG 工程化](/note/Engineering/rag-engineering)
 - [向量数据库工程化](/note/Engineering/vector-database)
+- [GraphRAG 工程化](/note/Engineering/graphrag-engineering)
+- [企业知识库权限与多租户 RAG](/note/Engineering/enterprise-rag-permission-multitenancy)
 - [异步任务与长任务处理](/note/Engineering/async-task)
 - [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery)
 - [API 安全与工具权限控制](/note/Engineering/api-security)
