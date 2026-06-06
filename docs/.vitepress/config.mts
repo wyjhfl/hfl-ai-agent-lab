@@ -266,6 +266,7 @@ export default defineConfigWithTheme<ThemeConfig>({
             { text: '路线总览', link: '/note/AI-Agent/' },
             { text: 'Agent 基础', link: '/note/AI-Agent/agent-basic' },
             { text: 'Prompt Engineering', link: '/note/AI-Agent/prompt-engineering' },
+            { text: 'Context Engineering', link: '/note/AI-Agent/context-engineering' },
             { text: 'RAG 基础', link: '/note/AI-Agent/rag' },
             { text: 'Tool Calling', link: '/note/AI-Agent/tool-calling' },
             { text: 'Agent Runtime', link: '/note/AI-Agent/agent-runtime' },
@@ -301,6 +302,7 @@ export default defineConfigWithTheme<ThemeConfig>({
           items: [
             { text: '工程化总览', link: '/note/Engineering/' },
             { text: 'FastAPI 后端接口', link: '/note/Engineering/fastapi' },
+            { text: 'LLM Gateway', link: '/note/Engineering/llm-gateway' },
             { text: '数据库设计', link: '/note/Engineering/database' },
             { text: 'RAG 工程化', link: '/note/Engineering/rag-engineering' },
             { text: '向量数据库', link: '/note/Engineering/vector-database' },
@@ -351,6 +353,7 @@ export default defineConfigWithTheme<ThemeConfig>({
           items: [
             { text: '题库总览', link: '/note/AI-Interview/' },
             { text: 'Agent 面试题', link: '/note/AI-Interview/agent-interview' },
+            { text: 'Agent 面试追问库', link: '/note/AI-Interview/agent-followup-interview' },
             { text: 'RAG 面试题', link: '/note/AI-Interview/rag-interview' },
             { text: 'LLM 工具调用面试题', link: '/note/AI-Interview/llm-tools-interview' },
             { text: '大模型工程面试题', link: '/note/AI-Interview/llm-engineering-interview' },

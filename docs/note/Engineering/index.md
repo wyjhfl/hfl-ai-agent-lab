@@ -19,6 +19,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 工程层级 | 核心内容 | 对 Agent 项目的价值 |
 | --- | --- | --- |
 | 后端接口层 | FastAPI、路由、请求校验、统一响应、鉴权 | 提供稳定的任务入口、RAG 问答入口、文件上传入口和状态查询入口 |
+| LLM Gateway 层 | 模型路由、限流、成本、Prompt 版本、降级和审计 | 把模型调用从业务代码中抽离，统一治理多模型访问 |
 | 数据存储层 | 用户、任务、文档、工具调用、Trace、评测结果 | 保存业务状态和运行证据，让系统可追踪、可恢复、可评估 |
 | RAG 检索层 | 文档解析、Chunk、Embedding、Hybrid Search、Rerank、引用溯源 | 让模型基于外部知识回答，并能解释答案来源 |
 | 向量数据库层 | Collection、Metadata、索引、过滤查询、增量更新 | 支撑高质量召回、权限过滤、引用定位和检索性能优化 |
@@ -35,17 +36,18 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 ## 3. 推荐学习顺序
 
 1. FastAPI：先把服务接口搭起来。
-2. Database：设计任务、文档、Trace、评测等数据模型。
-3. RAG Engineering：构建知识检索链路。
-4. Vector Database：管理向量数据和检索性能。
-5. Async Task：处理长任务和并发。
-6. API Security：控制工具权限和高风险操作。
-7. Agent Trace：记录 Agent 执行过程。
-8. Evaluation Pipeline：评估系统效果。
-9. MCP Server：标准化外部工具接入。
-10. Skills：把重复工作流沉淀成可复用操作手册。
-11. Docker Deploy：部署和运维。
-12. Production Checklist：上线前检查。
+2. LLM Gateway：统一模型路由、成本、降级和审计。
+3. Database：设计任务、文档、Trace、评测等数据模型。
+4. RAG Engineering：构建知识检索链路。
+5. Vector Database：管理向量数据和检索性能。
+6. Async Task：处理长任务和并发。
+7. API Security：控制工具权限和高风险操作。
+8. Agent Trace：记录 Agent 执行过程。
+9. Evaluation Pipeline：评估系统效果。
+10. MCP Server：标准化外部工具接入。
+11. Skills：把重复工作流沉淀成可复用操作手册。
+12. Docker Deploy：部署和运维。
+13. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -113,6 +115,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 ## 8. 相关链接
 
 - [FastAPI 后端接口工程化](/note/Engineering/fastapi)
+- [LLM Gateway](/note/Engineering/llm-gateway)
 - [数据库设计：从业务数据到 Agent 运行记录](/note/Engineering/database)
 - [RAG 工程化](/note/Engineering/rag-engineering)
 - [向量数据库工程化](/note/Engineering/vector-database)

@@ -12,6 +12,7 @@
 | 分类 | 覆盖内容 |
 |---|---|
 | Agent 面试题 | Agent 概念与架构、Workflow 与 Agent、ReAct、Plan-and-Execute、Reflection、任务拆分、记忆机制、Multi-Agent 协作 |
+| Agent 面试追问库 | Agent vs ChatBot、什么时候不用 Agent、失败排查、评测、安全、成本、长任务恢复 |
 | RAG 面试题 | RAG 原理、文档切割、Embedding、向量数据库、检索优化、Query Rewrite、多路召回、Reranking、幻觉规避、效果评估 |
 | LLM 工具调用面试题 | Function Calling、Tools、MCP、A2A、Skills、SSE、WebSocket、WebRTC、LLM 网关 |
 | 大模型工程面试题 | Transformer、Attention、KV Cache、LoRA、模型部署、推理加速、成本优化 |
@@ -39,6 +40,7 @@
 | 分类 | 已完成 |
 |---|---|
 | Agent 面试题 | 5 道 |
+| Agent 面试追问库 | 12 道追问 |
 | RAG 面试题 | 5 道 |
 | LLM 工具调用面试题 | 5 道 |
 | 大模型工程面试题 | 4 道 |
@@ -67,6 +69,7 @@
 | 面试题分类 | 推荐先读 | 推荐工程化补充 |
 |---|---|---|
 | [Agent 面试题](/note/AI-Interview/agent-interview) | [Agent 基础](/note/AI-Agent/agent-basic)、[Multi-Agent](/note/AI-Agent/multi-agent)、[Evaluation](/note/AI-Agent/evaluation) | [Agent Trace](/note/Engineering/agent-trace)、[Evaluation Pipeline](/note/Engineering/eval-pipeline) |
+| [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) | [Context Engineering](/note/AI-Agent/context-engineering)、[Agent Runtime](/note/AI-Agent/agent-runtime) | [LLM Gateway](/note/Engineering/llm-gateway)、[Agent Trace](/note/Engineering/agent-trace) |
 | [RAG 面试题](/note/AI-Interview/rag-interview) | [RAG](/note/AI-Agent/rag) | [RAG 工程化](/note/Engineering/rag-engineering)、[向量数据库](/note/Engineering/vector-database) |
 | [LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview) | [Tool Calling](/note/AI-Agent/tool-calling) | [API 安全](/note/Engineering/api-security)、[MCP Server](/note/Engineering/mcp-server) |
 | [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) | [Production Engineering](/note/AI-Agent/production) | [Docker 部署](/note/Engineering/docker-deploy)、[可观测性](/note/Engineering/observability)、[上线检查清单](/note/Engineering/production-checklist) |
