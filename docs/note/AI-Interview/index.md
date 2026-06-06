@@ -52,6 +52,7 @@
 
 面试题库解决“怎么回答技术问题”，作品集路线解决“怎么证明自己做过”。建议配合阅读：
 
+- [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan)
 - [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap)
 - [AI Agent 项目选题库](/topics/ai-agent-project-ideas)
 - [AI Agent 项目包装：简历、作品集和面试讲法](/topics/ai-agent-project-packaging)
@@ -74,11 +75,12 @@
 | 面试题分类 | 推荐先读 | 推荐工程化补充 |
 |---|---|---|
 | [Agent 面试题](/note/AI-Interview/agent-interview) | [Agent 基础](/note/AI-Agent/agent-basic)、[Multi-Agent](/note/AI-Agent/multi-agent)、[Evaluation](/note/AI-Agent/evaluation) | [Agent Trace](/note/Engineering/agent-trace)、[Evaluation Pipeline](/note/Engineering/eval-pipeline)、[Agent 失败恢复](/note/Engineering/agent-failure-recovery) |
-| [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) | [Context Engineering](/note/AI-Agent/context-engineering)、[Agent Runtime](/note/AI-Agent/agent-runtime) | [LLM Gateway](/note/Engineering/llm-gateway)、[LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization)、[Agent Trace](/note/Engineering/agent-trace) |
+| [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) | [Context Engineering](/note/AI-Agent/context-engineering)、[Agent Runtime](/note/AI-Agent/agent-runtime) | [LLM Gateway](/note/Engineering/llm-gateway)、[LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization)、[多模型路由](/note/Engineering/model-routing-ab-testing) |
 | Agent 协议与工具生态 | [Tool Calling](/note/AI-Agent/tool-calling)、[Browser / Computer Use Agent](/note/AI-Agent/browser-computer-use-agent) | [Agent 协议全景](/topics/agent-protocol-landscape)、[MCP Server 创建实战](/note/Engineering/mcp-server-build-guide) |
 | Agent 安全与治理追问 | [Guardrails / Safety](/note/AI-Agent/guardrails)、[Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission)、[Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)、[生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
 | [RAG 面试题](/note/AI-Interview/rag-interview) | [RAG](/note/AI-Agent/rag) | [RAG 工程化](/note/Engineering/rag-engineering)、[向量数据库](/note/Engineering/vector-database)、[向量检索选型](/topics/vector-search-selection) |
-| RAG / Fine-tuning 取舍 | [RAG vs Fine-tuning](/note/AI-Agent/rag-vs-finetuning) | [Eval Dataset 设计](/note/Engineering/eval-dataset-design)、[LLM Gateway](/note/Engineering/llm-gateway)、[PromptOps](/note/Engineering/promptops-versioning) |
+| RAG / Fine-tuning 取舍 | [RAG vs Fine-tuning](/note/AI-Agent/rag-vs-finetuning) | [Eval Dataset 设计](/note/Engineering/eval-dataset-design)、[LLM-as-Judge](/note/Engineering/llm-as-judge-rubric-eval)、[PromptOps](/note/Engineering/promptops-versioning) |
 | [LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview) | [Tool Calling](/note/AI-Agent/tool-calling) | [Structured Output](/note/Engineering/structured-output-engineering)、[Agent 工具沙箱](/note/Engineering/agent-tool-sandbox-permission)、[MCP Server](/note/Engineering/mcp-server) |
-| [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) | [Production Engineering](/note/AI-Agent/production) | [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization)、[反馈闭环](/note/Engineering/agent-feedback-loop)、[上线检查清单](/note/Engineering/production-checklist) |
+| [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) | [Production Engineering](/note/AI-Agent/production) | [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization)、[多模型路由](/note/Engineering/model-routing-ab-testing)、[生产运维 Runbook](/note/Engineering/agent-production-ops-runbook) |
+| 评测与安全追问 | [Evaluation](/note/AI-Agent/evaluation)、[Guardrails](/note/AI-Agent/guardrails) | [LLM-as-Judge](/note/Engineering/llm-as-judge-rubric-eval)、[合成数据与对抗评测集](/note/Engineering/synthetic-adversarial-eval-data)、[Agent 反馈闭环](/note/Engineering/agent-feedback-loop) |
 | [LangChain / LangGraph 面试题](/note/AI-Interview/langchain-interview) | [LangGraph](/note/AI-Agent/langgraph)、[Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | [Agent Trace](/note/Engineering/agent-trace)、[Evaluation Pipeline](/note/Engineering/eval-pipeline) |

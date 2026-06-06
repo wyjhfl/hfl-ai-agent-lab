@@ -23,6 +23,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Structured Output 层 | JSON Schema、Pydantic、TypeScript 类型、字段校验、输出修复 | 让模型输出可解析、可落库、可渲染、可评测，而不是只能给人读 |
 | PromptOps 层 | Prompt Registry、版本、评测、灰度、回滚、调用审计 | 把 Prompt 从临时代码字符串变成可治理的工程资产 |
 | 成本与延迟优化层 | 调用账本、模型路由、缓存、批处理、降级、p95 延迟 | 让 Agent 不只是能跑，还能在预算和 SLA 内稳定运行 |
+| 多模型治理层 | 路由策略、A/B 实验、Shadow Traffic、Canary、自动回滚 | 让模型切换和新模型上线可评测、可灰度、可追溯 |
 | 数据存储层 | 用户、任务、文档、工具调用、Trace、评测结果 | 保存业务状态和运行证据，让系统可追踪、可恢复、可评估 |
 | RAG 检索层 | 文档解析、Chunk、Embedding、Hybrid Search、Rerank、引用溯源 | 让模型基于外部知识回答，并能解释答案来源 |
 | 向量数据库层 | Collection、Metadata、索引、过滤查询、增量更新 | 支撑高质量召回、权限过滤、引用定位和检索性能优化 |
@@ -34,10 +35,13 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Trace 可观测层 | Run ID、Step ID、工具调用记录、状态变化、错误定位 | 还原 Agent 执行过程，支持调试、复盘和质量分析 |
 | Evaluation 评测层 | 测试集、指标、版本对比、失败样本库 | 把效果从主观感觉变成可比较、可迭代的数据 |
 | Eval Dataset 层 | smoke set、regression set、失败样本、评分规则 | 让评测可复用、可回归、可定位失败原因 |
+| Judge 评测层 | Rubric、LLM-as-Judge、人工校准、pairwise 对比 | 让自动语义评测更稳定、更可解释 |
+| 对抗评测层 | 合成样本、Prompt Injection、越权、危险工具、冲突证据 | 主动覆盖线上不常见但高风险的边界情况 |
 | 反馈闭环层 | 用户反馈、人工修正、失败归因、eval case 转化 | 把线上真实问题转成评测、Prompt、检索和产品迭代燃料 |
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
 | Skills 工作流层 | `SKILL.md`、脚本、参考资料、验收标准 | 把重复工程流程沉淀成 Agent 可复用的操作手册 |
 | 部署上线层 | Docker、环境变量、健康检查、日志、回滚、成本监控 | 保证系统能在真实环境稳定运行，并支持运维和回滚 |
+| 生产运维层 | SLO、报警分级、事故排查、止血开关、复盘模板 | 让 Agent 上线后有日常巡检和事故处理手册 |
 
 这张地图可以作为项目设计时的检查框架。一个 Agent 系统如果只实现了模型调用，而没有任务状态、工具权限、执行轨迹和评测闭环，就很难进入真实生产环境。
 
@@ -48,23 +52,27 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 3. Structured Output：让模型输出能被后端、前端、数据库和评测系统稳定消费。
 4. PromptOps：把 Prompt 版本、评测、灰度和回滚接入发布流程。
 5. Cost / Latency Optimization：建立调用账本、模型路由、缓存、降级和 p95 延迟优化。
-6. Database：设计任务、文档、Trace、评测等数据模型。
-7. RAG Engineering：构建知识检索链路。
-8. Vector Database：管理向量数据和检索性能。
-9. Async Task：处理长任务和并发。
-10. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
-11. API Security：控制工具权限和高风险操作。
-12. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
-13. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
-14. Agent Trace：记录 Agent 执行过程。
-15. Evaluation Pipeline：评估系统效果。
-16. Eval Dataset：沉淀 smoke、regression 和失败样本。
-17. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
-18. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
-19. MCP Server：标准化外部工具接入。
-20. Skills：把重复工作流沉淀成可复用操作手册。
-21. Docker Deploy：部署和运维。
-22. Production Checklist：上线前检查。
+6. Model Routing / A/B Testing：把模型切换、新模型灰度和实验结果纳入治理。
+7. Database：设计任务、文档、Trace、评测等数据模型。
+8. RAG Engineering：构建知识检索链路。
+9. Vector Database：管理向量数据和检索性能。
+10. Async Task：处理长任务和并发。
+11. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
+12. API Security：控制工具权限和高风险操作。
+13. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
+14. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
+15. Agent Trace：记录 Agent 执行过程。
+16. Evaluation Pipeline：评估系统效果。
+17. Eval Dataset：沉淀 smoke、regression 和失败样本。
+18. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
+19. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
+20. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
+21. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
+22. MCP Server：标准化外部工具接入。
+23. Skills：把重复工作流沉淀成可复用操作手册。
+24. Docker Deploy：部署和运维。
+25. Production Ops Runbook：上线后巡检、报警、止血和复盘。
+26. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -136,6 +144,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Structured Output 工程化](/note/Engineering/structured-output-engineering)
 - [PromptOps：Prompt 版本、评测和回滚](/note/Engineering/promptops-versioning)
 - [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization)
+- [多模型路由与 A/B 实验](/note/Engineering/model-routing-ab-testing)
 - [数据库设计：从业务数据到 Agent 运行记录](/note/Engineering/database)
 - [RAG 工程化](/note/Engineering/rag-engineering)
 - [向量数据库工程化](/note/Engineering/vector-database)
@@ -147,10 +156,13 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
 - [Evaluation Pipeline](/note/Engineering/eval-pipeline)
 - [Eval Dataset 设计](/note/Engineering/eval-dataset-design)
+- [LLM-as-Judge 与 Rubric 评测](/note/Engineering/llm-as-judge-rubric-eval)
+- [合成数据与对抗评测集](/note/Engineering/synthetic-adversarial-eval-data)
 - [AI Agent 反馈闭环](/note/Engineering/agent-feedback-loop)
 - [Batch / 离线评测流水线](/note/Engineering/batch-offline-eval-pipeline)
 - [MCP Server](/note/Engineering/mcp-server)
 - [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)
 - [Skills 编写](/note/AI-Tools/skill-authoring)
 - [Docker 部署](/note/Engineering/docker-deploy)
+- [Agent 生产运维 Runbook](/note/Engineering/agent-production-ops-runbook)
 - [AI Agent 上线检查清单](/note/Engineering/production-checklist)
