@@ -22,6 +22,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | LLM Gateway 层 | 模型路由、限流、成本、Prompt 版本、降级和审计 | 把模型调用从业务代码中抽离，统一治理多模型访问 |
 | Model Provider Failover 层 | timeout、rate limit、provider outage、model regression、fallback、degrade | 让模型供应商故障时系统可降级、可切换、可接管 |
 | Structured Output 层 | JSON Schema、Pydantic、TypeScript 类型、字段校验、输出修复 | 让模型输出可解析、可落库、可渲染、可评测，而不是只能给人读 |
+| LLM Output Safety Filter 层 | schema、citation、PII、policy、grounding、compliance、fallback | 在答案交付前拦截越权、泄漏、无证据和格式风险 |
 | Context Window 管理层 | token 预算、历史压缩、证据排序、Memory 过滤、上下文 Trace | 控制长上下文成本、相关性、可信边界和可复盘性 |
 | PromptOps 层 | Prompt Registry、版本、评测、灰度、回滚、调用审计 | 把 Prompt 从临时代码字符串变成可治理的工程资产 |
 | Prompt Regression 层 | smoke、golden、failure replay、adversarial、schema/citation/tool assertion | 防止 Prompt、模型、工具和 RAG 变更破坏历史能力 |
@@ -30,11 +31,13 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 成本预算层 | token、模型、embedding、rerank、tool、eval、human review、infra | 把 Agent 成本从事后账单变成上线前预算和门禁 |
 | LLM Semantic Cache 层 | query normalize、embedding 相似度、版本失效、权限隔离、误命中监控 | 在不牺牲安全和可信度的前提下降低成本与延迟 |
 | LLM Cost Chargeback 层 | cost ledger、tenant、feature、model、retry、cache saving、quota | 把成本拆到租户、功能和任务，支撑预算、限额和商业化 |
+| LLM Cost Anomaly Detection 层 | cost_per_success、p95_cost、retry_cost_ratio、model_mix、cache_hit_rate | 实时发现成本异常、重试风暴和模型路由错误 |
 | 多模型治理层 | 路由策略、A/B 实验、Shadow Traffic、Canary、自动回滚 | 让模型切换和新模型上线可评测、可灰度、可追溯 |
 | Model Rollout Canary 层 | offline eval、shadow traffic、canary、ramp-up、rollback trigger | 让新模型上线可控、可观测、可回滚 |
 | 数据存储层 | 用户、任务、文档、工具调用、Trace、评测结果 | 保存业务状态和运行证据，让系统可追踪、可恢复、可评估 |
 | RAG 检索层 | 文档解析、Chunk、Embedding、Hybrid Search、Rerank、引用溯源 | 让模型基于外部知识回答，并能解释答案来源 |
 | RAG 入库层 | 文件校验、解析、Normalize、Chunk、Metadata、Embedding、索引、质量检查 | 把原始文件稳定转成可检索、可追溯、可更新的知识资产 |
+| RAG Ingestion Quality Gate 层 | parse、metadata、ACL、chunk、duplicate、PII、embedding、retrieval smoke | 防止低质量文档污染索引和答案 |
 | RAG Debug 层 | Query Rewrite、召回、Filter、Rerank、Context Pack、Citation Trace | 定位答案差到底是入库、检索、排序、上下文还是生成问题 |
 | RAG Citation Evaluation 层 | citation coverage、faithfulness、permission、freshness、no-answer | 验证引用是否真的支持答案，而不是只显示来源链接 |
 | RAG Grounding Contract 层 | evidence_required、claim_to_citation、no_answer_policy、freshness、permission | 把“基于引用回答”变成可测试契约 |
@@ -51,6 +54,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Queue / Backpressure 层 | 优先级队列、资源并发、限流、熔断、死信队列、压力信号 | 防止长任务、工具失败和重试风暴压垮在线服务 |
 | 失败恢复层 | 状态机、幂等键、断点续跑、补偿、人工介入 | 让长任务在模型、工具、服务失败后能安全恢复 |
 | Workflow 状态机层 | Created、Queued、Planning、RunningTool、WaitingApproval、Completed、Failed | 把 Agent 长任务从自由对话变成可恢复、可审计、可展示的执行轨道 |
+| Agent Autonomy Levels 层 | L0 Assist、L1 Draft、L2 Low Risk、L3 Approval、L4 Delegated、L5 Full | 用等级管理 Agent 自主执行能力和副作用边界 |
 | Multi-Agent Handoff 层 | handoff_id、from/to agent、evidence_refs、constraints、acceptance criteria | 让多 Agent 交接有边界、有证据、有验收 |
 | Agent Scheduler 层 | cron、interval、delay、event、幂等键、并发、预算、熔断 | 支撑定时报表、周期巡检、批量评测和延迟跟进任务 |
 | Agent 错误分类层 | input、policy、context、retrieval、model、tool、runtime、infra、ux error | 把失败变成可定位、可统计、可恢复、可回归的工程信号 |
@@ -88,6 +92,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | MCP Server Hardening 层 | 参数校验、风险分级、timeout、rate limit、错误映射、schema version | 把 MCP Server 从脚本提升为可上线工具服务 |
 | MCP Supply Chain Risk 层 | server provenance、version pin、schema diff、dependency、sandbox、untrusted output | 防止 MCP 工具生态引入供应链和权限风险 |
 | MCP Tool Schema 层 | 工具命名、描述、参数、输出、错误、风险等级、版本 | 让工具可发现、可控、可评测，而不是散落函数 |
+| MCP Version Deprecation 层 | schema diff、deprecated_since、sunset_at、migration_note、usage_count | 让 MCP 工具版本迁移可通知、可灰度、可回滚 |
 | MCP Client 测试层 | fake server、contract、policy filter、error mapping、injection samples | 验证 MCP Client 接入后可回归、可审计、可降级 |
 | MCP Client 层 | Server Registry、Tool Discovery、权限过滤、连接管理、结果标准化 | 把 MCP Server 安全稳定接入 Agent Runtime |
 | MCP Gateway 层 | server registry、schema cache、policy filter、secret boundary、approval、audit | 统一治理多 MCP Server 的发现、鉴权、审批、限流和观测 |
@@ -116,6 +121,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 2. LLM Gateway：统一模型路由、成本、降级和审计。
 3. Model Provider Failover：设计模型供应商 timeout、限流、故障、降级和跨供应商切换。
 3. Structured Output：让模型输出能被后端、前端、数据库和评测系统稳定消费。
+4. LLM Output Safety Filter：在输出前校验 schema、citation、PII、policy、grounding 和合规。
 4. Context Window Management：控制长上下文的 token 预算、证据排序、历史压缩和上下文 Trace。
 5. PromptOps：把 Prompt 版本、评测、灰度和回滚接入发布流程。
 6. Prompt Regression Testing：用 smoke、golden、failure replay 和 adversarial 样本防止能力退化。
@@ -124,6 +130,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 7. LLM Cost Budget Table：把 token、模型、工具、评测、人审和基础设施拆成预算。
 8. LLM Semantic Cache：用语义缓存、权限隔离和版本失效降低重复请求成本。
 9. LLM Cost Chargeback：把成本拆到租户、功能、模型和 run，支持预算与配额。
+10. LLM Cost Anomaly Detection：监控 cost_per_success、p95_cost、retry_cost_ratio、model_mix 和 cache_hit_rate。
 8. Model Routing / A/B Testing：把模型切换、新模型灰度和实验结果纳入治理。
 9. Model Rollout Canary：用离线评测、shadow、canary 和自动回滚上线新模型。
 9. Database：设计任务、文档、Trace、评测等数据模型。
@@ -131,6 +138,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 11. PII Redaction：在输入、RAG、工具、Trace、评测和缓存中做敏感信息脱敏。
 11. RAG Engineering：构建知识检索链路。
 12. RAG Ingestion：把文件解析、Chunk、metadata、embedding 和索引做成可靠流水线。
+13. RAG Ingestion Quality Gate：在文档 active 前检查解析、metadata、ACL、chunk、PII、embedding 和召回。
 13. RAG Debugging：建立检索故障排查 Trace。
 14. RAG Citation Evaluation：评测引用覆盖率、支持度、权限和无答案行为。
 15. RAG Grounding Contract：把 claim-to-citation、no-answer、权限和 freshness 做成契约。
@@ -147,6 +155,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 21. Queue / Backpressure：用优先级队列、资源并发、限流、熔断和死信队列保护系统。
 22. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
 23. Agent Workflow State Machine：把任务状态、转移规则、审批、恢复和 Trace 设计清楚。
+24. Agent Autonomy Levels：把 Agent 自主性拆成可解释、可审批、可灰度的等级。
 24. Multi-Agent Handoff：用结构化交接协议传递目标、证据、约束和验收标准。
 24. Agent Scheduler / Cron：设计定时、延迟、周期和事件触发任务的幂等与并发。
 24. Agent Error Taxonomy：把 input、policy、context、retrieval、model、tool、runtime、infra、ux error 分开处理。
@@ -185,6 +194,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 47. MCP Server Hardening：为 MCP 工具服务补齐参数校验、风险分级、超时和审计。
 48. MCP Supply Chain Risk：治理 MCP Server 来源、版本、依赖、schema diff 和沙箱。
 47. MCP Tool Schema：设计工具命名、参数、输出、错误、风险和版本。
+48. MCP Version Deprecation：治理工具 schema 变更、弃用窗口、迁移和下线。
 48. MCP Client：把 MCP Server 安全稳定接入 Agent Runtime。
 49. MCP Client Testing：用 fake server、契约测试、权限过滤和注入样本验证 Client。
 50. MCP Gateway：统一治理多 MCP Server 的发现、权限、审批、限流和审计。
@@ -283,6 +293,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [LLM Gateway](/note/Engineering/llm-gateway)
 - [Model Provider Failover](/note/Engineering/model-provider-failover)
 - [Structured Output 工程化](/note/Engineering/structured-output-engineering)
+- [LLM Output Safety Filter](/note/Engineering/llm-output-safety-filter)
 - [Context Window 管理](/note/AI-Agent/context-window-management)
 - [PromptOps：Prompt 版本、评测和回滚](/note/Engineering/promptops-versioning)
 - [Prompt Regression Testing](/note/Engineering/prompt-regression-testing)
@@ -291,6 +302,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [LLM 成本预算表](/note/Engineering/llm-cost-budget-table)
 - [LLM Semantic Cache](/note/Engineering/llm-semantic-cache)
 - [LLM Cost Chargeback](/note/Engineering/llm-cost-chargeback)
+- [LLM Cost Anomaly Detection](/note/Engineering/llm-cost-anomaly-detection)
 - [多模型路由与 A/B 实验](/note/Engineering/model-routing-ab-testing)
 - [Model Rollout Canary](/note/Engineering/model-rollout-canary)
 - [数据库设计：从业务数据到 Agent 运行记录](/note/Engineering/database)
@@ -298,6 +310,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [PII 脱敏策略](/note/Engineering/pii-redaction-for-llm)
 - [RAG 工程化](/note/Engineering/rag-engineering)
 - [RAG 入库流水线](/note/Engineering/rag-ingestion-pipeline)
+- [RAG Ingestion Quality Gate](/note/Engineering/rag-ingestion-quality-gate)
 - [RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging)
 - [RAG Citation Evaluation](/note/Engineering/rag-citation-evaluation)
 - [RAG Grounding Contract](/note/Engineering/rag-grounding-contract)
@@ -314,6 +327,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent Queue 与 Backpressure](/topics/agent-queue-backpressure)
 - [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery)
 - [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)
+- [Agent Autonomy Levels](/note/Engineering/agent-autonomy-levels)
 - [Multi-Agent Handoff Protocol](/note/Engineering/multi-agent-handoff-protocol)
 - [Agent Scheduler 与 Cron](/note/Engineering/agent-scheduler-cron)
 - [Agent 错误分类](/note/Engineering/agent-error-taxonomy)
@@ -352,6 +366,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [MCP Server Hardening](/note/Engineering/mcp-server-hardening)
 - [MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk)
 - [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design)
+- [MCP Version Deprecation](/note/Engineering/mcp-version-deprecation)
 - [MCP Client 测试](/note/Engineering/mcp-client-testing)
 - [MCP Client 工程化](/note/Engineering/mcp-client-engineering)
 - [MCP Gateway 架构](/note/Engineering/mcp-gateway-architecture)
