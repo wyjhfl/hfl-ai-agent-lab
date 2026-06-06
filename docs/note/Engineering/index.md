@@ -25,6 +25,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | PromptOps 层 | Prompt Registry、版本、评测、灰度、回滚、调用审计 | 把 Prompt 从临时代码字符串变成可治理的工程资产 |
 | Prompt Regression 层 | smoke、golden、failure replay、adversarial、schema/citation/tool assertion | 防止 Prompt、模型、工具和 RAG 变更破坏历史能力 |
 | 成本与延迟优化层 | 调用账本、模型路由、缓存、批处理、降级、p95 延迟 | 让 Agent 不只是能跑，还能在预算和 SLA 内稳定运行 |
+| Agent Latency Budget 层 | queue、planning、retrieval、rerank、generation、tool、approval、retry、frontend render | 把端到端慢请求拆成可观测、可归因、可优化的预算项 |
 | 成本预算层 | token、模型、embedding、rerank、tool、eval、human review、infra | 把 Agent 成本从事后账单变成上线前预算和门禁 |
 | LLM Semantic Cache 层 | query normalize、embedding 相似度、版本失效、权限隔离、误命中监控 | 在不牺牲安全和可信度的前提下降低成本与延迟 |
 | LLM Cost Chargeback 层 | cost ledger、tenant、feature、model、retry、cache saving、quota | 把成本拆到租户、功能和任务，支撑预算、限额和商业化 |
@@ -37,6 +38,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | RAG Citation Evaluation 层 | citation coverage、faithfulness、permission、freshness、no-answer | 验证引用是否真的支持答案，而不是只显示来源链接 |
 | RAG Evaluation Report 层 | 数据集、Pipeline 配置、指标、失败归因、成本延迟、安全结果 | 把 RAG 优化过程沉淀成可复现、可面试表达的报告 |
 | RAG Knowledge Lifecycle 层 | document version、status、effective time、ACL、index version、cache invalidation | 治理文档新增、更新、过期、删除和权限变化 |
+| RAG Freshness Evaluation 层 | document_version、index_version、status、effective time、cache invalidation | 验证答案是否来自最新且有效的知识版本 |
 | RAG Permission Filtering 层 | tenant、workspace、ACL、classification、status、permission_filter_hash | 防止企业知识库和缓存跨租户、跨角色泄漏 |
 | 向量数据库层 | Collection、Metadata、索引、过滤查询、增量更新 | 支撑高质量召回、权限过滤、引用定位和检索性能优化 |
 | Embedding 评测迁移层 | Recall@k、MRR、hard negative、shadow query、canary、collection 版本 | 安全替换向量模型，避免召回质量和权限过滤退化 |
@@ -63,8 +65,10 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Agent Configuration Management 层 | agent profile、policy version、config snapshot、schema validation、rollback | 让模型、Prompt、RAG、工具和预算配置可治理 |
 | Agent Approval Workflow 层 | tool risk、policy check、approval request、args hash、execution guard、audit | 把高风险工具调用变成可审批、可追责、不可绕过的闭环 |
 | Agent Audit Log 层 | actor、action、target、risk、policy、hash、metadata、append-only | 让关键行为可追责、可合规、可复盘 |
+| Agent Secret Management 层 | Secret Store、Policy Layer、Token Broker、short-lived token、redacted trace | 防止模型、日志和工具回放泄漏真实凭证 |
 | Evaluation 评测层 | 测试集、指标、版本对比、失败样本库 | 把效果从主观感觉变成可比较、可迭代的数据 |
 | Eval Dataset 层 | smoke set、regression set、失败样本、评分规则 | 让评测可复用、可回归、可定位失败原因 |
+| Eval Case Lifecycle 层 | candidate、redacted、labeled、reviewed、active、flaky、deprecated、archived | 让评测样本可维护、可审核、可过期、可追溯 |
 | Agent Benchmark 层 | 固定任务集、方案对比、成本延迟、安全、恢复和 Trace 完整度 | 用数据比较 Workflow、单 Agent、多 Agent、模型和框架，而不是凭感觉选型 |
 | Agent Contract Testing 层 | JSON schema、tool args、task state、trace event、MCP schema 契约 | 保证模型输出和系统接口可集成、可验收、可回归 |
 | LLM Evaluation Scorecard 层 | task success、factuality、grounding、format、tool、safety、cost、latency | 把主观好不好拆成可比较、可解释、可门禁的评分卡 |
@@ -86,6 +90,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | MCP Gateway 层 | server registry、schema cache、policy filter、secret boundary、approval、audit | 统一治理多 MCP Server 的发现、鉴权、审批、限流和观测 |
 | MCP Gateway Operations 层 | health、schema diff、latency、error、quota、degrade、postmortem | 让多 MCP Server 接入后可巡检、可限流、可止血 |
 | MCP 安全授权层 | scope、tenant、role、secret boundary、schema pinning、audit、red team | 防止 MCP 工具越权、数据泄漏、危险副作用和供应链风险 |
+| MCP Token Exchange 层 | user_session、agent_run、gateway_token、tool_execution_token、scope、args_hash | 控制 MCP 工具调用的凭证范围、时效和审计边界 |
 | Memory Evaluation 层 | should/should-not remember、更新、遗忘、注入、stale memory 指标 | 证明长期记忆写得对、用得对、更新得了、忘得掉 |
 | Skills 工作流层 | `SKILL.md`、脚本、参考资料、验收标准 | 把重复工程流程沉淀成 Agent 可复用的操作手册 |
 | Skill Testing 层 | trigger、procedure、output、safety、regression、changelog | 让 Skill 像代码一样可版本化、可测试、可持续演进 |
@@ -109,6 +114,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 5. PromptOps：把 Prompt 版本、评测、灰度和回滚接入发布流程。
 6. Prompt Regression Testing：用 smoke、golden、failure replay 和 adversarial 样本防止能力退化。
 6. Cost / Latency Optimization：建立调用账本、模型路由、缓存、降级和 p95 延迟优化。
+7. Agent Latency Budget：拆解 queue、planning、RAG、tool、approval、retry 和前端感知延迟。
 7. LLM Cost Budget Table：把 token、模型、工具、评测、人审和基础设施拆成预算。
 8. LLM Semantic Cache：用语义缓存、权限隔离和版本失效降低重复请求成本。
 9. LLM Cost Chargeback：把成本拆到租户、功能、模型和 run，支持预算与配额。
@@ -123,6 +129,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 14. RAG Citation Evaluation：评测引用覆盖率、支持度、权限和无答案行为。
 15. RAG Evaluation Report：把评测目标、数据集、指标、失败归因和成本延迟写成报告。
 16. RAG Knowledge Lifecycle：治理文档版本、过期、权限变化、索引更新和缓存失效。
+17. RAG Freshness Evaluation：评估新文档、更新、过期、删除、权限变更和缓存失效。
 17. RAG Permission Filtering：把 tenant、ACL、status、effective time 和缓存隔离放进检索链路。
 15. Vector Database：管理向量数据和检索性能。
 16. Embedding Eval / Migration：评测和灰度迁移向量模型。
@@ -150,8 +157,10 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 34. Agent Configuration Management：把 Agent Profile 和策略版本纳入配置发布和回滚。
 34. Agent Approval Workflow：把高风险工具调用纳入审批、参数哈希和执行层校验。
 35. Agent Audit Log：记录关键行为的 actor、action、target、risk、policy 和 hash。
+36. Agent Secret Management：治理密钥、Token、OAuth 凭证、短期执行票据和脱敏 Trace。
 34. Evaluation Pipeline：评估系统效果。
 35. Eval Dataset：沉淀 smoke、regression 和失败样本。
+36. Eval Case Lifecycle：管理评测样本采集、脱敏、标注、审核、运行、过期和归档。
 36. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
 37. LLM Evaluation Scorecard：把质量、证据、格式、工具、安全、成本和延迟拆成评分卡。
 38. Eval Drift Monitoring：持续监控模型、Prompt、知识库、工具和 Judge 漂移。
@@ -172,6 +181,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 50. MCP Gateway：统一治理多 MCP Server 的发现、权限、审批、限流和审计。
 51. MCP Gateway Operations：巡检 health、schema diff、latency、quota，并支持降级止血。
 52. MCP Security / Auth：设计 scope、tenant、role、secret boundary、schema pinning 和审计。
+53. MCP Token Exchange：设计 Gateway、Server 和下游系统之间的短期 scope 凭证交换。
 53. Skills：把重复工作流沉淀成可复用操作手册。
 54. Skill Testing / Versioning：让 Skill 有 trigger、procedure、output、safety、regression 测试和 changelog。
 55. AI Project Design Doc：把项目背景、架构、数据、评测和风险写成可交付方案。
@@ -266,6 +276,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [PromptOps：Prompt 版本、评测和回滚](/note/Engineering/promptops-versioning)
 - [Prompt Regression Testing](/note/Engineering/prompt-regression-testing)
 - [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization)
+- [Agent Latency Budget](/note/Engineering/agent-latency-budget)
 - [LLM 成本预算表](/note/Engineering/llm-cost-budget-table)
 - [LLM Semantic Cache](/note/Engineering/llm-semantic-cache)
 - [LLM Cost Chargeback](/note/Engineering/llm-cost-chargeback)
@@ -280,6 +291,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [RAG Citation Evaluation](/note/Engineering/rag-citation-evaluation)
 - [RAG 评测报告模板](/note/Engineering/rag-evaluation-report-template)
 - [RAG 知识生命周期](/note/Engineering/rag-knowledge-lifecycle)
+- [RAG Freshness Evaluation](/note/Engineering/rag-freshness-evaluation)
 - [RAG 权限过滤](/note/Engineering/rag-permission-filtering)
 - [向量数据库工程化](/note/Engineering/vector-database)
 - [Embedding 模型评测与迁移](/note/Engineering/embedding-model-eval-migration)
@@ -306,8 +318,10 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent 配置治理](/note/Engineering/agent-configuration-management)
 - [Agent Approval Workflow](/note/Engineering/agent-approval-workflow)
 - [Agent 审计日志设计](/note/Engineering/agent-audit-log-design)
+- [Agent Secret Management](/note/Engineering/agent-secret-management)
 - [Evaluation Pipeline](/note/Engineering/eval-pipeline)
 - [Eval Dataset 设计](/note/Engineering/eval-dataset-design)
+- [Eval Case Lifecycle](/note/Engineering/eval-case-lifecycle)
 - [Fine-tuning 数据流水线](/note/Engineering/finetuning-data-pipeline)
 - [LLM-as-Judge 与 Rubric 评测](/note/Engineering/llm-as-judge-rubric-eval)
 - [LLM Evaluation Scorecard](/note/Engineering/llm-evaluation-scorecard)
@@ -329,6 +343,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [MCP Gateway 架构](/note/Engineering/mcp-gateway-architecture)
 - [MCP Gateway 运维](/note/Engineering/mcp-gateway-operations)
 - [MCP 安全与授权](/note/Engineering/mcp-security-auth)
+- [MCP Token Exchange](/note/Engineering/mcp-token-exchange)
 - [Skills 编写](/note/AI-Tools/skill-authoring)
 - [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning)
 - [Skill 运营手册](/note/AI-Tools/skill-operations-playbook)
