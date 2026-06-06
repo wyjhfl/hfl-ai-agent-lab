@@ -20,6 +20,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | --- | --- | --- |
 | 后端接口层 | FastAPI、路由、请求校验、统一响应、鉴权 | 提供稳定的任务入口、RAG 问答入口、文件上传入口和状态查询入口 |
 | LLM Gateway 层 | 模型路由、限流、成本、Prompt 版本、降级和审计 | 把模型调用从业务代码中抽离，统一治理多模型访问 |
+| OpenAI Agents SDK 层 | agent definition、tool、handoff、guardrail、trace、eval | 把 Agent Runtime 从 Demo 组织成可治理、可观测、可回归的工程框架 |
+| Responses API Tool Orchestration 层 | tool router、二次校验、结构化输出、tool result、trace | 让工具调用从模型建议变成后端可控执行链路 |
 | Model Provider Failover 层 | timeout、rate limit、provider outage、model regression、fallback、degrade | 让模型供应商故障时系统可降级、可切换、可接管 |
 | Structured Output 层 | JSON Schema、Pydantic、TypeScript 类型、字段校验、输出修复 | 让模型输出可解析、可落库、可渲染、可评测，而不是只能给人读 |
 | LLM Output Safety Filter 层 | schema、citation、PII、policy、grounding、compliance、fallback | 在答案交付前拦截越权、泄漏、无证据和格式风险 |
@@ -98,6 +100,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 反馈闭环层 | 用户反馈、人工修正、失败归因、eval case 转化 | 把线上真实问题转成评测、Prompt、检索和产品迭代燃料 |
 | Agent Feedback Triage 层 | thumbs、correction、run trace、root cause、severity、owner、backlog | 把反馈分诊成产品、检索、工具、模型、安全或数据任务 |
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
+| MCP Resources / Prompts 层 | resource URI、prompt template、tool boundary、权限过滤 | 避免把所有 MCP 能力都做成工具，让上下文和工作流可复用 |
 | MCP Server Hardening 层 | 参数校验、风险分级、timeout、rate limit、错误映射、schema version | 把 MCP Server 从脚本提升为可上线工具服务 |
 | MCP Supply Chain Risk 层 | server provenance、version pin、schema diff、dependency、sandbox、untrusted output | 防止 MCP 工具生态引入供应链和权限风险 |
 | MCP Sandbox Profile 层 | filesystem、network、command、secret、resource limit、audit、deny by default | 为不同 MCP 工具定义最小权限运行环境和资源边界 |
@@ -111,6 +114,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | MCP 安全授权层 | scope、tenant、role、secret boundary、schema pinning、audit、red team | 防止 MCP 工具越权、数据泄漏、危险副作用和供应链风险 |
 | MCP Token Exchange 层 | user_session、agent_run、gateway_token、tool_execution_token、scope、args_hash | 控制 MCP 工具调用的凭证范围、时效和审计边界 |
 | Memory Evaluation 层 | should/should-not remember、更新、遗忘、注入、stale memory 指标 | 证明长期记忆写得对、用得对、更新得了、忘得掉 |
+| Agent Memory Store 层 | scope、memory_type、sensitivity、expires_at、source_ref、write_policy | 让长期记忆可控、可删除、可评测，并避免隐私和陈旧记忆风险 |
 | Memory Privacy Retention 层 | should_remember、PII、retention、forget request、stale memory、cross tenant | 让长期记忆可授权、可过期、可删除、可评测 |
 | Skills 工作流层 | `SKILL.md`、脚本、参考资料、验收标准 | 把重复工程流程沉淀成 Agent 可复用的操作手册 |
 | Skill Testing 层 | trigger、procedure、output、safety、regression、changelog | 让 Skill 像代码一样可版本化、可测试、可持续演进 |
@@ -131,6 +135,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 
 1. FastAPI：先把服务接口搭起来。
 2. LLM Gateway：统一模型路由、成本、降级和审计。
+2. OpenAI Agents SDK Engineering：把 agent、tool、handoff、guardrail 和 trace 接入工程框架。
+2. Responses API Tool Orchestration：设计 tool router、执行层校验和结构化输出。
 3. Model Provider Failover：设计模型供应商 timeout、限流、故障、降级和跨供应商切换。
 3. Structured Output：让模型输出能被后端、前端、数据库和评测系统稳定消费。
 4. LLM Output Safety Filter：在输出前校验 schema、citation、PII、policy、grounding 和合规。
@@ -214,6 +220,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 47. MCP Server Hardening：为 MCP 工具服务补齐参数校验、风险分级、超时和审计。
 48. MCP Supply Chain Risk：治理 MCP Server 来源、版本、依赖、schema diff 和沙箱。
 48. MCP Server Template for Agents：用 Tools、Resources、Prompts、Policy、Telemetry 和测试清单搭建可治理 MCP Server。
+48. MCP Resources and Prompts：区分只读上下文、固定工作流和有副作用工具。
 48. MCP Sandbox Profile：为 MCP 工具配置文件、网络、命令、资源和审计边界。
 47. MCP Tool Schema：设计工具命名、参数、输出、错误、风险和版本。
 48. MCP Version Deprecation：治理工具 schema 变更、弃用窗口、迁移和下线。
@@ -316,6 +323,8 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 
 - [FastAPI 后端接口工程化](/note/Engineering/fastapi)
 - [LLM Gateway](/note/Engineering/llm-gateway)
+- [OpenAI Agents SDK Engineering](/note/Engineering/openai-agents-sdk-engineering)
+- [Responses API Tool Orchestration](/note/Engineering/responses-api-tool-orchestration)
 - [Model Provider Failover](/note/Engineering/model-provider-failover)
 - [Structured Output 工程化](/note/Engineering/structured-output-engineering)
 - [LLM Output Safety Filter](/note/Engineering/llm-output-safety-filter)
@@ -356,6 +365,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent Queue 与 Backpressure](/topics/agent-queue-backpressure)
 - [Agent UI State Machine](/note/Engineering/agent-ui-state-machine)
 - [Agent Frontend Telemetry](/note/Engineering/agent-frontend-telemetry)
+- [Computer Use Agent Safety](/note/Engineering/computer-use-agent-safety)
 - [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery)
 - [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)
 - [Agent Autonomy Levels](/note/Engineering/agent-autonomy-levels)
@@ -394,10 +404,12 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Conversation Regression Testing](/topics/conversation-regression-testing)
 - [Agent Memory 评测](/note/Engineering/memory-evaluation-for-agents)
 - [Memory Privacy Retention](/note/Engineering/memory-privacy-retention)
+- [Agent Memory Store Design](/note/Engineering/agent-memory-store-design)
 - [AI Agent 反馈闭环](/note/Engineering/agent-feedback-loop)
 - [Agent Feedback Triage](/note/Engineering/agent-feedback-triage)
 - [Batch / 离线评测流水线](/note/Engineering/batch-offline-eval-pipeline)
 - [MCP Server](/note/Engineering/mcp-server)
+- [MCP Resources and Prompts Design](/note/Engineering/mcp-resources-prompts-design)
 - [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)
 - [MCP Server Template for Agents](/note/Engineering/mcp-server-template-for-agents)
 - [MCP Server Hardening](/note/Engineering/mcp-server-hardening)

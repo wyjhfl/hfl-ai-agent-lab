@@ -108,12 +108,17 @@
 - [MCP Observability Metrics](/note/Engineering/mcp-observability-metrics)
 - [MCP Server Hardening](/note/Engineering/mcp-server-hardening)
 - [MCP Server Template for Agents](/note/Engineering/mcp-server-template-for-agents)
+- [MCP Resources and Prompts Design](/note/Engineering/mcp-resources-prompts-design)
 - [MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk)
 - [MCP Sandbox Profile](/note/Engineering/mcp-sandbox-profile)
 - [Human Takeover 运营台](/topics/human-takeover-operations-console)
 - [Browser Automation Testing](/topics/browser-automation-testing-agent-ui)
+- [Browser Agent E2E Acceptance](/topics/browser-agent-e2e-acceptance)
+- [Computer Use Agent Safety](/note/Engineering/computer-use-agent-safety)
 - [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)
 - [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)
+- [OpenAI Agents SDK Engineering](/note/Engineering/openai-agents-sdk-engineering)
+- [Responses API Tool Orchestration](/note/Engineering/responses-api-tool-orchestration)
 - [Agent UI State Machine](/note/Engineering/agent-ui-state-machine)
 - [Agent Frontend Telemetry](/note/Engineering/agent-frontend-telemetry)
 - [Agent UI Pattern Library](/topics/agent-ui-pattern-library)
@@ -194,6 +199,8 @@
 - **Agent UI State Machine**：不要只用 loading/error，要讲 queued、planning、waiting_approval、running_tool、failed_retryable 和 allowed_actions。
 - **Agent Frontend Telemetry**：不要只看后端 Trace，要讲前端如何采集证据查看、审批、重试、转人工和反馈。
 - **Agent UI Pattern Library**：不要只展示聊天框，要讲 Task Intake、Plan Preview、Tool Approval、Evidence Panel、Trace Timeline 和 Recovery Panel。
+- **Computer Use Safety**：不要只说能自动点网页，要讲观察、风险分类、具体确认、before/after trace 和第三方指令隔离。
+- **Realtime Voice Agent**：不要只说 ASR+LLM+TTS，要讲低延迟、打断、高风险确认、语音 UI 和指标。
 - **Agent Autonomy Levels**：不要只说“Agent 自主执行”，要讲 L0-L5 自主等级、工具风险、审批和灰度。
 - **LLM Evaluation Scorecard**：不要只说“效果不错”，要讲 task success、factuality、grounding、format、tool correctness、safety、cost、latency 的评分卡。
 - **MCP Tool Schema**：不要只说“接了 MCP 工具”，要讲工具命名、描述、参数、输出、错误、风险等级和 schema version。
@@ -236,6 +243,7 @@
 - **Agent Scheduler**：不要只说“定时任务”，要讲 cron/interval/event、window 幂等键、并发预算、熔断和 schedule Trace。
 - **MCP Server Hardening**：不要只说“写了 MCP Server”，要讲风险分级、参数校验、超时限流、错误映射、schema version 和审计日志。
 - **MCP Server Template**：不要只暴露一个函数，要讲 Tools、Resources、Prompts、Policy、Telemetry、结构化错误和测试清单。
+- **MCP Resources / Prompts**：不要把只读上下文和固定流程都做成 Tool，要讲 resource URI、prompt template 和权限过滤。
 - **RAG Evaluation Report**：不要只说“RAG 效果提升”，要讲评测目标、数据集分层、指标对比、失败归因、成本延迟和安全结果。
 - **RAG Ingestion Quality Gate**：不要只说“文档已入库”，要讲解析质量、metadata、ACL、chunk、PII、embedding 和召回 smoke。
 - **Production Failure Drill**：不要只说“有监控”，要讲模型延迟、RAG 退化、工具超时、审批卡住、租户隔离和成本失控的演练。
