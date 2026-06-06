@@ -11,12 +11,12 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | 零基础建立 Agent 工程认知 | AI Agent 核心概念专题 → [Agent 开发 Playbook](/topics/agent-development-playbook) → Engineering 工程化专题 → 面试表达专题 |
 | 想做 RAG 项目 | [RAG 项目面试表达](/topics/rag-project-interview) → [RAG 工程化](/topics/rag-engineering-system) → Evaluation / Trace 相关内容 |
 | 想做高级知识库 | [RAG 入库流水线](/note/Engineering/rag-ingestion-pipeline) → [RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging) → [GraphRAG 工程化](/note/Engineering/graphrag-engineering) |
-| 想做生产级 Agent | [Agent 开发 Playbook](/topics/agent-development-playbook) → [Agent Runtime](/topics/agent-runtime-explained) → [Context Window 管理](/note/AI-Agent/context-window-management) → [Trace](/topics/agent-trace-observability) → [Evaluation](/topics/evaluation-pipeline) → [Agent Release Gate](/note/Engineering/agent-release-gate) |
+| 想做生产级 Agent | [Agent 开发 Playbook](/topics/agent-development-playbook) → [Agent Runtime](/topics/agent-runtime-explained) → [Agent Workflow 状态机](/note/Engineering/agent-workflow-state-machine) → [Trace](/topics/agent-trace-observability) → [Evaluation](/topics/evaluation-pipeline) → [Agent Release Gate](/note/Engineering/agent-release-gate) |
 | 想准备面试 | [Agent 系统设计面试题](/topics/agent-system-design-interview) → [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) → [RAG 项目面试表达](/topics/rag-project-interview) → [多 Agent 项目面试表达](/topics/multi-agent-interview) |
 | 想优化线上 Agent | [Agent 错误分类](/note/Engineering/agent-error-taxonomy) → [Agent Queue 与 Backpressure](/topics/agent-queue-backpressure) → [Agent Release Gate](/note/Engineering/agent-release-gate) → [Agent 生产运维 Runbook](/note/Engineering/agent-production-ops-runbook) |
-| 想学习 AI 编程协作 | [Claude Code 实战工作流](/topics/claude-code-workflow) → [Skills 编写](/note/AI-Tools/skill-authoring) → [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning) → [AI 编程审查清单](/topics/ai-coding-review-checklist) |
+| 想学习 AI 编程协作 | [Claude Code 实战工作流](/topics/claude-code-workflow) → [Skills 编写](/note/AI-Tools/skill-authoring) → [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design) → [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning) → [AI 编程审查清单](/topics/ai-coding-review-checklist) |
 | 想看源码和架构 | [Hermes Agent](/note/Source-Reading/hermes-agent-advanced) / [OpenClaw](/topics/openclaw-architecture) / [Hook 机制](/topics/agent-harness-hooks) 相关专题 |
-| 想整理求职作品集 | [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap) → [项目实战](/projects) → [简历描述模板](/note/Interview/resume-bullets) |
+| 想整理求职作品集 | [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap) → [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template) → [项目实战](/projects) → [简历描述模板](/note/Interview/resume-bullets) |
 | 想 30 天准备面试 | [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan) → [AI Agent 项目包装](/topics/ai-agent-project-packaging) → [AI Agent 面试题库](/note/AI-Interview/) |
 | 想找项目选题 | [AI Agent 项目选题库](/topics/ai-agent-project-ideas) → [Agent Capability Matrix](/topics/agent-capability-matrix) → [Agent 开发 Playbook](/topics/agent-development-playbook) |
 | 想做商业化产品 | [Agent SaaS 产品化](/topics/agent-saas-productization) → [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota) → [Agent Product Metrics](/topics/agent-product-metrics) → [Agent UI 产品化设计](/topics/agent-ui-product-design) → [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization) |
@@ -54,6 +54,7 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | [企业知识库权限与多租户 RAG](/note/Engineering/enterprise-rag-permission-multitenancy) | 把 tenant、ACL、metadata filter、缓存失效和 GraphRAG 权限隔离纳入检索链路。 | 想做企业级知识库的人 |
 | [Agent 数据库设计：状态、证据与执行记录](/topics/agent-database-design) | 用 Task、Run、Step、Tool Call、Document、Chunk、Trace、Evaluation 建模 Agent 系统数据。 | 想理解 Agent 数据建模的学习者 |
 | [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery) | 设计状态机、幂等键、重试分类、断点续跑、补偿和人工介入，让长任务失败后能继续。 | 想做可靠长任务 Agent 的人 |
+| [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine) | 把 Created、Queued、Planning、RunningTool、WaitingApproval、Completed、Failed 建模成可恢复执行轨道。 | 想让 Agent 长任务可控、可恢复、可解释的人 |
 | [Agent Queue 与 Backpressure](/topics/agent-queue-backpressure) | 设计优先级队列、并发控制、背压、熔断、死信队列和长任务用户体验。 | 想让 Agent 长任务不压垮系统的人 |
 | [Agent 错误分类](/note/Engineering/agent-error-taxonomy) | 把 input、policy、context、retrieval、model、tool、runtime、infra、ux error 分开处理。 | 想系统排查 Agent 失败的人 |
 | [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission) | 从工具风险分级、参数校验、文件/网络/命令沙箱、审批和 MCP 权限审计控制工具调用风险。 | 想把 Tool Calling 安全落地的人 |
@@ -71,15 +72,18 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | [AI Agent 反馈闭环](/note/Engineering/agent-feedback-loop) | 将用户反馈关联 Trace、Prompt、模型、检索和工具调用，转化为评测样本与迭代队列。 | 想让线上反馈驱动持续改进的人 |
 | [Fine-tuning 数据流水线](/note/Engineering/finetuning-data-pipeline) | 从线上样本、用户修正、人工标注、合成数据到脱敏、质检、切分、训练、评测和灰度。 | 想理解微调落地流程的人 |
 | [LLM-as-Judge 与 Rubric 评测](/note/Engineering/llm-as-judge-rubric-eval) | 设计可解释评分维度、Judge 校准、pairwise/pointwise 对比和自动评测门禁。 | 想让自动评测更可信的人 |
+| [LLM Evaluation Scorecard](/note/Engineering/llm-evaluation-scorecard) | 把 task success、factuality、grounding、format、tool correctness、safety、cost 和 latency 做成评分卡。 | 想把主观体验变成可比较评测结果的人 |
 | [合成数据与对抗评测集](/note/Engineering/synthetic-adversarial-eval-data) | 用合成样本覆盖 Prompt Injection、越权、工具错误、冲突证据和无答案拒答等边界。 | 想系统提升评测覆盖的人 |
 | [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design) | 用固定任务集比较 Workflow、单 Agent、多 Agent、模型和框架方案的质量、成本、延迟和安全。 | 想证明 Agent 方案价值的人 |
 | [Agent Contract Testing](/topics/agent-contract-testing) | 用契约测试约束 JSON schema、tool args、task state、trace event 和 MCP schema。 | 想让 AI 输出可集成的人 |
 | [Conversation Regression Testing](/topics/conversation-regression-testing) | 把关键对话路径、fixtures、引用、工具调用和安全边界沉淀成回归测试。 | 想避免版本退化的人 |
 | [Agent 生产运维 Runbook](/note/Engineering/agent-production-ops-runbook) | 定义 SLO、每日巡检、报警分级、事故排查、止血开关和复盘模板。 | 想把 Agent 真正运维起来的人 |
+| [Agent 事故复盘模板](/topics/agent-incident-postmortem-template) | 用事故摘要、时间线、Trace、错误分类、修复动作和回归样本把线上失败沉淀成资产。 | 想建立 Agent 线上问题复盘闭环的人 |
 | [Agent Release Gate](/note/Engineering/agent-release-gate) | 用 code、contract、eval、RAG、safety、cost、latency、ops、product gate 判断版本能否灰度和上线。 | 想让 Prompt、模型、RAG、MCP 变更可发布、可回滚的人 |
 | [LLM 可观测仪表盘](/note/Engineering/llm-observability-dashboard) | 把模型、Prompt、RAG、工具、成本、延迟、质量、反馈和安全统一进可 drill-down 的仪表盘。 | 想把模型调用运营起来的人 |
 | [Docker 部署工程化：从本地 Demo 到可上线服务](/topics/docker-agent-deployment) | 从 API、Worker、数据库、Redis、向量库、健康检查、日志和回滚理解部署闭环。 | 想把 Demo 部署成服务的学习者 |
 | [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide) | 从工具 schema、返回结构、权限、Trace、stdio/HTTP 选择到测试清单，理解 MCP Server 怎么落地。 | 想把外部工具标准化接入 Agent 的学习者 |
+| [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design) | 设计工具命名、描述、参数、输出、错误、风险等级和版本管理，让 MCP 工具可发现、可控、可评测。 | 想把 MCP 工具做成平台能力的人 |
 | [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model) | 系统整理 Prompt Injection、工具滥用、RAG 文档污染、MCP 越权和数据泄漏防护。 | 想理解 Agent 安全治理的人 |
 | [Eval Dataset 设计](/note/Engineering/eval-dataset-design) | 设计 RAG、Tool Calling、长任务 Agent 的评测样本、指标、失败样本库和分层评测集。 | 想把评测从主观体验变成工程资产的人 |
 | [Batch / 离线评测流水线](/note/Engineering/batch-offline-eval-pipeline) | 用异步批处理跑评测集、失败样本回放、Prompt 版本对比、批量摘要和分类。 | 想做 LLMOps 离线流水线的人 |
@@ -131,6 +135,7 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap) | 把个人博客、项目 A、项目 B、面试题库、Skills/MCP 内容组织成可证明能力的求职作品集。 | 准备 AI Agent / 大模型应用开发岗位的人 |
 | [AI Agent 项目选题库](/topics/ai-agent-project-ideas) | 整理 RAG、MCP、LLMOps、语音、多模态、数据分析等 12 个适合求职作品集的项目方向。 | 需要规划个人项目矩阵的人 |
 | [AI Agent 项目包装：简历、作品集和面试讲法](/topics/ai-agent-project-packaging) | 把 RAG、多 Agent、MCP、LLMOps 项目包装成有架构、有难点、有指标、有贡献的求职表达。 | 已有项目但不知道怎么写进简历的人 |
+| [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template) | 用背景、目标、架构、Workflow、RAG/MCP、评测、安全、难点和 60 秒讲法组织项目文章。 | 想把个人项目讲成可证明能力的人 |
 | [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan) | 用 30 天把 Agent 基础、RAG、工具调用、工程化、生产运维和项目表达串成复习计划。 | 想系统准备 AI Agent 岗位面试的人 |
 | [RAG 项目面试表达：如何讲清楚从文档到答案的工程链路](/topics/rag-project-interview) | 把 RAG 从文档解析、Chunk、Embedding、检索、Rerank、引用和评测讲成完整工程链路。 | 准备 RAG 项目面试的人 |
 | [多 Agent 项目面试表达：不要只讲多角色聊天](/topics/multi-agent-interview) | 避免"多角色聊天"，围绕任务分派、状态共享、工具权限、Trace、结果聚合和评测表达。 | 准备多 Agent 项目面试的人 |
@@ -165,5 +170,5 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | 规划个人项目 | [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap) → [项目实战](/projects) → Engineering 工程化专题 → 面试表达专题 |
 | 包装求职材料 | [Agent Capability Matrix](/topics/agent-capability-matrix) → [AI Agent 项目包装](/topics/ai-agent-project-packaging) → [简历描述模板](/note/Interview/resume-bullets) |
 | 30 天冲刺面试 | [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan) → [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) → [项目面试表达](/note/Interview/) |
-| 写项目方案 | [AI 项目设计文档模板](/topics/ai-project-design-doc-template) → [Agent 系统设计案例库](/topics/agent-system-design-casebook) → [生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
+| 写项目方案 | [AI 项目设计文档模板](/topics/ai-project-design-doc-template) → [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template) → [Agent 系统设计案例库](/topics/agent-system-design-casebook) → [生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
 | 写产品需求 | [AI Agent PRD 模板](/topics/ai-agent-prd-template) → [Agent Product Metrics](/topics/agent-product-metrics) → [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota) → [Browser Automation Testing](/topics/browser-automation-testing-agent-ui) |

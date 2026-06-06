@@ -61,6 +61,7 @@
 - [简历描述模板](/note/Interview/resume-bullets)
 - [Agent Capability Matrix](/topics/agent-capability-matrix)
 - [AI Agent 项目包装：简历、作品集和面试讲法](/topics/ai-agent-project-packaging)
+- [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template)
 - [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan)
 - [AI 项目设计文档模板](/topics/ai-project-design-doc-template)
 - [AI Agent 产品需求文档 PRD 模板](/topics/ai-agent-prd-template)
@@ -88,6 +89,10 @@
 - [Human Takeover 运营台](/topics/human-takeover-operations-console)
 - [Browser Automation Testing](/topics/browser-automation-testing-agent-ui)
 - [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)
+- [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)
+- [LLM Evaluation Scorecard](/note/Engineering/llm-evaluation-scorecard)
+- [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design)
+- [Agent 事故复盘模板](/topics/agent-incident-postmortem-template)
 - [RAG 设计问答](/note/Interview/rag-qa)
 - [Multi-Agent 设计问答](/note/Interview/multi-agent-qa)
 - [LangGraph 设计问答](/note/Interview/langgraph-qa)
@@ -109,6 +114,11 @@
 - **MCP Security**：不要只说“接入 MCP”，要讲 scope、tenant、role、secret boundary、schema pinning 和 audit。
 - **Error Taxonomy**：不要把失败都归因成模型不行，要区分输入、权限、上下文、检索、模型、工具、运行时和基础设施错误。
 - **Contract / Regression Testing**：不要只说“做了测试”，要讲接口契约、状态机契约、MCP schema 契约和对话回归样例。
+- **Agent Workflow 状态机**：不要只说“Agent 会自己规划”，要讲 Created、Queued、Planning、RunningTool、WaitingApproval、Completed、Failed 等状态和转移规则。
+- **LLM Evaluation Scorecard**：不要只说“效果不错”，要讲 task success、factuality、grounding、format、tool correctness、safety、cost、latency 的评分卡。
+- **MCP Tool Schema**：不要只说“接了 MCP 工具”，要讲工具命名、描述、参数、输出、错误、风险等级和 schema version。
+- **Agent Incident Postmortem**：不要只说“线上问题已修复”，要讲事故摘要、时间线、Trace、错误分类、回归样本和 Release Gate 更新。
+- **Portfolio Case Study**：不要把作品集写成技术栈列表，要讲背景、目标、架构、Workflow、评测、安全、难点和 60 秒版本。
 - **Agent Product Metrics**：不要只说“用户觉得好用”，要讲 task completion、handoff、correction、trust signal、cost 和 latency 如何共同证明产品价值。
 - **LLM Data Governance**：不要只说“收集日志做优化”，要讲数据分级、脱敏、用途隔离、保留周期、删除请求和评测/训练集 lineage。
 - **Agent Release Gate**：不要把上线说成“测试通过”，要讲 code、contract、eval、RAG、safety、cost、latency、ops 和 product gate。
@@ -130,7 +140,7 @@
 如果已经有项目代码，但不知道怎么讲，建议按下面顺序整理：
 
 1. 先看 [Agent Capability Matrix](/topics/agent-capability-matrix)，确认项目能证明哪些能力域。
-2. 再看 [AI Agent 项目包装](/topics/ai-agent-project-packaging)，把项目改写成“业务问题 + 架构 + 难点 + 指标 + 贡献”。
+2. 再看 [AI Agent 项目包装](/topics/ai-agent-project-packaging) 和 [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template)，把项目改写成“业务问题 + 架构 + Workflow + 难点 + 指标 + 贡献”。
 3. 再看 [简历描述模板](/note/Interview/resume-bullets)，把项目压缩成 2-4 条简历 bullet。
 4. 最后回到 [AI Agent 面试题库](/note/AI-Interview/)，准备技术追问。
 
