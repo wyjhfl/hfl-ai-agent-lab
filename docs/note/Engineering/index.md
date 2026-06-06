@@ -34,12 +34,15 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 企业权限层 | tenant、workspace、ACL、metadata filter、缓存隔离 | 防止企业知识库和多租户 RAG 检索泄漏数据 |
 | 异步任务层 | 任务队列、Worker、状态机、超时、重试、幂等 | 处理文档入库、长时间 Agent 执行、批量评测等耗时任务 |
 | 失败恢复层 | 状态机、幂等键、断点续跑、补偿、人工介入 | 让长任务在模型、工具、服务失败后能安全恢复 |
+| Human Takeover 层 | 接管队列、任务摘要、Trace 查看、人工审批、重跑、失败标注 | 把人工运营纳入可靠性闭环，避免高风险或低置信度任务失控 |
 | 工具权限层 | 工具注册、参数校验、权限控制、审批、审计 | 控制 Agent 能调用什么工具、在什么条件下调用、如何追责 |
+| Tool Registry 层 | tool_id、版本、schema、风险等级、owner、启停、监控和审计 | 把工具从散落函数变成可治理、可授权、可评测的资产 |
 | 工具沙箱层 | 文件/网络/命令/数据沙箱、MCP 权限审计 | 限制工具调用的环境边界，避免越权、注入和危险副作用 |
 | 安全治理层 | Prompt Injection、防越权、数据脱敏、工具风险分级 | 把模型放进受控执行环境，避免工具滥用和数据泄漏 |
 | Trace 可观测层 | Run ID、Step ID、工具调用记录、状态变化、错误定位 | 还原 Agent 执行过程，支持调试、复盘和质量分析 |
 | Evaluation 评测层 | 测试集、指标、版本对比、失败样本库 | 把效果从主观感觉变成可比较、可迭代的数据 |
 | Eval Dataset 层 | smoke set、regression set、失败样本、评分规则 | 让评测可复用、可回归、可定位失败原因 |
+| Agent Benchmark 层 | 固定任务集、方案对比、成本延迟、安全、恢复和 Trace 完整度 | 用数据比较 Workflow、单 Agent、多 Agent、模型和框架，而不是凭感觉选型 |
 | Judge 评测层 | Rubric、LLM-as-Judge、人工校准、pairwise 对比 | 让自动语义评测更稳定、更可解释 |
 | 对抗评测层 | 合成样本、Prompt Injection、越权、危险工具、冲突证据 | 主动覆盖线上不常见但高风险的边界情况 |
 | 红队演练层 | Prompt/RAG/Tool/MCP/Memory/API 攻击样本、修复和回归 | 上线前主动攻击系统，把安全问题转化为评测资产 |
@@ -48,6 +51,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
 | MCP Client 层 | Server Registry、Tool Discovery、权限过滤、连接管理、结果标准化 | 把 MCP Server 安全稳定接入 Agent Runtime |
 | Skills 工作流层 | `SKILL.md`、脚本、参考资料、验收标准 | 把重复工程流程沉淀成 Agent 可复用的操作手册 |
+| Browser 验收层 | Playwright、Mock LLM、工具审批、任务状态、引用和截图 Trace | 验证用户真实流程能跑通，避免只测 API 不测体验 |
 | 部署上线层 | Docker、环境变量、健康检查、日志、回滚、成本监控 | 保证系统能在真实环境稳定运行，并支持运维和回滚 |
 | 生产运维层 | SLO、报警分级、事故排查、止血开关、复盘模板 | 让 Agent 上线后有日常巡检和事故处理手册 |
 | LLM 可观测层 | 成本、延迟、Prompt 版本、RAG、工具、反馈、安全的仪表盘 | 把模型调用从黑盒变成可 drill-down、可运营的系统 |
@@ -72,25 +76,31 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 14. Enterprise RAG Permission：把 tenant、ACL、metadata filter 和缓存隔离放进检索链路。
 15. Async Task：处理长任务和并发。
 16. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
-17. API Security：控制工具权限和高风险操作。
-18. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
-19. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
-20. Red Team：用攻击样本主动验证 Agent 安全边界。
-21. Agent Trace：记录 Agent 执行过程。
-22. Evaluation Pipeline：评估系统效果。
-23. Eval Dataset：沉淀 smoke、regression 和失败样本。
-24. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
-25. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
-26. Fine-tuning Data Pipeline：把线上样本转成可训练、可评测的数据。
-27. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
-28. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
-29. MCP Server：标准化外部工具接入。
-30. MCP Client：把 MCP Server 安全稳定接入 Agent Runtime。
-31. Skills：把重复工作流沉淀成可复用操作手册。
-32. Docker Deploy：部署和运维。
-33. Production Ops Runbook：上线后巡检、报警、止血和复盘。
-34. LLM Observability Dashboard：建设成本、延迟、质量和安全统一仪表盘。
-35. Production Checklist：上线前检查。
+17. Human Takeover / Ops Console：把低置信度、高风险、超时和用户转人工做成接管队列。
+18. API Security：控制身份、权限、租户和高风险操作。
+19. Tool Registry：治理工具 schema、版本、风险等级、owner、启停和审批策略。
+20. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
+21. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
+22. Red Team：用攻击样本主动验证 Agent 安全边界。
+23. Agent Trace：记录 Agent 执行过程。
+24. Evaluation Pipeline：评估系统效果。
+25. Eval Dataset：沉淀 smoke、regression 和失败样本。
+26. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
+27. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
+28. Agent Benchmark：用固定任务集比较 Workflow、单 Agent、多 Agent、模型和框架方案。
+29. Fine-tuning Data Pipeline：把线上样本转成可训练、可评测的数据。
+30. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
+31. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
+32. MCP Server：标准化外部工具接入。
+33. MCP Client：把 MCP Server 安全稳定接入 Agent Runtime。
+34. Skills：把重复工作流沉淀成可复用操作手册。
+35. AI Project Design Doc：把项目背景、架构、数据、评测和风险写成可交付方案。
+36. AI Agent PRD：把技术能力翻译成用户故事、交互流程、权限审批和验收标准。
+37. Browser Automation Testing：用浏览器自动化验证上传、问答、引用、工具审批和运营台流程。
+38. Docker Deploy：部署和运维。
+39. Production Ops Runbook：上线后巡检、报警、止血和复盘。
+40. LLM Observability Dashboard：建设成本、延迟、质量和安全统一仪表盘。
+41. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -117,7 +127,10 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 - Database 保存任务、Agent 运行记录、工具调用。
 - Async Task 支撑长任务。
 - API Security 控制工具权限。
+- Tool Registry 管理工具 schema、版本、风险等级、审批策略和 owner。
+- Human Takeover 支撑高风险、低置信度、SLA 超时和用户转人工场景。
 - Agent Trace 记录多 Agent 协作过程。
+- Agent Benchmark 比较 Workflow、单 Agent、多 Agent 和不同模型方案的真实收益。
 - Evaluation 评估任务完成质量。
 
 在这个项目中，工程重点是可控性。多 Agent 系统如果没有任务状态、权限边界和执行轨迹，失败后很难判断问题来自任务拆解、工具调用、模型输出还是外部依赖。
@@ -134,6 +147,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 
 - 补充项目 A 的具体数据库设计。
 - 补充项目 B 的多 Agent Trace 设计。
+- 补充 Human Takeover 运营台案例。
+- 补充 Agent Benchmark 指标示例。
 - 补充 Evaluation 指标示例。
 - 补充 Docker Compose 生产配置示例。
 
@@ -174,6 +189,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [异步任务与长任务处理](/note/Engineering/async-task)
 - [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery)
 - [API 安全与工具权限控制](/note/Engineering/api-security)
+- [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)
 - [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission)
 - [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)
 - [Agent 红队演练](/note/Engineering/agent-red-team-playbook)
@@ -183,6 +199,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Fine-tuning 数据流水线](/note/Engineering/finetuning-data-pipeline)
 - [LLM-as-Judge 与 Rubric 评测](/note/Engineering/llm-as-judge-rubric-eval)
 - [合成数据与对抗评测集](/note/Engineering/synthetic-adversarial-eval-data)
+- [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)
 - [AI Agent 反馈闭环](/note/Engineering/agent-feedback-loop)
 - [Batch / 离线评测流水线](/note/Engineering/batch-offline-eval-pipeline)
 - [MCP Server](/note/Engineering/mcp-server)
@@ -193,3 +210,6 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent 生产运维 Runbook](/note/Engineering/agent-production-ops-runbook)
 - [LLM 可观测仪表盘](/note/Engineering/llm-observability-dashboard)
 - [AI Agent 上线检查清单](/note/Engineering/production-checklist)
+- [Human Takeover 运营台](/topics/human-takeover-operations-console)
+- [Browser Automation Testing：给网页 Agent 和前端流程做验收](/topics/browser-automation-testing-agent-ui)
+- [AI Agent 产品需求文档 PRD 模板](/topics/ai-agent-prd-template)

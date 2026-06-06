@@ -62,15 +62,30 @@
 - [AI Agent 项目包装：简历、作品集和面试讲法](/topics/ai-agent-project-packaging)
 - [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan)
 - [AI 项目设计文档模板](/topics/ai-project-design-doc-template)
+- [AI Agent 产品需求文档 PRD 模板](/topics/ai-agent-prd-template)
 - [Agent 系统设计案例库](/topics/agent-system-design-casebook)
 - [数据分析 Agent 项目方向](/topics/data-analysis-agent)
 - [Agent SaaS 产品化项目方向](/topics/agent-saas-productization)
 - [Code Agent 工程化项目方向](/topics/code-agent-engineering)
 - [Agent 编排模式](/topics/agent-orchestration-patterns)
 - [Agent 红队演练](/note/Engineering/agent-red-team-playbook)
+- [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)
+- [Human Takeover 运营台](/topics/human-takeover-operations-console)
+- [Browser Automation Testing](/topics/browser-automation-testing-agent-ui)
+- [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)
 - [RAG 设计问答](/note/Interview/rag-qa)
 - [Multi-Agent 设计问答](/note/Interview/multi-agent-qa)
 - [LangGraph 设计问答](/note/Interview/langgraph-qa)
+
+## 本批次新增项目表达角度
+
+这批内容可以直接补到项目深挖和作品集讲法里：
+
+- **Tool Registry**：不要只说“我做了工具调用”，要说清楚工具如何注册、版本化、分风险等级、按角色授权、审批和审计。
+- **Human Takeover 运营台**：不要把人工接管当作失败兜底，而要说成生产级可靠性设计，包括接管队列、摘要、Trace 查看、审批、重跑和失败标注。
+- **Browser Automation Testing**：不要只说接口测试通过，要说明如何用 Playwright 验证上传、问答、引用、任务状态、工具审批和运营台流程。
+- **Agent Benchmark**：不要凭感觉说多 Agent 更好，要用固定任务集比较质量、成本、延迟、安全、恢复能力和 Trace 完整度。
+- **AI Agent PRD**：不要一上来写代码，要先把用户、场景、P0/P1 范围、权限审批、产品指标和验收标准写清楚。
 
 ## 后续补充方向
 
@@ -92,8 +107,8 @@
 
 如果距离面试时间较近，可以直接按 [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan) 执行，每周分别覆盖 Agent 基础、RAG、生产级工程和项目表达。
 
-如果需要补充作品集项目方向，可以先用 [AI 项目设计文档模板](/topics/ai-project-design-doc-template) 写清楚方案，再从 [数据分析 Agent](/topics/data-analysis-agent)、[Code Agent 工程化](/topics/code-agent-engineering)、[Agent SaaS 产品化](/topics/agent-saas-productization) 中选择一个，分别对应数据智能、AI 编程工具和商业化产品能力。
+如果需要补充作品集项目方向，可以先用 [AI 项目设计文档模板](/topics/ai-project-design-doc-template) 写清楚方案，再用 [AI Agent PRD 模板](/topics/ai-agent-prd-template) 写清楚用户、范围和验收标准，然后从 [数据分析 Agent](/topics/data-analysis-agent)、[Code Agent 工程化](/topics/code-agent-engineering)、[Agent SaaS 产品化](/topics/agent-saas-productization) 中选择一个，分别对应数据智能、AI 编程工具和商业化产品能力。
 
-项目深挖时，建议额外准备两类追问：一类是 [Agent 编排模式](/topics/agent-orchestration-patterns)，说明为什么选择 Router、Planner、Supervisor 或状态机；另一类是 [Agent 红队演练](/note/Engineering/agent-red-team-playbook)，说明上线前如何主动验证安全边界。
+项目深挖时，建议额外准备四类追问：一类是 [Agent 编排模式](/topics/agent-orchestration-patterns)，说明为什么选择 Router、Planner、Supervisor 或状态机；一类是 [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)，说明工具如何治理；一类是 [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)，说明如何证明方案收益；另一类是 [Agent 红队演练](/note/Engineering/agent-red-team-playbook)，说明上线前如何主动验证安全边界。
 
-如果遇到系统设计题，可以按 [Agent 系统设计案例库](/topics/agent-system-design-casebook) 的 6 类案例练习：企业知识库、数据分析、Code Review、客服工单、多 Agent 研究助手和 Agent SaaS。
+如果遇到系统设计题，可以按 [Agent 系统设计案例库](/topics/agent-system-design-casebook) 的 6 类案例练习：企业知识库、数据分析、Code Review、客服工单、多 Agent 研究助手和 Agent SaaS；如果面试官追问产品化落地，再补充 [Human Takeover 运营台](/topics/human-takeover-operations-console) 和 [Browser Automation Testing](/topics/browser-automation-testing-agent-ui)，说明系统如何被运营和验收。

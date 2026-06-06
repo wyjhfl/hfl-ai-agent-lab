@@ -56,9 +56,14 @@
 - [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap)
 - [AI Agent 项目选题库](/topics/ai-agent-project-ideas)
 - [AI Agent 项目包装：简历、作品集和面试讲法](/topics/ai-agent-project-packaging)
+- [AI Agent 产品需求文档 PRD 模板](/topics/ai-agent-prd-template)
 - [Agent 框架选型](/topics/agent-framework-selection)
 - [Agent 协议全景](/topics/agent-protocol-landscape)
 - [生产级 Agent 治理清单](/topics/production-agent-governance-checklist)
+- [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)
+- [Human Takeover 运营台](/topics/human-takeover-operations-console)
+- [Browser Automation Testing](/topics/browser-automation-testing-agent-ui)
+- [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)
 - [RAG 项目面试表达](/topics/rag-project-interview)
 - [多 Agent 项目面试表达](/topics/multi-agent-interview)
 - [项目 B 一分钟介绍](/note/Interview/project-b-one-minute)
@@ -76,15 +81,15 @@
 |---|---|---|
 | [Agent 面试题](/note/AI-Interview/agent-interview) | [Agent 基础](/note/AI-Agent/agent-basic)、[Multi-Agent](/note/AI-Agent/multi-agent)、[Evaluation](/note/AI-Agent/evaluation) | [Agent Trace](/note/Engineering/agent-trace)、[Evaluation Pipeline](/note/Engineering/eval-pipeline)、[Agent 失败恢复](/note/Engineering/agent-failure-recovery) |
 | [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) | [Context Engineering](/note/AI-Agent/context-engineering)、[Agent Runtime](/note/AI-Agent/agent-runtime) | [Agent 编排模式](/topics/agent-orchestration-patterns)、[LLM Gateway](/note/Engineering/llm-gateway)、[多模型路由](/note/Engineering/model-routing-ab-testing) |
-| Agent 协议与工具生态 | [Tool Calling](/note/AI-Agent/tool-calling)、[Browser / Computer Use Agent](/note/AI-Agent/browser-computer-use-agent) | [Agent 协议全景](/topics/agent-protocol-landscape)、[MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)、[MCP Client 工程化](/note/Engineering/mcp-client-engineering) |
-| Agent 安全与治理追问 | [Guardrails / Safety](/note/AI-Agent/guardrails)、[Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission)、[Agent 红队演练](/note/Engineering/agent-red-team-playbook)、[生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
+| Agent 协议与工具生态 | [Tool Calling](/note/AI-Agent/tool-calling)、[Browser / Computer Use Agent](/note/AI-Agent/browser-computer-use-agent) | [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)、[Agent 协议全景](/topics/agent-protocol-landscape)、[MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)、[MCP Client 工程化](/note/Engineering/mcp-client-engineering) |
+| Agent 安全与治理追问 | [Guardrails / Safety](/note/AI-Agent/guardrails)、[Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)、[Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission)、[Human Takeover 运营台](/topics/human-takeover-operations-console)、[Agent 红队演练](/note/Engineering/agent-red-team-playbook)、[生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
 | [RAG 面试题](/note/AI-Interview/rag-interview) | [RAG](/note/AI-Agent/rag) | [RAG 入库流水线](/note/Engineering/rag-ingestion-pipeline)、[RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging)、[向量检索选型](/topics/vector-search-selection) |
 | 高级 RAG / 企业知识库 | [RAG](/note/AI-Agent/rag)、[RAG vs Fine-tuning](/note/AI-Agent/rag-vs-finetuning) | [Embedding 模型评测与迁移](/note/Engineering/embedding-model-eval-migration)、[GraphRAG](/note/Engineering/graphrag-engineering)、[企业 RAG 权限与多租户](/note/Engineering/enterprise-rag-permission-multitenancy) |
 | RAG / Fine-tuning 取舍 | [RAG vs Fine-tuning](/note/AI-Agent/rag-vs-finetuning) | [Fine-tuning 数据流水线](/note/Engineering/finetuning-data-pipeline)、[Eval Dataset 设计](/note/Engineering/eval-dataset-design)、[PromptOps](/note/Engineering/promptops-versioning) |
 | [LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview) | [Tool Calling](/note/AI-Agent/tool-calling) | [Structured Output](/note/Engineering/structured-output-engineering)、[Agent 工具沙箱](/note/Engineering/agent-tool-sandbox-permission)、[MCP Server](/note/Engineering/mcp-server) |
 | [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) | [Production Engineering](/note/AI-Agent/production) | [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization)、[LLM 可观测仪表盘](/note/Engineering/llm-observability-dashboard)、[生产运维 Runbook](/note/Engineering/agent-production-ops-runbook) |
-| 评测与安全追问 | [Evaluation](/note/AI-Agent/evaluation)、[Guardrails](/note/AI-Agent/guardrails) | [LLM-as-Judge](/note/Engineering/llm-as-judge-rubric-eval)、[合成数据与对抗评测集](/note/Engineering/synthetic-adversarial-eval-data)、[Agent 反馈闭环](/note/Engineering/agent-feedback-loop) |
+| 评测与安全追问 | [Evaluation](/note/AI-Agent/evaluation)、[Guardrails](/note/AI-Agent/guardrails) | [LLM-as-Judge](/note/Engineering/llm-as-judge-rubric-eval)、[合成数据与对抗评测集](/note/Engineering/synthetic-adversarial-eval-data)、[Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)、[Agent 反馈闭环](/note/Engineering/agent-feedback-loop) |
 | AI 编程 / Code Agent | [Tool Calling](/note/AI-Agent/tool-calling)、[Agent Runtime](/note/AI-Agent/agent-runtime) | [Code Agent 工程化](/topics/code-agent-engineering)、[Skills 编写](/note/AI-Tools/skill-authoring)、[AI 编程审查清单](/topics/ai-coding-review-checklist) |
-| 数据分析 Agent / SaaS 产品化 | [Structured Output](/note/Engineering/structured-output-engineering)、[Agent UI](/topics/agent-ui-product-design) | [数据分析 Agent](/topics/data-analysis-agent)、[Agent SaaS 产品化](/topics/agent-saas-productization)、[Agent 反馈闭环](/note/Engineering/agent-feedback-loop) |
-| AI 系统设计题 | [Agent 系统设计面试题](/topics/agent-system-design-interview)、[Agent 开发 Playbook](/topics/agent-development-playbook) | [Agent 系统设计案例库](/topics/agent-system-design-casebook)、[AI 项目设计文档模板](/topics/ai-project-design-doc-template)、[生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
+| 数据分析 Agent / SaaS 产品化 | [Structured Output](/note/Engineering/structured-output-engineering)、[Agent UI](/topics/agent-ui-product-design) | [AI Agent PRD 模板](/topics/ai-agent-prd-template)、[数据分析 Agent](/topics/data-analysis-agent)、[Agent SaaS 产品化](/topics/agent-saas-productization)、[Human Takeover 运营台](/topics/human-takeover-operations-console)、[Browser Automation Testing](/topics/browser-automation-testing-agent-ui)、[Agent 反馈闭环](/note/Engineering/agent-feedback-loop) |
+| AI 系统设计题 | [Agent 系统设计面试题](/topics/agent-system-design-interview)、[Agent 开发 Playbook](/topics/agent-development-playbook) | [Agent 系统设计案例库](/topics/agent-system-design-casebook)、[AI 项目设计文档模板](/topics/ai-project-design-doc-template)、[AI Agent PRD 模板](/topics/ai-agent-prd-template)、[Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)、[生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
 | [LangChain / LangGraph 面试题](/note/AI-Interview/langchain-interview) | [LangGraph](/note/AI-Agent/langgraph)、[Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | [Agent Trace](/note/Engineering/agent-trace)、[Evaluation Pipeline](/note/Engineering/eval-pipeline) |
