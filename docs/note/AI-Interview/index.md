@@ -53,6 +53,7 @@
 面试题库解决“怎么回答技术问题”，作品集路线解决“怎么证明自己做过”。建议配合阅读：
 
 - [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap)
+- [AI Agent 项目选题库](/topics/ai-agent-project-ideas)
 - [Agent 框架选型](/topics/agent-framework-selection)
 - [生产级 Agent 治理清单](/topics/production-agent-governance-checklist)
 - [RAG 项目面试表达](/topics/rag-project-interview)
@@ -74,6 +75,7 @@
 | [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) | [Context Engineering](/note/AI-Agent/context-engineering)、[Agent Runtime](/note/AI-Agent/agent-runtime) | [LLM Gateway](/note/Engineering/llm-gateway)、[Agent Trace](/note/Engineering/agent-trace) |
 | Agent 安全与治理追问 | [Guardrails / Safety](/note/AI-Agent/guardrails)、[Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)、[生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
 | [RAG 面试题](/note/AI-Interview/rag-interview) | [RAG](/note/AI-Agent/rag) | [RAG 工程化](/note/Engineering/rag-engineering)、[向量数据库](/note/Engineering/vector-database) |
+| RAG / Fine-tuning 取舍 | [RAG vs Fine-tuning](/note/AI-Agent/rag-vs-finetuning) | [Eval Dataset 设计](/note/Engineering/eval-dataset-design)、[LLM Gateway](/note/Engineering/llm-gateway) |
 | [LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview) | [Tool Calling](/note/AI-Agent/tool-calling) | [API 安全](/note/Engineering/api-security)、[MCP Server](/note/Engineering/mcp-server) |
 | [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) | [Production Engineering](/note/AI-Agent/production) | [Docker 部署](/note/Engineering/docker-deploy)、[可观测性](/note/Engineering/observability)、[上线检查清单](/note/Engineering/production-checklist) |
 | [LangChain / LangGraph 面试题](/note/AI-Interview/langchain-interview) | [LangGraph](/note/AI-Agent/langgraph)、[Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | [Agent Trace](/note/Engineering/agent-trace)、[Evaluation Pipeline](/note/Engineering/eval-pipeline) |

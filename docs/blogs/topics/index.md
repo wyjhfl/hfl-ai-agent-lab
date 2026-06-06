@@ -15,6 +15,7 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | 想学习 AI 编程协作 | [Claude Code 实战工作流](/topics/claude-code-workflow) → [Skills 编写](/note/AI-Tools/skill-authoring) → [AI 编程审查清单](/topics/ai-coding-review-checklist) → [避免 AI 误提交和假验证](/topics/avoid-ai-miscommit-fake-verification) |
 | 想看源码和架构 | [Hermes Agent](/note/Source-Reading/hermes-agent-advanced) / [OpenClaw](/topics/openclaw-architecture) / [Hook 机制](/topics/agent-harness-hooks) 相关专题 |
 | 想整理求职作品集 | [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap) → [项目实战](/projects) → [简历描述模板](/note/Interview/resume-bullets) |
+| 想找项目选题 | [AI Agent 项目选题库](/topics/ai-agent-project-ideas) → [Agent 开发 Playbook](/topics/agent-development-playbook) → [生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
 
 ---
 
@@ -23,6 +24,7 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | 专题 | 解决的问题 | 适合读者 |
 |---|---|---|
 | [RAG 工程化：从文档到可评估答案](/topics/rag-engineering-system) | 从文档解析、Chunk、Embedding、检索、Rerank、引用和评测理解生产级 RAG。 | 想做 RAG 项目、理解 RAG 工程全链路的人 |
+| [多模态文档理解 Agent](/topics/multimodal-document-agent) | 处理 PDF、图片、表格、版面块、OCR 和结构化抽取，把复杂文档变成可检索证据。 | 想做文档智能和多模态项目的人 |
 | [Agent 开发 Playbook：从需求到可上线版本](/topics/agent-development-playbook) | 从业务问题、单 Agent 闭环、工具/RAG、State、Trace、Evaluation、Guardrails 到多 Agent 的开发顺序。 | 想把 Agent 从想法推进到可验证项目的人 |
 | [Agent 框架选型：LangGraph、OpenAI Agents SDK、LlamaIndex、CrewAI 怎么看](/topics/agent-framework-selection) | 从任务边界、State、Tool、Human-in-the-loop、Trace、RAG 和团队维护成本选择框架。 | 想讲清楚框架取舍的人 |
 | [Agent Trace：如何让 Agent 执行过程可观测](/topics/agent-trace-observability) | 用 Run、Step、Tool Call、状态变化和错误事件记录 Agent 的完整执行轨迹。 | 想让 Agent 系统可调试、可审计、可优化的人 |
@@ -44,7 +46,9 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 |---|---|---|
 | [Agent Runtime 是什么：Agent 真正开始工作的执行引擎](/topics/agent-runtime-explained) | 理解 Agent 的任务执行引擎，包括模型调用、工具调度、状态推进和结果生成。 | 想理解 Agent 任务执行引擎的人 |
 | [Context Engineering](/note/AI-Agent/context-engineering) | 理解系统规则、任务上下文、RAG 证据、Memory、State、Trace 如何分层进入模型上下文。 | 想提升长任务 Agent 稳定性的人 |
+| [RAG vs Fine-tuning](/note/AI-Agent/rag-vs-finetuning) | 判断什么时候该做检索增强，什么时候该做行为/格式微调，以及两者如何组合。 | 准备大模型工程取舍题的人 |
 | [Tool Calling 工程化：不只是函数调用](/topics/tool-calling-engineering) | 理解工具 Schema、参数校验、权限控制、错误处理、Trace 和安全审计。 | 想把工具调用从 Demo 推向生产级的人 |
+| [Realtime Voice Agent](/note/AI-Agent/realtime-voice-agent) | 理解低延迟语音输入输出、打断处理、多轮状态、工具调用和语音安全边界。 | 想做实时语音 Agent 的人 |
 | [Memory 与 State：Agent 不只是记住聊天记录](/topics/memory-state-agent) | 区分 Session、Context、Memory、State 和 Trace，理解长任务和多 Agent 的状态管理。 | 想理解 Agent 记忆与状态管理的人 |
 
 ---
@@ -67,6 +71,7 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | [Agent 系统设计面试题：如何讲清楚一个生产级 Agent](/topics/agent-system-design-interview) | 从 Runtime、Tool、Memory / State、Trace、Evaluation、Security 讲清楚生产级 Agent 系统设计。 | 准备 Agent 系统设计面试的人 |
 | [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) | 整理 Agent vs ChatBot、失败排查、评测、安全、成本、MCP、长任务恢复等工程追问。 | 已会基础概念、需要准备深挖追问的人 |
 | [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap) | 把个人博客、项目 A、项目 B、面试题库、Skills/MCP 内容组织成可证明能力的求职作品集。 | 准备 AI Agent / 大模型应用开发岗位的人 |
+| [AI Agent 项目选题库](/topics/ai-agent-project-ideas) | 整理 RAG、MCP、LLMOps、语音、多模态、数据分析等 12 个适合求职作品集的项目方向。 | 需要规划个人项目矩阵的人 |
 | [RAG 项目面试表达：如何讲清楚从文档到答案的工程链路](/topics/rag-project-interview) | 把 RAG 从文档解析、Chunk、Embedding、检索、Rerank、引用和评测讲成完整工程链路。 | 准备 RAG 项目面试的人 |
 | [多 Agent 项目面试表达：不要只讲多角色聊天](/topics/multi-agent-interview) | 避免"多角色聊天"，围绕任务分派、状态共享、工具权限、Trace、结果聚合和评测表达。 | 准备多 Agent 项目面试的人 |
 
