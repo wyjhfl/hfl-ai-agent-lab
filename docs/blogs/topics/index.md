@@ -33,7 +33,11 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | [生产级 Agent 治理清单](/topics/production-agent-governance-checklist) | 用 30 个问题检查任务边界、上下文、工具权限、状态恢复、模型治理、评测和回滚。 | 准备把 Agent 从 Demo 推到真实业务的人 |
 | [FastAPI 到 Agent Backend：接口层怎么设计](/topics/fastapi-agent-backend) | 从路由、Schema、Service、Worker、Trace、Evaluation 和权限理解 Agent 后端接口层。 | 想把 Agent / RAG 做成后端服务的学习者 |
 | [LLM Gateway](/note/Engineering/llm-gateway) | 统一治理多模型调用、路由、限流、成本、Prompt 版本、降级和审计。 | 想把模型调用接入生产后端的人 |
+| [Structured Output 工程化](/note/Engineering/structured-output-engineering) | 用 Schema、类型校验、重试修复、Trace 和评测让模型输出稳定进入业务系统。 | 想把 LLM 输出接入前后端和工作流的人 |
+| [PromptOps：Prompt 版本、评测和回滚](/note/Engineering/promptops-versioning) | 把 Prompt 当作可版本化、可评测、可发布、可回滚的工程资产管理。 | 想治理线上 Prompt 变更风险的人 |
+| [向量检索选型：Embedding、Hybrid Search、Rerank 和 Metadata Filter](/topics/vector-search-selection) | 从 Dense/Sparse、混合检索、权限过滤、重排和评测设计完整检索链路。 | 想提升 RAG 召回质量的人 |
 | [Agent 数据库设计：状态、证据与执行记录](/topics/agent-database-design) | 用 Task、Run、Step、Tool Call、Document、Chunk、Trace、Evaluation 建模 Agent 系统数据。 | 想理解 Agent 数据建模的学习者 |
+| [Agent UI 产品化设计：不要只做一个聊天框](/topics/agent-ui-product-design) | 设计任务面板、证据面板、工具调用审批、反馈和失败重跑，让 Agent 可控可解释。 | 想把 Agent 做成真实产品的人 |
 | [Docker 部署工程化：从本地 Demo 到可上线服务](/topics/docker-agent-deployment) | 从 API、Worker、数据库、Redis、向量库、健康检查、日志和回滚理解部署闭环。 | 想把 Demo 部署成服务的学习者 |
 | [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide) | 从工具 schema、返回结构、权限、Trace、stdio/HTTP 选择到测试清单，理解 MCP Server 怎么落地。 | 想把外部工具标准化接入 Agent 的学习者 |
 | [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model) | 系统整理 Prompt Injection、工具滥用、RAG 文档污染、MCP 越权和数据泄漏防护。 | 想理解 Agent 安全治理的人 |

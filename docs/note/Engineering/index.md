@@ -20,6 +20,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | --- | --- | --- |
 | 后端接口层 | FastAPI、路由、请求校验、统一响应、鉴权 | 提供稳定的任务入口、RAG 问答入口、文件上传入口和状态查询入口 |
 | LLM Gateway 层 | 模型路由、限流、成本、Prompt 版本、降级和审计 | 把模型调用从业务代码中抽离，统一治理多模型访问 |
+| Structured Output 层 | JSON Schema、Pydantic、TypeScript 类型、字段校验、输出修复 | 让模型输出可解析、可落库、可渲染、可评测，而不是只能给人读 |
+| PromptOps 层 | Prompt Registry、版本、评测、灰度、回滚、调用审计 | 把 Prompt 从临时代码字符串变成可治理的工程资产 |
 | 数据存储层 | 用户、任务、文档、工具调用、Trace、评测结果 | 保存业务状态和运行证据，让系统可追踪、可恢复、可评估 |
 | RAG 检索层 | 文档解析、Chunk、Embedding、Hybrid Search、Rerank、引用溯源 | 让模型基于外部知识回答，并能解释答案来源 |
 | 向量数据库层 | Collection、Metadata、索引、过滤查询、增量更新 | 支撑高质量召回、权限过滤、引用定位和检索性能优化 |
@@ -39,20 +41,22 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 
 1. FastAPI：先把服务接口搭起来。
 2. LLM Gateway：统一模型路由、成本、降级和审计。
-3. Database：设计任务、文档、Trace、评测等数据模型。
-4. RAG Engineering：构建知识检索链路。
-5. Vector Database：管理向量数据和检索性能。
-6. Async Task：处理长任务和并发。
-7. API Security：控制工具权限和高风险操作。
-8. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
-9. Agent Trace：记录 Agent 执行过程。
-10. Evaluation Pipeline：评估系统效果。
-11. Eval Dataset：沉淀 smoke、regression 和失败样本。
-12. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
-13. MCP Server：标准化外部工具接入。
-14. Skills：把重复工作流沉淀成可复用操作手册。
-15. Docker Deploy：部署和运维。
-16. Production Checklist：上线前检查。
+3. Structured Output：让模型输出能被后端、前端、数据库和评测系统稳定消费。
+4. PromptOps：把 Prompt 版本、评测、灰度和回滚接入发布流程。
+5. Database：设计任务、文档、Trace、评测等数据模型。
+6. RAG Engineering：构建知识检索链路。
+7. Vector Database：管理向量数据和检索性能。
+8. Async Task：处理长任务和并发。
+9. API Security：控制工具权限和高风险操作。
+10. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
+11. Agent Trace：记录 Agent 执行过程。
+12. Evaluation Pipeline：评估系统效果。
+13. Eval Dataset：沉淀 smoke、regression 和失败样本。
+14. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
+15. MCP Server：标准化外部工具接入。
+16. Skills：把重复工作流沉淀成可复用操作手册。
+17. Docker Deploy：部署和运维。
+18. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -121,6 +125,8 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 
 - [FastAPI 后端接口工程化](/note/Engineering/fastapi)
 - [LLM Gateway](/note/Engineering/llm-gateway)
+- [Structured Output 工程化](/note/Engineering/structured-output-engineering)
+- [PromptOps：Prompt 版本、评测和回滚](/note/Engineering/promptops-versioning)
 - [数据库设计：从业务数据到 Agent 运行记录](/note/Engineering/database)
 - [RAG 工程化](/note/Engineering/rag-engineering)
 - [向量数据库工程化](/note/Engineering/vector-database)

@@ -307,6 +307,8 @@ export default defineConfigWithTheme<ThemeConfig>({
             { text: '工程化总览', link: '/note/Engineering/' },
             { text: 'FastAPI 后端接口', link: '/note/Engineering/fastapi' },
             { text: 'LLM Gateway', link: '/note/Engineering/llm-gateway' },
+            { text: 'Structured Output 工程化', link: '/note/Engineering/structured-output-engineering' },
+            { text: 'PromptOps 版本管理', link: '/note/Engineering/promptops-versioning' },
             { text: '数据库设计', link: '/note/Engineering/database' },
             { text: 'RAG 工程化', link: '/note/Engineering/rag-engineering' },
             { text: '向量数据库', link: '/note/Engineering/vector-database' },
