@@ -21,6 +21,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 后端接口层 | FastAPI、路由、请求校验、统一响应、鉴权 | 提供稳定的任务入口、RAG 问答入口、文件上传入口和状态查询入口 |
 | LLM Gateway 层 | 模型路由、限流、成本、Prompt 版本、降级和审计 | 把模型调用从业务代码中抽离，统一治理多模型访问 |
 | Structured Output 层 | JSON Schema、Pydantic、TypeScript 类型、字段校验、输出修复 | 让模型输出可解析、可落库、可渲染、可评测，而不是只能给人读 |
+| Context Window 管理层 | token 预算、历史压缩、证据排序、Memory 过滤、上下文 Trace | 控制长上下文成本、相关性、可信边界和可复盘性 |
 | PromptOps 层 | Prompt Registry、版本、评测、灰度、回滚、调用审计 | 把 Prompt 从临时代码字符串变成可治理的工程资产 |
 | 成本与延迟优化层 | 调用账本、模型路由、缓存、批处理、降级、p95 延迟 | 让 Agent 不只是能跑，还能在预算和 SLA 内稳定运行 |
 | 多模型治理层 | 路由策略、A/B 实验、Shadow Traffic、Canary、自动回滚 | 让模型切换和新模型上线可评测、可灰度、可追溯 |
@@ -33,6 +34,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | GraphRAG 层 | 实体、关系、子图、社区摘要、路径检索 | 支撑多跳关系、全局结构和复杂知识推理 |
 | 企业权限层 | tenant、workspace、ACL、metadata filter、缓存隔离 | 防止企业知识库和多租户 RAG 检索泄漏数据 |
 | 异步任务层 | 任务队列、Worker、状态机、超时、重试、幂等 | 处理文档入库、长时间 Agent 执行、批量评测等耗时任务 |
+| Queue / Backpressure 层 | 优先级队列、资源并发、限流、熔断、死信队列、压力信号 | 防止长任务、工具失败和重试风暴压垮在线服务 |
 | 失败恢复层 | 状态机、幂等键、断点续跑、补偿、人工介入 | 让长任务在模型、工具、服务失败后能安全恢复 |
 | Human Takeover 层 | 接管队列、任务摘要、Trace 查看、人工审批、重跑、失败标注 | 把人工运营纳入可靠性闭环，避免高风险或低置信度任务失控 |
 | 工具权限层 | 工具注册、参数校验、权限控制、审批、审计 | 控制 Agent 能调用什么工具、在什么条件下调用、如何追责 |
@@ -50,6 +52,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 反馈闭环层 | 用户反馈、人工修正、失败归因、eval case 转化 | 把线上真实问题转成评测、Prompt、检索和产品迭代燃料 |
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
 | MCP Client 层 | Server Registry、Tool Discovery、权限过滤、连接管理、结果标准化 | 把 MCP Server 安全稳定接入 Agent Runtime |
+| MCP Gateway 层 | server registry、schema cache、policy filter、secret boundary、approval、audit | 统一治理多 MCP Server 的发现、鉴权、审批、限流和观测 |
+| Memory Evaluation 层 | should/should-not remember、更新、遗忘、注入、stale memory 指标 | 证明长期记忆写得对、用得对、更新得了、忘得掉 |
 | Skills 工作流层 | `SKILL.md`、脚本、参考资料、验收标准 | 把重复工程流程沉淀成 Agent 可复用的操作手册 |
 | Browser 验收层 | Playwright、Mock LLM、工具审批、任务状态、引用和截图 Trace | 验证用户真实流程能跑通，避免只测 API 不测体验 |
 | 部署上线层 | Docker、环境变量、健康检查、日志、回滚、成本监控 | 保证系统能在真实环境稳定运行，并支持运维和回滚 |
@@ -63,44 +67,48 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 1. FastAPI：先把服务接口搭起来。
 2. LLM Gateway：统一模型路由、成本、降级和审计。
 3. Structured Output：让模型输出能被后端、前端、数据库和评测系统稳定消费。
-4. PromptOps：把 Prompt 版本、评测、灰度和回滚接入发布流程。
-5. Cost / Latency Optimization：建立调用账本、模型路由、缓存、降级和 p95 延迟优化。
-6. Model Routing / A/B Testing：把模型切换、新模型灰度和实验结果纳入治理。
-7. Database：设计任务、文档、Trace、评测等数据模型。
-8. RAG Engineering：构建知识检索链路。
-9. RAG Ingestion：把文件解析、Chunk、metadata、embedding 和索引做成可靠流水线。
-10. RAG Debugging：建立检索故障排查 Trace。
-11. Vector Database：管理向量数据和检索性能。
-12. Embedding Eval / Migration：评测和灰度迁移向量模型。
-13. GraphRAG：在需要复杂关系推理时引入实体、关系和子图检索。
-14. Enterprise RAG Permission：把 tenant、ACL、metadata filter 和缓存隔离放进检索链路。
-15. Async Task：处理长任务和并发。
-16. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
-17. Human Takeover / Ops Console：把低置信度、高风险、超时和用户转人工做成接管队列。
-18. API Security：控制身份、权限、租户和高风险操作。
-19. Tool Registry：治理工具 schema、版本、风险等级、owner、启停和审批策略。
-20. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
-21. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
-22. Red Team：用攻击样本主动验证 Agent 安全边界。
-23. Agent Trace：记录 Agent 执行过程。
-24. Evaluation Pipeline：评估系统效果。
-25. Eval Dataset：沉淀 smoke、regression 和失败样本。
-26. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
-27. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
-28. Agent Benchmark：用固定任务集比较 Workflow、单 Agent、多 Agent、模型和框架方案。
-29. Fine-tuning Data Pipeline：把线上样本转成可训练、可评测的数据。
-30. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
-31. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
-32. MCP Server：标准化外部工具接入。
-33. MCP Client：把 MCP Server 安全稳定接入 Agent Runtime。
-34. Skills：把重复工作流沉淀成可复用操作手册。
-35. AI Project Design Doc：把项目背景、架构、数据、评测和风险写成可交付方案。
-36. AI Agent PRD：把技术能力翻译成用户故事、交互流程、权限审批和验收标准。
-37. Browser Automation Testing：用浏览器自动化验证上传、问答、引用、工具审批和运营台流程。
-38. Docker Deploy：部署和运维。
-39. Production Ops Runbook：上线后巡检、报警、止血和复盘。
-40. LLM Observability Dashboard：建设成本、延迟、质量和安全统一仪表盘。
-41. Production Checklist：上线前检查。
+4. Context Window Management：控制长上下文的 token 预算、证据排序、历史压缩和上下文 Trace。
+5. PromptOps：把 Prompt 版本、评测、灰度和回滚接入发布流程。
+6. Cost / Latency Optimization：建立调用账本、模型路由、缓存、降级和 p95 延迟优化。
+7. Model Routing / A/B Testing：把模型切换、新模型灰度和实验结果纳入治理。
+8. Database：设计任务、文档、Trace、评测等数据模型。
+9. RAG Engineering：构建知识检索链路。
+10. RAG Ingestion：把文件解析、Chunk、metadata、embedding 和索引做成可靠流水线。
+11. RAG Debugging：建立检索故障排查 Trace。
+12. Vector Database：管理向量数据和检索性能。
+13. Embedding Eval / Migration：评测和灰度迁移向量模型。
+14. GraphRAG：在需要复杂关系推理时引入实体、关系和子图检索。
+15. Enterprise RAG Permission：把 tenant、ACL、metadata filter 和缓存隔离放进检索链路。
+16. Async Task：处理长任务和并发。
+17. Queue / Backpressure：用优先级队列、资源并发、限流、熔断和死信队列保护系统。
+18. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
+19. Human Takeover / Ops Console：把低置信度、高风险、超时和用户转人工做成接管队列。
+20. API Security：控制身份、权限、租户和高风险操作。
+21. Tool Registry：治理工具 schema、版本、风险等级、owner、启停和审批策略。
+22. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
+23. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
+24. Red Team：用攻击样本主动验证 Agent 安全边界。
+25. Agent Trace：记录 Agent 执行过程。
+26. Evaluation Pipeline：评估系统效果。
+27. Eval Dataset：沉淀 smoke、regression 和失败样本。
+28. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
+29. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
+30. Agent Benchmark：用固定任务集比较 Workflow、单 Agent、多 Agent、模型和框架方案。
+31. Agent Memory Evaluation：评测记忆写入、检索、更新、遗忘和注入防护。
+32. Fine-tuning Data Pipeline：把线上样本转成可训练、可评测的数据。
+33. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
+34. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
+35. MCP Server：标准化外部工具接入。
+36. MCP Client：把 MCP Server 安全稳定接入 Agent Runtime。
+37. MCP Gateway：统一治理多 MCP Server 的发现、权限、审批、限流和审计。
+38. Skills：把重复工作流沉淀成可复用操作手册。
+39. AI Project Design Doc：把项目背景、架构、数据、评测和风险写成可交付方案。
+40. AI Agent PRD：把技术能力翻译成用户故事、交互流程、权限审批和验收标准。
+41. Browser Automation Testing：用浏览器自动化验证上传、问答、引用、工具审批和运营台流程。
+42. Docker Deploy：部署和运维。
+43. Production Ops Runbook：上线后巡检、报警、止血和复盘。
+44. LLM Observability Dashboard：建设成本、延迟、质量和安全统一仪表盘。
+45. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -126,6 +134,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 - FastAPI 提供任务入口。
 - Database 保存任务、Agent 运行记录、工具调用。
 - Async Task 支撑长任务。
+- Queue / Backpressure 防止长任务积压、重试风暴和资源耗尽。
 - API Security 控制工具权限。
 - Tool Registry 管理工具 schema、版本、风险等级、审批策略和 owner。
 - Human Takeover 支撑高风险、低置信度、SLA 超时和用户转人工场景。
@@ -175,6 +184,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [FastAPI 后端接口工程化](/note/Engineering/fastapi)
 - [LLM Gateway](/note/Engineering/llm-gateway)
 - [Structured Output 工程化](/note/Engineering/structured-output-engineering)
+- [Context Window 管理](/note/AI-Agent/context-window-management)
 - [PromptOps：Prompt 版本、评测和回滚](/note/Engineering/promptops-versioning)
 - [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization)
 - [多模型路由与 A/B 实验](/note/Engineering/model-routing-ab-testing)
@@ -187,6 +197,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [GraphRAG 工程化](/note/Engineering/graphrag-engineering)
 - [企业知识库权限与多租户 RAG](/note/Engineering/enterprise-rag-permission-multitenancy)
 - [异步任务与长任务处理](/note/Engineering/async-task)
+- [Agent Queue 与 Backpressure](/topics/agent-queue-backpressure)
 - [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery)
 - [API 安全与工具权限控制](/note/Engineering/api-security)
 - [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)
@@ -200,11 +211,13 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [LLM-as-Judge 与 Rubric 评测](/note/Engineering/llm-as-judge-rubric-eval)
 - [合成数据与对抗评测集](/note/Engineering/synthetic-adversarial-eval-data)
 - [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)
+- [Agent Memory 评测](/note/Engineering/memory-evaluation-for-agents)
 - [AI Agent 反馈闭环](/note/Engineering/agent-feedback-loop)
 - [Batch / 离线评测流水线](/note/Engineering/batch-offline-eval-pipeline)
 - [MCP Server](/note/Engineering/mcp-server)
 - [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)
 - [MCP Client 工程化](/note/Engineering/mcp-client-engineering)
+- [MCP Gateway 架构](/note/Engineering/mcp-gateway-architecture)
 - [Skills 编写](/note/AI-Tools/skill-authoring)
 - [Docker 部署](/note/Engineering/docker-deploy)
 - [Agent 生产运维 Runbook](/note/Engineering/agent-production-ops-runbook)
