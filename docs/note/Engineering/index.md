@@ -32,10 +32,12 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | LLM Semantic Cache 层 | query normalize、embedding 相似度、版本失效、权限隔离、误命中监控 | 在不牺牲安全和可信度的前提下降低成本与延迟 |
 | LLM Cost Chargeback 层 | cost ledger、tenant、feature、model、retry、cache saving、quota | 把成本拆到租户、功能和任务，支撑预算、限额和商业化 |
 | LLM Cost Anomaly Detection 层 | cost_per_success、p95_cost、retry_cost_ratio、model_mix、cache_hit_rate | 实时发现成本异常、重试风暴和模型路由错误 |
+| LLM Request Ledger 层 | request_id、run_id、tenant、feature、model、token、cost、latency、cache、release | 把每次模型调用变成可统计、可追责、可优化的账本事件 |
 | 多模型治理层 | 路由策略、A/B 实验、Shadow Traffic、Canary、自动回滚 | 让模型切换和新模型上线可评测、可灰度、可追溯 |
 | Model Rollout Canary 层 | offline eval、shadow traffic、canary、ramp-up、rollback trigger | 让新模型上线可控、可观测、可回滚 |
 | 数据存储层 | 用户、任务、文档、工具调用、Trace、评测结果 | 保存业务状态和运行证据，让系统可追踪、可恢复、可评估 |
 | RAG 检索层 | 文档解析、Chunk、Embedding、Hybrid Search、Rerank、引用溯源 | 让模型基于外部知识回答，并能解释答案来源 |
+| RAG Query Router 层 | intent、route policy、retriever、filter、rerank、no-answer、tool handoff | 按问题类型选择检索和回答链路，避免所有问题都走同一个向量检索 |
 | RAG 入库层 | 文件校验、解析、Normalize、Chunk、Metadata、Embedding、索引、质量检查 | 把原始文件稳定转成可检索、可追溯、可更新的知识资产 |
 | RAG Ingestion Quality Gate 层 | parse、metadata、ACL、chunk、duplicate、PII、embedding、retrieval smoke | 防止低质量文档污染索引和答案 |
 | RAG Debug 层 | Query Rewrite、召回、Filter、Rerank、Context Pack、Citation Trace | 定位答案差到底是入库、检索、排序、上下文还是生成问题 |
@@ -62,6 +64,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 工具权限层 | 工具注册、参数校验、权限控制、审批、审计 | 控制 Agent 能调用什么工具、在什么条件下调用、如何追责 |
 | Tool Registry 层 | tool_id、版本、schema、风险等级、owner、启停、监控和审计 | 把工具从散落函数变成可治理、可授权、可评测的资产 |
 | Tool Risk Classification 层 | R0-R4、敏感读取、可逆写、高影响写、危险操作、审批和沙箱 | 按副作用和数据敏感度控制 Agent 工具调用风险 |
+| Tool Idempotency Side Effect 层 | idempotency_key、args_hash、dedupe、retry、compensation、side_effect_log | 让会写入和外部副作用的工具可重试、可回放、不会重复执行 |
 | Tool Call Replay 层 | tool_call_id、schema_version、args_hash、policy、approval、dry/mock/live replay | 把工具失败变成可回放、可归因、可回归的调试资产 |
 | 工具沙箱层 | 文件/网络/命令/数据沙箱、MCP 权限审计 | 限制工具调用的环境边界，避免越权、注入和危险副作用 |
 | 安全治理层 | Prompt Injection、防越权、数据脱敏、工具风险分级 | 把模型放进受控执行环境，避免工具滥用和数据泄漏 |
@@ -88,9 +91,11 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | LLM 数据治理层 | 数据分级、脱敏、用途隔离、保留周期、评测/训练集溯源 | 让用户输入、Trace、反馈、评测和训练数据可用、可控、可删除 |
 | PII Redaction 层 | mask、tokenize、hash、drop、redaction_version、utility eval | 防止敏感信息进入模型、日志、缓存和评测集 |
 | 反馈闭环层 | 用户反馈、人工修正、失败归因、eval case 转化 | 把线上真实问题转成评测、Prompt、检索和产品迭代燃料 |
+| Agent Feedback Triage 层 | thumbs、correction、run trace、root cause、severity、owner、backlog | 把反馈分诊成产品、检索、工具、模型、安全或数据任务 |
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
 | MCP Server Hardening 层 | 参数校验、风险分级、timeout、rate limit、错误映射、schema version | 把 MCP Server 从脚本提升为可上线工具服务 |
 | MCP Supply Chain Risk 层 | server provenance、version pin、schema diff、dependency、sandbox、untrusted output | 防止 MCP 工具生态引入供应链和权限风险 |
+| MCP Sandbox Profile 层 | filesystem、network、command、secret、resource limit、audit、deny by default | 为不同 MCP 工具定义最小权限运行环境和资源边界 |
 | MCP Tool Schema 层 | 工具命名、描述、参数、输出、错误、风险等级、版本 | 让工具可发现、可控、可评测，而不是散落函数 |
 | MCP Version Deprecation 层 | schema diff、deprecated_since、sunset_at、migration_note、usage_count | 让 MCP 工具版本迁移可通知、可灰度、可回滚 |
 | MCP Client 测试层 | fake server、contract、policy filter、error mapping、injection samples | 验证 MCP Client 接入后可回归、可审计、可降级 |
@@ -131,6 +136,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 8. LLM Semantic Cache：用语义缓存、权限隔离和版本失效降低重复请求成本。
 9. LLM Cost Chargeback：把成本拆到租户、功能、模型和 run，支持预算与配额。
 10. LLM Cost Anomaly Detection：监控 cost_per_success、p95_cost、retry_cost_ratio、model_mix 和 cache_hit_rate。
+10. LLM Request Ledger：记录每次模型调用的租户、功能、模型、成本、延迟、缓存和发布版本。
 8. Model Routing / A/B Testing：把模型切换、新模型灰度和实验结果纳入治理。
 9. Model Rollout Canary：用离线评测、shadow、canary 和自动回滚上线新模型。
 9. Database：设计任务、文档、Trace、评测等数据模型。
@@ -140,6 +146,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 12. RAG Ingestion：把文件解析、Chunk、metadata、embedding 和索引做成可靠流水线。
 13. RAG Ingestion Quality Gate：在文档 active 前检查解析、metadata、ACL、chunk、PII、embedding 和召回。
 13. RAG Debugging：建立检索故障排查 Trace。
+13. RAG Query Router：按 FAQ、政策、多跳、SQL、拒答和工具调用选择链路。
 14. RAG Citation Evaluation：评测引用覆盖率、支持度、权限和无答案行为。
 15. RAG Grounding Contract：把 claim-to-citation、no-answer、权限和 freshness 做成契约。
 15. RAG Evaluation Report：把评测目标、数据集、指标、失败归因和成本延迟写成报告。
@@ -163,6 +170,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 26. API Security：控制身份、权限、租户和高风险操作。
 27. Tool Registry：治理工具 schema、版本、风险等级、owner、启停和审批策略。
 28. Tool Risk Classification：按 R0-R4 定义工具权限、审批、沙箱和审计策略。
+28. Tool Idempotency Side Effect：为写入、发消息、扣费和删除工具设计幂等与副作用日志。
 28. Tool Call Replay：记录和回放工具调用，定位参数、权限、schema 和外部服务失败。
 28. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
 29. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
@@ -189,10 +197,12 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 43. Memory Privacy Retention：评测记忆写入、隐私、留存、删除和跨租户隔离。
 43. Fine-tuning Data Pipeline：把线上样本转成可训练、可评测的数据。
 44. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
+44. Agent Feedback Triage：把点踩、修正和投诉分诊成可执行 backlog。
 45. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
 46. MCP Server：标准化外部工具接入。
 47. MCP Server Hardening：为 MCP 工具服务补齐参数校验、风险分级、超时和审计。
 48. MCP Supply Chain Risk：治理 MCP Server 来源、版本、依赖、schema diff 和沙箱。
+48. MCP Sandbox Profile：为 MCP 工具配置文件、网络、命令、资源和审计边界。
 47. MCP Tool Schema：设计工具命名、参数、输出、错误、风险和版本。
 48. MCP Version Deprecation：治理工具 schema 变更、弃用窗口、迁移和下线。
 48. MCP Client：把 MCP Server 安全稳定接入 Agent Runtime。
@@ -303,6 +313,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [LLM Semantic Cache](/note/Engineering/llm-semantic-cache)
 - [LLM Cost Chargeback](/note/Engineering/llm-cost-chargeback)
 - [LLM Cost Anomaly Detection](/note/Engineering/llm-cost-anomaly-detection)
+- [LLM Request Ledger](/note/Engineering/llm-request-ledger)
 - [多模型路由与 A/B 实验](/note/Engineering/model-routing-ab-testing)
 - [Model Rollout Canary](/note/Engineering/model-rollout-canary)
 - [数据库设计：从业务数据到 Agent 运行记录](/note/Engineering/database)
@@ -310,6 +321,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [PII 脱敏策略](/note/Engineering/pii-redaction-for-llm)
 - [RAG 工程化](/note/Engineering/rag-engineering)
 - [RAG 入库流水线](/note/Engineering/rag-ingestion-pipeline)
+- [RAG Query Router](/note/Engineering/rag-query-router)
 - [RAG Ingestion Quality Gate](/note/Engineering/rag-ingestion-quality-gate)
 - [RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging)
 - [RAG Citation Evaluation](/note/Engineering/rag-citation-evaluation)
@@ -334,6 +346,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [API 安全与工具权限控制](/note/Engineering/api-security)
 - [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)
 - [Tool Risk Classification](/note/Engineering/tool-risk-classification)
+- [Tool Idempotency Side Effect](/note/Engineering/tool-idempotency-side-effect)
 - [Tool Call 回放调试](/note/Engineering/tool-call-replay-debugging)
 - [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission)
 - [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)
@@ -360,11 +373,13 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent Memory 评测](/note/Engineering/memory-evaluation-for-agents)
 - [Memory Privacy Retention](/note/Engineering/memory-privacy-retention)
 - [AI Agent 反馈闭环](/note/Engineering/agent-feedback-loop)
+- [Agent Feedback Triage](/note/Engineering/agent-feedback-triage)
 - [Batch / 离线评测流水线](/note/Engineering/batch-offline-eval-pipeline)
 - [MCP Server](/note/Engineering/mcp-server)
 - [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)
 - [MCP Server Hardening](/note/Engineering/mcp-server-hardening)
 - [MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk)
+- [MCP Sandbox Profile](/note/Engineering/mcp-sandbox-profile)
 - [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design)
 - [MCP Version Deprecation](/note/Engineering/mcp-version-deprecation)
 - [MCP Client 测试](/note/Engineering/mcp-client-testing)
