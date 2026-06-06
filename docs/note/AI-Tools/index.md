@@ -12,6 +12,7 @@
 | Skills 编写 | 把重复提示词沉淀成可复用工作流，包含 `SKILL.md`、脚本、参考资料和验收标准 |
 | Skill 测试与版本管理 | 让可复用能力有版本号、changelog、触发测试、流程测试、安全测试和回归样例 |
 | MCP Tool Schema 设计 | 把工具命名、参数、输出、错误、风险等级和版本管理做成可复用规范 |
+| Skill 运营手册 | 把 Skill 的版本、触发、测试、反馈、漂移和废弃做成长期维护流程 |
 | AGENTS.md / Skill | 项目提示词、版本迭代推进方式 |
 
 ## 工具定位
@@ -44,9 +45,9 @@
 | 学仓库级协作 | [Claude Code 拆解](/note/AI-Tools/claude-code) |
 | 学局部代码实现 | [Codex 拆解](/note/AI-Tools/codex) |
 | 把流程沉淀成可复用能力 | [Skills 编写](/note/AI-Tools/skill-authoring) |
-| 测试和演进 Skill | [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning) |
+| 测试和演进 Skill | [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning) → [Skill 运营手册](/note/AI-Tools/skill-operations-playbook) |
 | 创建可治理 MCP 工具 | [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design) → [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide) |
 
 ## 当前状态
 
-当前已经形成 AI 编程协作、Claude Code、Codex、Skills 编写、Skill 测试版本管理和 MCP Tool Schema 六个入口。后续继续补充 MCP 工具创建、项目导师工作流和版本迭代案例。
+当前已经形成 AI 编程协作、Claude Code、Codex、Skills 编写、Skill 测试版本管理、Skill 运营手册和 MCP Tool Schema 七个入口。后续继续补充 MCP 工具创建、项目导师工作流和版本迭代案例。

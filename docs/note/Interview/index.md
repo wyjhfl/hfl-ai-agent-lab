@@ -62,6 +62,7 @@
 - [Agent Capability Matrix](/topics/agent-capability-matrix)
 - [AI Agent 项目包装：简历、作品集和面试讲法](/topics/ai-agent-project-packaging)
 - [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template)
+- [AI Agent 项目答辩稿](/topics/ai-agent-project-defense-script)
 - [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan)
 - [AI 项目设计文档模板](/topics/ai-project-design-doc-template)
 - [AI Agent 产品需求文档 PRD 模板](/topics/ai-agent-prd-template)
@@ -92,6 +93,10 @@
 - [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)
 - [LLM Evaluation Scorecard](/note/Engineering/llm-evaluation-scorecard)
 - [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design)
+- [MCP Client 测试](/note/Engineering/mcp-client-testing)
+- [Agent 租户隔离测试](/note/Engineering/agent-tenant-isolation-testing)
+- [LLM 成本预算表](/note/Engineering/llm-cost-budget-table)
+- [Skill 运营手册](/note/AI-Tools/skill-operations-playbook)
 - [Agent 事故复盘模板](/topics/agent-incident-postmortem-template)
 - [RAG 设计问答](/note/Interview/rag-qa)
 - [Multi-Agent 设计问答](/note/Interview/multi-agent-qa)
@@ -117,6 +122,10 @@
 - **Agent Workflow 状态机**：不要只说“Agent 会自己规划”，要讲 Created、Queued、Planning、RunningTool、WaitingApproval、Completed、Failed 等状态和转移规则。
 - **LLM Evaluation Scorecard**：不要只说“效果不错”，要讲 task success、factuality、grounding、format、tool correctness、safety、cost、latency 的评分卡。
 - **MCP Tool Schema**：不要只说“接了 MCP 工具”，要讲工具命名、描述、参数、输出、错误、风险等级和 schema version。
+- **MCP Client Testing**：不要只测 Server 启动，要讲 fake server、工具发现、policy filter、error mapping、timeout 和 Prompt Injection 样本。
+- **Tenant Isolation Testing**：不要只说“支持多租户”，要讲 API、RAG、Vector Metadata、MCP、Memory、Cache、Trace 和 Billing 的隔离测试。
+- **LLM Cost Budget**：不要只说“做了成本优化”，要讲 cost_per_task、p95_cost、cost_per_success、model_mix、cache_hit_rate 和 retry_cost_ratio。
+- **Skill Operations**：不要只说“写了 Skill”，要讲版本、触发测试、输出测试、安全测试、反馈、漂移修复和废弃策略。
 - **Agent Incident Postmortem**：不要只说“线上问题已修复”，要讲事故摘要、时间线、Trace、错误分类、回归样本和 Release Gate 更新。
 - **Portfolio Case Study**：不要把作品集写成技术栈列表，要讲背景、目标、架构、Workflow、评测、安全、难点和 60 秒版本。
 - **Agent Product Metrics**：不要只说“用户觉得好用”，要讲 task completion、handoff、correction、trust signal、cost 和 latency 如何共同证明产品价值。
@@ -140,7 +149,7 @@
 如果已经有项目代码，但不知道怎么讲，建议按下面顺序整理：
 
 1. 先看 [Agent Capability Matrix](/topics/agent-capability-matrix)，确认项目能证明哪些能力域。
-2. 再看 [AI Agent 项目包装](/topics/ai-agent-project-packaging) 和 [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template)，把项目改写成“业务问题 + 架构 + Workflow + 难点 + 指标 + 贡献”。
+2. 再看 [AI Agent 项目包装](/topics/ai-agent-project-packaging)、[AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template) 和 [AI Agent 项目答辩稿](/topics/ai-agent-project-defense-script)，把项目改写成“业务问题 + 架构 + Workflow + 难点 + 指标 + 贡献 + 5 分钟演示”。
 3. 再看 [简历描述模板](/note/Interview/resume-bullets)，把项目压缩成 2-4 条简历 bullet。
 4. 最后回到 [AI Agent 面试题库](/note/AI-Interview/)，准备技术追问。
 
