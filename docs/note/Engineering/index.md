@@ -22,15 +22,19 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | LLM Gateway 层 | 模型路由、限流、成本、Prompt 版本、降级和审计 | 把模型调用从业务代码中抽离，统一治理多模型访问 |
 | Structured Output 层 | JSON Schema、Pydantic、TypeScript 类型、字段校验、输出修复 | 让模型输出可解析、可落库、可渲染、可评测，而不是只能给人读 |
 | PromptOps 层 | Prompt Registry、版本、评测、灰度、回滚、调用审计 | 把 Prompt 从临时代码字符串变成可治理的工程资产 |
+| 成本与延迟优化层 | 调用账本、模型路由、缓存、批处理、降级、p95 延迟 | 让 Agent 不只是能跑，还能在预算和 SLA 内稳定运行 |
 | 数据存储层 | 用户、任务、文档、工具调用、Trace、评测结果 | 保存业务状态和运行证据，让系统可追踪、可恢复、可评估 |
 | RAG 检索层 | 文档解析、Chunk、Embedding、Hybrid Search、Rerank、引用溯源 | 让模型基于外部知识回答，并能解释答案来源 |
 | 向量数据库层 | Collection、Metadata、索引、过滤查询、增量更新 | 支撑高质量召回、权限过滤、引用定位和检索性能优化 |
 | 异步任务层 | 任务队列、Worker、状态机、超时、重试、幂等 | 处理文档入库、长时间 Agent 执行、批量评测等耗时任务 |
+| 失败恢复层 | 状态机、幂等键、断点续跑、补偿、人工介入 | 让长任务在模型、工具、服务失败后能安全恢复 |
 | 工具权限层 | 工具注册、参数校验、权限控制、审批、审计 | 控制 Agent 能调用什么工具、在什么条件下调用、如何追责 |
+| 工具沙箱层 | 文件/网络/命令/数据沙箱、MCP 权限审计 | 限制工具调用的环境边界，避免越权、注入和危险副作用 |
 | 安全治理层 | Prompt Injection、防越权、数据脱敏、工具风险分级 | 把模型放进受控执行环境，避免工具滥用和数据泄漏 |
 | Trace 可观测层 | Run ID、Step ID、工具调用记录、状态变化、错误定位 | 还原 Agent 执行过程，支持调试、复盘和质量分析 |
 | Evaluation 评测层 | 测试集、指标、版本对比、失败样本库 | 把效果从主观感觉变成可比较、可迭代的数据 |
 | Eval Dataset 层 | smoke set、regression set、失败样本、评分规则 | 让评测可复用、可回归、可定位失败原因 |
+| 反馈闭环层 | 用户反馈、人工修正、失败归因、eval case 转化 | 把线上真实问题转成评测、Prompt、检索和产品迭代燃料 |
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
 | Skills 工作流层 | `SKILL.md`、脚本、参考资料、验收标准 | 把重复工程流程沉淀成 Agent 可复用的操作手册 |
 | 部署上线层 | Docker、环境变量、健康检查、日志、回滚、成本监控 | 保证系统能在真实环境稳定运行，并支持运维和回滚 |
@@ -43,20 +47,24 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 2. LLM Gateway：统一模型路由、成本、降级和审计。
 3. Structured Output：让模型输出能被后端、前端、数据库和评测系统稳定消费。
 4. PromptOps：把 Prompt 版本、评测、灰度和回滚接入发布流程。
-5. Database：设计任务、文档、Trace、评测等数据模型。
-6. RAG Engineering：构建知识检索链路。
-7. Vector Database：管理向量数据和检索性能。
-8. Async Task：处理长任务和并发。
-9. API Security：控制工具权限和高风险操作。
-10. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
-11. Agent Trace：记录 Agent 执行过程。
-12. Evaluation Pipeline：评估系统效果。
-13. Eval Dataset：沉淀 smoke、regression 和失败样本。
-14. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
-15. MCP Server：标准化外部工具接入。
-16. Skills：把重复工作流沉淀成可复用操作手册。
-17. Docker Deploy：部署和运维。
-18. Production Checklist：上线前检查。
+5. Cost / Latency Optimization：建立调用账本、模型路由、缓存、降级和 p95 延迟优化。
+6. Database：设计任务、文档、Trace、评测等数据模型。
+7. RAG Engineering：构建知识检索链路。
+8. Vector Database：管理向量数据和检索性能。
+9. Async Task：处理长任务和并发。
+10. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
+11. API Security：控制工具权限和高风险操作。
+12. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
+13. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
+14. Agent Trace：记录 Agent 执行过程。
+15. Evaluation Pipeline：评估系统效果。
+16. Eval Dataset：沉淀 smoke、regression 和失败样本。
+17. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
+18. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
+19. MCP Server：标准化外部工具接入。
+20. Skills：把重复工作流沉淀成可复用操作手册。
+21. Docker Deploy：部署和运维。
+22. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -127,15 +135,19 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [LLM Gateway](/note/Engineering/llm-gateway)
 - [Structured Output 工程化](/note/Engineering/structured-output-engineering)
 - [PromptOps：Prompt 版本、评测和回滚](/note/Engineering/promptops-versioning)
+- [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization)
 - [数据库设计：从业务数据到 Agent 运行记录](/note/Engineering/database)
 - [RAG 工程化](/note/Engineering/rag-engineering)
 - [向量数据库工程化](/note/Engineering/vector-database)
 - [异步任务与长任务处理](/note/Engineering/async-task)
+- [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery)
 - [API 安全与工具权限控制](/note/Engineering/api-security)
+- [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission)
 - [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
 - [Evaluation Pipeline](/note/Engineering/eval-pipeline)
 - [Eval Dataset 设计](/note/Engineering/eval-dataset-design)
+- [AI Agent 反馈闭环](/note/Engineering/agent-feedback-loop)
 - [Batch / 离线评测流水线](/note/Engineering/batch-offline-eval-pipeline)
 - [MCP Server](/note/Engineering/mcp-server)
 - [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)

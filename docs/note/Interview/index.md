@@ -59,6 +59,7 @@
 - [项目 B 一分钟介绍](/note/Interview/project-b-one-minute)
 - [项目 B 深挖版](/note/Interview/project-b-deep-dive)
 - [简历描述模板](/note/Interview/resume-bullets)
+- [AI Agent 项目包装：简历、作品集和面试讲法](/topics/ai-agent-project-packaging)
 - [RAG 设计问答](/note/Interview/rag-qa)
 - [Multi-Agent 设计问答](/note/Interview/multi-agent-qa)
 - [LangGraph 设计问答](/note/Interview/langgraph-qa)
@@ -72,3 +73,11 @@
 - 面试官追问清单
 - 简历 bullet 与项目页面之间的映射
 - “一分钟介绍 → 深挖回答 → 反问准备”的表达链路
+
+## 推荐组合阅读
+
+如果已经有项目代码，但不知道怎么讲，建议按下面顺序整理：
+
+1. 先看 [AI Agent 项目包装](/topics/ai-agent-project-packaging)，把项目改写成“业务问题 + 架构 + 难点 + 指标 + 贡献”。
+2. 再看 [简历描述模板](/note/Interview/resume-bullets)，把项目压缩成 2-4 条简历 bullet。
+3. 最后回到 [AI Agent 面试题库](/note/AI-Interview/)，准备技术追问。
