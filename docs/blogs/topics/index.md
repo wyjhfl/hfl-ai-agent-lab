@@ -24,13 +24,17 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 |---|---|---|
 | [RAG 工程化：从文档到可评估答案](/topics/rag-engineering-system) | 从文档解析、Chunk、Embedding、检索、Rerank、引用和评测理解生产级 RAG。 | 想做 RAG 项目、理解 RAG 工程全链路的人 |
 | [Agent 开发 Playbook：从需求到可上线版本](/topics/agent-development-playbook) | 从业务问题、单 Agent 闭环、工具/RAG、State、Trace、Evaluation、Guardrails 到多 Agent 的开发顺序。 | 想把 Agent 从想法推进到可验证项目的人 |
+| [Agent 框架选型：LangGraph、OpenAI Agents SDK、LlamaIndex、CrewAI 怎么看](/topics/agent-framework-selection) | 从任务边界、State、Tool、Human-in-the-loop、Trace、RAG 和团队维护成本选择框架。 | 想讲清楚框架取舍的人 |
 | [Agent Trace：如何让 Agent 执行过程可观测](/topics/agent-trace-observability) | 用 Run、Step、Tool Call、状态变化和错误事件记录 Agent 的完整执行轨迹。 | 想让 Agent 系统可调试、可审计、可优化的人 |
 | [Evaluation Pipeline：Agent 效果怎么评估](/topics/evaluation-pipeline) | 从测试集、指标、自动评测、人工抽检、版本对比和失败样本库构建评测闭环。 | 想系统化评估 Agent / RAG 效果的人 |
+| [生产级 Agent 治理清单](/topics/production-agent-governance-checklist) | 用 30 个问题检查任务边界、上下文、工具权限、状态恢复、模型治理、评测和回滚。 | 准备把 Agent 从 Demo 推到真实业务的人 |
 | [FastAPI 到 Agent Backend：接口层怎么设计](/topics/fastapi-agent-backend) | 从路由、Schema、Service、Worker、Trace、Evaluation 和权限理解 Agent 后端接口层。 | 想把 Agent / RAG 做成后端服务的学习者 |
 | [LLM Gateway](/note/Engineering/llm-gateway) | 统一治理多模型调用、路由、限流、成本、Prompt 版本、降级和审计。 | 想把模型调用接入生产后端的人 |
 | [Agent 数据库设计：状态、证据与执行记录](/topics/agent-database-design) | 用 Task、Run、Step、Tool Call、Document、Chunk、Trace、Evaluation 建模 Agent 系统数据。 | 想理解 Agent 数据建模的学习者 |
 | [Docker 部署工程化：从本地 Demo 到可上线服务](/topics/docker-agent-deployment) | 从 API、Worker、数据库、Redis、向量库、健康检查、日志和回滚理解部署闭环。 | 想把 Demo 部署成服务的学习者 |
 | [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide) | 从工具 schema、返回结构、权限、Trace、stdio/HTTP 选择到测试清单，理解 MCP Server 怎么落地。 | 想把外部工具标准化接入 Agent 的学习者 |
+| [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model) | 系统整理 Prompt Injection、工具滥用、RAG 文档污染、MCP 越权和数据泄漏防护。 | 想理解 Agent 安全治理的人 |
+| [Eval Dataset 设计](/note/Engineering/eval-dataset-design) | 设计 RAG、Tool Calling、长任务 Agent 的评测样本、指标、失败样本库和分层评测集。 | 想把评测从主观体验变成工程资产的人 |
 
 ---
 
@@ -78,6 +82,7 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | [Hook 机制为什么是 Agent Harness 最重要的资产](/topics/agent-harness-hooks) | 理解 Agent Harness 如何通过规则、工具边界和治理层变得可控。 | 想把 Agent 从 Prompt Demo 推向可控系统的人 |
 | [Hermes vs OpenClaw：Agent 架构差异怎么理解](/topics/hermes-vs-openclaw) | 横向比较 Hermes 与 OpenClaw 在系统定位、任务组织、Runtime、Tool、Workspace、Memory、安全和评测上的差异。 | 想从源码阅读进入架构抽象的学习者 |
 | [Agent Runtime 横向对比：任务执行引擎到底负责什么](/topics/agent-runtime-comparison) | 比较简单 Agent Loop、Workflow 和生产级 Agent Runtime 的职责边界。 | 想设计 Agent 执行引擎的学习者 |
+| [Agent 框架选型](/topics/agent-framework-selection) | 比较 LangGraph、OpenAI Agents SDK、LlamaIndex、CrewAI 和轻量自研 Runtime 的适用场景。 | 想准备框架选型面试表达的人 |
 | [Tool System 横向对比：Tool、Skill、Plugin、MCP、Hook 到底怎么区分](/topics/tool-system-comparison) | 区分执行能力、能力封装、扩展机制、标准协议和治理入口。 | 想理解 Agent 工具系统边界的学习者 |
 
 ---
@@ -87,7 +92,7 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | 阅读目标 | 建议路径 |
 |---|---|
 | 建立学习主线 | [AI Agent 学习路线](/note/AI-Agent/) → [Agent 开发 Playbook](/topics/agent-development-playbook) → AI Agent 核心概念专题 → Engineering 工程化专题 |
-| 学工程落地 | [工程化笔记](/note/Engineering/) → RAG 工程化 / Agent Trace / Evaluation Pipeline 专题 |
+| 学工程落地 | [工程化笔记](/note/Engineering/) → [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model) → RAG 工程化 / Agent Trace / Evaluation Pipeline 专题 |
 | 准备面试 | [面试题库](/note/AI-Interview/) → [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) → 面试表达专题 → 源码与架构专题 |
 | 看架构设计 | [源码拆解](/note/Source-Reading/) → Hermes / OpenClaw / Hook 机制专题 |
 | 学 AI 编程协作 | [AI 工具笔记](/note/AI-Tools/) → AI 工具工作流专题 → [Skills 编写](/note/AI-Tools/skill-authoring) |

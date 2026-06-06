@@ -25,8 +25,10 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 向量数据库层 | Collection、Metadata、索引、过滤查询、增量更新 | 支撑高质量召回、权限过滤、引用定位和检索性能优化 |
 | 异步任务层 | 任务队列、Worker、状态机、超时、重试、幂等 | 处理文档入库、长时间 Agent 执行、批量评测等耗时任务 |
 | 工具权限层 | 工具注册、参数校验、权限控制、审批、审计 | 控制 Agent 能调用什么工具、在什么条件下调用、如何追责 |
+| 安全治理层 | Prompt Injection、防越权、数据脱敏、工具风险分级 | 把模型放进受控执行环境，避免工具滥用和数据泄漏 |
 | Trace 可观测层 | Run ID、Step ID、工具调用记录、状态变化、错误定位 | 还原 Agent 执行过程，支持调试、复盘和质量分析 |
 | Evaluation 评测层 | 测试集、指标、版本对比、失败样本库 | 把效果从主观感觉变成可比较、可迭代的数据 |
+| Eval Dataset 层 | smoke set、regression set、失败样本、评分规则 | 让评测可复用、可回归、可定位失败原因 |
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
 | Skills 工作流层 | `SKILL.md`、脚本、参考资料、验收标准 | 把重复工程流程沉淀成 Agent 可复用的操作手册 |
 | 部署上线层 | Docker、环境变量、健康检查、日志、回滚、成本监控 | 保证系统能在真实环境稳定运行，并支持运维和回滚 |
@@ -42,12 +44,14 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 5. Vector Database：管理向量数据和检索性能。
 6. Async Task：处理长任务和并发。
 7. API Security：控制工具权限和高风险操作。
-8. Agent Trace：记录 Agent 执行过程。
-9. Evaluation Pipeline：评估系统效果。
-10. MCP Server：标准化外部工具接入。
-11. Skills：把重复工作流沉淀成可复用操作手册。
-12. Docker Deploy：部署和运维。
-13. Production Checklist：上线前检查。
+8. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
+9. Agent Trace：记录 Agent 执行过程。
+10. Evaluation Pipeline：评估系统效果。
+11. Eval Dataset：沉淀 smoke、regression 和失败样本。
+12. MCP Server：标准化外部工具接入。
+13. Skills：把重复工作流沉淀成可复用操作手册。
+14. Docker Deploy：部署和运维。
+15. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -121,8 +125,10 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [向量数据库工程化](/note/Engineering/vector-database)
 - [异步任务与长任务处理](/note/Engineering/async-task)
 - [API 安全与工具权限控制](/note/Engineering/api-security)
+- [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
 - [Evaluation Pipeline](/note/Engineering/eval-pipeline)
+- [Eval Dataset 设计](/note/Engineering/eval-dataset-design)
 - [MCP Server](/note/Engineering/mcp-server)
 - [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)
 - [Skills 编写](/note/AI-Tools/skill-authoring)
