@@ -10,6 +10,7 @@
 | Codex 拆解 | IDE 内代码生成、局部实现、函数级修改、教学式开发 |
 | AI Coding Workflow | ChatGPT 规划 + Claude Code / Codex 执行的完整工作流 |
 | Skills 编写 | 把重复提示词沉淀成可复用工作流，包含 `SKILL.md`、脚本、参考资料和验收标准 |
+| Skill 测试与版本管理 | 让可复用能力有版本号、changelog、触发测试、流程测试、安全测试和回归样例 |
 | AGENTS.md / Skill | 项目提示词、版本迭代推进方式 |
 
 ## 工具定位
@@ -42,7 +43,8 @@
 | 学仓库级协作 | [Claude Code 拆解](/note/AI-Tools/claude-code) |
 | 学局部代码实现 | [Codex 拆解](/note/AI-Tools/codex) |
 | 把流程沉淀成可复用能力 | [Skills 编写](/note/AI-Tools/skill-authoring) |
+| 测试和演进 Skill | [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning) |
 
 ## 当前状态
 
-当前已经形成 AI 编程协作、Claude Code、Codex 和 Skills 编写四个入口。后续继续补充 MCP 工具创建、项目导师工作流和版本迭代案例。
+当前已经形成 AI 编程协作、Claude Code、Codex、Skills 编写和 Skill 测试版本管理五个入口。后续继续补充 MCP 工具创建、项目导师工作流和版本迭代案例。

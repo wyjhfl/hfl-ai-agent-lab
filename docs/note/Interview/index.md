@@ -71,6 +71,11 @@
 - [Agent 编排模式](/topics/agent-orchestration-patterns)
 - [Agent 红队演练](/note/Engineering/agent-red-team-playbook)
 - [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)
+- [Conversation Regression Testing](/topics/conversation-regression-testing)
+- [Agent Contract Testing](/topics/agent-contract-testing)
+- [Agent 错误分类](/note/Engineering/agent-error-taxonomy)
+- [MCP 安全与授权](/note/Engineering/mcp-security-auth)
+- [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning)
 - [Agent Queue 与 Backpressure](/topics/agent-queue-backpressure)
 - [Agent Memory 评测](/note/Engineering/memory-evaluation-for-agents)
 - [Context Window 管理](/note/AI-Agent/context-window-management)
@@ -95,6 +100,10 @@
 - **MCP Gateway**：不要只说“接入 MCP”，要讲 server registry、schema cache、policy filter、secret boundary、approval 和 audit。
 - **Memory Evaluation**：不要只说“做了记忆”，要讲 should remember / should not remember / update / forget / injection 测试集。
 - **Queue / Backpressure**：不要只说“异步任务”，要讲优先级队列、资源并发、背压信号、熔断和死信队列。
+- **Skill Testing**：不要只说“写了 Skill”，要讲触发测试、流程测试、输出测试、安全测试、回归样例和 changelog。
+- **MCP Security**：不要只说“接入 MCP”，要讲 scope、tenant、role、secret boundary、schema pinning 和 audit。
+- **Error Taxonomy**：不要把失败都归因成模型不行，要区分输入、权限、上下文、检索、模型、工具、运行时和基础设施错误。
+- **Contract / Regression Testing**：不要只说“做了测试”，要讲接口契约、状态机契约、MCP schema 契约和对话回归样例。
 
 ## 后续补充方向
 
