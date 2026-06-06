@@ -64,6 +64,7 @@
 - [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template)
 - [AI Agent 项目答辩稿](/topics/ai-agent-project-defense-script)
 - [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan)
+- [AI Agent 面试追问地图](/topics/ai-agent-interview-followup-map)
 - [AI 项目设计文档模板](/topics/ai-project-design-doc-template)
 - [AI Agent 产品需求文档 PRD 模板](/topics/ai-agent-prd-template)
 - [Agent Product Metrics](/topics/agent-product-metrics)
@@ -73,6 +74,7 @@
 - [Agent Release Gate](/note/Engineering/agent-release-gate)
 - [Agent 系统设计案例库](/topics/agent-system-design-casebook)
 - [数据分析 Agent 项目方向](/topics/data-analysis-agent)
+- [数据分析 Agent 安全](/topics/data-analysis-agent-security)
 - [Agent SaaS 产品化项目方向](/topics/agent-saas-productization)
 - [Code Agent 工程化项目方向](/topics/code-agent-engineering)
 - [Agent 编排模式](/topics/agent-orchestration-patterns)
@@ -87,11 +89,14 @@
 - [Agent Memory 评测](/note/Engineering/memory-evaluation-for-agents)
 - [Context Window 管理](/note/AI-Agent/context-window-management)
 - [MCP Gateway 架构](/note/Engineering/mcp-gateway-architecture)
+- [MCP Gateway 运维](/note/Engineering/mcp-gateway-operations)
 - [Human Takeover 运营台](/topics/human-takeover-operations-console)
 - [Browser Automation Testing](/topics/browser-automation-testing-agent-ui)
 - [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)
 - [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)
 - [LLM Evaluation Scorecard](/note/Engineering/llm-evaluation-scorecard)
+- [RAG Citation Evaluation](/note/Engineering/rag-citation-evaluation)
+- [Agent Control Plane](/note/Engineering/agent-control-plane)
 - [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design)
 - [MCP Client 测试](/note/Engineering/mcp-client-testing)
 - [Agent 租户隔离测试](/note/Engineering/agent-tenant-isolation-testing)
@@ -123,6 +128,10 @@
 - **LLM Evaluation Scorecard**：不要只说“效果不错”，要讲 task success、factuality、grounding、format、tool correctness、safety、cost、latency 的评分卡。
 - **MCP Tool Schema**：不要只说“接了 MCP 工具”，要讲工具命名、描述、参数、输出、错误、风险等级和 schema version。
 - **MCP Client Testing**：不要只测 Server 启动，要讲 fake server、工具发现、policy filter、error mapping、timeout 和 Prompt Injection 样本。
+- **RAG Citation Evaluation**：不要只说“答案带引用”，要讲 citation coverage、faithfulness、permission、freshness 和 no-answer。
+- **Agent Control Plane**：不要把模型、Prompt、工具策略散落在业务代码里，要讲 model registry、prompt registry、tool policy、eval gate、budget 和 release。
+- **MCP Gateway Operations**：不要只讲 Gateway 架构，要讲 health、schema diff、latency、error、quota、degrade 和 postmortem。
+- **Data Analysis Agent Security**：不要只说 NL2SQL，要讲语义层、SQL guardrails、权限、cost estimate、脱敏和洞察校验。
 - **Tenant Isolation Testing**：不要只说“支持多租户”，要讲 API、RAG、Vector Metadata、MCP、Memory、Cache、Trace 和 Billing 的隔离测试。
 - **LLM Cost Budget**：不要只说“做了成本优化”，要讲 cost_per_task、p95_cost、cost_per_success、model_mix、cache_hit_rate 和 retry_cost_ratio。
 - **Skill Operations**：不要只说“写了 Skill”，要讲版本、触发测试、输出测试、安全测试、反馈、漂移修复和废弃策略。
@@ -155,7 +164,7 @@
 
 如果距离面试时间较近，可以直接按 [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan) 执行，每周分别覆盖 Agent 基础、RAG、生产级工程和项目表达。
 
-如果需要补充作品集项目方向，可以先用 [AI 项目设计文档模板](/topics/ai-project-design-doc-template) 写清楚方案，再用 [AI Agent PRD 模板](/topics/ai-agent-prd-template) 和 [Agent Product Metrics](/topics/agent-product-metrics) 写清楚用户、范围、指标和验收标准，然后从 [数据分析 Agent](/topics/data-analysis-agent)、[Code Agent 工程化](/topics/code-agent-engineering)、[Agent SaaS 产品化](/topics/agent-saas-productization) 与 [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota) 中选择一个，分别对应数据智能、AI 编程工具和商业化产品能力。
+如果需要补充作品集项目方向，可以先用 [AI 项目设计文档模板](/topics/ai-project-design-doc-template) 写清楚方案，再用 [AI Agent PRD 模板](/topics/ai-agent-prd-template) 和 [Agent Product Metrics](/topics/agent-product-metrics) 写清楚用户、范围、指标和验收标准，然后从 [数据分析 Agent](/topics/data-analysis-agent) 与 [数据分析 Agent 安全](/topics/data-analysis-agent-security)、[Code Agent 工程化](/topics/code-agent-engineering)、[Agent SaaS 产品化](/topics/agent-saas-productization) 与 [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota) 中选择一个，分别对应数据智能、AI 编程工具和商业化产品能力。
 
 项目深挖时，建议额外准备四类追问：一类是 [Agent 编排模式](/topics/agent-orchestration-patterns)，说明为什么选择 Router、Planner、Supervisor 或状态机；一类是 [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)，说明工具如何治理；一类是 [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)，说明如何证明方案收益；另一类是 [Agent 红队演练](/note/Engineering/agent-red-team-playbook)，说明上线前如何主动验证安全边界。
 
