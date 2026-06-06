@@ -115,6 +115,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Skills 工作流层 | `SKILL.md`、脚本、参考资料、验收标准 | 把重复工程流程沉淀成 Agent 可复用的操作手册 |
 | Skill Testing 层 | trigger、procedure、output、safety、regression、changelog | 让 Skill 像代码一样可版本化、可测试、可持续演进 |
 | Browser 验收层 | Playwright、Mock LLM、工具审批、任务状态、引用和截图 Trace | 验证用户真实流程能跑通，避免只测 API 不测体验 |
+| Agent UI State Machine 层 | idle、queued、planning、waiting_approval、running_tool、completed、failed | 让 Agent 前端状态和后端 run event 对齐，支持恢复、审批和测试 |
+| Agent Frontend Telemetry 层 | run_id、evidence_open、approval_decision、retry、handoff、feedback | 把用户行为和后端 Trace 串起来，优化体验和评测闭环 |
 | 部署上线层 | Docker、环境变量、健康检查、日志、回滚、成本监控 | 保证系统能在真实环境稳定运行，并支持运维和回滚 |
 | 生产运维层 | SLO、报警分级、事故排查、止血开关、复盘模板 | 让 Agent 上线后有日常巡检和事故处理手册 |
 | Agent SLO / Error Budget 层 | task_success、grounding、tool_success、approval_timeout、cost、safety budget | 把可靠性目标和发布节奏绑定，防止错误预算被快速耗尽 |
@@ -211,6 +213,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 46. MCP Server：标准化外部工具接入。
 47. MCP Server Hardening：为 MCP 工具服务补齐参数校验、风险分级、超时和审计。
 48. MCP Supply Chain Risk：治理 MCP Server 来源、版本、依赖、schema diff 和沙箱。
+48. MCP Server Template for Agents：用 Tools、Resources、Prompts、Policy、Telemetry 和测试清单搭建可治理 MCP Server。
 48. MCP Sandbox Profile：为 MCP 工具配置文件、网络、命令、资源和审计边界。
 47. MCP Tool Schema：设计工具命名、参数、输出、错误、风险和版本。
 48. MCP Version Deprecation：治理工具 schema 变更、弃用窗口、迁移和下线。
@@ -223,6 +226,9 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 53. MCP Token Exchange：设计 Gateway、Server 和下游系统之间的短期 scope 凭证交换。
 53. Skills：把重复工作流沉淀成可复用操作手册。
 54. Skill Testing / Versioning：让 Skill 有 trigger、procedure、output、safety、regression 测试和 changelog。
+55. Skill Review Checklist：像代码审查一样检查 Skill 的触发、流程、渐进加载和安全边界。
+56. Agent UI State Machine：让前端状态和后端 run event 对齐。
+57. Agent Frontend Telemetry：用前端埋点补齐用户信任、证据查看、审批和反馈信号。
 55. AI Project Design Doc：把项目背景、架构、数据、评测和风险写成可交付方案。
 56. AI Agent PRD：把技术能力翻译成用户故事、交互流程、权限审批和验收标准。
 57. Agent Product Metrics：把 task success、handoff、correction、trust signal、cost、latency 统一进产品指标。
@@ -348,6 +354,8 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent 租户隔离测试](/note/Engineering/agent-tenant-isolation-testing)
 - [异步任务与长任务处理](/note/Engineering/async-task)
 - [Agent Queue 与 Backpressure](/topics/agent-queue-backpressure)
+- [Agent UI State Machine](/note/Engineering/agent-ui-state-machine)
+- [Agent Frontend Telemetry](/note/Engineering/agent-frontend-telemetry)
 - [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery)
 - [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)
 - [Agent Autonomy Levels](/note/Engineering/agent-autonomy-levels)
@@ -391,6 +399,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Batch / 离线评测流水线](/note/Engineering/batch-offline-eval-pipeline)
 - [MCP Server](/note/Engineering/mcp-server)
 - [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)
+- [MCP Server Template for Agents](/note/Engineering/mcp-server-template-for-agents)
 - [MCP Server Hardening](/note/Engineering/mcp-server-hardening)
 - [MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk)
 - [MCP Sandbox Profile](/note/Engineering/mcp-sandbox-profile)
@@ -405,6 +414,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [MCP Token Exchange](/note/Engineering/mcp-token-exchange)
 - [Skills 编写](/note/AI-Tools/skill-authoring)
 - [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning)
+- [Skill Review Checklist](/note/AI-Tools/skill-review-checklist)
 - [Skill 运营手册](/note/AI-Tools/skill-operations-playbook)
 - [Docker 部署](/note/Engineering/docker-deploy)
 - [Agent 生产运维 Runbook](/note/Engineering/agent-production-ops-runbook)

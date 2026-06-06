@@ -98,6 +98,7 @@
 - [MCP 安全与授权](/note/Engineering/mcp-security-auth)
 - [MCP Token Exchange](/note/Engineering/mcp-token-exchange)
 - [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning)
+- [Skill Review Checklist](/note/AI-Tools/skill-review-checklist)
 - [Agent Queue 与 Backpressure](/topics/agent-queue-backpressure)
 - [Agent Memory 评测](/note/Engineering/memory-evaluation-for-agents)
 - [Memory Privacy Retention](/note/Engineering/memory-privacy-retention)
@@ -106,12 +107,17 @@
 - [MCP Gateway 运维](/note/Engineering/mcp-gateway-operations)
 - [MCP Observability Metrics](/note/Engineering/mcp-observability-metrics)
 - [MCP Server Hardening](/note/Engineering/mcp-server-hardening)
+- [MCP Server Template for Agents](/note/Engineering/mcp-server-template-for-agents)
 - [MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk)
 - [MCP Sandbox Profile](/note/Engineering/mcp-sandbox-profile)
 - [Human Takeover 运营台](/topics/human-takeover-operations-console)
 - [Browser Automation Testing](/topics/browser-automation-testing-agent-ui)
 - [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)
 - [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)
+- [Agent UI State Machine](/note/Engineering/agent-ui-state-machine)
+- [Agent Frontend Telemetry](/note/Engineering/agent-frontend-telemetry)
+- [Agent UI Pattern Library](/topics/agent-ui-pattern-library)
+- [AI Agent Portfolio UI Blueprint](/topics/ai-agent-portfolio-ui-blueprint)
 - [Agent Autonomy Levels](/note/Engineering/agent-autonomy-levels)
 - [Multi-Agent Handoff Protocol](/note/Engineering/multi-agent-handoff-protocol)
 - [Agent Scheduler 与 Cron](/note/Engineering/agent-scheduler-cron)
@@ -177,6 +183,7 @@
 - **Memory Privacy Retention**：不要只说“做了长期记忆”，要讲 should_remember、PII、retention、forget request 和跨租户隔离。
 - **Queue / Backpressure**：不要只说“异步任务”，要讲优先级队列、资源并发、背压信号、熔断和死信队列。
 - **Skill Testing**：不要只说“写了 Skill”，要讲触发测试、流程测试、输出测试、安全测试、回归样例和 changelog。
+- **Skill Review Checklist**：不要只说“写了 Skill”，要讲 frontmatter、渐进加载、脚本、验收标准和安全审查。
 - **MCP Security**：不要只说“接入 MCP”，要讲 scope、tenant、role、secret boundary、schema pinning 和 audit。
 - **MCP Sandbox Profile**：不要让所有 MCP 工具共用运行环境，要讲文件、网络、命令、Secret、资源预算和审计边界。
 - **MCP Token Exchange**：不要让 MCP Server 共用全局 Token，要讲 run、tool、scope、args_hash、approval 绑定的短期凭证。
@@ -184,6 +191,9 @@
 - **Error Taxonomy**：不要把失败都归因成模型不行，要区分输入、权限、上下文、检索、模型、工具、运行时和基础设施错误。
 - **Contract / Regression Testing**：不要只说“做了测试”，要讲接口契约、状态机契约、MCP schema 契约和对话回归样例。
 - **Agent Workflow 状态机**：不要只说“Agent 会自己规划”，要讲 Created、Queued、Planning、RunningTool、WaitingApproval、Completed、Failed 等状态和转移规则。
+- **Agent UI State Machine**：不要只用 loading/error，要讲 queued、planning、waiting_approval、running_tool、failed_retryable 和 allowed_actions。
+- **Agent Frontend Telemetry**：不要只看后端 Trace，要讲前端如何采集证据查看、审批、重试、转人工和反馈。
+- **Agent UI Pattern Library**：不要只展示聊天框，要讲 Task Intake、Plan Preview、Tool Approval、Evidence Panel、Trace Timeline 和 Recovery Panel。
 - **Agent Autonomy Levels**：不要只说“Agent 自主执行”，要讲 L0-L5 自主等级、工具风险、审批和灰度。
 - **LLM Evaluation Scorecard**：不要只说“效果不错”，要讲 task success、factuality、grounding、format、tool correctness、safety、cost、latency 的评分卡。
 - **MCP Tool Schema**：不要只说“接了 MCP 工具”，要讲工具命名、描述、参数、输出、错误、风险等级和 schema version。
@@ -225,6 +235,7 @@
 - **LLM Semantic Cache**：不要只说“加缓存降成本”，要讲语义相似、tenant/scope 隔离、knowledge_version、prompt_version、误命中率和陈旧答案失效。
 - **Agent Scheduler**：不要只说“定时任务”，要讲 cron/interval/event、window 幂等键、并发预算、熔断和 schedule Trace。
 - **MCP Server Hardening**：不要只说“写了 MCP Server”，要讲风险分级、参数校验、超时限流、错误映射、schema version 和审计日志。
+- **MCP Server Template**：不要只暴露一个函数，要讲 Tools、Resources、Prompts、Policy、Telemetry、结构化错误和测试清单。
 - **RAG Evaluation Report**：不要只说“RAG 效果提升”，要讲评测目标、数据集分层、指标对比、失败归因、成本延迟和安全结果。
 - **RAG Ingestion Quality Gate**：不要只说“文档已入库”，要讲解析质量、metadata、ACL、chunk、PII、embedding 和召回 smoke。
 - **Production Failure Drill**：不要只说“有监控”，要讲模型延迟、RAG 退化、工具超时、审批卡住、租户隔离和成本失控的演练。

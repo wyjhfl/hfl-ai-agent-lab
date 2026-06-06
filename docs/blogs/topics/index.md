@@ -27,9 +27,9 @@
 | 想整理求职作品集 | [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap) → [AI Agent Job Search Evidence Map](/topics/ai-agent-job-search-evidence-map) → [AI Agent Career Readiness Checklist](/topics/ai-agent-career-readiness-checklist) → [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template) → [AI Agent Demo Acceptance Script](/topics/ai-agent-demo-acceptance-script) → [AI Agent Interview Story Bank](/topics/ai-agent-interview-story-bank) → [AI Agent 项目答辩稿](/topics/ai-agent-project-defense-script) → [AI Agent Offer Portfolio Review](/topics/ai-agent-offer-portfolio-review) → [项目实战](/projects) → [简历描述模板](/note/Interview/resume-bullets) |
 | 想 30 天准备面试 | [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan) → [AI Agent 项目包装](/topics/ai-agent-project-packaging) → [AI Agent 面试题库](/note/AI-Interview/) |
 | 想找项目选题 | [AI Agent 项目选题库](/topics/ai-agent-project-ideas) → [Agent Capability Matrix](/topics/agent-capability-matrix) → [Agent 开发 Playbook](/topics/agent-development-playbook) |
-| 想做商业化产品 | [Agent SaaS 产品化](/topics/agent-saas-productization) → [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota) → [LLM Request Ledger](/note/Engineering/llm-request-ledger) → [LLM Cost Chargeback](/note/Engineering/llm-cost-chargeback) → [LLM Cost Anomaly Detection](/note/Engineering/llm-cost-anomaly-detection) → [Agent Product Metrics](/topics/agent-product-metrics) → [Agent UI 产品化设计](/topics/agent-ui-product-design) |
+| 想做商业化产品 | [Agent SaaS 产品化](/topics/agent-saas-productization) → [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota) → [LLM Request Ledger](/note/Engineering/llm-request-ledger) → [LLM Cost Chargeback](/note/Engineering/llm-cost-chargeback) → [LLM Cost Anomaly Detection](/note/Engineering/llm-cost-anomaly-detection) → [Agent Product Metrics](/topics/agent-product-metrics) → [Agent UI 产品化设计](/topics/agent-ui-product-design) → [Agent UI Pattern Library](/topics/agent-ui-pattern-library) → [Agent UI State Machine](/note/Engineering/agent-ui-state-machine) |
 | 想写项目设计文档 | [AI 项目设计文档模板](/topics/ai-project-design-doc-template) → [Agent System Design Whiteboard Template](/topics/agent-system-design-whiteboard-template) → [Agent 系统设计案例库](/topics/agent-system-design-casebook) → [生产级 Agent Readiness Review](/topics/agent-production-readiness-review) → [AI Agent Enterprise Pilot Plan](/topics/ai-agent-enterprise-pilot-plan) → [AI Agent 项目包装](/topics/ai-agent-project-packaging) |
-| 想做 Agent 产品需求 | [AI Agent PRD 模板](/topics/ai-agent-prd-template) → [Agent Product Metrics](/topics/agent-product-metrics) → [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota) → [Agent UI 产品化设计](/topics/agent-ui-product-design) → [Human Takeover 运营台](/topics/human-takeover-operations-console) |
+| 想做 Agent 产品需求 | [AI Agent PRD 模板](/topics/ai-agent-prd-template) → [Agent Product Metrics](/topics/agent-product-metrics) → [Agent UI 产品化设计](/topics/agent-ui-product-design) → [Agent UI Pattern Library](/topics/agent-ui-pattern-library) → [Agent UI State Machine](/note/Engineering/agent-ui-state-machine) → [Agent Frontend Telemetry](/note/Engineering/agent-frontend-telemetry) → [Human Takeover 运营台](/topics/human-takeover-operations-console) |
 
 ---
 
@@ -134,6 +134,7 @@
 | [Docker 部署工程化：从本地 Demo 到可上线服务](/topics/docker-agent-deployment) | 从 API、Worker、数据库、Redis、向量库、健康检查、日志和回滚理解部署闭环。 | 想把 Demo 部署成服务的学习者 |
 | [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide) | 从工具 schema、返回结构、权限、Trace、stdio/HTTP 选择到测试清单，理解 MCP Server 怎么落地。 | 想把外部工具标准化接入 Agent 的学习者 |
 | [MCP Server Hardening](/note/Engineering/mcp-server-hardening) | 为 MCP Server 增加风险分级、参数校验、超时、错误映射、审计日志和 schema 版本治理。 | 想把 MCP 工具服务安全上线的人 |
+| [MCP Server Template for Agents](/note/Engineering/mcp-server-template-for-agents) | 提供 Tools、Resources、Prompts、Policy、Telemetry、错误结构和测试清单的 MCP Server 骨架。 | 想搭建可治理 MCP Server 的人 |
 | [MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk) | 治理 MCP Server 来源、版本 pin、schema diff、依赖、沙箱、注入和审计。 | 想安全运营 MCP 工具生态的人 |
 | [MCP Sandbox Profile](/note/Engineering/mcp-sandbox-profile) | 为 MCP 工具定义文件、网络、命令、资源预算和审计边界，降低工具越权风险。 | 想把 MCP 工具运行环境隔离清楚的人 |
 | [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design) | 设计工具命名、描述、参数、输出、错误、风险等级和版本管理，让 MCP 工具可发现、可控、可评测。 | 想把 MCP 工具做成平台能力的人 |
@@ -175,6 +176,7 @@
 | [Code Agent 工程化](/topics/code-agent-engineering) | 系统整理 Code Agent 的仓库检查、编辑边界、测试验证、提交规范和安全风险。 | 想把 AI 写代码做成可靠流程的人 |
 | [Skills 编写：把一次性提示词沉淀成可复用工作流](/note/AI-Tools/skill-authoring) | 用 `SKILL.md`、脚本、参考资料和验收标准沉淀博客写作、项目推进、简历整理等重复流程。 | 想让 AI 协作流程稳定复用的人 |
 | [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning) | 为 Skill 设计版本号、changelog、触发测试、流程测试、安全测试和回归样例。 | 想让 Skills 长期稳定演进的人 |
+| [Skill Review Checklist](/note/AI-Tools/skill-review-checklist) | 像代码审查一样检查 Skill 的触发、流程、渐进加载、脚本、验收标准和安全边界。 | 想提升 Skill 质量的人 |
 | [Skill 运营手册](/note/AI-Tools/skill-operations-playbook) | 把 Skill 当成长期资产维护，管理触发、版本、测试、反馈、漂移和废弃。 | 想系统化运营 AI 协作流程的人 |
 | [AI 编程审查清单：提交前必须检查的 10 件事](/topics/ai-coding-review-checklist) | 从文件范围、内容质量、Markdown 格式、构建结果、Git 状态、远端状态审查 AI 输出。 | 想避免 AI 产出质量失控的人 |
 | [如何避免 AI 误提交和假验证](/topics/avoid-ai-miscommit-fake-verification) | 用文件白名单、暂存区检查、构建日志、commit hash 和远端核对降低风险。 | 想安全使用 AI 编程助手的人 |
@@ -194,6 +196,7 @@
 | [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) | 整理 Agent vs ChatBot、失败排查、评测、安全、成本、MCP、长任务恢复等工程追问。 | 已会基础概念、需要准备深挖追问的人 |
 | [AI Agent 面试追问地图](/topics/ai-agent-interview-followup-map) | 从概念、设计、工程、生产到复盘整理面试官的连续追问路径。 | 想把零散题目串成回答体系的人 |
 | [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap) | 把个人博客、项目 A、项目 B、面试题库、Skills/MCP 内容组织成可证明能力的求职作品集。 | 准备 AI Agent / 大模型应用开发岗位的人 |
+| [AI Agent Portfolio UI Blueprint](/topics/ai-agent-portfolio-ui-blueprint) | 把首页、项目页、专题页设计成能力证据面板，让招聘方快速看到项目、代码、评测和 Demo 证据。 | 想优化个人作品集网站的人 |
 | [AI Agent 项目选题库](/topics/ai-agent-project-ideas) | 整理 RAG、MCP、LLMOps、语音、多模态、数据分析等 12 个适合求职作品集的项目方向。 | 需要规划个人项目矩阵的人 |
 | [AI Agent 项目包装：简历、作品集和面试讲法](/topics/ai-agent-project-packaging) | 把 RAG、多 Agent、MCP、LLMOps 项目包装成有架构、有难点、有指标、有贡献的求职表达。 | 已有项目但不知道怎么写进简历的人 |
 | [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template) | 用背景、目标、架构、Workflow、RAG/MCP、评测、安全、难点和 60 秒讲法组织项目文章。 | 想把个人项目讲成可证明能力的人 |
