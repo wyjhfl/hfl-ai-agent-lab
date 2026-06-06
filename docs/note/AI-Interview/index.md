@@ -46,6 +46,16 @@
 
 本轮内容为 HFL AI Agent Lab 原创整理，参考公开面试题方向，但不复制外站正文。
 
+## 求职作品集补充
+
+面试题库解决“怎么回答技术问题”，作品集路线解决“怎么证明自己做过”。建议配合阅读：
+
+- [AI Agent 求职作品集路线](/topics/ai-agent-portfolio-roadmap)
+- [RAG 项目面试表达](/topics/rag-project-interview)
+- [多 Agent 项目面试表达](/topics/multi-agent-interview)
+- [项目 B 一分钟介绍](/note/Interview/project-b-one-minute)
+- [简历描述模板](/note/Interview/resume-bullets)
+
 ## 如何配合学习路线和工程化笔记复习
 
 不要只背题。建议按照以下路径复习：

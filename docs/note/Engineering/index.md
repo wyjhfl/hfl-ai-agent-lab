@@ -27,6 +27,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Trace 可观测层 | Run ID、Step ID、工具调用记录、状态变化、错误定位 | 还原 Agent 执行过程，支持调试、复盘和质量分析 |
 | Evaluation 评测层 | 测试集、指标、版本对比、失败样本库 | 把效果从主观感觉变成可比较、可迭代的数据 |
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
+| Skills 工作流层 | `SKILL.md`、脚本、参考资料、验收标准 | 把重复工程流程沉淀成 Agent 可复用的操作手册 |
 | 部署上线层 | Docker、环境变量、健康检查、日志、回滚、成本监控 | 保证系统能在真实环境稳定运行，并支持运维和回滚 |
 
 这张地图可以作为项目设计时的检查框架。一个 Agent 系统如果只实现了模型调用，而没有任务状态、工具权限、执行轨迹和评测闭环，就很难进入真实生产环境。
@@ -42,8 +43,9 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 7. Agent Trace：记录 Agent 执行过程。
 8. Evaluation Pipeline：评估系统效果。
 9. MCP Server：标准化外部工具接入。
-10. Docker Deploy：部署和运维。
-11. Production Checklist：上线前检查。
+10. Skills：把重复工作流沉淀成可复用操作手册。
+11. Docker Deploy：部署和运维。
+12. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -119,5 +121,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
 - [Evaluation Pipeline](/note/Engineering/eval-pipeline)
 - [MCP Server](/note/Engineering/mcp-server)
+- [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)
+- [Skills 编写](/note/AI-Tools/skill-authoring)
 - [Docker 部署](/note/Engineering/docker-deploy)
 - [AI Agent 上线检查清单](/note/Engineering/production-checklist)
