@@ -42,6 +42,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Tool Registry 层 | tool_id、版本、schema、风险等级、owner、启停、监控和审计 | 把工具从散落函数变成可治理、可授权、可评测的资产 |
 | 工具沙箱层 | 文件/网络/命令/数据沙箱、MCP 权限审计 | 限制工具调用的环境边界，避免越权、注入和危险副作用 |
 | 安全治理层 | Prompt Injection、防越权、数据脱敏、工具风险分级 | 把模型放进受控执行环境，避免工具滥用和数据泄漏 |
+| Prompt Injection 纵深防御层 | untrusted evidence、retrieval 清洗、tool policy、approval、sandbox、adversarial regression | 防止外部内容诱导模型越权执行工具或泄漏数据 |
 | Trace 可观测层 | Run ID、Step ID、工具调用记录、状态变化、错误定位 | 还原 Agent 执行过程，支持调试、复盘和质量分析 |
 | Evaluation 评测层 | 测试集、指标、版本对比、失败样本库 | 把效果从主观感觉变成可比较、可迭代的数据 |
 | Eval Dataset 层 | smoke set、regression set、失败样本、评分规则 | 让评测可复用、可回归、可定位失败原因 |
@@ -52,6 +53,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 对抗评测层 | 合成样本、Prompt Injection、越权、危险工具、冲突证据 | 主动覆盖线上不常见但高风险的边界情况 |
 | 红队演练层 | Prompt/RAG/Tool/MCP/Memory/API 攻击样本、修复和回归 | 上线前主动攻击系统，把安全问题转化为评测资产 |
 | Fine-tuning 数据层 | 样本收集、脱敏、标注、质检、切分、训练、评测、灰度 | 把线上行为和格式样本转成可训练、可回归的数据资产 |
+| LLM 数据治理层 | 数据分级、脱敏、用途隔离、保留周期、评测/训练集溯源 | 让用户输入、Trace、反馈、评测和训练数据可用、可控、可删除 |
 | 反馈闭环层 | 用户反馈、人工修正、失败归因、eval case 转化 | 把线上真实问题转成评测、Prompt、检索和产品迭代燃料 |
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
 | MCP Client 层 | Server Registry、Tool Discovery、权限过滤、连接管理、结果标准化 | 把 MCP Server 安全稳定接入 Agent Runtime |
@@ -63,6 +65,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Browser 验收层 | Playwright、Mock LLM、工具审批、任务状态、引用和截图 Trace | 验证用户真实流程能跑通，避免只测 API 不测体验 |
 | 部署上线层 | Docker、环境变量、健康检查、日志、回滚、成本监控 | 保证系统能在真实环境稳定运行，并支持运维和回滚 |
 | 生产运维层 | SLO、报警分级、事故排查、止血开关、复盘模板 | 让 Agent 上线后有日常巡检和事故处理手册 |
+| Agent Release Gate 层 | code、contract、eval、RAG、safety、cost、latency、ops、product gate | 让 Prompt、模型、RAG、MCP 和策略变更可灰度、可回滚 |
 | LLM 可观测层 | 成本、延迟、Prompt 版本、RAG、工具、反馈、安全的仪表盘 | 把模型调用从黑盒变成可 drill-down、可运营的系统 |
 
 这张地图可以作为项目设计时的检查框架。一个 Agent 系统如果只实现了模型调用，而没有任务状态、工具权限、执行轨迹和评测闭环，就很难进入真实生产环境。
@@ -77,48 +80,53 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 6. Cost / Latency Optimization：建立调用账本、模型路由、缓存、降级和 p95 延迟优化。
 7. Model Routing / A/B Testing：把模型切换、新模型灰度和实验结果纳入治理。
 8. Database：设计任务、文档、Trace、评测等数据模型。
-9. RAG Engineering：构建知识检索链路。
-10. RAG Ingestion：把文件解析、Chunk、metadata、embedding 和索引做成可靠流水线。
-11. RAG Debugging：建立检索故障排查 Trace。
-12. Vector Database：管理向量数据和检索性能。
-13. Embedding Eval / Migration：评测和灰度迁移向量模型。
-14. GraphRAG：在需要复杂关系推理时引入实体、关系和子图检索。
-15. Enterprise RAG Permission：把 tenant、ACL、metadata filter 和缓存隔离放进检索链路。
-16. Async Task：处理长任务和并发。
-17. Queue / Backpressure：用优先级队列、资源并发、限流、熔断和死信队列保护系统。
-18. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
-19. Agent Error Taxonomy：把 input、policy、context、retrieval、model、tool、runtime、infra、ux error 分开处理。
-20. Human Takeover / Ops Console：把低置信度、高风险、超时和用户转人工做成接管队列。
-21. API Security：控制身份、权限、租户和高风险操作。
-22. Tool Registry：治理工具 schema、版本、风险等级、owner、启停和审批策略。
-23. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
-24. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
-25. Red Team：用攻击样本主动验证 Agent 安全边界。
-26. Agent Trace：记录 Agent 执行过程。
-27. Evaluation Pipeline：评估系统效果。
-28. Eval Dataset：沉淀 smoke、regression 和失败样本。
-29. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
-30. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
-31. Agent Benchmark：用固定任务集比较 Workflow、单 Agent、多 Agent、模型和框架方案。
-32. Agent Contract Testing：验证 JSON schema、tool args、task state、trace event 和 MCP schema 契约。
-33. Conversation Regression Testing：把关键对话路径、fixtures、工具调用和安全边界做成回归。
-34. Agent Memory Evaluation：评测记忆写入、检索、更新、遗忘和注入防护。
-35. Fine-tuning Data Pipeline：把线上样本转成可训练、可评测的数据。
-36. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
-37. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
-38. MCP Server：标准化外部工具接入。
-39. MCP Client：把 MCP Server 安全稳定接入 Agent Runtime。
-40. MCP Gateway：统一治理多 MCP Server 的发现、权限、审批、限流和审计。
-41. MCP Security / Auth：设计 scope、tenant、role、secret boundary、schema pinning 和审计。
-42. Skills：把重复工作流沉淀成可复用操作手册。
-43. Skill Testing / Versioning：让 Skill 有 trigger、procedure、output、safety、regression 测试和 changelog。
-44. AI Project Design Doc：把项目背景、架构、数据、评测和风险写成可交付方案。
-45. AI Agent PRD：把技术能力翻译成用户故事、交互流程、权限审批和验收标准。
-46. Browser Automation Testing：用浏览器自动化验证上传、问答、引用、工具审批和运营台流程。
-47. Docker Deploy：部署和运维。
-48. Production Ops Runbook：上线后巡检、报警、止血和复盘。
-49. LLM Observability Dashboard：建设成本、延迟、质量和安全统一仪表盘。
-50. Production Checklist：上线前检查。
+9. LLM Data Governance：治理用户输入、Trace、反馈、评测集和训练数据的分级、脱敏、授权和保留周期。
+10. RAG Engineering：构建知识检索链路。
+11. RAG Ingestion：把文件解析、Chunk、metadata、embedding 和索引做成可靠流水线。
+12. RAG Debugging：建立检索故障排查 Trace。
+13. Vector Database：管理向量数据和检索性能。
+14. Embedding Eval / Migration：评测和灰度迁移向量模型。
+15. GraphRAG：在需要复杂关系推理时引入实体、关系和子图检索。
+16. Enterprise RAG Permission：把 tenant、ACL、metadata filter 和缓存隔离放进检索链路。
+17. Async Task：处理长任务和并发。
+18. Queue / Backpressure：用优先级队列、资源并发、限流、熔断和死信队列保护系统。
+19. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
+20. Agent Error Taxonomy：把 input、policy、context、retrieval、model、tool、runtime、infra、ux error 分开处理。
+21. Human Takeover / Ops Console：把低置信度、高风险、超时和用户转人工做成接管队列。
+22. API Security：控制身份、权限、租户和高风险操作。
+23. Tool Registry：治理工具 schema、版本、风险等级、owner、启停和审批策略。
+24. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
+25. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
+26. Prompt Injection Defense-in-depth：用上下文降权、RAG 清洗、tool policy、approval、sandbox 和红队回归做纵深防御。
+27. Red Team：用攻击样本主动验证 Agent 安全边界。
+28. Agent Trace：记录 Agent 执行过程。
+29. Evaluation Pipeline：评估系统效果。
+30. Eval Dataset：沉淀 smoke、regression 和失败样本。
+31. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
+32. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
+33. Agent Benchmark：用固定任务集比较 Workflow、单 Agent、多 Agent、模型和框架方案。
+34. Agent Contract Testing：验证 JSON schema、tool args、task state、trace event 和 MCP schema 契约。
+35. Conversation Regression Testing：把关键对话路径、fixtures、工具调用和安全边界做成回归。
+36. Agent Memory Evaluation：评测记忆写入、检索、更新、遗忘和注入防护。
+37. Fine-tuning Data Pipeline：把线上样本转成可训练、可评测的数据。
+38. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
+39. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
+40. MCP Server：标准化外部工具接入。
+41. MCP Client：把 MCP Server 安全稳定接入 Agent Runtime。
+42. MCP Gateway：统一治理多 MCP Server 的发现、权限、审批、限流和审计。
+43. MCP Security / Auth：设计 scope、tenant、role、secret boundary、schema pinning 和审计。
+44. Skills：把重复工作流沉淀成可复用操作手册。
+45. Skill Testing / Versioning：让 Skill 有 trigger、procedure、output、safety、regression 测试和 changelog。
+46. AI Project Design Doc：把项目背景、架构、数据、评测和风险写成可交付方案。
+47. AI Agent PRD：把技术能力翻译成用户故事、交互流程、权限审批和验收标准。
+48. Agent Product Metrics：把 task success、handoff、correction、trust signal、cost、latency 统一进产品指标。
+49. Agent SaaS Tenant / RBAC / Quota：设计 tenant、workspace、role、permission、quota、usage 和 billing。
+50. Browser Automation Testing：用浏览器自动化验证上传、问答、引用、工具审批和运营台流程。
+51. Docker Deploy：部署和运维。
+52. Agent Release Gate：上线前检查 code、contract、eval、RAG、safety、cost、latency、ops 和 product gate。
+53. Production Ops Runbook：上线后巡检、报警、止血和复盘。
+54. LLM Observability Dashboard：建设成本、延迟、质量和安全统一仪表盘。
+55. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -199,6 +207,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization)
 - [多模型路由与 A/B 实验](/note/Engineering/model-routing-ab-testing)
 - [数据库设计：从业务数据到 Agent 运行记录](/note/Engineering/database)
+- [LLM 数据治理](/note/Engineering/llm-data-governance)
 - [RAG 工程化](/note/Engineering/rag-engineering)
 - [RAG 入库流水线](/note/Engineering/rag-ingestion-pipeline)
 - [RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging)
@@ -214,6 +223,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)
 - [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission)
 - [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)
+- [Prompt Injection 纵深防御](/note/Engineering/prompt-injection-defense-in-depth)
 - [Agent 红队演练](/note/Engineering/agent-red-team-playbook)
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
 - [Evaluation Pipeline](/note/Engineering/eval-pipeline)
@@ -236,8 +246,11 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning)
 - [Docker 部署](/note/Engineering/docker-deploy)
 - [Agent 生产运维 Runbook](/note/Engineering/agent-production-ops-runbook)
+- [Agent Release Gate](/note/Engineering/agent-release-gate)
 - [LLM 可观测仪表盘](/note/Engineering/llm-observability-dashboard)
 - [AI Agent 上线检查清单](/note/Engineering/production-checklist)
 - [Human Takeover 运营台](/topics/human-takeover-operations-console)
 - [Browser Automation Testing：给网页 Agent 和前端流程做验收](/topics/browser-automation-testing-agent-ui)
 - [AI Agent 产品需求文档 PRD 模板](/topics/ai-agent-prd-template)
+- [Agent Product Metrics](/topics/agent-product-metrics)
+- [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota)
