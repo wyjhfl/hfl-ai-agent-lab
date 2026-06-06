@@ -63,6 +63,7 @@
 - [AI Agent 项目包装：简历、作品集和面试讲法](/topics/ai-agent-project-packaging)
 - [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template)
 - [AI Agent 项目答辩稿](/topics/ai-agent-project-defense-script)
+- [生产级 Agent Readiness Review](/topics/agent-production-readiness-review)
 - [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan)
 - [AI Agent 面试追问地图](/topics/ai-agent-interview-followup-map)
 - [AI 项目设计文档模板](/topics/ai-project-design-doc-template)
@@ -90,19 +91,25 @@
 - [Context Window 管理](/note/AI-Agent/context-window-management)
 - [MCP Gateway 架构](/note/Engineering/mcp-gateway-architecture)
 - [MCP Gateway 运维](/note/Engineering/mcp-gateway-operations)
+- [MCP Server Hardening](/note/Engineering/mcp-server-hardening)
 - [Human Takeover 运营台](/topics/human-takeover-operations-console)
 - [Browser Automation Testing](/topics/browser-automation-testing-agent-ui)
 - [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)
 - [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)
+- [Agent Scheduler 与 Cron](/note/Engineering/agent-scheduler-cron)
 - [LLM Evaluation Scorecard](/note/Engineering/llm-evaluation-scorecard)
 - [RAG Citation Evaluation](/note/Engineering/rag-citation-evaluation)
+- [RAG 评测报告模板](/note/Engineering/rag-evaluation-report-template)
 - [Agent Control Plane](/note/Engineering/agent-control-plane)
+- [Agent Approval Workflow](/note/Engineering/agent-approval-workflow)
 - [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design)
 - [MCP Client 测试](/note/Engineering/mcp-client-testing)
 - [Agent 租户隔离测试](/note/Engineering/agent-tenant-isolation-testing)
 - [LLM 成本预算表](/note/Engineering/llm-cost-budget-table)
+- [LLM Semantic Cache](/note/Engineering/llm-semantic-cache)
 - [Skill 运营手册](/note/AI-Tools/skill-operations-playbook)
 - [Agent 事故复盘模板](/topics/agent-incident-postmortem-template)
+- [Agent 故障演练](/note/Engineering/agent-production-failure-drill)
 - [RAG 设计问答](/note/Interview/rag-qa)
 - [Multi-Agent 设计问答](/note/Interview/multi-agent-qa)
 - [LangGraph 设计问答](/note/Interview/langgraph-qa)
@@ -140,6 +147,13 @@
 - **Agent Product Metrics**：不要只说“用户觉得好用”，要讲 task completion、handoff、correction、trust signal、cost 和 latency 如何共同证明产品价值。
 - **LLM Data Governance**：不要只说“收集日志做优化”，要讲数据分级、脱敏、用途隔离、保留周期、删除请求和评测/训练集 lineage。
 - **Agent Release Gate**：不要把上线说成“测试通过”，要讲 code、contract、eval、RAG、safety、cost、latency、ops 和 product gate。
+- **Agent Approval Workflow**：不要只说“危险操作会问用户”，要讲模型提议、策略判断、审批卡片、参数哈希、执行层校验和审计 Trace。
+- **LLM Semantic Cache**：不要只说“加缓存降成本”，要讲语义相似、tenant/scope 隔离、knowledge_version、prompt_version、误命中率和陈旧答案失效。
+- **Agent Scheduler**：不要只说“定时任务”，要讲 cron/interval/event、window 幂等键、并发预算、熔断和 schedule Trace。
+- **MCP Server Hardening**：不要只说“写了 MCP Server”，要讲风险分级、参数校验、超时限流、错误映射、schema version 和审计日志。
+- **RAG Evaluation Report**：不要只说“RAG 效果提升”，要讲评测目标、数据集分层、指标对比、失败归因、成本延迟和安全结果。
+- **Production Failure Drill**：不要只说“有监控”，要讲模型延迟、RAG 退化、工具超时、审批卡住、租户隔离和成本失控的演练。
+- **Production Readiness Review**：不要只列技术栈，要从任务边界、Workflow、RAG、Tool/MCP、Memory、评测、安全、成本、运维和发布十个维度审查。
 - **Prompt Injection Defense**：不要只靠系统提示，要讲 untrusted evidence、tool policy、审批、沙箱、审计和对抗回归测试。
 - **SaaS Tenant / RBAC / Quota**：不要只说“支持团队使用”，要讲 tenant、workspace、role、permission、quota、usage、billing 和审计隔离。
 
