@@ -26,6 +26,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 成本与延迟优化层 | 调用账本、模型路由、缓存、批处理、降级、p95 延迟 | 让 Agent 不只是能跑，还能在预算和 SLA 内稳定运行 |
 | 成本预算层 | token、模型、embedding、rerank、tool、eval、human review、infra | 把 Agent 成本从事后账单变成上线前预算和门禁 |
 | LLM Semantic Cache 层 | query normalize、embedding 相似度、版本失效、权限隔离、误命中监控 | 在不牺牲安全和可信度的前提下降低成本与延迟 |
+| LLM Cost Chargeback 层 | cost ledger、tenant、feature、model、retry、cache saving、quota | 把成本拆到租户、功能和任务，支撑预算、限额和商业化 |
 | 多模型治理层 | 路由策略、A/B 实验、Shadow Traffic、Canary、自动回滚 | 让模型切换和新模型上线可评测、可灰度、可追溯 |
 | 数据存储层 | 用户、任务、文档、工具调用、Trace、评测结果 | 保存业务状态和运行证据，让系统可追踪、可恢复、可评估 |
 | RAG 检索层 | 文档解析、Chunk、Embedding、Hybrid Search、Rerank、引用溯源 | 让模型基于外部知识回答，并能解释答案来源 |
@@ -33,6 +34,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | RAG Debug 层 | Query Rewrite、召回、Filter、Rerank、Context Pack、Citation Trace | 定位答案差到底是入库、检索、排序、上下文还是生成问题 |
 | RAG Citation Evaluation 层 | citation coverage、faithfulness、permission、freshness、no-answer | 验证引用是否真的支持答案，而不是只显示来源链接 |
 | RAG Evaluation Report 层 | 数据集、Pipeline 配置、指标、失败归因、成本延迟、安全结果 | 把 RAG 优化过程沉淀成可复现、可面试表达的报告 |
+| RAG Knowledge Lifecycle 层 | document version、status、effective time、ACL、index version、cache invalidation | 治理文档新增、更新、过期、删除和权限变化 |
 | 向量数据库层 | Collection、Metadata、索引、过滤查询、增量更新 | 支撑高质量召回、权限过滤、引用定位和检索性能优化 |
 | Embedding 评测迁移层 | Recall@k、MRR、hard negative、shadow query、canary、collection 版本 | 安全替换向量模型，避免召回质量和权限过滤退化 |
 | GraphRAG 层 | 实体、关系、子图、社区摘要、路径检索 | 支撑多跳关系、全局结构和复杂知识推理 |
@@ -53,6 +55,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Trace 可观测层 | Run ID、Step ID、工具调用记录、状态变化、错误定位 | 还原 Agent 执行过程，支持调试、复盘和质量分析 |
 | Agent Control Plane 层 | model registry、prompt registry、tool policy、eval gate、budget、release | 把 Agent 运行策略从业务代码中抽离，统一灰度和回滚 |
 | Agent Approval Workflow 层 | tool risk、policy check、approval request、args hash、execution guard、audit | 把高风险工具调用变成可审批、可追责、不可绕过的闭环 |
+| Agent Audit Log 层 | actor、action、target、risk、policy、hash、metadata、append-only | 让关键行为可追责、可合规、可复盘 |
 | Evaluation 评测层 | 测试集、指标、版本对比、失败样本库 | 把效果从主观感觉变成可比较、可迭代的数据 |
 | Eval Dataset 层 | smoke set、regression set、失败样本、评分规则 | 让评测可复用、可回归、可定位失败原因 |
 | Agent Benchmark 层 | 固定任务集、方案对比、成本延迟、安全、恢复和 Trace 完整度 | 用数据比较 Workflow、单 Agent、多 Agent、模型和框架，而不是凭感觉选型 |
@@ -67,6 +70,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 反馈闭环层 | 用户反馈、人工修正、失败归因、eval case 转化 | 把线上真实问题转成评测、Prompt、检索和产品迭代燃料 |
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
 | MCP Server Hardening 层 | 参数校验、风险分级、timeout、rate limit、错误映射、schema version | 把 MCP Server 从脚本提升为可上线工具服务 |
+| MCP Supply Chain Risk 层 | server provenance、version pin、schema diff、dependency、sandbox、untrusted output | 防止 MCP 工具生态引入供应链和权限风险 |
 | MCP Tool Schema 层 | 工具命名、描述、参数、输出、错误、风险等级、版本 | 让工具可发现、可控、可评测，而不是散落函数 |
 | MCP Client 测试层 | fake server、contract、policy filter、error mapping、injection samples | 验证 MCP Client 接入后可回归、可审计、可降级 |
 | MCP Client 层 | Server Registry、Tool Discovery、权限过滤、连接管理、结果标准化 | 把 MCP Server 安全稳定接入 Agent Runtime |
@@ -96,6 +100,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 6. Cost / Latency Optimization：建立调用账本、模型路由、缓存、降级和 p95 延迟优化。
 7. LLM Cost Budget Table：把 token、模型、工具、评测、人审和基础设施拆成预算。
 8. LLM Semantic Cache：用语义缓存、权限隔离和版本失效降低重复请求成本。
+9. LLM Cost Chargeback：把成本拆到租户、功能、模型和 run，支持预算与配额。
 8. Model Routing / A/B Testing：把模型切换、新模型灰度和实验结果纳入治理。
 9. Database：设计任务、文档、Trace、评测等数据模型。
 10. LLM Data Governance：治理用户输入、Trace、反馈、评测集和训练数据的分级、脱敏、授权和保留周期。
@@ -104,6 +109,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 13. RAG Debugging：建立检索故障排查 Trace。
 14. RAG Citation Evaluation：评测引用覆盖率、支持度、权限和无答案行为。
 15. RAG Evaluation Report：把评测目标、数据集、指标、失败归因和成本延迟写成报告。
+16. RAG Knowledge Lifecycle：治理文档版本、过期、权限变化、索引更新和缓存失效。
 15. Vector Database：管理向量数据和检索性能。
 16. Embedding Eval / Migration：评测和灰度迁移向量模型。
 17. GraphRAG：在需要复杂关系推理时引入实体、关系和子图检索。
@@ -125,6 +131,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 32. Agent Trace：记录 Agent 执行过程。
 33. Agent Control Plane：统一管理模型、Prompt、工具、策略、预算和发布。
 34. Agent Approval Workflow：把高风险工具调用纳入审批、参数哈希和执行层校验。
+35. Agent Audit Log：记录关键行为的 actor、action、target、risk、policy 和 hash。
 34. Evaluation Pipeline：评估系统效果。
 35. Eval Dataset：沉淀 smoke、regression 和失败样本。
 36. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
@@ -139,6 +146,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 45. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
 46. MCP Server：标准化外部工具接入。
 47. MCP Server Hardening：为 MCP 工具服务补齐参数校验、风险分级、超时和审计。
+48. MCP Supply Chain Risk：治理 MCP Server 来源、版本、依赖、schema diff 和沙箱。
 47. MCP Tool Schema：设计工具命名、参数、输出、错误、风险和版本。
 48. MCP Client：把 MCP Server 安全稳定接入 Agent Runtime。
 49. MCP Client Testing：用 fake server、契约测试、权限过滤和注入样本验证 Client。
@@ -239,6 +247,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization)
 - [LLM 成本预算表](/note/Engineering/llm-cost-budget-table)
 - [LLM Semantic Cache](/note/Engineering/llm-semantic-cache)
+- [LLM Cost Chargeback](/note/Engineering/llm-cost-chargeback)
 - [多模型路由与 A/B 实验](/note/Engineering/model-routing-ab-testing)
 - [数据库设计：从业务数据到 Agent 运行记录](/note/Engineering/database)
 - [LLM 数据治理](/note/Engineering/llm-data-governance)
@@ -247,6 +256,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging)
 - [RAG Citation Evaluation](/note/Engineering/rag-citation-evaluation)
 - [RAG 评测报告模板](/note/Engineering/rag-evaluation-report-template)
+- [RAG 知识生命周期](/note/Engineering/rag-knowledge-lifecycle)
 - [向量数据库工程化](/note/Engineering/vector-database)
 - [Embedding 模型评测与迁移](/note/Engineering/embedding-model-eval-migration)
 - [GraphRAG 工程化](/note/Engineering/graphrag-engineering)
@@ -267,6 +277,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
 - [Agent Control Plane](/note/Engineering/agent-control-plane)
 - [Agent Approval Workflow](/note/Engineering/agent-approval-workflow)
+- [Agent 审计日志设计](/note/Engineering/agent-audit-log-design)
 - [Evaluation Pipeline](/note/Engineering/eval-pipeline)
 - [Eval Dataset 设计](/note/Engineering/eval-dataset-design)
 - [Fine-tuning 数据流水线](/note/Engineering/finetuning-data-pipeline)
@@ -282,6 +293,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [MCP Server](/note/Engineering/mcp-server)
 - [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)
 - [MCP Server Hardening](/note/Engineering/mcp-server-hardening)
+- [MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk)
 - [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design)
 - [MCP Client 测试](/note/Engineering/mcp-client-testing)
 - [MCP Client 工程化](/note/Engineering/mcp-client-engineering)

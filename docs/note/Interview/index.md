@@ -64,6 +64,8 @@
 - [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template)
 - [AI Agent 项目答辩稿](/topics/ai-agent-project-defense-script)
 - [生产级 Agent Readiness Review](/topics/agent-production-readiness-review)
+- [AI Agent Enterprise Pilot Plan](/topics/ai-agent-enterprise-pilot-plan)
+- [AI Agent CTO Review Checklist](/topics/ai-agent-cto-review-checklist)
 - [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan)
 - [AI Agent 面试追问地图](/topics/ai-agent-interview-followup-map)
 - [AI 项目设计文档模板](/topics/ai-project-design-doc-template)
@@ -92,6 +94,7 @@
 - [MCP Gateway 架构](/note/Engineering/mcp-gateway-architecture)
 - [MCP Gateway 运维](/note/Engineering/mcp-gateway-operations)
 - [MCP Server Hardening](/note/Engineering/mcp-server-hardening)
+- [MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk)
 - [Human Takeover 运营台](/topics/human-takeover-operations-console)
 - [Browser Automation Testing](/topics/browser-automation-testing-agent-ui)
 - [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)
@@ -100,13 +103,16 @@
 - [LLM Evaluation Scorecard](/note/Engineering/llm-evaluation-scorecard)
 - [RAG Citation Evaluation](/note/Engineering/rag-citation-evaluation)
 - [RAG 评测报告模板](/note/Engineering/rag-evaluation-report-template)
+- [RAG 知识生命周期](/note/Engineering/rag-knowledge-lifecycle)
 - [Agent Control Plane](/note/Engineering/agent-control-plane)
 - [Agent Approval Workflow](/note/Engineering/agent-approval-workflow)
+- [Agent 审计日志设计](/note/Engineering/agent-audit-log-design)
 - [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design)
 - [MCP Client 测试](/note/Engineering/mcp-client-testing)
 - [Agent 租户隔离测试](/note/Engineering/agent-tenant-isolation-testing)
 - [LLM 成本预算表](/note/Engineering/llm-cost-budget-table)
 - [LLM Semantic Cache](/note/Engineering/llm-semantic-cache)
+- [LLM Cost Chargeback](/note/Engineering/llm-cost-chargeback)
 - [Skill 运营手册](/note/AI-Tools/skill-operations-playbook)
 - [Agent 事故复盘模板](/topics/agent-incident-postmortem-template)
 - [Agent 故障演练](/note/Engineering/agent-production-failure-drill)
@@ -154,6 +160,12 @@
 - **RAG Evaluation Report**：不要只说“RAG 效果提升”，要讲评测目标、数据集分层、指标对比、失败归因、成本延迟和安全结果。
 - **Production Failure Drill**：不要只说“有监控”，要讲模型延迟、RAG 退化、工具超时、审批卡住、租户隔离和成本失控的演练。
 - **Production Readiness Review**：不要只列技术栈，要从任务边界、Workflow、RAG、Tool/MCP、Memory、评测、安全、成本、运维和发布十个维度审查。
+- **Agent Audit Log**：不要只说“有日志”，要讲 actor、action、target、risk、policy、hash、脱敏 metadata 和 append-only。
+- **LLM Cost Chargeback**：不要只说“有成本控制”，要讲成本如何按 tenant、feature、agent、model、run 分摊。
+- **RAG Knowledge Lifecycle**：不要只说“文档入库”，要讲版本、生效期、过期、权限变更、索引更新和缓存失效。
+- **MCP Supply Chain Risk**：不要只说“用了 MCP”，要讲 Server 来源、版本 pin、schema diff、依赖风险、沙箱和审计。
+- **Enterprise Pilot Plan**：不要只展示 Demo，要讲试点范围、种子用户、禁用能力、指标、风险和退出条件。
+- **CTO Review Checklist**：不要从技术栈开始汇报，要从业务价值、风险、成本、质量、运维和维护责任回答。
 - **Prompt Injection Defense**：不要只靠系统提示，要讲 untrusted evidence、tool policy、审批、沙箱、审计和对抗回归测试。
 - **SaaS Tenant / RBAC / Quota**：不要只说“支持团队使用”，要讲 tenant、workspace、role、permission、quota、usage、billing 和审计隔离。
 

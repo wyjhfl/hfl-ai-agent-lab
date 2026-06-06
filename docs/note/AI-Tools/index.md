@@ -13,6 +13,7 @@
 | Skill 测试与版本管理 | 让可复用能力有版本号、changelog、触发测试、流程测试、安全测试和回归样例 |
 | MCP Tool Schema 设计 | 把工具命名、参数、输出、错误、风险等级和版本管理做成可复用规范 |
 | MCP Server Hardening | 把 MCP 工具服务的参数校验、风险分级、超时、审计和 schema version 做成上线前必查项 |
+| MCP Supply Chain Risk | 管理 MCP Server 来源、版本 pin、schema diff、依赖、沙箱和工具返回内容注入风险 |
 | Skill 运营手册 | 把 Skill 的版本、触发、测试、反馈、漂移和废弃做成长期维护流程 |
 | AGENTS.md / Skill | 项目提示词、版本迭代推进方式 |
 
@@ -47,7 +48,7 @@
 | 学局部代码实现 | [Codex 拆解](/note/AI-Tools/codex) |
 | 把流程沉淀成可复用能力 | [Skills 编写](/note/AI-Tools/skill-authoring) |
 | 测试和演进 Skill | [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning) → [Skill 运营手册](/note/AI-Tools/skill-operations-playbook) |
-| 创建可治理 MCP 工具 | [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design) → [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide) → [MCP Server Hardening](/note/Engineering/mcp-server-hardening) |
+| 创建可治理 MCP 工具 | [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design) → [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide) → [MCP Server Hardening](/note/Engineering/mcp-server-hardening) → [MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk) |
 
 ## 当前状态
 
