@@ -28,6 +28,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | LLM Semantic Cache 层 | query normalize、embedding 相似度、版本失效、权限隔离、误命中监控 | 在不牺牲安全和可信度的前提下降低成本与延迟 |
 | LLM Cost Chargeback 层 | cost ledger、tenant、feature、model、retry、cache saving、quota | 把成本拆到租户、功能和任务，支撑预算、限额和商业化 |
 | 多模型治理层 | 路由策略、A/B 实验、Shadow Traffic、Canary、自动回滚 | 让模型切换和新模型上线可评测、可灰度、可追溯 |
+| Model Rollout Canary 层 | offline eval、shadow traffic、canary、ramp-up、rollback trigger | 让新模型上线可控、可观测、可回滚 |
 | 数据存储层 | 用户、任务、文档、工具调用、Trace、评测结果 | 保存业务状态和运行证据，让系统可追踪、可恢复、可评估 |
 | RAG 检索层 | 文档解析、Chunk、Embedding、Hybrid Search、Rerank、引用溯源 | 让模型基于外部知识回答，并能解释答案来源 |
 | RAG 入库层 | 文件校验、解析、Normalize、Chunk、Metadata、Embedding、索引、质量检查 | 把原始文件稳定转成可检索、可追溯、可更新的知识资产 |
@@ -44,16 +45,19 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Queue / Backpressure 层 | 优先级队列、资源并发、限流、熔断、死信队列、压力信号 | 防止长任务、工具失败和重试风暴压垮在线服务 |
 | 失败恢复层 | 状态机、幂等键、断点续跑、补偿、人工介入 | 让长任务在模型、工具、服务失败后能安全恢复 |
 | Workflow 状态机层 | Created、Queued、Planning、RunningTool、WaitingApproval、Completed、Failed | 把 Agent 长任务从自由对话变成可恢复、可审计、可展示的执行轨道 |
+| Multi-Agent Handoff 层 | handoff_id、from/to agent、evidence_refs、constraints、acceptance criteria | 让多 Agent 交接有边界、有证据、有验收 |
 | Agent Scheduler 层 | cron、interval、delay、event、幂等键、并发、预算、熔断 | 支撑定时报表、周期巡检、批量评测和延迟跟进任务 |
 | Agent 错误分类层 | input、policy、context、retrieval、model、tool、runtime、infra、ux error | 把失败变成可定位、可统计、可恢复、可回归的工程信号 |
 | Human Takeover 层 | 接管队列、任务摘要、Trace 查看、人工审批、重跑、失败标注 | 把人工运营纳入可靠性闭环，避免高风险或低置信度任务失控 |
 | 工具权限层 | 工具注册、参数校验、权限控制、审批、审计 | 控制 Agent 能调用什么工具、在什么条件下调用、如何追责 |
 | Tool Registry 层 | tool_id、版本、schema、风险等级、owner、启停、监控和审计 | 把工具从散落函数变成可治理、可授权、可评测的资产 |
+| Tool Call Replay 层 | tool_call_id、schema_version、args_hash、policy、approval、dry/mock/live replay | 把工具失败变成可回放、可归因、可回归的调试资产 |
 | 工具沙箱层 | 文件/网络/命令/数据沙箱、MCP 权限审计 | 限制工具调用的环境边界，避免越权、注入和危险副作用 |
 | 安全治理层 | Prompt Injection、防越权、数据脱敏、工具风险分级 | 把模型放进受控执行环境，避免工具滥用和数据泄漏 |
 | Prompt Injection 纵深防御层 | untrusted evidence、retrieval 清洗、tool policy、approval、sandbox、adversarial regression | 防止外部内容诱导模型越权执行工具或泄漏数据 |
 | Trace 可观测层 | Run ID、Step ID、工具调用记录、状态变化、错误定位 | 还原 Agent 执行过程，支持调试、复盘和质量分析 |
 | Agent Control Plane 层 | model registry、prompt registry、tool policy、eval gate、budget、release | 把 Agent 运行策略从业务代码中抽离，统一灰度和回滚 |
+| Agent Configuration Management 层 | agent profile、policy version、config snapshot、schema validation、rollback | 让模型、Prompt、RAG、工具和预算配置可治理 |
 | Agent Approval Workflow 层 | tool risk、policy check、approval request、args hash、execution guard、audit | 把高风险工具调用变成可审批、可追责、不可绕过的闭环 |
 | Agent Audit Log 层 | actor、action、target、risk、policy、hash、metadata、append-only | 让关键行为可追责、可合规、可复盘 |
 | Evaluation 评测层 | 测试集、指标、版本对比、失败样本库 | 把效果从主观感觉变成可比较、可迭代的数据 |
@@ -67,6 +71,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 红队演练层 | Prompt/RAG/Tool/MCP/Memory/API 攻击样本、修复和回归 | 上线前主动攻击系统，把安全问题转化为评测资产 |
 | Fine-tuning 数据层 | 样本收集、脱敏、标注、质检、切分、训练、评测、灰度 | 把线上行为和格式样本转成可训练、可回归的数据资产 |
 | LLM 数据治理层 | 数据分级、脱敏、用途隔离、保留周期、评测/训练集溯源 | 让用户输入、Trace、反馈、评测和训练数据可用、可控、可删除 |
+| PII Redaction 层 | mask、tokenize、hash、drop、redaction_version、utility eval | 防止敏感信息进入模型、日志、缓存和评测集 |
 | 反馈闭环层 | 用户反馈、人工修正、失败归因、eval case 转化 | 把线上真实问题转成评测、Prompt、检索和产品迭代燃料 |
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
 | MCP Server Hardening 层 | 参数校验、风险分级、timeout、rate limit、错误映射、schema version | 把 MCP Server 从脚本提升为可上线工具服务 |
@@ -102,8 +107,10 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 8. LLM Semantic Cache：用语义缓存、权限隔离和版本失效降低重复请求成本。
 9. LLM Cost Chargeback：把成本拆到租户、功能、模型和 run，支持预算与配额。
 8. Model Routing / A/B Testing：把模型切换、新模型灰度和实验结果纳入治理。
+9. Model Rollout Canary：用离线评测、shadow、canary 和自动回滚上线新模型。
 9. Database：设计任务、文档、Trace、评测等数据模型。
 10. LLM Data Governance：治理用户输入、Trace、反馈、评测集和训练数据的分级、脱敏、授权和保留周期。
+11. PII Redaction：在输入、RAG、工具、Trace、评测和缓存中做敏感信息脱敏。
 11. RAG Engineering：构建知识检索链路。
 12. RAG Ingestion：把文件解析、Chunk、metadata、embedding 和索引做成可靠流水线。
 13. RAG Debugging：建立检索故障排查 Trace。
@@ -119,17 +126,20 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 21. Queue / Backpressure：用优先级队列、资源并发、限流、熔断和死信队列保护系统。
 22. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
 23. Agent Workflow State Machine：把任务状态、转移规则、审批、恢复和 Trace 设计清楚。
+24. Multi-Agent Handoff：用结构化交接协议传递目标、证据、约束和验收标准。
 24. Agent Scheduler / Cron：设计定时、延迟、周期和事件触发任务的幂等与并发。
 24. Agent Error Taxonomy：把 input、policy、context、retrieval、model、tool、runtime、infra、ux error 分开处理。
 25. Human Takeover / Ops Console：把低置信度、高风险、超时和用户转人工做成接管队列。
 26. API Security：控制身份、权限、租户和高风险操作。
 27. Tool Registry：治理工具 schema、版本、风险等级、owner、启停和审批策略。
+28. Tool Call Replay：记录和回放工具调用，定位参数、权限、schema 和外部服务失败。
 28. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
 29. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
 30. Prompt Injection Defense-in-depth：用上下文降权、RAG 清洗、tool policy、approval、sandbox 和红队回归做纵深防御。
 31. Red Team：用攻击样本主动验证 Agent 安全边界。
 32. Agent Trace：记录 Agent 执行过程。
 33. Agent Control Plane：统一管理模型、Prompt、工具、策略、预算和发布。
+34. Agent Configuration Management：把 Agent Profile 和策略版本纳入配置发布和回滚。
 34. Agent Approval Workflow：把高风险工具调用纳入审批、参数哈希和执行层校验。
 35. Agent Audit Log：记录关键行为的 actor、action、target、risk、policy 和 hash。
 34. Evaluation Pipeline：评估系统效果。
@@ -249,8 +259,10 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [LLM Semantic Cache](/note/Engineering/llm-semantic-cache)
 - [LLM Cost Chargeback](/note/Engineering/llm-cost-chargeback)
 - [多模型路由与 A/B 实验](/note/Engineering/model-routing-ab-testing)
+- [Model Rollout Canary](/note/Engineering/model-rollout-canary)
 - [数据库设计：从业务数据到 Agent 运行记录](/note/Engineering/database)
 - [LLM 数据治理](/note/Engineering/llm-data-governance)
+- [PII 脱敏策略](/note/Engineering/pii-redaction-for-llm)
 - [RAG 工程化](/note/Engineering/rag-engineering)
 - [RAG 入库流水线](/note/Engineering/rag-ingestion-pipeline)
 - [RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging)
@@ -266,16 +278,19 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent Queue 与 Backpressure](/topics/agent-queue-backpressure)
 - [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery)
 - [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)
+- [Multi-Agent Handoff Protocol](/note/Engineering/multi-agent-handoff-protocol)
 - [Agent Scheduler 与 Cron](/note/Engineering/agent-scheduler-cron)
 - [Agent 错误分类](/note/Engineering/agent-error-taxonomy)
 - [API 安全与工具权限控制](/note/Engineering/api-security)
 - [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)
+- [Tool Call 回放调试](/note/Engineering/tool-call-replay-debugging)
 - [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission)
 - [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)
 - [Prompt Injection 纵深防御](/note/Engineering/prompt-injection-defense-in-depth)
 - [Agent 红队演练](/note/Engineering/agent-red-team-playbook)
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
 - [Agent Control Plane](/note/Engineering/agent-control-plane)
+- [Agent 配置治理](/note/Engineering/agent-configuration-management)
 - [Agent Approval Workflow](/note/Engineering/agent-approval-workflow)
 - [Agent 审计日志设计](/note/Engineering/agent-audit-log-design)
 - [Evaluation Pipeline](/note/Engineering/eval-pipeline)
