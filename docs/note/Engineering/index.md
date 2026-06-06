@@ -48,10 +48,11 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 9. Agent Trace：记录 Agent 执行过程。
 10. Evaluation Pipeline：评估系统效果。
 11. Eval Dataset：沉淀 smoke、regression 和失败样本。
-12. MCP Server：标准化外部工具接入。
-13. Skills：把重复工作流沉淀成可复用操作手册。
-14. Docker Deploy：部署和运维。
-15. Production Checklist：上线前检查。
+12. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
+13. MCP Server：标准化外部工具接入。
+14. Skills：把重复工作流沉淀成可复用操作手册。
+15. Docker Deploy：部署和运维。
+16. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -129,6 +130,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
 - [Evaluation Pipeline](/note/Engineering/eval-pipeline)
 - [Eval Dataset 设计](/note/Engineering/eval-dataset-design)
+- [Batch / 离线评测流水线](/note/Engineering/batch-offline-eval-pipeline)
 - [MCP Server](/note/Engineering/mcp-server)
 - [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)
 - [Skills 编写](/note/AI-Tools/skill-authoring)

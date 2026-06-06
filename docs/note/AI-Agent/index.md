@@ -21,14 +21,16 @@
 | 5 | RAG vs Fine-tuning | [RAG vs Fine-tuning](/note/AI-Agent/rag-vs-finetuning) | 区分外部知识检索和模型行为训练的适用边界 |
 | 6 | Tool Calling | [Tool Calling](/note/AI-Agent/tool-calling) | 理解工具注册、参数生成、工具选择、结果回填 |
 | 7 | Realtime Voice Agent | [Realtime Voice Agent](/note/AI-Agent/realtime-voice-agent) | 理解低延迟语音交互、打断、状态和工具调用 |
-| 8 | Agent Runtime | [Agent Runtime](/note/AI-Agent/agent-runtime) | 理解 Agent 运行时循环、状态管理、工具编排和停止条件 |
-| 9 | Memory / Persistence | [Memory / Persistence](/note/AI-Agent/memory) | 理解短期记忆、长期记忆、上下文压缩和持久化策略 |
-| 10 | LangGraph 状态机 | [LangGraph 状态机](/note/AI-Agent/langgraph) | 掌握 State、Node、Edge、Checkpoint 的设计和使用 |
-| 11 | Multi-Agent / Handoff | [Multi-Agent 架构](/note/AI-Agent/multi-agent) | 理解多 Agent 协作模式、调度策略、结果整合 |
-| 12 | Guardrails / Human Approval | [Guardrails / Safety](/note/AI-Agent/guardrails)、[Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | 理解安全边界、权限控制、Hook 拦截和人工审批 |
-| 13 | Agent Harness | [Agent Harness 总览](/note/AI-Agent/agent-harness) | 理解 Runtime、Memory、Tool、Guardrails、Trace、Eval 如何组成生产级骨架 |
-| 14 | Trace / Evaluation | [Trace 与 Evaluation](/note/AI-Agent/evaluation) | 理解 Trace 记录、自动评测、失败样本沉淀 |
-| 15 | Production Engineering | [Production Engineering](/note/AI-Agent/production) | 理解部署、监控、成本控制、Prompt 管理 |
+| 8 | Browser / Computer Use Agent | [Browser / Computer Use Agent](/note/AI-Agent/browser-computer-use-agent) | 理解 GUI 自动化、浏览器操作、截图/DOM 观察和高风险动作审批 |
+| 9 | Agent Runtime | [Agent Runtime](/note/AI-Agent/agent-runtime) | 理解 Agent 运行时循环、状态管理、工具编排和停止条件 |
+| 10 | Memory / Persistence | [Memory / Persistence](/note/AI-Agent/memory) | 理解短期记忆、长期记忆、上下文压缩和持久化策略 |
+| 11 | 长期记忆系统 | [长期记忆系统设计](/note/AI-Agent/long-term-memory) | 理解用户偏好、项目事实、记忆写入、检索和遗忘机制 |
+| 12 | LangGraph 状态机 | [LangGraph 状态机](/note/AI-Agent/langgraph) | 掌握 State、Node、Edge、Checkpoint 的设计和使用 |
+| 13 | Multi-Agent / Handoff | [Multi-Agent 架构](/note/AI-Agent/multi-agent) | 理解多 Agent 协作模式、调度策略、结果整合 |
+| 14 | Guardrails / Human Approval | [Guardrails / Safety](/note/AI-Agent/guardrails)、[Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | 理解安全边界、权限控制、Hook 拦截和人工审批 |
+| 15 | Agent Harness | [Agent Harness 总览](/note/AI-Agent/agent-harness) | 理解 Runtime、Memory、Tool、Guardrails、Trace、Eval 如何组成生产级骨架 |
+| 16 | Trace / Evaluation | [Trace 与 Evaluation](/note/AI-Agent/evaluation) | 理解 Trace 记录、自动评测、失败样本沉淀 |
+| 17 | Production Engineering | [Production Engineering](/note/AI-Agent/production) | 理解部署、监控、成本控制、Prompt 管理 |
 
 ## 和工程化笔记的关系
 
@@ -40,8 +42,9 @@
 | RAG vs Fine-tuning | [Eval Dataset 设计](/note/Engineering/eval-dataset-design)、[LLM Gateway](/note/Engineering/llm-gateway) |
 | Context Engineering | [Agent Trace](/note/Engineering/agent-trace)、[LLM Gateway](/note/Engineering/llm-gateway) |
 | Tool Calling | [API 安全](/note/Engineering/api-security)、[MCP Server](/note/Engineering/mcp-server) |
+| Browser / Computer Use | [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)、[Agent Trace](/note/Engineering/agent-trace) |
 | Agent Runtime | [Agent Trace](/note/Engineering/agent-trace)、[异步任务](/note/Engineering/async-task) |
-| Memory / Persistence | [数据库设计](/note/Engineering/database)、[Agent Trace](/note/Engineering/agent-trace) |
+| Memory / Persistence | [数据库设计](/note/Engineering/database)、[Agent Trace](/note/Engineering/agent-trace)、[长期记忆系统设计](/note/AI-Agent/long-term-memory) |
 | LangGraph / Multi-Agent | [Agent Trace](/note/Engineering/agent-trace)、[Eval Pipeline](/note/Engineering/eval-pipeline) |
 | Guardrails / Safety | [API 安全](/note/Engineering/api-security)、[上线检查清单](/note/Engineering/production-checklist) |
 | Agent Harness | [MCP Server](/note/Engineering/mcp-server)、[Agent Trace](/note/Engineering/agent-trace)、[Eval Pipeline](/note/Engineering/eval-pipeline) |
@@ -58,6 +61,7 @@
 | RAG | [RAG 面试题](/note/AI-Interview/rag-interview) |
 | RAG vs Fine-tuning | [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) |
 | Tool Calling | [LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview) |
+| Browser / Computer Use | [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) |
 | LangGraph | [LangChain / LangGraph 面试题](/note/AI-Interview/langchain-interview) |
 | Agent Harness / Guardrails | [Agent 面试题](/note/AI-Interview/agent-interview)、[大模型工程面试题](/note/AI-Interview/llm-engineering-interview) |
 | Production Engineering | [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) |
@@ -102,6 +106,7 @@ RAG 让模型能结合外部知识回答问题，Tool Calling 让模型能调用
 | RAG | [RAG 基础](/note/AI-Agent/rag) | [RAG 工程化](/note/Engineering/rag-engineering) | [RAG 面试题](/note/AI-Interview/rag-interview) |
 | RAG vs Fine-tuning | [RAG vs Fine-tuning](/note/AI-Agent/rag-vs-finetuning) | [Eval Dataset 设计](/note/Engineering/eval-dataset-design) | [大模型工程面试题](/note/AI-Interview/llm-engineering-interview) |
 | Tool Calling | [Tool Calling](/note/AI-Agent/tool-calling) | [API 安全](/note/Engineering/api-security)、[MCP Server](/note/Engineering/mcp-server) | [LLM 工具调用面试题](/note/AI-Interview/llm-tools-interview) |
+| Browser / Computer Use | [Browser / Computer Use Agent](/note/AI-Agent/browser-computer-use-agent) | [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)、[Agent Trace](/note/Engineering/agent-trace) | [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) |
 | Agent Runtime | [Agent Runtime](/note/AI-Agent/agent-runtime) | [Agent Trace](/note/Engineering/agent-trace) | [Agent 面试题](/note/AI-Interview/agent-interview) |
 | Memory / Persistence | [Memory / Persistence](/note/AI-Agent/memory) | [数据库设计](/note/Engineering/database)、[Agent Trace](/note/Engineering/agent-trace) | [Agent 面试题](/note/AI-Interview/agent-interview) |
 | LangGraph | [LangGraph](/note/AI-Agent/langgraph) | [Agent Trace](/note/Engineering/agent-trace) | [LangChain / LangGraph 面试题](/note/AI-Interview/langchain-interview) |
