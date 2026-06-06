@@ -61,6 +61,7 @@
 - [简历描述模板](/note/Interview/resume-bullets)
 - [Agent Capability Matrix](/topics/agent-capability-matrix)
 - [AI Agent Resume Project Matrix](/topics/ai-agent-resume-project-matrix)
+- [AI Agent Interview Story Bank](/topics/ai-agent-interview-story-bank)
 - [AI Agent 项目包装：简历、作品集和面试讲法](/topics/ai-agent-project-packaging)
 - [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template)
 - [AI Agent 项目答辩稿](/topics/ai-agent-project-defense-script)
@@ -95,9 +96,11 @@
 - [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning)
 - [Agent Queue 与 Backpressure](/topics/agent-queue-backpressure)
 - [Agent Memory 评测](/note/Engineering/memory-evaluation-for-agents)
+- [Memory Privacy Retention](/note/Engineering/memory-privacy-retention)
 - [Context Window 管理](/note/AI-Agent/context-window-management)
 - [MCP Gateway 架构](/note/Engineering/mcp-gateway-architecture)
 - [MCP Gateway 运维](/note/Engineering/mcp-gateway-operations)
+- [MCP Observability Metrics](/note/Engineering/mcp-observability-metrics)
 - [MCP Server Hardening](/note/Engineering/mcp-server-hardening)
 - [MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk)
 - [Human Takeover 运营台](/topics/human-takeover-operations-console)
@@ -114,6 +117,7 @@
 - [RAG 知识生命周期](/note/Engineering/rag-knowledge-lifecycle)
 - [RAG 权限过滤](/note/Engineering/rag-permission-filtering)
 - [RAG Freshness Evaluation](/note/Engineering/rag-freshness-evaluation)
+- [RAG Grounding Contract](/note/Engineering/rag-grounding-contract)
 - [PII 脱敏策略](/note/Engineering/pii-redaction-for-llm)
 - [Agent Control Plane](/note/Engineering/agent-control-plane)
 - [Agent Approval Workflow](/note/Engineering/agent-approval-workflow)
@@ -126,11 +130,13 @@
 - [Agent 租户隔离测试](/note/Engineering/agent-tenant-isolation-testing)
 - [LLM 成本预算表](/note/Engineering/llm-cost-budget-table)
 - [Agent Latency Budget](/note/Engineering/agent-latency-budget)
+- [Model Provider Failover](/note/Engineering/model-provider-failover)
 - [LLM Semantic Cache](/note/Engineering/llm-semantic-cache)
 - [Model Rollout Canary](/note/Engineering/model-rollout-canary)
 - [LLM Cost Chargeback](/note/Engineering/llm-cost-chargeback)
 - [Skill 运营手册](/note/AI-Tools/skill-operations-playbook)
 - [Agent 事故复盘模板](/topics/agent-incident-postmortem-template)
+- [Agent Run Replay](/note/Engineering/agent-run-replay)
 - [Agent SLO 与 Error Budget](/note/Engineering/agent-slo-error-budget)
 - [Agent 故障演练](/note/Engineering/agent-production-failure-drill)
 - [RAG 设计问答](/note/Interview/rag-qa)
@@ -152,10 +158,12 @@
 - **Tool Call Replay**：不要只说“工具偶发失败”，要讲 tool_call_id、schema、参数、审批、结果快照以及 dry/mock/live 三种回放模式。
 - **Multi-Agent Handoff**：不要只说“多个 Agent 协作”，要讲 handoff payload、evidence_refs、constraints、acceptance_criteria 和责任归属。
 - **Memory Evaluation**：不要只说“做了记忆”，要讲 should remember / should not remember / update / forget / injection 测试集。
+- **Memory Privacy Retention**：不要只说“做了长期记忆”，要讲 should_remember、PII、retention、forget request 和跨租户隔离。
 - **Queue / Backpressure**：不要只说“异步任务”，要讲优先级队列、资源并发、背压信号、熔断和死信队列。
 - **Skill Testing**：不要只说“写了 Skill”，要讲触发测试、流程测试、输出测试、安全测试、回归样例和 changelog。
 - **MCP Security**：不要只说“接入 MCP”，要讲 scope、tenant、role、secret boundary、schema pinning 和 audit。
 - **MCP Token Exchange**：不要让 MCP Server 共用全局 Token，要讲 run、tool、scope、args_hash、approval 绑定的短期凭证。
+- **MCP Observability Metrics**：不要只说“MCP 能启动”，要讲 server health、schema diff、tool success、token exchange、approval 和 sandbox 指标。
 - **Error Taxonomy**：不要把失败都归因成模型不行，要区分输入、权限、上下文、检索、模型、工具、运行时和基础设施错误。
 - **Contract / Regression Testing**：不要只说“做了测试”，要讲接口契约、状态机契约、MCP schema 契约和对话回归样例。
 - **Agent Workflow 状态机**：不要只说“Agent 会自己规划”，要讲 Created、Queued、Planning、RunningTool、WaitingApproval、Completed、Failed 等状态和转移规则。
@@ -171,15 +179,18 @@
 - **Tenant Isolation Testing**：不要只说“支持多租户”，要讲 API、RAG、Vector Metadata、MCP、Memory、Cache、Trace 和 Billing 的隔离测试。
 - **LLM Cost Budget**：不要只说“做了成本优化”，要讲 cost_per_task、p95_cost、cost_per_success、model_mix、cache_hit_rate 和 retry_cost_ratio。
 - **Agent Latency Budget**：不要只说“换更快模型”，要讲 queue、planning、retrieval、tool、approval、retry 和前端感知延迟。
+- **Model Provider Failover**：不要只说“模型挂了就重试”，要讲同供应商降级、跨供应商切换、功能降级和人工接管。
 - **Eval Drift Monitoring**：不要只说“上线前测过”，要讲线上抽样、golden set、分桶趋势、Judge 校准和漂移响应。
 - **Eval Case Lifecycle**：不要让评测集无人维护，要讲 candidate、脱敏、标注、审核、active、flaky、deprecated 和 archived。
 - **Model Rollout Canary**：不要只说“换了更好的模型”，要讲 offline eval、shadow、canary、ramp-up、自动回滚和风险阈值。
 - **Skill Operations**：不要只说“写了 Skill”，要讲版本、触发测试、输出测试、安全测试、反馈、漂移修复和废弃策略。
 - **Agent Incident Postmortem**：不要只说“线上问题已修复”，要讲事故摘要、时间线、Trace、错误分类、回归样本和 Release Gate 更新。
+- **Agent Run Replay**：不要只说“看日志排查”，要讲 input、config、context、retrieval、tool、model、output 快照和 replay 模式。
 - **Portfolio Case Study**：不要把作品集写成技术栈列表，要讲背景、目标、架构、Workflow、评测、安全、难点和 60 秒版本。
 - **Demo Acceptance Script**：不要临场随意演示，要按主路径、权限、工具风险、失败恢复、Trace、评测和指标准备验收脚本。
 - **System Design Whiteboard**：不要只画 LLM 到工具，要按任务边界、Runtime、RAG、Tool/MCP、Data、Observability 和 Governance 白板表达。
 - **Resume Project Matrix**：不要把简历 bullet 写成“熟悉 RAG/Agent”，要把每条经历映射到 Workflow、Tool、MCP、Eval、Security、Cost、Ops 和 Product 能力证据。
+- **Interview Story Bank**：不要只背项目介绍，要把失败、权衡和结果整理成 STAR 故事并绑定能力标签。
 - **Agent Product Metrics**：不要只说“用户觉得好用”，要讲 task completion、handoff、correction、trust signal、cost 和 latency 如何共同证明产品价值。
 - **LLM Data Governance**：不要只说“收集日志做优化”，要讲数据分级、脱敏、用途隔离、保留周期、删除请求和评测/训练集 lineage。
 - **Agent Release Gate**：不要把上线说成“测试通过”，要讲 code、contract、eval、RAG、safety、cost、latency、ops 和 product gate。
@@ -197,6 +208,7 @@
 - **RAG Knowledge Lifecycle**：不要只说“文档入库”，要讲版本、生效期、过期、权限变更、索引更新和缓存失效。
 - **RAG Permission Filtering**：不要只说“做了多租户”，要讲 tenant、workspace、ACL、classification、status、citation 和缓存隔离。
 - **RAG Freshness Evaluation**：不要只说“文档入库成功”，要讲新文档、更新、过期、删除、权限变更和缓存失效如何评测。
+- **RAG Grounding Contract**：不要只说“答案有引用”，要讲 claim-to-citation、no-answer、权限、freshness 和 unsupported claim。
 - **MCP Supply Chain Risk**：不要只说“用了 MCP”，要讲 Server 来源、版本 pin、schema diff、依赖风险、沙箱和审计。
 - **Enterprise Pilot Plan**：不要只展示 Demo，要讲试点范围、种子用户、禁用能力、指标、风险和退出条件。
 - **CTO Review Checklist**：不要从技术栈开始汇报，要从业务价值、风险、成本、质量、运维和维护责任回答。
@@ -218,7 +230,7 @@
 
 如果已经有项目代码，但不知道怎么讲，建议按下面顺序整理：
 
-1. 先看 [Agent Capability Matrix](/topics/agent-capability-matrix) 和 [AI Agent Resume Project Matrix](/topics/ai-agent-resume-project-matrix)，确认项目能证明哪些能力域，并把能力映射到简历 bullet。
+1. 先看 [Agent Capability Matrix](/topics/agent-capability-matrix)、[AI Agent Resume Project Matrix](/topics/ai-agent-resume-project-matrix) 和 [AI Agent Interview Story Bank](/topics/ai-agent-interview-story-bank)，确认项目能证明哪些能力域，并把能力映射到简历 bullet。
 2. 再看 [AI Agent 项目包装](/topics/ai-agent-project-packaging)、[AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template)、[AI Agent Demo Acceptance Script](/topics/ai-agent-demo-acceptance-script) 和 [AI Agent 项目答辩稿](/topics/ai-agent-project-defense-script)，把项目改写成“业务问题 + 架构 + Workflow + 难点 + 指标 + 贡献 + 5 分钟演示”。
 3. 再看 [简历描述模板](/note/Interview/resume-bullets)，把项目压缩成 2-4 条简历 bullet。
 4. 最后回到 [AI Agent 面试题库](/note/AI-Interview/)，准备技术追问。

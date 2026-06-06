@@ -20,6 +20,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | --- | --- | --- |
 | 后端接口层 | FastAPI、路由、请求校验、统一响应、鉴权 | 提供稳定的任务入口、RAG 问答入口、文件上传入口和状态查询入口 |
 | LLM Gateway 层 | 模型路由、限流、成本、Prompt 版本、降级和审计 | 把模型调用从业务代码中抽离，统一治理多模型访问 |
+| Model Provider Failover 层 | timeout、rate limit、provider outage、model regression、fallback、degrade | 让模型供应商故障时系统可降级、可切换、可接管 |
 | Structured Output 层 | JSON Schema、Pydantic、TypeScript 类型、字段校验、输出修复 | 让模型输出可解析、可落库、可渲染、可评测，而不是只能给人读 |
 | Context Window 管理层 | token 预算、历史压缩、证据排序、Memory 过滤、上下文 Trace | 控制长上下文成本、相关性、可信边界和可复盘性 |
 | PromptOps 层 | Prompt Registry、版本、评测、灰度、回滚、调用审计 | 把 Prompt 从临时代码字符串变成可治理的工程资产 |
@@ -36,6 +37,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | RAG 入库层 | 文件校验、解析、Normalize、Chunk、Metadata、Embedding、索引、质量检查 | 把原始文件稳定转成可检索、可追溯、可更新的知识资产 |
 | RAG Debug 层 | Query Rewrite、召回、Filter、Rerank、Context Pack、Citation Trace | 定位答案差到底是入库、检索、排序、上下文还是生成问题 |
 | RAG Citation Evaluation 层 | citation coverage、faithfulness、permission、freshness、no-answer | 验证引用是否真的支持答案，而不是只显示来源链接 |
+| RAG Grounding Contract 层 | evidence_required、claim_to_citation、no_answer_policy、freshness、permission | 把“基于引用回答”变成可测试契约 |
 | RAG Evaluation Report 层 | 数据集、Pipeline 配置、指标、失败归因、成本延迟、安全结果 | 把 RAG 优化过程沉淀成可复现、可面试表达的报告 |
 | RAG Knowledge Lifecycle 层 | document version、status、effective time、ACL、index version、cache invalidation | 治理文档新增、更新、过期、删除和权限变化 |
 | RAG Freshness Evaluation 层 | document_version、index_version、status、effective time、cache invalidation | 验证答案是否来自最新且有效的知识版本 |
@@ -61,6 +63,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 安全治理层 | Prompt Injection、防越权、数据脱敏、工具风险分级 | 把模型放进受控执行环境，避免工具滥用和数据泄漏 |
 | Prompt Injection 纵深防御层 | untrusted evidence、retrieval 清洗、tool policy、approval、sandbox、adversarial regression | 防止外部内容诱导模型越权执行工具或泄漏数据 |
 | Trace 可观测层 | Run ID、Step ID、工具调用记录、状态变化、错误定位 | 还原 Agent 执行过程，支持调试、复盘和质量分析 |
+| Agent Run Replay 层 | input、config、context、retrieval、state、tool、model、output snapshot | 让线上失败可复现、可回放、可转成回归样本 |
 | Agent Control Plane 层 | model registry、prompt registry、tool policy、eval gate、budget、release | 把 Agent 运行策略从业务代码中抽离，统一灰度和回滚 |
 | Agent Configuration Management 层 | agent profile、policy version、config snapshot、schema validation、rollback | 让模型、Prompt、RAG、工具和预算配置可治理 |
 | Agent Approval Workflow 层 | tool risk、policy check、approval request、args hash、execution guard、audit | 把高风险工具调用变成可审批、可追责、不可绕过的闭环 |
@@ -89,9 +92,11 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | MCP Client 层 | Server Registry、Tool Discovery、权限过滤、连接管理、结果标准化 | 把 MCP Server 安全稳定接入 Agent Runtime |
 | MCP Gateway 层 | server registry、schema cache、policy filter、secret boundary、approval、audit | 统一治理多 MCP Server 的发现、鉴权、审批、限流和观测 |
 | MCP Gateway Operations 层 | health、schema diff、latency、error、quota、degrade、postmortem | 让多 MCP Server 接入后可巡检、可限流、可止血 |
+| MCP Observability Metrics 层 | server health、schema diff、tool success、token exchange、approval、sandbox | 让 MCP 工具体系可监控、可告警、可降级 |
 | MCP 安全授权层 | scope、tenant、role、secret boundary、schema pinning、audit、red team | 防止 MCP 工具越权、数据泄漏、危险副作用和供应链风险 |
 | MCP Token Exchange 层 | user_session、agent_run、gateway_token、tool_execution_token、scope、args_hash | 控制 MCP 工具调用的凭证范围、时效和审计边界 |
 | Memory Evaluation 层 | should/should-not remember、更新、遗忘、注入、stale memory 指标 | 证明长期记忆写得对、用得对、更新得了、忘得掉 |
+| Memory Privacy Retention 层 | should_remember、PII、retention、forget request、stale memory、cross tenant | 让长期记忆可授权、可过期、可删除、可评测 |
 | Skills 工作流层 | `SKILL.md`、脚本、参考资料、验收标准 | 把重复工程流程沉淀成 Agent 可复用的操作手册 |
 | Skill Testing 层 | trigger、procedure、output、safety、regression、changelog | 让 Skill 像代码一样可版本化、可测试、可持续演进 |
 | Browser 验收层 | Playwright、Mock LLM、工具审批、任务状态、引用和截图 Trace | 验证用户真实流程能跑通，避免只测 API 不测体验 |
@@ -109,6 +114,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 
 1. FastAPI：先把服务接口搭起来。
 2. LLM Gateway：统一模型路由、成本、降级和审计。
+3. Model Provider Failover：设计模型供应商 timeout、限流、故障、降级和跨供应商切换。
 3. Structured Output：让模型输出能被后端、前端、数据库和评测系统稳定消费。
 4. Context Window Management：控制长上下文的 token 预算、证据排序、历史压缩和上下文 Trace。
 5. PromptOps：把 Prompt 版本、评测、灰度和回滚接入发布流程。
@@ -127,6 +133,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 12. RAG Ingestion：把文件解析、Chunk、metadata、embedding 和索引做成可靠流水线。
 13. RAG Debugging：建立检索故障排查 Trace。
 14. RAG Citation Evaluation：评测引用覆盖率、支持度、权限和无答案行为。
+15. RAG Grounding Contract：把 claim-to-citation、no-answer、权限和 freshness 做成契约。
 15. RAG Evaluation Report：把评测目标、数据集、指标、失败归因和成本延迟写成报告。
 16. RAG Knowledge Lifecycle：治理文档版本、过期、权限变化、索引更新和缓存失效。
 17. RAG Freshness Evaluation：评估新文档、更新、过期、删除、权限变更和缓存失效。
@@ -153,6 +160,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 30. Prompt Injection Defense-in-depth：用上下文降权、RAG 清洗、tool policy、approval、sandbox 和红队回归做纵深防御。
 31. Red Team：用攻击样本主动验证 Agent 安全边界。
 32. Agent Trace：记录 Agent 执行过程。
+33. Agent Run Replay：保存 run 快照并支持 dry、mock、deterministic、live 和 partial replay。
 33. Agent Control Plane：统一管理模型、Prompt、工具、策略、预算和发布。
 34. Agent Configuration Management：把 Agent Profile 和策略版本纳入配置发布和回滚。
 34. Agent Approval Workflow：把高风险工具调用纳入审批、参数哈希和执行层校验。
@@ -169,6 +177,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 40. Agent Contract Testing：验证 JSON schema、tool args、task state、trace event 和 MCP schema 契约。
 41. Conversation Regression Testing：把关键对话路径、fixtures、工具调用和安全边界做成回归。
 42. Agent Memory Evaluation：评测记忆写入、检索、更新、遗忘和注入防护。
+43. Memory Privacy Retention：评测记忆写入、隐私、留存、删除和跨租户隔离。
 43. Fine-tuning Data Pipeline：把线上样本转成可训练、可评测的数据。
 44. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
 45. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
@@ -180,6 +189,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 49. MCP Client Testing：用 fake server、契约测试、权限过滤和注入样本验证 Client。
 50. MCP Gateway：统一治理多 MCP Server 的发现、权限、审批、限流和审计。
 51. MCP Gateway Operations：巡检 health、schema diff、latency、quota，并支持降级止血。
+52. MCP Observability Metrics：观测 MCP server health、schema diff、tool success、token exchange 和 approval。
 52. MCP Security / Auth：设计 scope、tenant、role、secret boundary、schema pinning 和审计。
 53. MCP Token Exchange：设计 Gateway、Server 和下游系统之间的短期 scope 凭证交换。
 53. Skills：把重复工作流沉淀成可复用操作手册。
@@ -271,6 +281,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 
 - [FastAPI 后端接口工程化](/note/Engineering/fastapi)
 - [LLM Gateway](/note/Engineering/llm-gateway)
+- [Model Provider Failover](/note/Engineering/model-provider-failover)
 - [Structured Output 工程化](/note/Engineering/structured-output-engineering)
 - [Context Window 管理](/note/AI-Agent/context-window-management)
 - [PromptOps：Prompt 版本、评测和回滚](/note/Engineering/promptops-versioning)
@@ -289,6 +300,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [RAG 入库流水线](/note/Engineering/rag-ingestion-pipeline)
 - [RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging)
 - [RAG Citation Evaluation](/note/Engineering/rag-citation-evaluation)
+- [RAG Grounding Contract](/note/Engineering/rag-grounding-contract)
 - [RAG 评测报告模板](/note/Engineering/rag-evaluation-report-template)
 - [RAG 知识生命周期](/note/Engineering/rag-knowledge-lifecycle)
 - [RAG Freshness Evaluation](/note/Engineering/rag-freshness-evaluation)
@@ -314,6 +326,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Prompt Injection 纵深防御](/note/Engineering/prompt-injection-defense-in-depth)
 - [Agent 红队演练](/note/Engineering/agent-red-team-playbook)
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
+- [Agent Run Replay](/note/Engineering/agent-run-replay)
 - [Agent Control Plane](/note/Engineering/agent-control-plane)
 - [Agent 配置治理](/note/Engineering/agent-configuration-management)
 - [Agent Approval Workflow](/note/Engineering/agent-approval-workflow)
@@ -331,6 +344,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent Contract Testing](/topics/agent-contract-testing)
 - [Conversation Regression Testing](/topics/conversation-regression-testing)
 - [Agent Memory 评测](/note/Engineering/memory-evaluation-for-agents)
+- [Memory Privacy Retention](/note/Engineering/memory-privacy-retention)
 - [AI Agent 反馈闭环](/note/Engineering/agent-feedback-loop)
 - [Batch / 离线评测流水线](/note/Engineering/batch-offline-eval-pipeline)
 - [MCP Server](/note/Engineering/mcp-server)
@@ -342,6 +356,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [MCP Client 工程化](/note/Engineering/mcp-client-engineering)
 - [MCP Gateway 架构](/note/Engineering/mcp-gateway-architecture)
 - [MCP Gateway 运维](/note/Engineering/mcp-gateway-operations)
+- [MCP Observability Metrics](/note/Engineering/mcp-observability-metrics)
 - [MCP 安全与授权](/note/Engineering/mcp-security-auth)
 - [MCP Token Exchange](/note/Engineering/mcp-token-exchange)
 - [Skills 编写](/note/AI-Tools/skill-authoring)
