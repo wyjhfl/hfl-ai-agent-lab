@@ -26,6 +26,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 多模型治理层 | 路由策略、A/B 实验、Shadow Traffic、Canary、自动回滚 | 让模型切换和新模型上线可评测、可灰度、可追溯 |
 | 数据存储层 | 用户、任务、文档、工具调用、Trace、评测结果 | 保存业务状态和运行证据，让系统可追踪、可恢复、可评估 |
 | RAG 检索层 | 文档解析、Chunk、Embedding、Hybrid Search、Rerank、引用溯源 | 让模型基于外部知识回答，并能解释答案来源 |
+| RAG 入库层 | 文件校验、解析、Normalize、Chunk、Metadata、Embedding、索引、质量检查 | 把原始文件稳定转成可检索、可追溯、可更新的知识资产 |
+| RAG Debug 层 | Query Rewrite、召回、Filter、Rerank、Context Pack、Citation Trace | 定位答案差到底是入库、检索、排序、上下文还是生成问题 |
 | 向量数据库层 | Collection、Metadata、索引、过滤查询、增量更新 | 支撑高质量召回、权限过滤、引用定位和检索性能优化 |
 | GraphRAG 层 | 实体、关系、子图、社区摘要、路径检索 | 支撑多跳关系、全局结构和复杂知识推理 |
 | 企业权限层 | tenant、workspace、ACL、metadata filter、缓存隔离 | 防止企业知识库和多租户 RAG 检索泄漏数据 |
@@ -39,8 +41,10 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Eval Dataset 层 | smoke set、regression set、失败样本、评分规则 | 让评测可复用、可回归、可定位失败原因 |
 | Judge 评测层 | Rubric、LLM-as-Judge、人工校准、pairwise 对比 | 让自动语义评测更稳定、更可解释 |
 | 对抗评测层 | 合成样本、Prompt Injection、越权、危险工具、冲突证据 | 主动覆盖线上不常见但高风险的边界情况 |
+| 红队演练层 | Prompt/RAG/Tool/MCP/Memory/API 攻击样本、修复和回归 | 上线前主动攻击系统，把安全问题转化为评测资产 |
 | 反馈闭环层 | 用户反馈、人工修正、失败归因、eval case 转化 | 把线上真实问题转成评测、Prompt、检索和产品迭代燃料 |
 | MCP 工具接入层 | Tools、Resources、Prompts、Schema、鉴权、审计 | 标准化外部工具接入方式，降低工具集成成本 |
+| MCP Client 层 | Server Registry、Tool Discovery、权限过滤、连接管理、结果标准化 | 把 MCP Server 安全稳定接入 Agent Runtime |
 | Skills 工作流层 | `SKILL.md`、脚本、参考资料、验收标准 | 把重复工程流程沉淀成 Agent 可复用的操作手册 |
 | 部署上线层 | Docker、环境变量、健康检查、日志、回滚、成本监控 | 保证系统能在真实环境稳定运行，并支持运维和回滚 |
 | 生产运维层 | SLO、报警分级、事故排查、止血开关、复盘模板 | 让 Agent 上线后有日常巡检和事故处理手册 |
@@ -57,26 +61,30 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 6. Model Routing / A/B Testing：把模型切换、新模型灰度和实验结果纳入治理。
 7. Database：设计任务、文档、Trace、评测等数据模型。
 8. RAG Engineering：构建知识检索链路。
-9. Vector Database：管理向量数据和检索性能。
-10. GraphRAG：在需要复杂关系推理时引入实体、关系和子图检索。
-11. Enterprise RAG Permission：把 tenant、ACL、metadata filter 和缓存隔离放进检索链路。
-12. Async Task：处理长任务和并发。
-13. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
-14. API Security：控制工具权限和高风险操作。
-15. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
-16. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
-17. Agent Trace：记录 Agent 执行过程。
-18. Evaluation Pipeline：评估系统效果。
-19. Eval Dataset：沉淀 smoke、regression 和失败样本。
-20. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
-21. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
-22. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
-23. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
-24. MCP Server：标准化外部工具接入。
-25. Skills：把重复工作流沉淀成可复用操作手册。
-26. Docker Deploy：部署和运维。
-27. Production Ops Runbook：上线后巡检、报警、止血和复盘。
-28. Production Checklist：上线前检查。
+9. RAG Ingestion：把文件解析、Chunk、metadata、embedding 和索引做成可靠流水线。
+10. RAG Debugging：建立检索故障排查 Trace。
+11. Vector Database：管理向量数据和检索性能。
+12. GraphRAG：在需要复杂关系推理时引入实体、关系和子图检索。
+13. Enterprise RAG Permission：把 tenant、ACL、metadata filter 和缓存隔离放进检索链路。
+14. Async Task：处理长任务和并发。
+15. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
+16. API Security：控制工具权限和高风险操作。
+17. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
+18. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
+19. Red Team：用攻击样本主动验证 Agent 安全边界。
+20. Agent Trace：记录 Agent 执行过程。
+21. Evaluation Pipeline：评估系统效果。
+22. Eval Dataset：沉淀 smoke、regression 和失败样本。
+23. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
+24. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
+25. Feedback Loop：把线上反馈转化为评测样本和迭代任务。
+26. Batch / Offline Eval：低成本跑批量评测、摘要、分类和失败样本回放。
+27. MCP Server：标准化外部工具接入。
+28. MCP Client：把 MCP Server 安全稳定接入 Agent Runtime。
+29. Skills：把重复工作流沉淀成可复用操作手册。
+30. Docker Deploy：部署和运维。
+31. Production Ops Runbook：上线后巡检、报警、止血和复盘。
+32. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
 
@@ -151,6 +159,8 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [多模型路由与 A/B 实验](/note/Engineering/model-routing-ab-testing)
 - [数据库设计：从业务数据到 Agent 运行记录](/note/Engineering/database)
 - [RAG 工程化](/note/Engineering/rag-engineering)
+- [RAG 入库流水线](/note/Engineering/rag-ingestion-pipeline)
+- [RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging)
 - [向量数据库工程化](/note/Engineering/vector-database)
 - [GraphRAG 工程化](/note/Engineering/graphrag-engineering)
 - [企业知识库权限与多租户 RAG](/note/Engineering/enterprise-rag-permission-multitenancy)
@@ -159,6 +169,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [API 安全与工具权限控制](/note/Engineering/api-security)
 - [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission)
 - [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)
+- [Agent 红队演练](/note/Engineering/agent-red-team-playbook)
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
 - [Evaluation Pipeline](/note/Engineering/eval-pipeline)
 - [Eval Dataset 设计](/note/Engineering/eval-dataset-design)
@@ -168,6 +179,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Batch / 离线评测流水线](/note/Engineering/batch-offline-eval-pipeline)
 - [MCP Server](/note/Engineering/mcp-server)
 - [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)
+- [MCP Client 工程化](/note/Engineering/mcp-client-engineering)
 - [Skills 编写](/note/AI-Tools/skill-authoring)
 - [Docker 部署](/note/Engineering/docker-deploy)
 - [Agent 生产运维 Runbook](/note/Engineering/agent-production-ops-runbook)

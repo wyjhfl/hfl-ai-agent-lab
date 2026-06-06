@@ -10,7 +10,7 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 |---|---|
 | 零基础建立 Agent 工程认知 | AI Agent 核心概念专题 → [Agent 开发 Playbook](/topics/agent-development-playbook) → Engineering 工程化专题 → 面试表达专题 |
 | 想做 RAG 项目 | [RAG 项目面试表达](/topics/rag-project-interview) → [RAG 工程化](/topics/rag-engineering-system) → Evaluation / Trace 相关内容 |
-| 想做高级知识库 | [GraphRAG 工程化](/note/Engineering/graphrag-engineering) → [企业 RAG 权限与多租户](/note/Engineering/enterprise-rag-permission-multitenancy) → [向量检索选型](/topics/vector-search-selection) |
+| 想做高级知识库 | [RAG 入库流水线](/note/Engineering/rag-ingestion-pipeline) → [RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging) → [GraphRAG 工程化](/note/Engineering/graphrag-engineering) |
 | 想做生产级 Agent | [Agent 开发 Playbook](/topics/agent-development-playbook) → [Agent Runtime](/topics/agent-runtime-explained) → [Context Engineering](/note/AI-Agent/context-engineering) → [Trace](/topics/agent-trace-observability) → [Evaluation](/topics/evaluation-pipeline) |
 | 想准备面试 | [Agent 系统设计面试题](/topics/agent-system-design-interview) → [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) → [RAG 项目面试表达](/topics/rag-project-interview) → [多 Agent 项目面试表达](/topics/multi-agent-interview) |
 | 想优化线上 Agent | [LLM 成本与延迟优化](/note/Engineering/llm-cost-latency-optimization) → [多模型路由与 A/B 实验](/note/Engineering/model-routing-ab-testing) → [Agent 生产运维 Runbook](/note/Engineering/agent-production-ops-runbook) |
@@ -28,8 +28,11 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | 专题 | 解决的问题 | 适合读者 |
 |---|---|---|
 | [RAG 工程化：从文档到可评估答案](/topics/rag-engineering-system) | 从文档解析、Chunk、Embedding、检索、Rerank、引用和评测理解生产级 RAG。 | 想做 RAG 项目、理解 RAG 工程全链路的人 |
+| [RAG 入库流水线：从原始文件到可检索知识库](/note/Engineering/rag-ingestion-pipeline) | 设计文件校验、解析、Normalize、Chunk、Metadata、Embedding、索引、质量检查和文档生命周期。 | 想把知识库入库做稳定的人 |
+| [RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging) | 按文档、Chunk、Query Rewrite、召回、Filter、Rerank、Context Pack、生成逐层定位答案差原因。 | 想系统排查 RAG 效果问题的人 |
 | [多模态文档理解 Agent](/topics/multimodal-document-agent) | 处理 PDF、图片、表格、版面块、OCR 和结构化抽取，把复杂文档变成可检索证据。 | 想做文档智能和多模态项目的人 |
 | [Agent 开发 Playbook：从需求到可上线版本](/topics/agent-development-playbook) | 从业务问题、单 Agent 闭环、工具/RAG、State、Trace、Evaluation、Guardrails 到多 Agent 的开发顺序。 | 想把 Agent 从想法推进到可验证项目的人 |
+| [Agent 编排模式：Router、Planner、Supervisor 和 Workflow 怎么选](/topics/agent-orchestration-patterns) | 对比 Chain、Router、Planner-Executor、Supervisor、State Machine、Graph Workflow 和人审模式。 | 想设计可控 Agent Runtime 的人 |
 | [Agent 协议全景](/topics/agent-protocol-landscape) | 区分 Function Calling、Tools、MCP、A2A、Plugin、Skill、Hook 和 Agent SDK 的职责边界。 | 想理解 Agent 协议生态的人 |
 | [Agent 框架选型：LangGraph、OpenAI Agents SDK、LlamaIndex、CrewAI 怎么看](/topics/agent-framework-selection) | 从任务边界、State、Tool、Human-in-the-loop、Trace、RAG 和团队维护成本选择框架。 | 想讲清楚框架取舍的人 |
 | [Agent Trace：如何让 Agent 执行过程可观测](/topics/agent-trace-observability) | 用 Run、Step、Tool Call、状态变化和错误事件记录 Agent 的完整执行轨迹。 | 想让 Agent 系统可调试、可审计、可优化的人 |
@@ -47,6 +50,8 @@ HFL AI Agent Lab 的专题文章用于把学习路线、工程化笔记、源码
 | [Agent 数据库设计：状态、证据与执行记录](/topics/agent-database-design) | 用 Task、Run、Step、Tool Call、Document、Chunk、Trace、Evaluation 建模 Agent 系统数据。 | 想理解 Agent 数据建模的学习者 |
 | [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery) | 设计状态机、幂等键、重试分类、断点续跑、补偿和人工介入，让长任务失败后能继续。 | 想做可靠长任务 Agent 的人 |
 | [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission) | 从工具风险分级、参数校验、文件/网络/命令沙箱、审批和 MCP 权限审计控制工具调用风险。 | 想把 Tool Calling 安全落地的人 |
+| [MCP Client 工程化](/note/Engineering/mcp-client-engineering) | 设计 server registry、tool discovery、权限过滤、schema adapter、连接管理、结果标准化和 Trace。 | 想把 MCP Server 稳定接入 Agent Runtime 的人 |
+| [Agent 红队演练](/note/Engineering/agent-red-team-playbook) | 用 Prompt Injection、越权、危险工具、路径逃逸、审批绕过和 Memory 污染主动攻击系统。 | 想做 Agent 安全上线前验证的人 |
 | [Agent UI 产品化设计：不要只做一个聊天框](/topics/agent-ui-product-design) | 设计任务面板、证据面板、工具调用审批、反馈和失败重跑，让 Agent 可控可解释。 | 想把 Agent 做成真实产品的人 |
 | [Agent SaaS 产品化：从个人 Demo 到可卖的产品](/topics/agent-saas-productization) | 从多租户、额度计费、团队权限、onboarding、产品指标和运营后台理解 Agent 商业化。 | 想把 Agent 项目做成产品的人 |
 | [AI Agent 反馈闭环](/note/Engineering/agent-feedback-loop) | 将用户反馈关联 Trace、Prompt、模型、检索和工具调用，转化为评测样本与迭代队列。 | 想让线上反馈驱动持续改进的人 |
