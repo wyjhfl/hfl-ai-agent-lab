@@ -55,6 +55,7 @@
 - [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan)
 - [AI Agent 面试追问地图](/topics/ai-agent-interview-followup-map)
 - [AI Agent Resume Project Matrix](/topics/ai-agent-resume-project-matrix)
+- [AI Agent Job Search Evidence Map](/topics/ai-agent-job-search-evidence-map)
 - [AI Agent Interview Story Bank](/topics/ai-agent-interview-story-bank)
 - [AI Agent Career Readiness Checklist](/topics/ai-agent-career-readiness-checklist)
 - [AI Agent Offer Portfolio Review](/topics/ai-agent-offer-portfolio-review)

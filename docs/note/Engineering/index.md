@@ -24,6 +24,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Structured Output 层 | JSON Schema、Pydantic、TypeScript 类型、字段校验、输出修复 | 让模型输出可解析、可落库、可渲染、可评测，而不是只能给人读 |
 | LLM Output Safety Filter 层 | schema、citation、PII、policy、grounding、compliance、fallback | 在答案交付前拦截越权、泄漏、无证据和格式风险 |
 | Context Window 管理层 | token 预算、历史压缩、证据排序、Memory 过滤、上下文 Trace | 控制长上下文成本、相关性、可信边界和可复盘性 |
+| Context Packing for Agents 层 | task_brief、constraints、state、evidence_pack、tool_result_pack、memory_pack | 把上下文从字符串拼接升级成可审计、可回放、可预算的上下文包 |
 | PromptOps 层 | Prompt Registry、版本、评测、灰度、回滚、调用审计 | 把 Prompt 从临时代码字符串变成可治理的工程资产 |
 | Prompt Regression 层 | smoke、golden、failure replay、adversarial、schema/citation/tool assertion | 防止 Prompt、模型、工具和 RAG 变更破坏历史能力 |
 | 成本与延迟优化层 | 调用账本、模型路由、缓存、批处理、降级、p95 延迟 | 让 Agent 不只是能跑，还能在预算和 SLA 内稳定运行 |
@@ -38,6 +39,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 数据存储层 | 用户、任务、文档、工具调用、Trace、评测结果 | 保存业务状态和运行证据，让系统可追踪、可恢复、可评估 |
 | RAG 检索层 | 文档解析、Chunk、Embedding、Hybrid Search、Rerank、引用溯源 | 让模型基于外部知识回答，并能解释答案来源 |
 | RAG Query Router 层 | intent、route policy、retriever、filter、rerank、no-answer、tool handoff | 按问题类型选择检索和回答链路，避免所有问题都走同一个向量检索 |
+| RAG Metadata Schema 层 | document、chunk、tenant、ACL、status、version、citation、index_version | 让企业 RAG 可过滤、可追溯、可失效、可隔离 |
 | RAG 入库层 | 文件校验、解析、Normalize、Chunk、Metadata、Embedding、索引、质量检查 | 把原始文件稳定转成可检索、可追溯、可更新的知识资产 |
 | RAG Ingestion Quality Gate 层 | parse、metadata、ACL、chunk、duplicate、PII、embedding、retrieval smoke | 防止低质量文档污染索引和答案 |
 | RAG Debug 层 | Query Rewrite、召回、Filter、Rerank、Context Pack、Citation Trace | 定位答案差到底是入库、检索、排序、上下文还是生成问题 |
@@ -63,6 +65,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Human Takeover 层 | 接管队列、任务摘要、Trace 查看、人工审批、重跑、失败标注 | 把人工运营纳入可靠性闭环，避免高风险或低置信度任务失控 |
 | 工具权限层 | 工具注册、参数校验、权限控制、审批、审计 | 控制 Agent 能调用什么工具、在什么条件下调用、如何追责 |
 | Tool Registry 层 | tool_id、版本、schema、风险等级、owner、启停、监控和审计 | 把工具从散落函数变成可治理、可授权、可评测的资产 |
+| Tool Output Normalization 层 | status、key_fields、evidence_refs、error、retry_policy、redaction、raw_ref | 让工具返回可被模型、前端、Trace、评测和回放稳定消费 |
 | Tool Risk Classification 层 | R0-R4、敏感读取、可逆写、高影响写、危险操作、审批和沙箱 | 按副作用和数据敏感度控制 Agent 工具调用风险 |
 | Tool Idempotency Side Effect 层 | idempotency_key、args_hash、dedupe、retry、compensation、side_effect_log | 让会写入和外部副作用的工具可重试、可回放、不会重复执行 |
 | Tool Call Replay 层 | tool_call_id、schema_version、args_hash、policy、approval、dry/mock/live replay | 把工具失败变成可回放、可归因、可回归的调试资产 |
@@ -71,6 +74,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Prompt Injection 纵深防御层 | untrusted evidence、retrieval 清洗、tool policy、approval、sandbox、adversarial regression | 防止外部内容诱导模型越权执行工具或泄漏数据 |
 | Trace 可观测层 | Run ID、Step ID、工具调用记录、状态变化、错误定位 | 还原 Agent 执行过程，支持调试、复盘和质量分析 |
 | Agent Run Replay 层 | input、config、context、retrieval、state、tool、model、output snapshot | 让线上失败可复现、可回放、可转成回归样本 |
+| Agent Decision Record 层 | route、tool、approval、safety、retry、model、context decision | 记录关键决策的候选项、依据、策略版本和结果，支撑解释、审计与复盘 |
 | Agent Control Plane 层 | model registry、prompt registry、tool policy、eval gate、budget、release | 把 Agent 运行策略从业务代码中抽离，统一灰度和回滚 |
 | Agent Configuration Management 层 | agent profile、policy version、config snapshot、schema validation、rollback | 让模型、Prompt、RAG、工具和预算配置可治理 |
 | Agent Approval Workflow 层 | tool risk、policy check、approval request、args hash、execution guard、audit | 把高风险工具调用变成可审批、可追责、不可绕过的闭环 |
@@ -83,6 +87,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Agent Contract Testing 层 | JSON schema、tool args、task state、trace event、MCP schema 契约 | 保证模型输出和系统接口可集成、可验收、可回归 |
 | LLM Evaluation Scorecard 层 | task success、factuality、grounding、format、tool、safety、cost、latency | 把主观好不好拆成可比较、可解释、可门禁的评分卡 |
 | Eval Drift Monitoring 层 | input、knowledge、model、prompt、tool、judge、cost、safety drift | 持续发现上线后质量、安全、成本和延迟退化 |
+| Eval Failure Clustering 层 | failed assertions、root cause、cluster、severity、owner、regression set | 把失败样本聚类成可执行迭代 backlog，而不是只看平均分 |
 | Conversation Regression 层 | golden conversation、fixtures、关键事实、引用、拒答、工具调用回归 | 防止 Prompt、模型、RAG、工具和 Memory 变更破坏历史能力 |
 | Judge 评测层 | Rubric、LLM-as-Judge、人工校准、pairwise 对比 | 让自动语义评测更稳定、更可解释 |
 | 对抗评测层 | 合成样本、Prompt Injection、越权、危险工具、冲突证据 | 主动覆盖线上不常见但高风险的边界情况 |
@@ -128,6 +133,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 3. Structured Output：让模型输出能被后端、前端、数据库和评测系统稳定消费。
 4. LLM Output Safety Filter：在输出前校验 schema、citation、PII、policy、grounding 和合规。
 4. Context Window Management：控制长上下文的 token 预算、证据排序、历史压缩和上下文 Trace。
+4. Context Packing for Agents：把任务、约束、证据、工具结果、Memory 和输出契约打成可回放上下文包。
 5. PromptOps：把 Prompt 版本、评测、灰度和回滚接入发布流程。
 6. Prompt Regression Testing：用 smoke、golden、failure replay 和 adversarial 样本防止能力退化。
 6. Cost / Latency Optimization：建立调用账本、模型路由、缓存、降级和 p95 延迟优化。
@@ -147,6 +153,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 13. RAG Ingestion Quality Gate：在文档 active 前检查解析、metadata、ACL、chunk、PII、embedding 和召回。
 13. RAG Debugging：建立检索故障排查 Trace。
 13. RAG Query Router：按 FAQ、政策、多跳、SQL、拒答和工具调用选择链路。
+13. RAG Metadata Schema：为 document/chunk 设计 tenant、ACL、version、status 和 citation 元数据。
 14. RAG Citation Evaluation：评测引用覆盖率、支持度、权限和无答案行为。
 15. RAG Grounding Contract：把 claim-to-citation、no-answer、权限和 freshness 做成契约。
 15. RAG Evaluation Report：把评测目标、数据集、指标、失败归因和成本延迟写成报告。
@@ -169,6 +176,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 25. Human Takeover / Ops Console：把低置信度、高风险、超时和用户转人工做成接管队列。
 26. API Security：控制身份、权限、租户和高风险操作。
 27. Tool Registry：治理工具 schema、版本、风险等级、owner、启停和审批策略。
+27. Tool Output Normalization：统一工具返回的 status、error、evidence_refs、redaction 和 raw_ref。
 28. Tool Risk Classification：按 R0-R4 定义工具权限、审批、沙箱和审计策略。
 28. Tool Idempotency Side Effect：为写入、发消息、扣费和删除工具设计幂等与副作用日志。
 28. Tool Call Replay：记录和回放工具调用，定位参数、权限、schema 和外部服务失败。
@@ -189,6 +197,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 36. LLM-as-Judge：设计 Rubric、Judge 校准和自动评测门禁。
 37. LLM Evaluation Scorecard：把质量、证据、格式、工具、安全、成本和延迟拆成评分卡。
 38. Eval Drift Monitoring：持续监控模型、Prompt、知识库、工具和 Judge 漂移。
+38. Eval Failure Clustering：把失败样本按根因聚类，沉淀 owner、修复计划和回归集。
 38. Synthetic / Adversarial Eval：补齐边界样本和攻击样本。
 39. Agent Benchmark：用固定任务集比较 Workflow、单 Agent、多 Agent、模型和框架方案。
 40. Agent Contract Testing：验证 JSON schema、tool args、task state、trace event 和 MCP schema 契约。
@@ -304,6 +313,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Model Provider Failover](/note/Engineering/model-provider-failover)
 - [Structured Output 工程化](/note/Engineering/structured-output-engineering)
 - [LLM Output Safety Filter](/note/Engineering/llm-output-safety-filter)
+- [Context Packing for Agents](/note/Engineering/context-packing-for-agents)
 - [Context Window 管理](/note/AI-Agent/context-window-management)
 - [PromptOps：Prompt 版本、评测和回滚](/note/Engineering/promptops-versioning)
 - [Prompt Regression Testing](/note/Engineering/prompt-regression-testing)
@@ -322,6 +332,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [RAG 工程化](/note/Engineering/rag-engineering)
 - [RAG 入库流水线](/note/Engineering/rag-ingestion-pipeline)
 - [RAG Query Router](/note/Engineering/rag-query-router)
+- [RAG Metadata Schema](/note/Engineering/rag-metadata-schema-design)
 - [RAG Ingestion Quality Gate](/note/Engineering/rag-ingestion-quality-gate)
 - [RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging)
 - [RAG Citation Evaluation](/note/Engineering/rag-citation-evaluation)
@@ -345,6 +356,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent 错误分类](/note/Engineering/agent-error-taxonomy)
 - [API 安全与工具权限控制](/note/Engineering/api-security)
 - [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)
+- [Tool Output Normalization](/note/Engineering/tool-output-normalization)
 - [Tool Risk Classification](/note/Engineering/tool-risk-classification)
 - [Tool Idempotency Side Effect](/note/Engineering/tool-idempotency-side-effect)
 - [Tool Call 回放调试](/note/Engineering/tool-call-replay-debugging)
@@ -354,6 +366,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent 红队演练](/note/Engineering/agent-red-team-playbook)
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
 - [Agent Run Replay](/note/Engineering/agent-run-replay)
+- [Agent Decision Record](/note/Engineering/agent-decision-record)
 - [Agent Control Plane](/note/Engineering/agent-control-plane)
 - [Agent 配置治理](/note/Engineering/agent-configuration-management)
 - [Agent Approval Workflow](/note/Engineering/agent-approval-workflow)
@@ -366,6 +379,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [LLM-as-Judge 与 Rubric 评测](/note/Engineering/llm-as-judge-rubric-eval)
 - [LLM Evaluation Scorecard](/note/Engineering/llm-evaluation-scorecard)
 - [Eval Drift Monitoring](/note/Engineering/eval-drift-monitoring)
+- [Eval Failure Clustering](/note/Engineering/eval-failure-clustering)
 - [合成数据与对抗评测集](/note/Engineering/synthetic-adversarial-eval-data)
 - [Agent Benchmark 设计](/note/Engineering/agent-benchmark-design)
 - [Agent Contract Testing](/topics/agent-contract-testing)

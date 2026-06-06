@@ -3,11 +3,39 @@ layout: page
 sidebar: false
 ---
 
-# 项目实战
+<div class="project-hero">
+  <p class="project-eyebrow">Project Portfolio</p>
+  <h1>项目实战</h1>
+  <p>项目页按“业务问题 → 架构能力 → 可展示证据 → 面试表达”组织，不只列技术栈，而是让读者快速看到 RAG、Agent Runtime、工具治理、评测和上线能力。</p>
+</div>
 
-## 当前项目状态
-
-项目模块仍在建设中。项目 A 已有完整内容，项目 B 当前仅保留占位入口，后续逐步补充完整设计。
+<div class="project-card-grid">
+  <a class="project-card project-card-featured" href="/projects/project-a-rag-workorder">
+    <span>Project A / RAG Workorder</span>
+    <h3>设备售后诊断与工单 RAG 系统</h3>
+    <p>面向设备售后场景，构建设备故障知识检索、智能诊断、工单生成和后端工程化链路。</p>
+  </a>
+  <a class="project-card" href="/projects/project-b-agent-copilot">
+    <span>Project B / Multi-Agent Copilot</span>
+    <h3>运营中台多 Agent Copilot</h3>
+    <p>当前保留入口，后续围绕 LangGraph、工具调用、人工审批、Trace 与 Evaluation 补齐。</p>
+  </a>
+  <a class="project-card" href="/projects/project-b-roadmap">
+    <span>Roadmap</span>
+    <h3>项目 B 版本路线图</h3>
+    <p>按 v0.1 到 v1.0 拆解 Agent 产品从 Demo 到可展示系统的迭代阶段。</p>
+  </a>
+  <a class="project-card" href="/topics/ai-agent-job-search-evidence-map">
+    <span>Evidence Map</span>
+    <h3>求职能力证据地图</h3>
+    <p>把简历关键词绑定到项目、代码、文章、Demo、评测和面试故事。</p>
+  </a>
+  <a class="project-card" href="/topics/ai-agent-demo-acceptance-script">
+    <span>Demo Script</span>
+    <h3>Demo 验收脚本</h3>
+    <p>按主路径、权限、工具风险、失败恢复、Trace 和评测准备 5 分钟演示。</p>
+  </a>
+</div>
 
 ## 项目 A：设备售后诊断与工单 RAG 系统
 

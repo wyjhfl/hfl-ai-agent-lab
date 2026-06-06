@@ -61,6 +61,7 @@
 - [简历描述模板](/note/Interview/resume-bullets)
 - [Agent Capability Matrix](/topics/agent-capability-matrix)
 - [AI Agent Resume Project Matrix](/topics/ai-agent-resume-project-matrix)
+- [AI Agent Job Search Evidence Map](/topics/ai-agent-job-search-evidence-map)
 - [AI Agent Interview Story Bank](/topics/ai-agent-interview-story-bank)
 - [AI Agent Career Readiness Checklist](/topics/ai-agent-career-readiness-checklist)
 - [AI Agent Offer Portfolio Review](/topics/ai-agent-offer-portfolio-review)
@@ -160,6 +161,7 @@
 这批内容可以直接补到项目深挖和作品集讲法里：
 
 - **Tool Registry**：不要只说“我做了工具调用”，要说清楚工具如何注册、版本化、分风险等级、按角色授权、审批和审计。
+- **Tool Output Normalization**：不要让模型直接读原始工具返回，要讲 status、key_fields、error、retry_policy、redaction 和 raw_ref。
 - **Tool Risk Classification**：不要把所有工具都当成函数调用，要讲 R0-R4 风险分级、权限、审批、沙箱和审计。
 - **Tool Idempotency Side Effect**：不要只说“工具失败会重试”，要讲 idempotency_key、args_hash、side_effect_log、补偿动作和重复执行防护。
 - **Human Takeover 运营台**：不要把人工接管当作失败兜底，而要说成生产级可靠性设计，包括接管队列、摘要、Trace 查看、审批、重跑和失败标注。
@@ -167,6 +169,7 @@
 - **Agent Benchmark**：不要凭感觉说多 Agent 更好，要用固定任务集比较质量、成本、延迟、安全、恢复能力和 Trace 完整度。
 - **AI Agent PRD**：不要一上来写代码，要先把用户、场景、P0/P1 范围、权限审批、产品指标和验收标准写清楚。
 - **Context Window 管理**：不要说“大上下文全塞进去”，要讲 token 预算、历史压缩、证据排序、Memory 过滤和上下文 Trace。
+- **Context Packing**：不要只拼 Prompt，要讲 task_brief、constraints、evidence_pack、tool_result_pack 和 context_pack 快照。
 - **MCP Gateway**：不要只说“接入 MCP”，要讲 server registry、schema cache、policy filter、secret boundary、approval 和 audit。
 - **Tool Call Replay**：不要只说“工具偶发失败”，要讲 tool_call_id、schema、参数、审批、结果快照以及 dry/mock/live 三种回放模式。
 - **Multi-Agent Handoff**：不要只说“多个 Agent 协作”，要讲 handoff payload、evidence_refs、constraints、acceptance_criteria 和责任归属。
@@ -188,6 +191,7 @@
 - **MCP Client Testing**：不要只测 Server 启动，要讲 fake server、工具发现、policy filter、error mapping、timeout 和 Prompt Injection 样本。
 - **RAG Citation Evaluation**：不要只说“答案带引用”，要讲 citation coverage、faithfulness、permission、freshness 和 no-answer。
 - **RAG Query Router**：不要让所有问题都走同一个向量检索，要讲 FAQ、政策、多跳、SQL、拒答和工具调用如何路由。
+- **RAG Metadata Schema**：不要只存 text 和 embedding，要讲 tenant、ACL、status、version、semantic_type 和 citation。
 - **Agent Control Plane**：不要把模型、Prompt、工具策略散落在业务代码里，要讲 model registry、prompt registry、tool policy、eval gate、budget 和 release。
 - **Agent Configuration Management**：不要把 Prompt、模型、工具和预算写死在代码里，要讲环境隔离、配置版本、diff review、灰度和回滚。
 - **MCP Gateway Operations**：不要只讲 Gateway 架构，要讲 health、schema diff、latency、error、quota、degrade 和 postmortem。
@@ -200,11 +204,13 @@
 - **Agent Latency Budget**：不要只说“换更快模型”，要讲 queue、planning、retrieval、tool、approval、retry 和前端感知延迟。
 - **Model Provider Failover**：不要只说“模型挂了就重试”，要讲同供应商降级、跨供应商切换、功能降级和人工接管。
 - **Eval Drift Monitoring**：不要只说“上线前测过”，要讲线上抽样、golden set、分桶趋势、Judge 校准和漂移响应。
+- **Eval Failure Clustering**：不要只汇报通过率，要讲失败样本如何按根因聚类、分配 owner、进入回归集。
 - **Eval Case Lifecycle**：不要让评测集无人维护，要讲 candidate、脱敏、标注、审核、active、flaky、deprecated 和 archived。
 - **Model Rollout Canary**：不要只说“换了更好的模型”，要讲 offline eval、shadow、canary、ramp-up、自动回滚和风险阈值。
 - **Skill Operations**：不要只说“写了 Skill”，要讲版本、触发测试、输出测试、安全测试、反馈、漂移修复和废弃策略。
 - **Agent Incident Postmortem**：不要只说“线上问题已修复”，要讲事故摘要、时间线、Trace、错误分类、回归样本和 Release Gate 更新。
 - **Agent Run Replay**：不要只说“看日志排查”，要讲 input、config、context、retrieval、tool、model、output 快照和 replay 模式。
+- **Agent Decision Record**：不要只记录最终答案，要讲关键决策的候选项、依据、策略版本、风险等级和结果。
 - **Portfolio Case Study**：不要把作品集写成技术栈列表，要讲背景、目标、架构、Workflow、评测、安全、难点和 60 秒版本。
 - **Demo Acceptance Script**：不要临场随意演示，要按主路径、权限、工具风险、失败恢复、Trace、评测和指标准备验收脚本。
 - **System Design Whiteboard**：不要只画 LLM 到工具，要按任务边界、Runtime、RAG、Tool/MCP、Data、Observability 和 Governance 白板表达。
