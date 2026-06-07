@@ -4,6 +4,7 @@
 
 - VitePress default theme already supports home hero, actions, features, local search, nav, sidebar, doc outline, and theme CSS variables. Extend these before introducing a full replacement theme.
 - Open-source VitePress blog themes commonly add category cards, article grids, tag archives, timeline navigation, hero panels, and dark-mode-friendly glass surfaces.
+- Current research candidates: VitePress default theme extension, vitepress-theme-teek, vitepress-theme-trigger, Nólëbase Integrations, and OpenAI Agent Skills.
 - Claude/Codex style skills are useful for repeatable UI work when they encode workflow, file entry points, validation, and design constraints rather than large copied templates.
 
 ## Layout checklist
@@ -13,6 +14,8 @@
 - Capability map: RAG, Runtime, Tool/MCP, Evaluation, Safety/Ops, Career evidence.
 - Project pages: show business problem, architecture capability, evidence, and interview expression.
 - Topic pages: include a short visual atlas before dense tables.
+- Featured evidence: surface 6-9 strongest proof links before long indexes.
+- Security and observability should be first-class capability clusters, not buried in long engineering tables.
 
 ## Visual checklist
 

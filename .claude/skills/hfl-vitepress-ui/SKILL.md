@@ -16,6 +16,7 @@ description: Optimize the HFL AI Agent Lab VitePress interface and content navig
    - `docs/.vitepress/theme/custom.css`
    - `docs/.vitepress/config.mts`
 3. Use the UI principles in `references/ui-principles.md` when changing layout or CSS.
+   - `references/template-research.md` when choosing templates, plugins, or open-source skills.
 4. Prefer VitePress default theme extension over replacing the whole theme.
 5. Keep Chinese copy practical: learning path, engineering mechanism, project evidence, interview value.
 6. Update navigation/index links when adding or surfacing pages.
@@ -28,6 +29,8 @@ description: Optimize the HFL AI Agent Lab VitePress interface and content navig
 - Use cards for routing, tables for dense engineering details, and timelines for learning sequences.
 - Preserve readability of long Chinese technical notes: line height, table scroll, code contrast, heading anchors.
 - Avoid heavy client dependencies unless there is a clear benefit.
+- Use external templates as pattern references first; do not replace the VitePress theme without a migration plan.
+- Prioritize featured evidence, reading paths, and project proof over decorative UI changes.
 
 ## Commit hygiene
 

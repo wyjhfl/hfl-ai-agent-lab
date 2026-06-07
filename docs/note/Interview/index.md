@@ -80,6 +80,10 @@
 - [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota)
 - [LLM 数据治理](/note/Engineering/llm-data-governance)
 - [Prompt Injection 纵深防御](/note/Engineering/prompt-injection-defense-in-depth)
+- [AI Agent Security Interview Guide](/topics/ai-agent-security-interview-guide)
+- [OWASP LLM Top 10 for Agents](/note/Engineering/owasp-llm-top10-agent-mapping)
+- [Agent Guardrails Pipeline](/note/Engineering/agent-guardrails-pipeline)
+- [Agent Identity and RBAC](/note/Engineering/agent-identity-rbac-design)
 - [Agent Release Gate](/note/Engineering/agent-release-gate)
 - [Agent 系统设计案例库](/topics/agent-system-design-casebook)
 - [Agent System Design Whiteboard Template](/topics/agent-system-design-whiteboard-template)
@@ -96,6 +100,7 @@
 - [Agent Contract Testing](/topics/agent-contract-testing)
 - [Agent 错误分类](/note/Engineering/agent-error-taxonomy)
 - [MCP 安全与授权](/note/Engineering/mcp-security-auth)
+- [MCP OAuth Authorization Design](/note/Engineering/mcp-oauth-authorization-design)
 - [MCP Token Exchange](/note/Engineering/mcp-token-exchange)
 - [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning)
 - [Skill Review Checklist](/note/AI-Tools/skill-review-checklist)
@@ -123,6 +128,7 @@
 - [Agent Frontend Telemetry](/note/Engineering/agent-frontend-telemetry)
 - [Agent UI Pattern Library](/topics/agent-ui-pattern-library)
 - [AI Agent Portfolio UI Blueprint](/topics/ai-agent-portfolio-ui-blueprint)
+- [AI Agent Site UI Optimization Playbook](/topics/ai-agent-site-ui-optimization-playbook)
 - [Agent Autonomy Levels](/note/Engineering/agent-autonomy-levels)
 - [Multi-Agent Handoff Protocol](/note/Engineering/multi-agent-handoff-protocol)
 - [Agent Scheduler 与 Cron](/note/Engineering/agent-scheduler-cron)
@@ -190,9 +196,12 @@
 - **Skill Testing**：不要只说“写了 Skill”，要讲触发测试、流程测试、输出测试、安全测试、回归样例和 changelog。
 - **Skill Review Checklist**：不要只说“写了 Skill”，要讲 frontmatter、渐进加载、脚本、验收标准和安全审查。
 - **MCP Security**：不要只说“接入 MCP”，要讲 scope、tenant、role、secret boundary、schema pinning 和 audit。
+- **MCP OAuth Authorization**：不要只说“配了 API Key”，要讲 Authorization Server、scope、audience、短期 token、刷新撤销和 approval 绑定。
 - **MCP Sandbox Profile**：不要让所有 MCP 工具共用运行环境，要讲文件、网络、命令、Secret、资源预算和审计边界。
 - **MCP Token Exchange**：不要让 MCP Server 共用全局 Token，要讲 run、tool、scope、args_hash、approval 绑定的短期凭证。
 - **MCP Observability Metrics**：不要只说“MCP 能启动”，要讲 server health、schema diff、tool success、token exchange、approval 和 sandbox 指标。
+- **OpenTelemetry GenAI**：不要只看 HTTP 200，要讲 agent.run、gen_ai.request、rag.retrieve、tool.call、policy.denied 和 cost event 如何串成 Trace。
+- **Agent Observability Dashboard**：不要只展示日志，要讲 task success、p95 latency、cost per success、tool error、RAG hit、safety block 和 UX 信任信号。
 - **Error Taxonomy**：不要把失败都归因成模型不行，要区分输入、权限、上下文、检索、模型、工具、运行时和基础设施错误。
 - **Contract / Regression Testing**：不要只说“做了测试”，要讲接口契约、状态机契约、MCP schema 契约和对话回归样例。
 - **Agent Workflow 状态机**：不要只说“Agent 会自己规划”，要讲 Created、Queued、Planning、RunningTool、WaitingApproval、Completed、Failed 等状态和转移规则。
@@ -261,6 +270,9 @@
 - **Enterprise Pilot Plan**：不要只展示 Demo，要讲试点范围、种子用户、禁用能力、指标、风险和退出条件。
 - **CTO Review Checklist**：不要从技术栈开始汇报，要从业务价值、风险、成本、质量、运维和维护责任回答。
 - **Prompt Injection Defense**：不要只靠系统提示，要讲 untrusted evidence、tool policy、审批、沙箱、审计和对抗回归测试。
+- **OWASP LLM Top 10 Mapping**：不要只背安全名词，要把 Prompt Injection、敏感泄漏、供应链、过度代理和成本消耗映射到 Agent 控制点。
+- **Agent Guardrails Pipeline**：不要只说“加 guardrail”，要讲 input、retrieval、context、tool、output、feedback 六个防护位置。
+- **Agent Identity / RBAC**：不要让 Agent 用全局系统账号，要讲 user_identity、agent_identity、tool_identity、tenant、role、scope 和审计。
 - **LLM Output Safety Filter**：不要只做输入安全，要讲输出 schema、citation、PII、policy、grounding 和 compliance 检查。
 - **Prompt Regression Testing**：不要说“Prompt 改完我看过”，要讲 smoke、golden、failure replay、adversarial 和 schema/citation/tool assertion。
 - **SaaS Tenant / RBAC / Quota**：不要只说“支持团队使用”，要讲 tenant、workspace、role、permission、quota、usage、billing 和审计隔离。

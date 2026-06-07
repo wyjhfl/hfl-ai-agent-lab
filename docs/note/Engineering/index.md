@@ -61,6 +61,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | 失败恢复层 | 状态机、幂等键、断点续跑、补偿、人工介入 | 让长任务在模型、工具、服务失败后能安全恢复 |
 | Workflow 状态机层 | Created、Queued、Planning、RunningTool、WaitingApproval、Completed、Failed | 把 Agent 长任务从自由对话变成可恢复、可审计、可展示的执行轨道 |
 | Agent Autonomy Levels 层 | L0 Assist、L1 Draft、L2 Low Risk、L3 Approval、L4 Delegated、L5 Full | 用等级管理 Agent 自主执行能力和副作用边界 |
+| Agent Identity / RBAC 层 | user_identity、agent_identity、tool_identity、tenant、role、scope | 明确 Agent 代表谁执行、能访问什么、谁审批以及如何审计 |
 | Multi-Agent Handoff 层 | handoff_id、from/to agent、evidence_refs、constraints、acceptance criteria | 让多 Agent 交接有边界、有证据、有验收 |
 | Agent Scheduler 层 | cron、interval、delay、event、幂等键、并发、预算、熔断 | 支撑定时报表、周期巡检、批量评测和延迟跟进任务 |
 | Agent 错误分类层 | input、policy、context、retrieval、model、tool、runtime、infra、ux error | 把失败变成可定位、可统计、可恢复、可回归的工程信号 |
@@ -73,6 +74,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Tool Call Replay 层 | tool_call_id、schema_version、args_hash、policy、approval、dry/mock/live replay | 把工具失败变成可回放、可归因、可回归的调试资产 |
 | 工具沙箱层 | 文件/网络/命令/数据沙箱、MCP 权限审计 | 限制工具调用的环境边界，避免越权、注入和危险副作用 |
 | 安全治理层 | Prompt Injection、防越权、数据脱敏、工具风险分级 | 把模型放进受控执行环境，避免工具滥用和数据泄漏 |
+| OWASP LLM Top 10 Mapping 层 | Prompt Injection、敏感泄漏、供应链、过度代理、成本消耗 | 把通用 LLM 风险映射到 Agent、RAG、MCP、Memory 和 Tool 控制点 |
+| Agent Guardrails Pipeline 层 | input、retrieval、context、tool、output、feedback guard | 把安全防护从单点过滤器变成可测试、可审计、可回滚的流水线 |
 | Prompt Injection 纵深防御层 | untrusted evidence、retrieval 清洗、tool policy、approval、sandbox、adversarial regression | 防止外部内容诱导模型越权执行工具或泄漏数据 |
 | Trace 可观测层 | Run ID、Step ID、工具调用记录、状态变化、错误定位 | 还原 Agent 执行过程，支持调试、复盘和质量分析 |
 | Agent Run Replay 层 | input、config、context、retrieval、state、tool、model、output snapshot | 让线上失败可复现、可回放、可转成回归样本 |
@@ -112,6 +115,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | MCP Gateway Operations 层 | health、schema diff、latency、error、quota、degrade、postmortem | 让多 MCP Server 接入后可巡检、可限流、可止血 |
 | MCP Observability Metrics 层 | server health、schema diff、tool success、token exchange、approval、sandbox | 让 MCP 工具体系可监控、可告警、可降级 |
 | MCP 安全授权层 | scope、tenant、role、secret boundary、schema pinning、audit、red team | 防止 MCP 工具越权、数据泄漏、危险副作用和供应链风险 |
+| MCP OAuth Authorization 层 | authorization server、scope、audience、short-lived token、approval binding | 让 MCP 授权链路可审计、可撤销、可最小权限 |
 | MCP Token Exchange 层 | user_session、agent_run、gateway_token、tool_execution_token、scope、args_hash | 控制 MCP 工具调用的凭证范围、时效和审计边界 |
 | Memory Evaluation 层 | should/should-not remember、更新、遗忘、注入、stale memory 指标 | 证明长期记忆写得对、用得对、更新得了、忘得掉 |
 | Agent Memory Store 层 | scope、memory_type、sensitivity、expires_at、source_ref、write_policy | 让长期记忆可控、可删除、可评测，并避免隐私和陈旧记忆风险 |
@@ -128,6 +132,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 | Incident Postmortem 层 | 事故摘要、时间线、Trace、根因、回归样本、Release Gate 更新 | 把线上失败转化为评测、监控、Runbook 和产品改进资产 |
 | Agent Release Gate 层 | code、contract、eval、RAG、safety、cost、latency、ops、product gate | 让 Prompt、模型、RAG、MCP 和策略变更可灰度、可回滚 |
 | LLM 可观测层 | 成本、延迟、Prompt 版本、RAG、工具、反馈、安全的仪表盘 | 把模型调用从黑盒变成可 drill-down、可运营的系统 |
+| OpenTelemetry GenAI 层 | trace、metrics、logs、gen_ai span、tool span、cost event | 用统一语义把模型、RAG、工具、审批和前端体验串成可观测链路 |
+| Agent Observability Dashboard 层 | task success、p95 latency、cost、tool error、safety、UX signal | 把质量、成本、延迟、安全和用户体验统一到运营面板 |
 
 这张地图可以作为项目设计时的检查框架。一个 Agent 系统如果只实现了模型调用，而没有任务状态、工具权限、执行轨迹和评测闭环，就很难进入真实生产环境。
 
@@ -178,6 +184,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 22. Failure Recovery：设计状态机、幂等、断点续跑和补偿。
 23. Agent Workflow State Machine：把任务状态、转移规则、审批、恢复和 Trace 设计清楚。
 24. Agent Autonomy Levels：把 Agent 自主性拆成可解释、可审批、可灰度的等级。
+24. Agent Identity / RBAC：明确 user、agent、tool 三类身份和最小权限边界。
 24. Multi-Agent Handoff：用结构化交接协议传递目标、证据、约束和验收标准。
 24. Agent Scheduler / Cron：设计定时、延迟、周期和事件触发任务的幂等与并发。
 24. Agent Error Taxonomy：把 input、policy、context、retrieval、model、tool、runtime、infra、ux error 分开处理。
@@ -190,6 +197,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 28. Tool Call Replay：记录和回放工具调用，定位参数、权限、schema 和外部服务失败。
 28. Tool Sandbox：限制文件、网络、命令和 MCP 工具边界。
 29. Agent Security：设计 Prompt Injection、工具滥用和数据泄漏防护。
+29. OWASP LLM Top 10 Mapping：把通用 LLM 风险映射到 Agent/RAG/MCP/Memory/Tool 控制点。
+29. Agent Guardrails Pipeline：把 input、retrieval、context、tool、output 和 feedback 防护串成流水线。
 30. Prompt Injection Defense-in-depth：用上下文降权、RAG 清洗、tool policy、approval、sandbox 和红队回归做纵深防御。
 31. Red Team：用攻击样本主动验证 Agent 安全边界。
 32. Agent Trace：记录 Agent 执行过程。
@@ -230,6 +239,7 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 51. MCP Gateway Operations：巡检 health、schema diff、latency、quota，并支持降级止血。
 52. MCP Observability Metrics：观测 MCP server health、schema diff、tool success、token exchange 和 approval。
 52. MCP Security / Auth：设计 scope、tenant、role、secret boundary、schema pinning 和审计。
+52. MCP OAuth Authorization：设计授权服务器、scope、audience、短期 token、刷新与撤销。
 53. MCP Token Exchange：设计 Gateway、Server 和下游系统之间的短期 scope 凭证交换。
 53. Skills：把重复工作流沉淀成可复用操作手册。
 54. Skill Testing / Versioning：让 Skill 有 trigger、procedure、output、safety、regression 测试和 changelog。
@@ -248,6 +258,8 @@ Demo 阶段通常只需要模型调用和简单 Prompt。只要能把用户输�
 63. Production Failure Drill：上线前演练模型、RAG、工具、审批、租户和成本故障。
 63. Agent Incident Postmortem：把线上失败沉淀成回归样本、门禁和 Runbook。
 64. LLM Observability Dashboard：建设成本、延迟、质量和安全统一仪表盘。
+64. OpenTelemetry GenAI Observability：用统一 trace/metric/log 语义连接 LLM、RAG、Tool 和审批。
+64. Agent Observability Dashboard：把产品成功、质量、运行时、工具、RAG、成本、安全和 UX 分层看板化。
 65. Production Checklist：上线前检查。
 
 这个顺序从“服务能接请求”开始，到“系统能上线和评估”结束。学习时不建议一开始就追求复杂 Agent 框架，而是先把后端接口、数据模型、检索链路和执行记录打牢。
@@ -369,6 +381,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent 失败恢复与幂等设计](/note/Engineering/agent-failure-recovery)
 - [Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)
 - [Agent Autonomy Levels](/note/Engineering/agent-autonomy-levels)
+- [Agent Identity and RBAC](/note/Engineering/agent-identity-rbac-design)
 - [Multi-Agent Handoff Protocol](/note/Engineering/multi-agent-handoff-protocol)
 - [Agent Scheduler 与 Cron](/note/Engineering/agent-scheduler-cron)
 - [Agent 错误分类](/note/Engineering/agent-error-taxonomy)
@@ -380,6 +393,8 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Tool Call 回放调试](/note/Engineering/tool-call-replay-debugging)
 - [Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission)
 - [Agent 安全威胁模型](/note/Engineering/agent-security-threat-model)
+- [OWASP LLM Top 10 for Agents](/note/Engineering/owasp-llm-top10-agent-mapping)
+- [Agent Guardrails Pipeline](/note/Engineering/agent-guardrails-pipeline)
 - [Prompt Injection 纵深防御](/note/Engineering/prompt-injection-defense-in-depth)
 - [Agent 红队演练](/note/Engineering/agent-red-team-playbook)
 - [Agent Trace 执行轨迹](/note/Engineering/agent-trace)
@@ -423,6 +438,7 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [MCP Gateway 运维](/note/Engineering/mcp-gateway-operations)
 - [MCP Observability Metrics](/note/Engineering/mcp-observability-metrics)
 - [MCP 安全与授权](/note/Engineering/mcp-security-auth)
+- [MCP OAuth Authorization Design](/note/Engineering/mcp-oauth-authorization-design)
 - [MCP Token Exchange](/note/Engineering/mcp-token-exchange)
 - [Skills 编写](/note/AI-Tools/skill-authoring)
 - [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning)
@@ -435,6 +451,8 @@ Agent 项目如果不保存任务、步骤、工具调用和评测结果，就�
 - [Agent 事故复盘模板](/topics/agent-incident-postmortem-template)
 - [Agent Release Gate](/note/Engineering/agent-release-gate)
 - [LLM 可观测仪表盘](/note/Engineering/llm-observability-dashboard)
+- [OpenTelemetry GenAI Observability](/note/Engineering/opentelemetry-genai-observability)
+- [Agent Observability Dashboard Design](/note/Engineering/agent-observability-dashboard-design)
 - [AI Agent 上线检查清单](/note/Engineering/production-checklist)
 - [Human Takeover 运营台](/topics/human-takeover-operations-console)
 - [Browser Automation Testing：给网页 Agent 和前端流程做验收](/topics/browser-automation-testing-agent-ui)

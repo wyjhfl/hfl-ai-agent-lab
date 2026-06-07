@@ -62,6 +62,7 @@ const evidenceLinks = [
   ['作品集路线', '/topics/ai-agent-portfolio-roadmap'],
   ['Demo 验收脚本', '/topics/ai-agent-demo-acceptance-script'],
   ['Offer Review', '/topics/ai-agent-offer-portfolio-review'],
+  ['UI 优化路线', '/topics/ai-agent-site-ui-optimization-playbook'],
 ]
 </script>
 
@@ -118,15 +119,15 @@ const evidenceLinks = [
 
     <section class="lab-metrics" aria-label="站点内容概览">
       <div>
-        <strong>217</strong>
+        <strong>237</strong>
         <span>Markdown 内容页</span>
       </div>
       <div>
-        <strong>100</strong>
+        <strong>114</strong>
         <span>工程化笔记</span>
       </div>
       <div>
-        <strong>63</strong>
+        <strong>67</strong>
         <span>专题长文</span>
       </div>
       <div>

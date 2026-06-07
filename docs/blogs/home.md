@@ -50,7 +50,7 @@ features:
   - icon: "06"
     title: UI 持续优化
     details: 站点采用 VitePress 默认主题扩展、自定义卡片、路径地图和内容证据入口，后续继续向作品集模板演进。
-    link: /topics/agent-ui-product-design
+    link: /topics/ai-agent-site-ui-optimization-playbook
     linkText: UI 设计思路 →
 ---
 

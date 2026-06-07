@@ -71,6 +71,10 @@
 - [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota)
 - [LLM 数据治理](/note/Engineering/llm-data-governance)
 - [Prompt Injection 纵深防御](/note/Engineering/prompt-injection-defense-in-depth)
+- [AI Agent Security Interview Guide](/topics/ai-agent-security-interview-guide)
+- [OWASP LLM Top 10 for Agents](/note/Engineering/owasp-llm-top10-agent-mapping)
+- [Agent Guardrails Pipeline](/note/Engineering/agent-guardrails-pipeline)
+- [Agent Identity and RBAC](/note/Engineering/agent-identity-rbac-design)
 - [LLM Output Safety Filter](/note/Engineering/llm-output-safety-filter)
 - [Prompt Regression Testing](/note/Engineering/prompt-regression-testing)
 - [Agent Release Gate](/note/Engineering/agent-release-gate)
@@ -81,6 +85,7 @@
 - [Agent Contract Testing](/topics/agent-contract-testing)
 - [Agent 错误分类](/note/Engineering/agent-error-taxonomy)
 - [MCP 安全与授权](/note/Engineering/mcp-security-auth)
+- [MCP OAuth Authorization Design](/note/Engineering/mcp-oauth-authorization-design)
 - [MCP Token Exchange](/note/Engineering/mcp-token-exchange)
 - [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning)
 - [MCP Gateway 架构](/note/Engineering/mcp-gateway-architecture)
@@ -123,6 +128,8 @@
 - [Agent 事故复盘模板](/topics/agent-incident-postmortem-template)
 - [Agent Run Replay](/note/Engineering/agent-run-replay)
 - [Agent SLO 与 Error Budget](/note/Engineering/agent-slo-error-budget)
+- [OpenTelemetry GenAI Observability](/note/Engineering/opentelemetry-genai-observability)
+- [Agent Observability Dashboard Design](/note/Engineering/agent-observability-dashboard-design)
 - [Agent 故障演练](/note/Engineering/agent-production-failure-drill)
 - [Agent Memory 评测](/note/Engineering/memory-evaluation-for-agents)
 - [Memory Privacy Retention](/note/Engineering/memory-privacy-retention)
@@ -160,6 +167,7 @@
 | [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) | [Context Engineering](/note/AI-Agent/context-engineering)、[Context Window 管理](/note/AI-Agent/context-window-management)、[Agent Runtime](/note/AI-Agent/agent-runtime) | [AI Agent 面试追问地图](/topics/ai-agent-interview-followup-map)、[AI Agent Resume Project Matrix](/topics/ai-agent-resume-project-matrix)、[Agent Workflow 状态机设计](/note/Engineering/agent-workflow-state-machine)、[Agent Autonomy Levels](/note/Engineering/agent-autonomy-levels)、[Agent Scheduler 与 Cron](/note/Engineering/agent-scheduler-cron)、[Agent Control Plane](/note/Engineering/agent-control-plane)、[Agent 配置治理](/note/Engineering/agent-configuration-management)、[Agent Approval Workflow](/note/Engineering/agent-approval-workflow)、[Agent 错误分类](/note/Engineering/agent-error-taxonomy)、[Agent Run Replay](/note/Engineering/agent-run-replay)、[Agent Queue 与 Backpressure](/topics/agent-queue-backpressure)、[多模型路由](/note/Engineering/model-routing-ab-testing)、[Model Rollout Canary](/note/Engineering/model-rollout-canary) |
 | Agent 协议与工具生态 | [Tool Calling](/note/AI-Agent/tool-calling)、[Browser / Computer Use Agent](/note/AI-Agent/browser-computer-use-agent) | [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)、[Tool Risk Classification](/note/Engineering/tool-risk-classification)、[Tool Idempotency Side Effect](/note/Engineering/tool-idempotency-side-effect)、[Tool Call 回放调试](/note/Engineering/tool-call-replay-debugging)、[Agent 协议全景](/topics/agent-protocol-landscape)、[MCP Server 创建实战](/note/Engineering/mcp-server-build-guide)、[MCP Server Hardening](/note/Engineering/mcp-server-hardening)、[MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk)、[MCP Sandbox Profile](/note/Engineering/mcp-sandbox-profile)、[MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design)、[MCP Version Deprecation](/note/Engineering/mcp-version-deprecation)、[MCP Client 测试](/note/Engineering/mcp-client-testing)、[MCP Client 工程化](/note/Engineering/mcp-client-engineering)、[MCP Gateway 架构](/note/Engineering/mcp-gateway-architecture)、[MCP Gateway 运维](/note/Engineering/mcp-gateway-operations)、[MCP Observability Metrics](/note/Engineering/mcp-observability-metrics)、[MCP 安全与授权](/note/Engineering/mcp-security-auth)、[MCP Token Exchange](/note/Engineering/mcp-token-exchange) |
 | Agent 安全与治理追问 | [Guardrails / Safety](/note/AI-Agent/guardrails)、[Human-in-the-loop](/note/AI-Agent/human-in-the-loop) | [Tool Registry 工程化](/note/Engineering/tool-registry-engineering)、[Tool Risk Classification](/note/Engineering/tool-risk-classification)、[Agent 工具沙箱与权限边界](/note/Engineering/agent-tool-sandbox-permission)、[PII 脱敏策略](/note/Engineering/pii-redaction-for-llm)、[Prompt Injection 纵深防御](/note/Engineering/prompt-injection-defense-in-depth)、[LLM Output Safety Filter](/note/Engineering/llm-output-safety-filter)、[Human Takeover 运营台](/topics/human-takeover-operations-console)、[Agent 红队演练](/note/Engineering/agent-red-team-playbook)、[生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
+| Agent 安全面试专项 | [Guardrails / Safety](/note/AI-Agent/guardrails)、[Browser / Computer Use Agent](/note/AI-Agent/browser-computer-use-agent) | [AI Agent Security Interview Guide](/topics/ai-agent-security-interview-guide)、[OWASP LLM Top 10 for Agents](/note/Engineering/owasp-llm-top10-agent-mapping)、[Agent Guardrails Pipeline](/note/Engineering/agent-guardrails-pipeline)、[Agent Identity and RBAC](/note/Engineering/agent-identity-rbac-design)、[MCP OAuth Authorization Design](/note/Engineering/mcp-oauth-authorization-design)、[Computer Use Agent Safety](/note/Engineering/computer-use-agent-safety) |
 | [RAG 面试题](/note/AI-Interview/rag-interview) | [RAG](/note/AI-Agent/rag) | [RAG Query Router](/note/Engineering/rag-query-router)、[RAG 入库流水线](/note/Engineering/rag-ingestion-pipeline)、[RAG Ingestion Quality Gate](/note/Engineering/rag-ingestion-quality-gate)、[RAG 检索故障排查](/note/Engineering/rag-retrieval-debugging)、[RAG Citation Evaluation](/note/Engineering/rag-citation-evaluation)、[RAG 评测报告模板](/note/Engineering/rag-evaluation-report-template)、[向量检索选型](/topics/vector-search-selection) |
 | 高级 RAG / 企业知识库 | [RAG](/note/AI-Agent/rag)、[RAG vs Fine-tuning](/note/AI-Agent/rag-vs-finetuning) | [RAG 知识生命周期](/note/Engineering/rag-knowledge-lifecycle)、[RAG 权限过滤](/note/Engineering/rag-permission-filtering)、[RAG Freshness Evaluation](/note/Engineering/rag-freshness-evaluation)、[RAG Grounding Contract](/note/Engineering/rag-grounding-contract)、[Embedding 模型评测与迁移](/note/Engineering/embedding-model-eval-migration)、[GraphRAG](/note/Engineering/graphrag-engineering)、[企业 RAG 权限与多租户](/note/Engineering/enterprise-rag-permission-multitenancy)、[Agent 租户隔离测试](/note/Engineering/agent-tenant-isolation-testing) |
 | RAG / Fine-tuning 取舍 | [RAG vs Fine-tuning](/note/AI-Agent/rag-vs-finetuning) | [Fine-tuning 数据流水线](/note/Engineering/finetuning-data-pipeline)、[LLM 数据治理](/note/Engineering/llm-data-governance)、[Eval Dataset 设计](/note/Engineering/eval-dataset-design)、[PromptOps](/note/Engineering/promptops-versioning) |
