@@ -16,3 +16,9 @@
 - [Project C Gateway Console UI](/projects/project-c-gateway-console-ui)
 - [Project C Demo 验收脚本](/projects/project-c-demo-script)
 - [Project C 安全与评测方案](/projects/project-c-security-eval-plan)
+
+- [Project D：Agent Evaluation & Red Team Lab](/projects/project-d-agent-evaluation-redteam-lab)
+- [Project D 架构设计](/projects/project-d-eval-architecture)
+- [Project D 红队样本库](/projects/project-d-redteam-playbook)
+- [Project D Eval Dashboard UI](/projects/project-d-eval-dashboard-ui)
+- [Project D Demo 验收脚本](/projects/project-d-demo-script)

@@ -54,6 +54,16 @@
 
 > 我没有把多 Agent 设计成自由对话，而是按照业务流程拆分角色，并通过状态机约束每个 Agent 的输入输出和执行顺序，从而保证系统可控。
 
+## Project D 作品集表达入口
+
+- [Project D 主入口](/projects/project-d-agent-evaluation-redteam-lab)
+- [Project D 架构设计](/projects/project-d-eval-architecture)
+- [Project D 红队样本库](/projects/project-d-redteam-playbook)
+- [Project D Eval Dashboard UI](/projects/project-d-eval-dashboard-ui)
+- [Project D Demo 验收脚本](/projects/project-d-demo-script)
+- [Project D 一分钟介绍](/note/Interview/project-d-one-minute)
+- [Project D 深挖问答](/note/Interview/project-d-deep-dive)
+
 ## Project C 作品集表达入口
 
 - [Project C 主入口](/projects/project-c-mcp-gateway-skill-hub)
@@ -63,6 +73,8 @@
 - [Project C 安全与评测方案](/projects/project-c-security-eval-plan)
 - [Project C 一分钟介绍](/note/Interview/project-c-one-minute)
 - [Project C 深挖问答](/note/Interview/project-c-deep-dive)
+- [Project D 一分钟介绍](/note/Interview/project-d-one-minute)
+- [Project D 深挖问答](/note/Interview/project-d-deep-dive)
 
 ## Project B 作品集表达入口
 
