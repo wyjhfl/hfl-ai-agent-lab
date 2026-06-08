@@ -101,10 +101,10 @@ const featuredEvidence = [
     href: '/note/Engineering/agent-guardrails-pipeline',
   },
   {
-    tag: 'PROJECTS',
-    title: '项目实战作品集',
-    desc: '集中展示 RAG、Multi-Agent Copilot、路线图、Demo 验收和项目答辩材料。',
-    href: '/projects',
+    tag: 'MCP / SKILLS',
+    title: 'MCP 与 Skills 组合开发',
+    desc: '把外部工具协议、Skill 工作流、测试门禁和面试表达串成可展示能力。',
+    href: '/topics/mcp-skills-agent-extension-strategy',
   },
 ]
 
@@ -170,15 +170,15 @@ const evidenceLinks = [
 
     <section class="lab-metrics" aria-label="站点内容概览">
       <div>
-        <strong>237</strong>
+        <strong>244</strong>
         <span>Markdown 内容页</span>
       </div>
       <div>
-        <strong>114</strong>
+        <strong>116</strong>
         <span>工程化笔记</span>
       </div>
       <div>
-        <strong>67</strong>
+        <strong>70</strong>
         <span>专题长文</span>
       </div>
       <div>

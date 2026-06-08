@@ -10,6 +10,8 @@
 | Codex 拆解 | IDE 内代码生成、局部实现、函数级修改、教学式开发 |
 | AI Coding Workflow | ChatGPT 规划 + Claude Code / Codex 执行的完整工作流 |
 | Skills 编写 | 把重复提示词沉淀成可复用工作流，包含 `SKILL.md`、脚本、参考资料和验收标准 |
+| Skill 与 MCP 组合实战 | 用 Skill 固化 MCP Server 创建、测试和上线流程，让 Agent 既会调用工具，也会按流程做对 |
+| Skill 评测闭环 | 用触发测试、执行轨迹复盘、输出 rubric 和回归样例持续改进 Skill |
 | Skill 测试与版本管理 | 让可复用能力有版本号、changelog、触发测试、流程测试、安全测试和回归样例 |
 | Skill Review Checklist | 像代码审查一样检查 Skill 的触发、流程、渐进加载、脚本、验收标准和安全边界 |
 | MCP Tool Schema 设计 | 把工具命名、参数、输出、错误、风险等级和版本管理做成可复用规范 |
@@ -49,8 +51,9 @@
 | 学局部代码实现 | [Codex 拆解](/note/AI-Tools/codex) |
 | 把流程沉淀成可复用能力 | [Skills 编写](/note/AI-Tools/skill-authoring) |
 | 测试和演进 Skill | [Skill 测试与版本管理](/note/AI-Tools/skill-testing-versioning) → [Skill Review Checklist](/note/AI-Tools/skill-review-checklist) → [Skill 运营手册](/note/AI-Tools/skill-operations-playbook) |
+| 把 Skill 和 MCP 组合成项目能力 | [Skill 与 MCP 组合实战](/note/AI-Tools/skill-mcp-integration) → [MCP、Tools 与 Skills 选型](/topics/mcp-skills-agent-extension-strategy) → [MCP Server Testing Harness](/note/Engineering/mcp-server-testing-harness) → [Skill 评测闭环](/note/AI-Tools/skill-evaluation-loop) |
 | 创建可治理 MCP 工具 | [MCP Tool Schema 设计](/note/Engineering/mcp-tool-schema-design) → [MCP Server 创建实战](/note/Engineering/mcp-server-build-guide) → [MCP Server Template for Agents](/note/Engineering/mcp-server-template-for-agents) → [MCP Server Hardening](/note/Engineering/mcp-server-hardening) → [MCP 供应链风险](/note/Engineering/mcp-supply-chain-risk) |
 
 ## 当前状态
 
-当前已经形成 AI 编程协作、Claude Code、Codex、Skills 编写、Skill 测试版本管理、Skill Review Checklist、Skill 运营手册、MCP Tool Schema、MCP Server Template 和 MCP Server Hardening 等入口。后续继续补充 MCP 工具创建、项目导师工作流、版本迭代案例和自动化验收流程。
+当前已经形成 AI 编程协作、Claude Code、Codex、Skills 编写、Skill 测试版本管理、Skill Review Checklist、Skill 运营手册、Skill 与 MCP 组合实战、Skill 评测闭环、MCP Tool Schema、MCP Server Template、MCP Server Hardening 和 MCP Server Testing Harness 等入口。后续继续补充项目导师工作流、MCP Server 生成模板、版本迭代案例和自动化验收流程。

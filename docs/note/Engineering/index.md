@@ -2,6 +2,16 @@
 
 这不是一组普通后端学习笔记，而是围绕 AI Agent、RAG 和 Multi-Agent 项目落地所需要的工程能力地图。
 
+## MCP / Skills 工程化新增入口
+
+- [MCP、Tools 与 Skills：Agent 扩展能力选型策略](/topics/mcp-skills-agent-extension-strategy)
+- [MCP Server 面试与项目答辩 Playbook](/topics/mcp-server-interview-playbook)
+- [MCP Server Testing Harness](/note/Engineering/mcp-server-testing-harness)
+- [MCP Elicitation 交互设计](/note/Engineering/mcp-elicitation-interaction-design)
+- [Skill 与 MCP 组合实战](/note/AI-Tools/skill-mcp-integration)
+- [Skill 评测闭环](/note/AI-Tools/skill-evaluation-loop)
+
+
 AI Agent 项目不能只停留在模型调用和 Prompt 层面。一个可上线、可维护、可评估的 Agent 系统，至少需要后端服务、数据存储、RAG 检索、工具权限、异步任务、执行轨迹、评测体系、安全控制和部署运维。
 
 ## 1. 为什么需要工程化笔记
