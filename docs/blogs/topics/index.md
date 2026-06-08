@@ -1,3 +1,37 @@
+<div class="topic-hero topic-atlas-hero">
+  <p class="topic-eyebrow">Topic Atlas</p>
+  <h1>博客专题导航</h1>
+  <p>专题页不再把所有文章一次性铺开，而是先按“建设 Agent、补 RAG、做 MCP/Skills、做评测治理、准备面试、优化 UI”六个目标分流。旧索引与所有链接完整保留在下方折叠区。</p>
+</div>
+
+<div class="topic-route-strip">
+  <a href="/topics/agent-builder-hub"><strong>Build</strong><span>从想法到可上线 Agent</span></a>
+  <a href="/projects"><strong>Portfolio</strong><span>A-F 项目作品证据</span></a>
+  <a href="/learning-paths"><strong>Learn</strong><span>AI Agent 学习路线</span></a>
+  <a href="/note/Interview/"><strong>Interview</strong><span>项目表达与求职材料</span></a>
+</div>
+
+## 先选一个主题枢纽
+
+<div class="topic-hub-grid">
+  <a class="topic-hub-card featured-topic-hub" href="/topics/agent-builder-hub"><span>Builder</span><h3>Agent Builder Hub</h3><p>把 PRD、RAG、MCP、Skill、Eval、Release Gate 和作品集表达串成一条建设路线。</p><b>进入建设路线 →</b></a>
+  <a class="topic-hub-card" href="/topics/rag-engineering-system"><span>RAG</span><h3>知识与检索工程</h3><p>入库、metadata、权限、引用、freshness、query router、检索评测和企业知识治理。</p><b>查看 RAG 路线 →</b></a>
+  <a class="topic-hub-card" href="/topics/mcp-skills-agent-extension-strategy"><span>MCP / Skills</span><h3>Agent 扩展能力</h3><p>区分 Tool、MCP Server、Skill、Plugin、Hook 的边界，并沉淀可复用工具能力。</p><b>查看扩展策略 →</b></a>
+  <a class="topic-hub-card" href="/note/Engineering/agent-release-gate"><span>Eval / Ops</span><h3>评测、可观测与上线门禁</h3><p>用 scorecard、trace replay、失败聚类、dashboard 和 release gate 管住 Agent 质量。</p><b>查看上线门禁 →</b></a>
+  <a class="topic-hub-card" href="/topics/ai-agent-security-interview-guide"><span>Security</span><h3>安全治理与企业落地</h3><p>Prompt Injection、PII、RBAC、审计、Secret、Guardrails、红队和合规表达。</p><b>查看安全路线 →</b></a>
+  <a class="topic-hub-card" href="/topics/ai-agent-job-search-evidence-map"><span>Career</span><h3>求职作品集证据</h3><p>把项目、代码、文章、Demo、评测和面试故事映射到简历关键词与岗位要求。</p><b>查看证据地图 →</b></a>
+</div>
+
+## 快速阅读路线
+
+<div class="content-route-grid topic-route-grid">
+  <section class="content-route-card featured-route"><span>30 分钟</span><h3>快速理解站点结构</h3><ol><li><a href="/content-map">全站内容地图</a></li><li><a href="/projects">项目实战总览</a></li><li><a href="/topics/agent-builder-hub">Agent Builder Hub</a></li><li><a href="/note/Interview/">项目面试表达</a></li></ol></section>
+  <section class="content-route-card"><span>做项目</span><h3>把一个 Agent 做成作品集</h3><ol><li><a href="/topics/ai-agent-prd-template">AI Agent PRD 模板</a></li><li><a href="/note/Engineering/mcp-server-template-for-agents">MCP Server Template</a></li><li><a href="/note/Engineering/llm-evaluation-scorecard">LLM Evaluation Scorecard</a></li><li><a href="/topics/ai-agent-demo-acceptance-script">Demo 验收脚本</a></li></ol></section>
+  <section class="content-route-card"><span>准备面试</span><h3>把散知识转成回答体系</h3><ol><li><a href="/topics/agent-system-design-interview">Agent 系统设计面试</a></li><li><a href="/topics/ai-agent-interview-followup-map">面试追问地图</a></li><li><a href="/topics/ai-agent-resume-project-matrix">简历项目矩阵</a></li><li><a href="/topics/ai-agent-offer-portfolio-review">Offer Portfolio Review</a></li></ol></section>
+</div>
+
+::: details 展开完整专题索引（保留全部旧路径与链接）
+
 <div class="topic-hero">
   <p class="topic-eyebrow">Topic Atlas</p>
   <h1>博客专题</h1>
@@ -257,3 +291,6 @@
 | 30 天冲刺面试 | [AI Agent 面试 30 天复习清单](/topics/ai-agent-interview-30-day-plan) → [Agent 面试追问库](/note/AI-Interview/agent-followup-interview) → [项目面试表达](/note/Interview/) |
 | 写项目方案 | [AI 项目设计文档模板](/topics/ai-project-design-doc-template) → [AI Agent 作品集 Case Study 模板](/topics/ai-agent-portfolio-case-study-template) → [AI Agent 项目答辩稿](/topics/ai-agent-project-defense-script) → [Agent 系统设计案例库](/topics/agent-system-design-casebook) → [生产级 Agent 治理清单](/topics/production-agent-governance-checklist) |
 | 写产品需求 | [AI Agent PRD 模板](/topics/ai-agent-prd-template) → [Agent Product Metrics](/topics/agent-product-metrics) → [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota) → [Browser Automation Testing](/topics/browser-automation-testing-agent-ui) |
+
+
+:::

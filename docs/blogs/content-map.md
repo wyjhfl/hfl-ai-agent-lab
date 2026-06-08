@@ -1,4 +1,4 @@
-﻿---
+---
 layout: page
 sidebar: false
 ---
@@ -10,14 +10,14 @@ sidebar: false
 </div>
 
 <div class="project-read-flow">
-  <div><strong>学习</strong><span>先补 AI Agent / RAG / Tool Calling / Multi-Agent 基础。</span></div>
-  <div><strong>工程</strong><span>再看运行时、工具、评测、可观测性、安全和运维。</span></div>
-  <div><strong>项目</strong><span>最后把能力沉淀成 A-F 项目证据包。</span></div>
+  <div><strong>入口</strong><span>先按目标选择：看作品、补体系、搭 Agent、准备面试。</span></div>
+  <div><strong>枢纽</strong><span>再进入 Builder、RAG、MCP、Eval、安全和求职主题。</span></div>
+  <div><strong>证据</strong><span>最后沉淀到 A-F 项目、Demo、评测报告和面试讲法。</span></div>
 </div>
 
 <div class="portfolio-section-heading">
   <p class="project-eyebrow">Main Paths</p>
-  <h2>四个最常用入口</h2>
+  <h2>五个最常用入口</h2>
 </div>
 
 <div class="project-map-grid content-map-grid">
@@ -40,7 +40,13 @@ sidebar: false
     <div class="project-link-list"><a href="/note/Engineering/">工程笔记</a><a href="/topics/">专题文章</a><a href="/note/Source-Reading/">源码拆解</a></div>
   </section>
   <section class="project-map-card">
-    <span>04 / Interview</span>
+    <span>04 / Builder</span>
+    <h3>Agent Builder Hub</h3>
+    <p>适合开始做系统：从 PRD、RAG、MCP、Skill、Eval、Release Gate 到作品集表达。</p>
+    <div class="project-link-list"><a href="/topics/agent-builder-hub">建设路线</a><a href="/note/Engineering/mcp-server-template-for-agents">MCP 模板</a><a href="/note/AI-Tools/skill-authoring">Skill 编写</a></div>
+  </section>
+  <section class="project-map-card">
+    <span>05 / Interview</span>
     <h3>面试与求职表达</h3>
     <p>适合投递前整理：一分钟介绍、深挖问答、STAR 故事、简历 bullet、Demo 脚本。</p>
     <div class="project-link-list"><a href="/note/Interview/">项目面试表达</a><a href="/note/Interview/resume-bullets">简历模板</a><a href="/topics/ai-agent-offer-portfolio-review">Offer Review</a></div>
@@ -56,7 +62,7 @@ sidebar: false
 <div class="content-atlas-grid content-map-atlas">
   <section class="content-atlas-card"><h3>RAG / Knowledge</h3><p>知识库、引用、权限、入库质量、freshness 与 RAG 评测。</p><div class="atlas-link-list"><a href="/topics/rag-engineering-system">RAG 工程体系</a><a href="/note/Engineering/rag-ingestion-quality-gate">RAG Ingestion Gate</a><a href="/note/Engineering/rag-citation-evaluation">Citation Evaluation</a><a href="/note/Engineering/rag-permission-filtering">Permission Filtering</a></div></section>
   <section class="content-atlas-card"><h3>Agent Runtime</h3><p>状态机、运行轨迹、错误分类、回放、配置和反馈分诊。</p><div class="atlas-link-list"><a href="/topics/agent-runtime-explained">Agent Runtime</a><a href="/note/Engineering/agent-workflow-state-machine">Workflow 状态机</a><a href="/note/Engineering/agent-run-replay">Run Replay</a><a href="/note/Engineering/agent-error-taxonomy">错误分类</a></div></section>
-  <section class="content-atlas-card"><h3>MCP / Tools / Skills</h3><p>工具注册、MCP Gateway、沙箱、OAuth、Skill 测试和供应链风险。</p><div class="atlas-link-list"><a href="/note/Engineering/mcp-gateway-architecture">MCP Gateway</a><a href="/note/Engineering/tool-registry-engineering">Tool Registry</a><a href="/note/Engineering/mcp-sandbox-profile">Sandbox Profile</a><a href="/note/AI-Tools/skill-testing-versioning">Skill 测试</a></div></section>
+  <section class="content-atlas-card"><h3>MCP / Tools / Skills</h3><p>工具注册、MCP Gateway、沙箱、OAuth、Skill 测试和供应链风险。</p><div class="atlas-link-list"><a href="/topics/agent-builder-hub">Agent Builder Hub</a><a href="/note/Engineering/mcp-gateway-architecture">MCP Gateway</a><a href="/note/Engineering/tool-registry-engineering">Tool Registry</a><a href="/note/AI-Tools/skill-testing-versioning">Skill 测试</a></div></section>
   <section class="content-atlas-card"><h3>Eval / Observability</h3><p>评分卡、失败聚类、漂移、Release Gate、OpenTelemetry 和 Dashboard。</p><div class="atlas-link-list"><a href="/note/Engineering/llm-evaluation-scorecard">LLM Scorecard</a><a href="/note/Engineering/eval-failure-clustering">Failure Clustering</a><a href="/note/Engineering/agent-observability-dashboard-design">Observability Dashboard</a><a href="/note/Engineering/agent-release-gate">Release Gate</a></div></section>
   <section class="content-atlas-card"><h3>Security / Governance</h3><p>Prompt Injection、PII、RBAC、审计、Secret、Guardrails 与红队。</p><div class="atlas-link-list"><a href="/topics/ai-agent-security-interview-guide">安全面试指南</a><a href="/note/Engineering/prompt-injection-defense-in-depth">Prompt Injection 防御</a><a href="/note/Engineering/pii-redaction-for-llm">PII 脱敏</a><a href="/note/Engineering/agent-audit-log-design">审计日志</a></div></section>
   <section class="content-atlas-card"><h3>UI / Product</h3><p>Agent 产品 UI、状态机、前端 telemetry、Pattern Library 和作品集 UI。</p><div class="atlas-link-list"><a href="/topics/agent-ui-pattern-library">Agent UI Pattern Library</a><a href="/note/Engineering/agent-ui-state-machine">Agent UI State Machine</a><a href="/note/Engineering/agent-frontend-telemetry">Frontend Telemetry</a><a href="/topics/ai-agent-site-ui-optimization-playbook">站点 UI 优化</a></div></section>
