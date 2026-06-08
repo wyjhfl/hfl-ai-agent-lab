@@ -259,6 +259,21 @@ export default defineConfigWithTheme<ThemeConfig>({
       { text: 'GitHub', link: 'https://github.com/wyjhfl' },
     ],
     sidebar: {
+      '/projects/': [
+        {
+          text: '项目实战',
+          items: [
+            { text: '项目总览', link: '/projects' },
+            { text: 'Project B：Multi-Agent Copilot', link: '/projects/project-b-agent-copilot' },
+            { text: 'Project B 架构设计', link: '/projects/project-b-architecture' },
+            { text: 'Project B Demo 验收', link: '/projects/project-b-demo-script' },
+            { text: 'Project B Trace / Eval', link: '/projects/project-b-trace-eval-plan' },
+            { text: 'Project B 路线图', link: '/projects/project-b-roadmap' },
+            { text: 'Project A：RAG 工单', link: '/projects/project-a-rag-workorder' },
+          ],
+        },
+      ],
+
       '/note/AI-Agent/': [
         {
           text: 'AI Agent 学习路线',
@@ -452,6 +467,7 @@ export default defineConfigWithTheme<ThemeConfig>({
             { text: '表达总览', link: '/note/Interview/' },
             { text: '项目 B 一分钟介绍', link: '/note/Interview/project-b-one-minute' },
             { text: '项目 B 深挖版', link: '/note/Interview/project-b-deep-dive' },
+            { text: 'Project B STAR 故事库', link: '/note/Interview/project-b-star-story-bank' },
             { text: '简历描述模板', link: '/note/Interview/resume-bullets' },
             { text: 'RAG 设计问答', link: '/note/Interview/rag-qa' },
             { text: 'Multi-Agent 设计问答', link: '/note/Interview/multi-agent-qa' },

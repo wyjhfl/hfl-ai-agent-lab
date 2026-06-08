@@ -59,6 +59,12 @@ const timeline = [
 
 const featuredEvidence = [
   {
+    tag: 'PROJECT B',
+    title: 'Project B 多 Agent Copilot',
+    desc: '把运营中台 Copilot 做成包含架构、Demo、Trace/Eval 和面试故事的主力作品集项目。',
+    href: '/projects/project-b-agent-copilot',
+  },
+  {
     tag: 'INTERVIEW READY',
     title: 'AI Agent 安全面试指南',
     desc: '把 OWASP LLM Top 10、权限边界、工具调用风控和上线门禁整理成可讲的面试答案。',
@@ -170,7 +176,7 @@ const evidenceLinks = [
 
     <section class="lab-metrics" aria-label="站点内容概览">
       <div>
-        <strong>244</strong>
+        <strong>249</strong>
         <span>Markdown 内容页</span>
       </div>
       <div>
@@ -207,7 +213,7 @@ const evidenceLinks = [
     <section class="lab-section lab-featured-section">
       <div class="lab-section-heading">
         <p class="lab-eyebrow">Featured Evidence</p>
-        <h2>先给招聘方和读者看的 8 个强证据入口</h2>
+        <h2>先给招聘方和读者看的 9 个强证据入口</h2>
         <p class="lab-section-desc">首页优先呈现能证明工程能力的内容：安全、可观测性、Guardrails、UI 设计、项目路线和面试表达，减少读者在导航里寻找重点的成本。</p>
       </div>
       <div class="featured-evidence-grid">

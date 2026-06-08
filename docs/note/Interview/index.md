@@ -54,10 +54,18 @@
 
 > 我没有把多 Agent 设计成自由对话，而是按照业务流程拆分角色，并通过状态机约束每个 Agent 的输入输出和执行顺序，从而保证系统可控。
 
+## Project B 作品集表达入口
+
+- [Project B 主入口](/projects/project-b-agent-copilot)
+- [Project B 架构设计](/projects/project-b-architecture)
+- [Project B Demo 验收脚本](/projects/project-b-demo-script)
+- [Project B Trace / Eval 方案](/projects/project-b-trace-eval-plan)
+
 ## 当前内容
 
 - [项目 B 一分钟介绍](/note/Interview/project-b-one-minute)
 - [项目 B 深挖版](/note/Interview/project-b-deep-dive)
+- [Project B STAR 故事库](/note/Interview/project-b-star-story-bank)
 - [简历描述模板](/note/Interview/resume-bullets)
 - [Agent Capability Matrix](/topics/agent-capability-matrix)
 - [AI Agent Resume Project Matrix](/topics/ai-agent-resume-project-matrix)
