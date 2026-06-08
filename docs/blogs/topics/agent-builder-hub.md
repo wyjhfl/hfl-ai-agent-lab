@@ -60,7 +60,7 @@ sidebar: false
     <span>Eval / Ops</span>
     <h3>我要把 Agent 推向生产可控</h3>
     <ol>
-      <li><a href="/note/Engineering/llm-evaluation-scorecard">LLM Evaluation Scorecard</a></li>
+      <li><a href="/topics/agent-eval-observability-playbook">Agent Eval & Observability Playbook</a></li>
       <li><a href="/note/Engineering/agent-observability-dashboard-design">Observability Dashboard</a></li>
       <li><a href="/topics/agent-production-readiness-review">Production Readiness Review</a></li>
       <li><a href="/projects/project-d-agent-evaluation-redteam-lab">Project D 评测红队 Lab</a></li>
@@ -74,6 +74,16 @@ sidebar: false
       <li><a href="/topics/ai-agent-interview-followup-map">面试追问地图</a></li>
       <li><a href="/note/Interview/">项目面试表达</a></li>
       <li><a href="/topics/ai-agent-offer-portfolio-review">Offer Portfolio Review</a></li>
+    </ol>
+  </section>
+  <section class="content-route-card">
+    <span>UI / Evidence</span>
+    <h3>我要把项目页面做得像产品</h3>
+    <ol>
+      <li><a href="/topics/agent-ui-review-checklist">Agent UI Review Checklist</a></li>
+      <li><a href="/topics/agent-demo-evidence-dashboard">Demo Evidence Dashboard</a></li>
+      <li><a href="/topics/agent-ui-pattern-library">Agent UI Pattern Library</a></li>
+      <li><a href="/topics/ai-agent-portfolio-ui-blueprint">Portfolio UI Blueprint</a></li>
     </ol>
   </section>
 </div>

@@ -68,9 +68,9 @@ const hubCards = [
     tag: 'EVAL / OBS',
     title: '评测与可观测性',
     desc: 'Scorecard、regression set、trace replay、失败聚类、drift、canary 和 Release Gate。',
-    href: '/note/Engineering/agent-release-gate',
+    href: '/topics/agent-eval-observability-playbook',
     links: [
-      ['LLM Scorecard', '/note/Engineering/llm-evaluation-scorecard'],
+      ['Eval Playbook', '/topics/agent-eval-observability-playbook'],
       ['Run Replay', '/note/Engineering/agent-run-replay'],
       ['Dashboard', '/note/Engineering/agent-observability-dashboard-design'],
     ],
@@ -92,7 +92,7 @@ const hubCards = [
     desc: '把项目、代码、文章、Demo、评测和面试故事映射到岗位关键词。',
     href: '/topics/ai-agent-job-search-evidence-map',
     links: [
-      ['作品集路线', '/topics/ai-agent-portfolio-roadmap'],
+      ['证据看板', '/topics/agent-demo-evidence-dashboard'],
       ['简历矩阵', '/topics/ai-agent-resume-project-matrix'],
       ['Offer Review', '/topics/ai-agent-offer-portfolio-review'],
     ],
@@ -120,8 +120,8 @@ const readingPaths = [
     label: 'Path 02',
     title: '优化现有项目作品集',
     desc: '先看 A-F 项目矩阵，再补架构、UI、评测、安全和面试表达缺口。',
-    href: '/projects',
-    steps: ['Projects', 'Evidence Matrix', 'Interview Notes', 'Portfolio Review'],
+    href: '/topics/agent-demo-evidence-dashboard',
+    steps: ['Evidence Board', 'UI Review', 'Eval Scorecard', 'Portfolio Review'],
   },
   {
     label: 'Path 03',
