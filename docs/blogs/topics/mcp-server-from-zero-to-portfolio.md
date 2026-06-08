@@ -22,7 +22,7 @@
 | 文档智能 Agent | 查询抽取字段、复核状态、PII 风险 | 能连接 Project F |
 | 运维排障 Agent | 查询日志、指标、runbook、变更记录 | 能体现生产级能力 |
 
-**推荐个人作品集优先做：Repo Context MCP Server。**  
+**推荐个人作品集优先做：Repo Context MCP Server。**
 原因：容易准备样例数据，能和 Coding Agent、评测、CI、面试表达都串起来。
 
 ---
