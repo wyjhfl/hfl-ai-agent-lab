@@ -25,8 +25,8 @@
 ## 快速阅读路线
 
 <div class="content-route-grid topic-route-grid">
-  <section class="content-route-card featured-route"><span>30 分钟</span><h3>快速理解站点结构</h3><ol><li><a href="/content-map">全站内容地图</a></li><li><a href="/projects">项目实战总览</a></li><li><a href="/topics/agent-builder-hub">Agent Builder Hub</a></li><li><a href="/note/Interview/">项目面试表达</a></li></ol></section>
-  <section class="content-route-card"><span>做项目</span><h3>把一个 Agent 做成作品集</h3><ol><li><a href="/topics/ai-agent-prd-template">AI Agent PRD 模板</a></li><li><a href="/note/Engineering/mcp-server-template-for-agents">MCP Server Template</a></li><li><a href="/note/Engineering/llm-evaluation-scorecard">LLM Evaluation Scorecard</a></li><li><a href="/topics/ai-agent-demo-acceptance-script">Demo 验收脚本</a></li></ol></section>
+  <section class="content-route-card featured-route"><span>30 天</span><h3>做一个可展示 Agent Demo</h3><ol><li><a href="/topics/agent-builder-demo-roadmap">30 天 Agent Builder Demo 路线</a></li><li><a href="/topics/mcp-server-from-zero-to-portfolio">MCP Server 从零到作品集</a></li><li><a href="/topics/agent-skill-playbook">Agent Skill Playbook</a></li><li><a href="/topics/ai-agent-demo-acceptance-script">Demo 验收脚本</a></li></ol></section>
+  <section class="content-route-card"><span>做项目</span><h3>把一个 Agent 做成作品集</h3><ol><li><a href="/topics/ai-agent-prd-template">AI Agent PRD 模板</a></li><li><a href="/topics/mcp-server-from-zero-to-portfolio">MCP Server 作品集</a></li><li><a href="/note/Engineering/llm-evaluation-scorecard">LLM Evaluation Scorecard</a></li><li><a href="/topics/ai-agent-portfolio-case-study-template">Case Study 模板</a></li></ol></section>
   <section class="content-route-card"><span>准备面试</span><h3>把散知识转成回答体系</h3><ol><li><a href="/topics/agent-system-design-interview">Agent 系统设计面试</a></li><li><a href="/topics/ai-agent-interview-followup-map">面试追问地图</a></li><li><a href="/topics/ai-agent-resume-project-matrix">简历项目矩阵</a></li><li><a href="/topics/ai-agent-offer-portfolio-review">Offer Portfolio Review</a></li></ol></section>
 </div>
 

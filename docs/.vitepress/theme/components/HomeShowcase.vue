@@ -37,9 +37,9 @@ const hubCards = [
     desc: '把 PRD、RAG、MCP、Skill、Eval、Release Gate 和作品集表达串成一条建设路线。',
     href: '/topics/agent-builder-hub',
     links: [
-      ['PRD 模板', '/topics/ai-agent-prd-template'],
-      ['MCP Server', '/note/Engineering/mcp-server-build-guide'],
-      ['Skill 测试', '/note/AI-Tools/skill-testing-versioning'],
+      ['30 天路线', '/topics/agent-builder-demo-roadmap'],
+      ['MCP 作品集', '/topics/mcp-server-from-zero-to-portfolio'],
+      ['Skill Playbook', '/topics/agent-skill-playbook'],
     ],
   },
   {
@@ -57,10 +57,10 @@ const hubCards = [
     tag: 'TOOLS / MCP',
     title: '工具治理与扩展能力',
     desc: 'Tool Registry、MCP Gateway、schema pinning、sandbox、approval、audit 与 Skill Hub。',
-    href: '/note/Engineering/mcp-gateway-architecture',
+    href: '/topics/mcp-server-from-zero-to-portfolio',
     links: [
+      ['MCP 作品集', '/topics/mcp-server-from-zero-to-portfolio'],
       ['Tool Registry', '/note/Engineering/tool-registry-engineering'],
-      ['MCP Gateway', '/note/Engineering/mcp-gateway-architecture'],
       ['Skill × MCP', '/note/AI-Tools/skill-mcp-integration'],
     ],
   },
@@ -113,8 +113,8 @@ const readingPaths = [
     label: 'Path 01',
     title: '做一个可演示 Agent',
     desc: '从需求边界开始，补工具、Skill、评测和 Demo 验收，最后沉淀项目文章。',
-    href: '/topics/agent-builder-hub',
-    steps: ['Builder Hub', 'MCP Template', 'Skill Testing', 'Demo Script'],
+    href: '/topics/agent-builder-demo-roadmap',
+    steps: ['30 天路线', 'MCP Server', 'Skill Playbook', 'Demo Script'],
   },
   {
     label: 'Path 02',

@@ -24,8 +24,8 @@ sidebar: false
 <div class="builder-stage-grid">
   <section class="builder-stage-card"><span>Stage 1</span><h3>任务边界 / PRD</h3><p>明确用户、输入输出、拒答边界、人工接管和验收标准，避免把 Agent 做成泛聊天。</p><a href="/topics/ai-agent-prd-template">AI Agent PRD 模板 →</a></section>
   <section class="builder-stage-card"><span>Stage 2</span><h3>上下文 / RAG 准备</h3><p>处理 metadata、权限、引用、freshness、入库门禁和检索评测，让 Agent 有可信上下文。</p><a href="/topics/rag-engineering-system">RAG 工程体系 →</a></section>
-  <section class="builder-stage-card"><span>Stage 3</span><h3>工具 / MCP 设计</h3><p>把工具边界、schema、sandbox、OAuth、审计和版本治理放在 Agent 可控范围内。</p><a href="/note/Engineering/mcp-server-build-guide">MCP Server 创建实战 →</a></section>
-  <section class="builder-stage-card"><span>Stage 4</span><h3>Skill 工作流封装</h3><p>把可复用流程写进 Skill：前置条件、脚本、资产、参考资料、测试和版本策略。</p><a href="/note/AI-Tools/skill-authoring">Skills 编写 →</a></section>
+  <section class="builder-stage-card"><span>Stage 3</span><h3>工具 / MCP 设计</h3><p>把工具边界、schema、sandbox、OAuth、审计和版本治理放在 Agent 可控范围内。</p><a href="/topics/mcp-server-from-zero-to-portfolio">MCP Server 从零到作品集 →</a></section>
+  <section class="builder-stage-card"><span>Stage 4</span><h3>Skill 工作流封装</h3><p>把可复用流程写进 Skill：前置条件、脚本、资产、参考资料、测试和版本策略。</p><a href="/topics/agent-skill-playbook">Agent Skill Playbook →</a></section>
   <section class="builder-stage-card"><span>Stage 5</span><h3>评测 / 回归 / 可观测</h3><p>用 scorecard、regression set、trace replay、失败聚类和 dashboard 驱动迭代。</p><a href="/note/Engineering/agent-release-gate">Agent Release Gate →</a></section>
   <section class="builder-stage-card"><span>Stage 6</span><h3>发布 / 安全 / 面试证据</h3><p>沉淀 demo、指标、风险清单、runbook 和项目讲法，把工程过程变成作品集证据。</p><a href="/topics/ai-agent-job-search-evidence-map">能力证据地图 →</a></section>
 </div>
@@ -40,9 +40,9 @@ sidebar: false
     <span>Build Demo</span>
     <h3>我要从零做一个 Agent Demo</h3>
     <ol>
-      <li><a href="/topics/ai-agent-prd-template">AI Agent PRD 模板</a></li>
-      <li><a href="/note/Engineering/mcp-server-template-for-agents">MCP Server Template for Agents</a></li>
-      <li><a href="/note/AI-Tools/skill-testing-versioning">Skill 测试与版本管理</a></li>
+      <li><a href="/topics/agent-builder-demo-roadmap">30 天 Agent Builder Demo 路线</a></li>
+      <li><a href="/topics/mcp-server-from-zero-to-portfolio">MCP Server 从零到作品集</a></li>
+      <li><a href="/topics/agent-skill-playbook">Agent Skill Playbook</a></li>
       <li><a href="/topics/ai-agent-demo-acceptance-script">Demo 验收脚本</a></li>
     </ol>
   </section>
@@ -50,9 +50,9 @@ sidebar: false
     <span>MCP / Tools</span>
     <h3>我要把工具能力做成可治理平台</h3>
     <ol>
+      <li><a href="/topics/mcp-server-from-zero-to-portfolio">MCP Server 从零到作品集</a></li>
       <li><a href="/topics/mcp-skills-agent-extension-strategy">MCP / Skills 选型</a></li>
       <li><a href="/note/Engineering/tool-registry-engineering">Tool Registry 工程化</a></li>
-      <li><a href="/note/Engineering/mcp-gateway-architecture">MCP Gateway 架构</a></li>
       <li><a href="/projects/project-c-mcp-gateway-skill-hub">Project C 作品入口</a></li>
     </ol>
   </section>
