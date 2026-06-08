@@ -11,7 +11,7 @@ hero:
       link: /projects
     - theme: alt
       text: 进入学习路线
-      link: /note/AI-Agent/
+      link: /learning-paths
     - theme: alt
       text: 阅读专题地图
       link: /topics/
@@ -19,8 +19,8 @@ hero:
 features:
   - icon: "01"
     title: 路线清晰
-    details: 从 Agent 基础、RAG、Tool Calling 到 Multi-Agent、Evaluation、Production，按能力层级推进。
-    link: /note/AI-Agent/
+    details: 从学习看板进入 Agent 基础、RAG、Tool Calling、Multi-Agent、Evaluation、Production 和项目证据链。
+    link: /learning-paths
     linkText: 查看路线 →
 
   - icon: "02"

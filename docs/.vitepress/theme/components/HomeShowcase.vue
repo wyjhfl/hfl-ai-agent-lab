@@ -11,8 +11,8 @@ const quickStarts = [
     eyebrow: 'For Learners',
     title: '给学习者的 Agent 路线',
     desc: '从 Prompt、RAG、Tool Calling 到 Multi-Agent、Evaluation、Production，按工程能力逐层推进。',
-    href: '/note/AI-Agent/',
-    cta: '进入学习路线',
+    href: '/learning-paths',
+    cta: '进入学习看板',
   },
   {
     eyebrow: 'For Builders',
@@ -58,6 +58,12 @@ const timeline = [
 ]
 
 const featuredEvidence = [
+  {
+    tag: 'LEARNING MAP',
+    title: 'AI Agent 学习路径看板',
+    desc: '把学习、工程、项目、面试四段路径组织成可扫读的能力导航。',
+    href: '/learning-paths',
+  },
   {
     tag: 'PROJECT B',
     title: 'Project B 多 Agent Copilot',
@@ -176,7 +182,7 @@ const evidenceLinks = [
 
     <section class="lab-metrics" aria-label="站点内容概览">
       <div>
-        <strong>249</strong>
+        <strong>252</strong>
         <span>Markdown 内容页</span>
       </div>
       <div>
@@ -213,7 +219,7 @@ const evidenceLinks = [
     <section class="lab-section lab-featured-section">
       <div class="lab-section-heading">
         <p class="lab-eyebrow">Featured Evidence</p>
-        <h2>先给招聘方和读者看的 9 个强证据入口</h2>
+        <h2>先给招聘方和读者看的 10 个强证据入口</h2>
         <p class="lab-section-desc">首页优先呈现能证明工程能力的内容：安全、可观测性、Guardrails、UI 设计、项目路线和面试表达，减少读者在导航里寻找重点的成本。</p>
       </div>
       <div class="featured-evidence-grid">

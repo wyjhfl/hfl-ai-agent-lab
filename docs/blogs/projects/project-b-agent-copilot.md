@@ -85,6 +85,7 @@ stateDiagram-v2
 - [Project B 架构设计](/projects/project-b-architecture)
 - [Project B Demo 验收脚本](/projects/project-b-demo-script)
 - [Project B Trace / Eval 方案](/projects/project-b-trace-eval-plan)
+- [Project B 产品 UI 蓝图](/projects/project-b-ui-blueprint)
 - [Project B 路线图](/projects/project-b-roadmap)
 - [Project B 一分钟介绍](/note/Interview/project-b-one-minute)
 - [Project B 深挖版](/note/Interview/project-b-deep-dive)

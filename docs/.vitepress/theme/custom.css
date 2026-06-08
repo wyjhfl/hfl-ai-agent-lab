@@ -1211,3 +1211,33 @@ a.architecture-card:hover {
   box-shadow: 0 28px 70px rgba(37, 99, 235, 0.12);
   text-decoration: none;
 }
+
+/* Learning path dashboard and UI blueprint */
+.path-hero { position: relative; overflow: hidden; max-width: 1180px; margin: 10px auto 28px; padding: 34px; border: 1px solid rgba(99, 102, 241, 0.18); border-radius: 30px; background: radial-gradient(circle at 16% 8%, rgba(14, 165, 233, 0.18), transparent 32%), radial-gradient(circle at 92% 18%, rgba(124, 58, 237, 0.14), transparent 30%), var(--hfl-surface-glass); box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08); }
+.path-eyebrow { margin: 0 0 10px; color: var(--vp-c-brand-1); font-size: 12px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; }
+.path-hero h1 { margin: 0; font-size: clamp(36px, 5vw, 58px); line-height: 1.08; letter-spacing: -0.055em; }
+.path-hero p:not(.path-eyebrow) { max-width: 820px; margin: 16px 0 0; color: var(--vp-c-text-2); font-size: 17px; line-height: 1.9; }
+.path-stage-grid, .path-track-grid, .screen-wire-grid { display: grid; max-width: 1180px; margin: 0 auto 38px; gap: 14px; }
+.path-stage-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.path-track-grid, .screen-wire-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.path-stage-card, .path-track-card, .screen-wire-card { display: flex; min-height: 210px; flex-direction: column; padding: 22px; border: 1px solid rgba(99, 102, 241, 0.16); border-radius: 24px; background: radial-gradient(circle at 18% 0%, rgba(59, 130, 246, 0.1), transparent 34%), var(--hfl-surface-glass); color: inherit; box-shadow: 0 18px 42px rgba(15, 23, 42, 0.055); transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease; }
+.path-stage-card:hover, .path-track-card:hover { transform: translateY(-4px); border-color: rgba(14, 165, 233, 0.38); box-shadow: 0 28px 70px rgba(37, 99, 235, 0.12); text-decoration: none; }
+.path-stage-card span, .path-track-card span, .screen-wire-card span { color: var(--vp-c-brand-1); font-size: 12px; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+.path-stage-card h2, .path-track-card h3, .screen-wire-card h3 { margin: 14px 0 0; color: var(--vp-c-text-1); line-height: 1.2; letter-spacing: -0.035em; }
+.path-stage-card h2 { font-size: 23px; }
+.path-track-card h3, .screen-wire-card h3 { font-size: 21px; }
+.path-stage-card p, .path-track-card p, .screen-wire-card p { margin: 12px 0 0; color: var(--vp-c-text-2); line-height: 1.78; }
+.path-stage-card strong, .path-track-card a { margin-top: auto; padding-top: 18px; color: var(--vp-c-brand-1); font-weight: 800; }
+.path-section-heading { max-width: 1180px; margin: 40px auto 18px; }
+.path-section-heading h2 { margin: 0; font-size: clamp(28px, 4vw, 42px); line-height: 1.16; letter-spacing: -0.045em; }
+.sprint-timeline { display: grid; max-width: 1180px; margin: 0 auto 38px; gap: 10px; }
+.sprint-timeline div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; padding: 16px 18px; border: 1px solid rgba(99, 102, 241, 0.14); border-radius: 18px; background: var(--hfl-surface-glass); }
+.sprint-timeline strong { color: var(--vp-c-brand-1); }
+.sprint-timeline span { color: var(--vp-c-text-2); line-height: 1.7; }
+.path-cta-panel { display: grid; grid-template-columns: minmax(0, 1.3fr) auto; align-items: center; gap: 24px; max-width: 1180px; margin: 36px auto 54px; padding: 28px; border: 1px solid rgba(14, 165, 233, 0.22); border-radius: 28px; background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(124, 58, 237, 0.1)), var(--hfl-surface-glass); box-shadow: 0 24px 66px rgba(37, 99, 235, 0.1); }
+.path-cta-panel h2 { margin: 0; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.045em; }
+.path-cta-panel p:not(.path-eyebrow) { margin: 12px 0 0; color: var(--vp-c-text-2); line-height: 1.82; }
+.path-cta-panel a { display: inline-flex; min-height: 44px; align-items: center; padding: 0 18px; border-radius: 999px; background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-3)); color: white; font-weight: 900; text-decoration: none; }
+@media (max-width: 1220px) { .path-hero, .path-stage-grid, .path-track-grid, .screen-wire-grid, .path-section-heading, .sprint-timeline, .path-cta-panel { margin-right: 24px; margin-left: 24px; } }
+@media (max-width: 960px) { .path-stage-grid, .path-track-grid, .screen-wire-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .path-cta-panel { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .path-hero, .path-stage-grid, .path-track-grid, .screen-wire-grid, .path-section-heading, .sprint-timeline, .path-cta-panel { margin-right: 16px; margin-left: 16px; } .path-stage-grid, .path-track-grid, .screen-wire-grid { grid-template-columns: 1fr; } .sprint-timeline div { grid-template-columns: 1fr; } }

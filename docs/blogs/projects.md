@@ -66,8 +66,9 @@ sidebar: false
   <a class="architecture-card" href="/projects/project-b-architecture"><span>02 / Architecture</span><h3>架构设计</h3><p>分层展示 UI、Run Controller、Agent Runtime、Context、Tool、Governance 和 Observability。</p></a>
   <a class="architecture-card" href="/projects/project-b-demo-script"><span>03 / Demo</span><h3>Demo 验收</h3><p>用 5 分钟脚本讲清主路径、失败路径和工程价值。</p></a>
   <a class="architecture-card" href="/projects/project-b-trace-eval-plan"><span>04 / Trace</span><h3>Trace / Eval</h3><p>用 spans、tool calls、approval 和 eval cases 证明系统可维护。</p></a>
-  <a class="architecture-card" href="/note/Interview/project-b-deep-dive"><span>05 / Interview</span><h3>项目深挖</h3><p>准备多 Agent、状态机、工具治理、审批和评测的追问答案。</p></a>
-  <a class="architecture-card" href="/note/Interview/project-b-star-story-bank"><span>06 / STAR</span><h3>故事库</h3><p>把架构取舍包装成可讲述的项目经历和简历 bullet。</p></a>
+  <a class="architecture-card" href="/projects/project-b-ui-blueprint"><span>05 / UI</span><h3>产品 UI 蓝图</h3><p>展示 Copilot 面板、Trace Drawer、审批弹窗和 Eval Dashboard 的产品化设计。</p></a>
+  <a class="architecture-card" href="/note/Interview/project-b-deep-dive"><span>06 / Interview</span><h3>项目深挖</h3><p>准备多 Agent、状态机、工具治理、审批和评测的追问答案。</p></a>
+  <a class="architecture-card" href="/note/Interview/project-b-star-story-bank"><span>07 / STAR</span><h3>故事库</h3><p>把架构取舍包装成可讲述的项目经历和简历 bullet。</p></a>
 </div>
 
 <div class="project-status-card">

@@ -7,5 +7,6 @@
 - [Project B 架构设计](/projects/project-b-architecture)
 - [Project B Demo 验收脚本](/projects/project-b-demo-script)
 - [Project B Trace / Eval 方案](/projects/project-b-trace-eval-plan)
+- [Project B 产品 UI 蓝图](/projects/project-b-ui-blueprint)
 - [Project B 路线图](/projects/project-b-roadmap)
 - [Project A：设备售后诊断与工单 RAG 系统](/projects/project-a-rag-workorder)

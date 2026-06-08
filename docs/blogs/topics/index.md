@@ -5,12 +5,14 @@
 </div>
 
 <div class="topic-card-grid">
+  <a class="topic-card" href="/learning-paths"><span>Dashboard</span><h3>AI Agent 学习路径看板</h3><p>把学习路线、工程笔记、项目证据和面试表达组织成一张导航图。</p></a>
   <a class="topic-card" href="/topics/mcp-skills-agent-extension-strategy"><span>MCP / Skills</span><h3>Agent 扩展能力选型</h3><p>判断普通 Tool、MCP Server、Skill 与组合方案的工程边界。</p></a>
   <a class="topic-card" href="/topics/mcp-server-interview-playbook"><span>Interview</span><h3>MCP Server 面试答辩</h3><p>把 MCP Server 讲成可设计、可治理、可上线和可排障的项目能力。</p></a>
   <a class="topic-card" href="/topics/rag-engineering-system"><span>RAG</span><h3>RAG 工程化路径</h3><p>从入库、metadata、权限、引用、freshness 到 query router 和评测报告。</p></a>
   <a class="topic-card" href="/topics/agent-development-playbook"><span>Agent</span><h3>生产级 Agent 路线</h3><p>从 Runtime、状态机、工具风险、审批、Trace 到 Release Gate。</p></a>
   <a class="topic-card" href="/topics/ai-agent-job-search-evidence-map"><span>Career</span><h3>求职作品集证据</h3><p>把项目、代码、文章、Demo、评测和面试故事映射到简历关键词。</p></a>
   <a class="topic-card" href="/topics/ai-agent-site-ui-optimization-playbook"><span>UI/UX</span><h3>站点界面优化路线</h3><p>参考 VitePress、开源主题和 Skills，把知识库升级成作品集级导航体验。</p></a>
+  <a class="topic-card" href="/note/AI-Tools/ui-design-skill-research"><span>UI Skill</span><h3>UI Design Skill 调研</h3><p>把界面优化沉淀成可复用检查流程：信息架构、可访问性、响应式和构建验证。</p></a>
 </div>
 
 ---
@@ -19,6 +21,7 @@
 
 | 目标 | 推荐路径 |
 |---|---|
+| 想快速规划学习路线 | [AI Agent 学习路径看板](/learning-paths) → [AI Agent 学习路线](/note/AI-Agent/) → [工程化笔记](/note/Engineering/) → [Project B 作品集](/projects/project-b-agent-copilot) → [项目面试表达](/note/Interview/) |
 | 想做 MCP / Skills 工具化能力 | [MCP、Tools 与 Skills 选型](/topics/mcp-skills-agent-extension-strategy) → [MCP Server 面试答辩](/topics/mcp-server-interview-playbook) → [Skill 与 MCP 组合实战](/note/AI-Tools/skill-mcp-integration) → [MCP Server Testing Harness](/note/Engineering/mcp-server-testing-harness) → [MCP Elicitation 交互设计](/note/Engineering/mcp-elicitation-interaction-design) → [Skill 评测闭环](/note/AI-Tools/skill-evaluation-loop) |
 | 零基础建立 Agent 工程认知 | AI Agent 核心概念专题 → [Agent 开发 Playbook](/topics/agent-development-playbook) → Engineering 工程化专题 → 面试表达专题 |
 | 想做 RAG 项目 | [RAG 项目面试表达](/topics/rag-project-interview) → [RAG 工程化](/topics/rag-engineering-system) → [RAG Metadata Schema](/note/Engineering/rag-metadata-schema-design) → [RAG Query Router](/note/Engineering/rag-query-router) → [RAG Ingestion Quality Gate](/note/Engineering/rag-ingestion-quality-gate) → Evaluation / Trace 相关内容 |

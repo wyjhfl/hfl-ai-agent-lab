@@ -243,6 +243,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     nav: [
       { text: '首页', link: '/home' },
       { text: '学习路线', link: '/note/AI-Agent/' },
+      { text: '学习看板', link: '/learning-paths' },
       { text: '专题文章', link: '/topics/' },
       { text: '源码拆解', link: '/note/Source-Reading/' },
       { text: '工程笔记', link: '/note/Engineering/' },
@@ -267,6 +268,7 @@ export default defineConfigWithTheme<ThemeConfig>({
             { text: 'Project B：Multi-Agent Copilot', link: '/projects/project-b-agent-copilot' },
             { text: 'Project B 架构设计', link: '/projects/project-b-architecture' },
             { text: 'Project B Demo 验收', link: '/projects/project-b-demo-script' },
+            { text: 'Project B UI 蓝图', link: '/projects/project-b-ui-blueprint' },
             { text: 'Project B Trace / Eval', link: '/projects/project-b-trace-eval-plan' },
             { text: 'Project B 路线图', link: '/projects/project-b-roadmap' },
             { text: 'Project A：RAG 工单', link: '/projects/project-a-rag-workorder' },
@@ -450,6 +452,7 @@ export default defineConfigWithTheme<ThemeConfig>({
             { text: 'Claude Code 拆解', link: '/note/AI-Tools/claude-code' },
             { text: 'Codex 拆解', link: '/note/AI-Tools/codex' },
             { text: 'AI Coding Workflow', link: '/note/AI-Tools/ai-coding-workflow' },
+            { text: 'UI Design Skill 调研', link: '/note/AI-Tools/ui-design-skill-research' },
             { text: 'Skills 编写', link: '/note/AI-Tools/skill-authoring' },
             { text: 'Skill × MCP 组合实战', link: '/note/AI-Tools/skill-mcp-integration' },
             { text: 'Skill 评测闭环', link: '/note/AI-Tools/skill-evaluation-loop' },

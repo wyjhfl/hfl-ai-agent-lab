@@ -37,3 +37,8 @@ description: Optimize the HFL AI Agent Lab VitePress interface and content navig
 - Do not commit generated output under `docs/.vitepress/dist/` or `docs/blogs/public/blog-index/`.
 - Stage source files only.
 - Build before commit and push after a meaningful UI batch.
+
+
+## 2026 UI Skill Research
+
+When optimizing UI, also consult `references/ui-skill-research-2026.md` for the current decision: keep the VitePress default theme, extend with reusable card/path/project components, and always verify navigation, responsive layout, build output, and generated-folder ignores.
