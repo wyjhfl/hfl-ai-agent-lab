@@ -3,105 +3,139 @@ layout: page
 sidebar: false
 ---
 
-<div class="project-hero">
+<div class="project-hero project-hero-organized">
   <p class="project-eyebrow">Project Portfolio</p>
   <h1>项目实战</h1>
-  <p>项目页按“业务问题 → 架构能力 → 可展示证据 → 面试表达”组织，不只列技术栈，而是让读者快速看到 RAG、Agent Runtime、工具治理、评测、上线和安全治理能力。</p>
+  <p>这里不再把所有链接平铺堆在一起，而是按“项目主线 → 能力标签 → 证据包 → 面试表达”组织。内容不删除，入口重新分组，让招聘方或读者可以先看项目，再按架构、UI、评测、Demo 和面试材料深入。</p>
 </div>
 
-<div class="project-card-grid">
-  <a class="project-card project-card-featured" href="/projects/project-e-ai-coding-agent-workbench">
+<div class="project-read-flow">
+  <div><strong>01</strong><span>先看项目主入口，理解业务问题和系统边界。</span></div>
+  <div><strong>02</strong><span>再看架构 / UI / Eval / Security，判断工程深度。</span></div>
+  <div><strong>03</strong><span>最后看一分钟介绍和深挖问答，转成面试表达。</span></div>
+</div>
+
+<div class="portfolio-section-heading">
+  <p class="project-eyebrow">Project Map</p>
+  <h2>A-F 六个项目按能力域分组</h2>
+  <p>每张卡片都保留完整证据链：主入口、架构、UI/控制台、评测、安全、Demo 和面试讲法。</p>
+</div>
+
+<div class="project-map-grid">
+  <section class="project-map-card featured-project">
+    <span>Project F / Document Intelligence</span>
+    <h3>多模态文档智能与知识运营 Agent</h3>
+    <p>PDF、扫描件、表格和图片经过 OCR / VLM / Layout Parsing、结构化抽取、引用定位、PII 脱敏、人工复核和入库门禁后进入 RAG 知识库。</p>
+    <div class="project-pill-row"><b>多模态解析</b><b>RAG Ingestion</b><b>PII Governance</b></div>
+    <div class="project-link-list">
+      <a href="/projects/project-f-multimodal-document-agent">主入口</a>
+      <a href="/projects/project-f-architecture">架构</a>
+      <a href="/projects/project-f-document-review-console-ui">Review Console</a>
+      <a href="/projects/project-f-ingestion-eval-plan">Ingestion Eval</a>
+      <a href="/projects/project-f-security-governance">安全治理</a>
+      <a href="/note/Interview/project-f-one-minute">一分钟介绍</a>
+    </div>
+  </section>
+
+  <section class="project-map-card">
     <span>Project E / Coding Agent</span>
     <h3>AI Coding Agent Workbench</h3>
     <p>把任务理解、Repo Context Pack、代码执行、测试门禁、Review Bench、PR 交付和 Skill 沉淀做成团队级代码代理平台。</p>
-  </a>
-  <a class="project-card project-card-featured" href="/projects/project-d-agent-evaluation-redteam-lab">
+    <div class="project-pill-row"><b>Repo Automation</b><b>Review Bench</b><b>Verification Gate</b></div>
+    <div class="project-link-list">
+      <a href="/projects/project-e-ai-coding-agent-workbench">主入口</a>
+      <a href="/projects/project-e-architecture">架构</a>
+      <a href="/projects/project-e-repo-automation-console-ui">Console UI</a>
+      <a href="/projects/project-e-code-review-bench">Review Bench</a>
+      <a href="/projects/project-e-demo-script">Demo</a>
+      <a href="/note/Interview/project-e-one-minute">面试表达</a>
+    </div>
+  </section>
+
+  <section class="project-map-card">
     <span>Project D / Evaluation Lab</span>
     <h3>Agent Evaluation & Red Team Lab</h3>
-    <p>把 Eval Dataset、Hybrid Grader、红队样本、Trace Replay、失败聚类和 Release Gate 做成 Agent 生产化项目。</p>
-  </a>
-  <a class="project-card project-card-featured" href="/projects/project-c-mcp-gateway-skill-hub">
+    <p>把 Eval Dataset、Hybrid Grader、红队样本、Trace Replay、失败聚类和 Release Gate 做成 Agent 生产化评测平台。</p>
+    <div class="project-pill-row"><b>Eval Dataset</b><b>Red Team</b><b>Release Gate</b></div>
+    <div class="project-link-list">
+      <a href="/projects/project-d-agent-evaluation-redteam-lab">主入口</a>
+      <a href="/projects/project-d-eval-architecture">架构</a>
+      <a href="/projects/project-d-redteam-playbook">红队样本</a>
+      <a href="/projects/project-d-eval-dashboard-ui">Dashboard</a>
+      <a href="/projects/project-d-demo-script">Demo</a>
+      <a href="/note/Interview/project-d-one-minute">面试表达</a>
+    </div>
+  </section>
+
+  <section class="project-map-card">
     <span>Project C / MCP Gateway</span>
     <h3>企业 MCP Gateway 与 Skill Hub</h3>
     <p>把 MCP Server、Tool Registry、Skill Hub、安全扫描、审批、审计和 Eval Gate 组合成企业 Agent 扩展平台。</p>
-  </a>
-  <a class="project-card project-card-featured" href="/projects/project-b-agent-copilot">
+    <div class="project-pill-row"><b>MCP Gateway</b><b>Skill Hub</b><b>Approval</b></div>
+    <div class="project-link-list">
+      <a href="/projects/project-c-mcp-gateway-skill-hub">主入口</a>
+      <a href="/projects/project-c-architecture">架构</a>
+      <a href="/projects/project-c-gateway-console-ui">Console UI</a>
+      <a href="/projects/project-c-security-eval-plan">安全评测</a>
+      <a href="/projects/project-c-demo-script">Demo</a>
+      <a href="/note/Interview/project-c-one-minute">面试表达</a>
+    </div>
+  </section>
+
+  <section class="project-map-card">
     <span>Project B / Multi-Agent Copilot</span>
     <h3>运营中台多 Agent Copilot</h3>
-    <p>主力作品集项目：围绕 Router、Planner、Executor、Reviewer、Tool Registry、Human Approval、Trace / Eval 展示生产级 Agent 工程能力。</p>
-  </a>
-  <a class="project-card" href="/projects/project-b-architecture">
-    <span>Architecture</span>
-    <h3>Project B 架构设计</h3>
-    <p>用分层架构、状态机、工具注册表、权限审批和可观测性解释多 Agent 系统如何落地。</p>
-  </a>
-  <a class="project-card" href="/projects/project-b-demo-script">
-    <span>Demo</span>
-    <h3>Project B Demo 验收脚本</h3>
-    <p>按 5 分钟演示节奏展示主路径、工具调用、审批、失败恢复、Trace 和评测门禁。</p>
-  </a>
-  <a class="project-card" href="/projects/project-b-trace-eval-plan">
-    <span>Trace / Eval</span>
-    <h3>Project B Trace / Eval 方案</h3>
-    <p>记录 router、planner、retriever、tool、approval、reviewer spans，并用评测集防止回归。</p>
-  </a>
-  <a class="project-card" href="/projects/project-a-rag-workorder">
+    <p>主力多 Agent 项目：Router、Planner、Executor、Reviewer、Tool Registry、Human Approval、Trace / Eval 和产品 UI 蓝图。</p>
+    <div class="project-pill-row"><b>Multi-Agent</b><b>Trace / Eval</b><b>Human Approval</b></div>
+    <div class="project-link-list">
+      <a href="/projects/project-b-agent-copilot">主入口</a>
+      <a href="/projects/project-b-architecture">架构</a>
+      <a href="/projects/project-b-ui-blueprint">UI 蓝图</a>
+      <a href="/projects/project-b-trace-eval-plan">Trace / Eval</a>
+      <a href="/projects/project-b-demo-script">Demo</a>
+      <a href="/note/Interview/project-b-one-minute">面试表达</a>
+    </div>
+  </section>
+
+  <section class="project-map-card compact-project">
     <span>Project A / RAG Workorder</span>
     <h3>设备售后诊断与工单 RAG 系统</h3>
-    <p>面向设备售后场景，构建设备故障知识检索、智能诊断、工单生成和后端工程化链路。</p>
-  </a>
-  <a class="project-card" href="/topics/ai-agent-job-search-evidence-map">
-    <span>Evidence Map</span>
-    <h3>求职能力证据地图</h3>
-    <p>把简历关键词绑定到项目、代码、文章、Demo、评测和面试故事。</p>
-  </a>
+    <p>面向设备售后场景，展示知识检索、故障诊断、工单生成和后端工程化能力。</p>
+    <div class="project-pill-row"><b>RAG</b><b>Citation</b><b>Workorder</b></div>
+    <div class="project-link-list">
+      <a href="/projects/project-a-rag-workorder">项目详情</a>
+      <a href="/topics/rag-project-interview">RAG 面试讲法</a>
+      <a href="/topics/rag-engineering-system">RAG 工程体系</a>
+    </div>
+  </section>
 </div>
 
 <div class="portfolio-section-heading">
   <p class="project-eyebrow">Evidence Matrix</p>
   <h2>项目证据矩阵</h2>
-  <p>每个项目都要能回答三个问题：解决什么业务问题、用了哪些 Agent / RAG 工程能力、有什么可验证证据。</p>
+  <p>如果时间有限，可以只看这一张矩阵：每个项目解决什么问题、证明什么能力、面试怎么讲。</p>
 </div>
 
-<div class="evidence-matrix">
-  <div class="matrix-row matrix-head"><span>项目</span><span>核心能力</span><span>可展示证据</span><span>面试表达</span></div>
-  <div class="matrix-row"><span><strong>Project E</strong><br />AI Coding Agent Workbench</span><span>Task Intake、Repo Context Pack、Verification Gate、Code Review Bench、PR Composer、Skill Library</span><span><a href="/projects/project-e-architecture">架构设计</a>、<a href="/projects/project-e-code-review-bench">Review Bench</a>、<a href="/projects/project-e-repo-automation-console-ui">Console UI</a>、<a href="/projects/project-e-demo-script">Demo 脚本</a></span><span><a href="/note/Interview/project-e-one-minute">一分钟介绍</a>、<a href="/note/Interview/project-e-deep-dive">深挖问答</a></span></div>
-  <div class="matrix-row"><span><strong>Project D</strong><br />Agent Evaluation & Red Team Lab</span><span>Eval Dataset、Hybrid Grader、Red Team、Trace Replay、Failure Clustering、Release Gate</span><span><a href="/projects/project-d-eval-architecture">架构设计</a>、<a href="/projects/project-d-redteam-playbook">红队样本</a>、<a href="/projects/project-d-eval-dashboard-ui">Dashboard</a>、<a href="/projects/project-d-demo-script">Demo 脚本</a></span><span><a href="/note/Interview/project-d-one-minute">一分钟介绍</a>、<a href="/note/Interview/project-d-deep-dive">深挖问答</a></span></div>
-  <div class="matrix-row"><span><strong>Project C</strong><br />企业 MCP Gateway / Skill Hub</span><span>MCP Gateway、Tool Registry、Skill Hub、安全扫描、Approval、Eval Gate</span><span><a href="/projects/project-c-architecture">架构设计</a>、<a href="/projects/project-c-gateway-console-ui">控制台 UI</a>、<a href="/projects/project-c-demo-script">Demo 脚本</a>、<a href="/projects/project-c-security-eval-plan">安全评测</a></span><span><a href="/note/Interview/project-c-one-minute">一分钟介绍</a>、<a href="/note/Interview/project-c-deep-dive">深挖问答</a></span></div>
-  <div class="matrix-row"><span><strong>Project B</strong><br />运营中台 Multi-Agent Copilot</span><span>多 Agent 编排、工具治理、人工审批、Trace / Eval、Release Gate</span><span><a href="/projects/project-b-architecture">架构设计</a>、<a href="/projects/project-b-demo-script">Demo 脚本</a>、<a href="/projects/project-b-trace-eval-plan">Trace / Eval</a>、<a href="/projects/project-b-roadmap">路线图</a></span><span><a href="/note/Interview/project-b-one-minute">一分钟介绍</a>、<a href="/note/Interview/project-b-deep-dive">深挖问答</a>、<a href="/note/Interview/project-b-star-story-bank">STAR 故事库</a></span></div>
-  <div class="matrix-row"><span><strong>Project A</strong><br />设备售后 RAG 工单</span><span>RAG 检索、引用、工单生成、后端工程化</span><span>项目详情、RAG 系统设计、Demo 验收脚本</span><span><a href="/topics/rag-project-interview">RAG 项目面试讲法</a></span></div>
-  <div class="matrix-row"><span><strong>Portfolio Site</strong><br />AI Agent Engineering Lab</span><span>内容架构、UI 信息层级、求职证据打包</span><span>UI 优化路线、专题地图、首页精选证据区</span><span><a href="/topics/ai-agent-offer-portfolio-review">Offer Review 清单</a></span></div>
-</div>
-
-<div class="portfolio-section-heading">
-  <p class="project-eyebrow">Project B Evidence Pack</p>
-  <h2>Project B 作品集证据包</h2>
-  <p>Project B 已从预留入口升级为可答辩项目：不仅有概念，还有架构、状态机、工具治理、审批、Trace、Eval、Demo 和面试故事。</p>
-</div>
-
-<div class="architecture-snapshot-grid">
-  <a class="architecture-card" href="/projects/project-b-agent-copilot"><span>01 / Overview</span><h3>项目主入口</h3><p>说明业务场景、Agent 分工、状态流、工具设计和可展示证据。</p></a>
-  <a class="architecture-card" href="/projects/project-b-architecture"><span>02 / Architecture</span><h3>架构设计</h3><p>分层展示 UI、Run Controller、Agent Runtime、Context、Tool、Governance 和 Observability。</p></a>
-  <a class="architecture-card" href="/projects/project-b-demo-script"><span>03 / Demo</span><h3>Demo 验收</h3><p>用 5 分钟脚本讲清主路径、失败路径和工程价值。</p></a>
-  <a class="architecture-card" href="/projects/project-b-trace-eval-plan"><span>04 / Trace</span><h3>Trace / Eval</h3><p>用 spans、tool calls、approval 和 eval cases 证明系统可维护。</p></a>
-  <a class="architecture-card" href="/projects/project-b-ui-blueprint"><span>05 / UI</span><h3>产品 UI 蓝图</h3><p>展示 Copilot 面板、Trace Drawer、审批弹窗和 Eval Dashboard 的产品化设计。</p></a>
-  <a class="architecture-card" href="/note/Interview/project-b-deep-dive"><span>06 / Interview</span><h3>项目深挖</h3><p>准备多 Agent、状态机、工具治理、审批和评测的追问答案。</p></a>
-  <a class="architecture-card" href="/note/Interview/project-b-star-story-bank"><span>07 / STAR</span><h3>故事库</h3><p>把架构取舍包装成可讲述的项目经历和简历 bullet。</p></a>
+<div class="evidence-matrix evidence-matrix-compact">
+  <div class="matrix-row matrix-head"><span>项目</span><span>核心能力</span><span>关键证据</span><span>面试表达</span></div>
+  <div class="matrix-row"><span><strong>F 文档智能</strong></span><span>OCR/VLM 路由、结构化抽取、引用定位、PII、入库门禁</span><span><a href="/projects/project-f-document-review-console-ui">Review Console</a>、<a href="/projects/project-f-ingestion-eval-plan">Eval</a></span><span><a href="/note/Interview/project-f-deep-dive">深挖问答</a></span></div>
+  <div class="matrix-row"><span><strong>E 代码代理</strong></span><span>Repo Context、测试门禁、代码审查、PR 协作</span><span><a href="/projects/project-e-code-review-bench">Review Bench</a>、<a href="/projects/project-e-repo-automation-console-ui">Console</a></span><span><a href="/note/Interview/project-e-deep-dive">深挖问答</a></span></div>
+  <div class="matrix-row"><span><strong>D 评测红队</strong></span><span>Eval Dataset、Hybrid Grader、Red Team、Release Gate</span><span><a href="/projects/project-d-redteam-playbook">红队样本</a>、<a href="/projects/project-d-eval-dashboard-ui">Dashboard</a></span><span><a href="/note/Interview/project-d-deep-dive">深挖问答</a></span></div>
+  <div class="matrix-row"><span><strong>C MCP 平台</strong></span><span>MCP Gateway、Tool Registry、Skill Hub、Approval</span><span><a href="/projects/project-c-gateway-console-ui">Console UI</a>、<a href="/projects/project-c-security-eval-plan">安全评测</a></span><span><a href="/note/Interview/project-c-deep-dive">深挖问答</a></span></div>
+  <div class="matrix-row"><span><strong>B 多 Agent</strong></span><span>编排、工具治理、审批、Trace / Eval</span><span><a href="/projects/project-b-ui-blueprint">UI 蓝图</a>、<a href="/projects/project-b-trace-eval-plan">Trace / Eval</a></span><span><a href="/note/Interview/project-b-star-story-bank">STAR 故事库</a></span></div>
+  <div class="matrix-row"><span><strong>A RAG 工单</strong></span><span>检索、引用、诊断、工单生成</span><span><a href="/projects/project-a-rag-workorder">项目详情</a></span><span><a href="/topics/rag-project-interview">RAG 面试讲法</a></span></div>
 </div>
 
 <div class="project-status-card">
-  <div><p class="project-eyebrow">Next Focus</p><h2>下一阶段：补 Project B UI 状态面板与 Trace Drawer</h2><p>下一批可以继续把 Project B 做得更像真实产品：补 Copilot UI 状态卡、审批弹窗、Trace Drawer、Eval Dashboard 和模拟截图，让项目页从文档升级为产品级案例。</p></div>
-  <ul><li><a href="/topics/agent-ui-pattern-library">Agent UI Pattern Library</a></li><li><a href="/note/Engineering/agent-observability-dashboard-design">可观测性 Dashboard</a></li><li><a href="/note/Engineering/agent-guardrails-pipeline">Guardrails Pipeline</a></li><li><a href="/topics/ai-agent-project-defense-script">项目答辩脚本</a></li></ul>
+  <div>
+    <p class="project-eyebrow">Next Focus</p>
+    <h2>下一阶段：用真实样例把 Project F 做成可演示 Demo</h2>
+    <p>建议继续补合同、票据、手册、研报四类样例的 gold dataset、页面标注、字段抽取对比和 RAG QA 评测报告。</p>
+  </div>
+  <ul>
+    <li><a href="/projects/project-f-document-review-console-ui">Project F Review Console</a></li>
+    <li><a href="/projects/project-f-ingestion-eval-plan">Ingestion Eval Plan</a></li>
+    <li><a href="/note/Engineering/rag-ingestion-quality-gate">RAG Ingestion Quality Gate</a></li>
+    <li><a href="/note/Engineering/pii-redaction-for-llm">PII 脱敏策略</a></li>
+  </ul>
 </div>
-
-## 项目 A：设备售后诊断与工单 RAG 系统
-
-面向设备售后场景，构建智能诊断与工单管理系统。它用于展示 RAG 知识库、故障诊断、工单生成和后端工程化能力。
-
-[查看项目 A 详情](/projects/project-a-rag-workorder)
-
-## 项目 B：运营中台多 Agent Copilot
-
-项目 B 是当前主力项目，用来展示多 Agent 产品从 Demo 到生产化的关键能力：Agent 分工、状态机、工具调用、Human-in-the-loop、Trace / Evaluation、Guardrails 与上线门禁。
-
-[查看项目 B 入口](/projects/project-b-agent-copilot)

@@ -1,218 +1,168 @@
-<script setup lang="ts">
-const quickStarts = [
+﻿<script setup lang="ts">
+const entryCards = [
   {
-    eyebrow: 'For Portfolio',
-    title: '给招聘方看的作品集入口',
-    desc: '把项目、架构、评测、Demo 脚本和面试讲法放在第一屏，快速证明不是只会写关键词。',
+    eyebrow: '看作品',
+    title: '项目实战作品集',
+    desc: '直接看 A-F 六个项目：RAG、多 Agent、MCP、评测、Coding Agent、多模态文档智能。',
     href: '/projects',
-    cta: '查看项目作品',
+    cta: '进入项目总览',
   },
   {
-    eyebrow: 'For Learners',
-    title: '给学习者的 Agent 路线',
-    desc: '从 Prompt、RAG、Tool Calling 到 Multi-Agent、Evaluation、Production，按工程能力逐层推进。',
+    eyebrow: '补体系',
+    title: 'AI Agent 学习路线',
+    desc: '按 Prompt、RAG、Tool Calling、Multi-Agent、Evaluation、Production 分阶段学习。',
     href: '/learning-paths',
     cta: '进入学习看板',
   },
   {
-    eyebrow: 'For Builders',
-    title: '给开发者的工程化手册',
-    desc: '聚焦 Trace、MCP、Context Pack、工具权限、上线门禁和失败回放，沉淀能落地的系统设计。',
+    eyebrow: '查工程',
+    title: '工程化手册',
+    desc: '集中查 Trace、MCP、权限、评测、成本、发布、安全和运维等落地问题。',
     href: '/note/Engineering/',
     cta: '阅读工程笔记',
   },
+  {
+    eyebrow: '准备面试',
+    title: '面试与求职证据',
+    desc: '把项目讲法、简历 bullet、STAR 故事、技术追问和作品集证据串起来。',
+    href: '/note/Interview/',
+    cta: '准备项目表达',
+  },
+]
+
+const contentAtlas = [
+  {
+    title: '项目作品线',
+    desc: '用于给招聘方快速证明：能把 AI Agent 做成完整产品与工程系统。',
+    links: [
+      ['Project F 多模态文档智能', '/projects/project-f-multimodal-document-agent'],
+      ['Project E AI Coding Agent', '/projects/project-e-ai-coding-agent-workbench'],
+      ['Project D Agent Evaluation Lab', '/projects/project-d-agent-evaluation-redteam-lab'],
+      ['Project C MCP Gateway', '/projects/project-c-mcp-gateway-skill-hub'],
+      ['Project B Multi-Agent Copilot', '/projects/project-b-agent-copilot'],
+    ],
+  },
+  {
+    title: '工程能力线',
+    desc: '用于系统补齐后端、数据、RAG、工具治理、可观测性和上线门禁。',
+    links: [
+      ['RAG 工程体系', '/topics/rag-engineering-system'],
+      ['Agent Runtime', '/topics/agent-runtime-explained'],
+      ['Tool Registry', '/note/Engineering/tool-registry-engineering'],
+      ['Agent Observability', '/note/Engineering/agent-observability-dashboard-design'],
+      ['Agent Release Gate', '/note/Engineering/agent-release-gate'],
+    ],
+  },
+  {
+    title: '安全治理线',
+    desc: '用于回答企业落地最关心的权限、隐私、审计、红队和风险控制。',
+    links: [
+      ['AI Agent 安全面试指南', '/topics/ai-agent-security-interview-guide'],
+      ['OWASP LLM Top 10 Mapping', '/note/Engineering/owasp-llm-top10-agent-mapping'],
+      ['Agent Guardrails Pipeline', '/note/Engineering/agent-guardrails-pipeline'],
+      ['PII 脱敏策略', '/note/Engineering/pii-redaction-for-llm'],
+      ['MCP Sandbox Profile', '/note/Engineering/mcp-sandbox-profile'],
+    ],
+  },
+  {
+    title: '求职表达线',
+    desc: '用于把技术内容变成简历、作品集、Demo、项目答辩和面试故事。',
+    links: [
+      ['能力证据地图', '/topics/ai-agent-job-search-evidence-map'],
+      ['作品集路线', '/topics/ai-agent-portfolio-roadmap'],
+      ['Demo 验收脚本', '/topics/ai-agent-demo-acceptance-script'],
+      ['Interview Story Bank', '/topics/ai-agent-interview-story-bank'],
+      ['Offer Portfolio Review', '/topics/ai-agent-offer-portfolio-review'],
+    ],
+  },
+]
+
+const projectLadder = [
+  ['F', 'Document Intelligence', '多模态解析 / RAG 入库 / PII 治理', '/projects/project-f-multimodal-document-agent'],
+  ['E', 'AI Coding Agent', '代码代理 / 测试门禁 / PR 协作', '/projects/project-e-ai-coding-agent-workbench'],
+  ['D', 'Evaluation Lab', '评测集 / 红队 / Release Gate', '/projects/project-d-agent-evaluation-redteam-lab'],
+  ['C', 'MCP Gateway', '工具注册 / Skill Hub / 安全审批', '/projects/project-c-mcp-gateway-skill-hub'],
+  ['B', 'Multi-Agent Copilot', '多 Agent 编排 / Trace / Human Approval', '/projects/project-b-agent-copilot'],
+  ['A', 'RAG Workorder', '知识库 / 工单诊断 / 引用回答', '/projects/project-a-rag-workorder'],
 ]
 
 const capabilityCards = [
   {
-    tag: 'RAG SYSTEM',
-    title: '企业级知识库链路',
-    desc: 'Metadata、ACL、Citation、Freshness、Query Router 与检索故障排查。',
-    href: '/topics/rag-engineering-system',
+    tag: 'RAG / KNOWLEDGE',
+    title: '知识进入系统前先治理',
+    desc: 'Metadata、ACL、Citation、Freshness、Ingestion Gate、PII 与检索评测。',
+    href: '/note/Engineering/rag-ingestion-quality-gate',
   },
   {
     tag: 'AGENT RUNTIME',
-    title: '从状态机到运行轨迹',
-    desc: 'Agent Runtime、Workflow、Decision Record、Run Replay 与 SLO。',
+    title: '把 Agent 执行过程显式化',
+    desc: '状态机、Run Replay、Decision Record、Trace Span、错误分类和恢复策略。',
     href: '/topics/agent-runtime-explained',
   },
   {
     tag: 'TOOLS / MCP',
-    title: '工具治理与 MCP 边界',
-    desc: 'Tool Registry、Risk Level、Idempotency、Sandbox、Token Exchange。',
-    href: '/note/Engineering/tool-registry-engineering',
+    title: '工具不是函数调用，而是治理边界',
+    desc: 'Tool Registry、MCP Gateway、schema pinning、sandbox、approval 和 audit。',
+    href: '/note/Engineering/mcp-gateway-architecture',
   },
   {
     tag: 'EVALUATION',
-    title: '评测驱动迭代闭环',
-    desc: 'Scorecard、Drift、Failure Clustering、Regression Set 和 Release Gate。',
-    href: '/note/Engineering/eval-failure-clustering',
+    title: '用评测驱动 Agent 迭代',
+    desc: 'Scorecard、Regression Set、Failure Clustering、Drift、Canary 和 Release Gate。',
+    href: '/note/Engineering/llm-evaluation-scorecard',
   },
-]
-
-const timeline = [
-  ['01', '学习路线', '先补 Agent / RAG / Tool Calling 的基础概念和常见架构。'],
-  ['02', '工程笔记', '再看后端、数据、权限、Trace、Eval、MCP 和部署细节。'],
-  ['03', '专题长文', '把零散能力串成可讲述的系统设计和项目方案。'],
-  ['04', '项目表达', '最后沉淀简历 bullet、Demo 脚本、STAR 故事和面试追问。'],
-]
-
-const featuredEvidence = [
-  {
-    tag: 'PROJECT E',
-    title: 'Project E AI Coding Agent Workbench',
-    desc: '把任务理解、上下文打包、测试门禁、代码审查和 PR 交付做成代码代理工程化项目。',
-    href: '/projects/project-e-ai-coding-agent-workbench',
-  },
-  {
-    tag: 'PROJECT D',
-    title: 'Project D Agent Evaluation Lab',
-    desc: '把评测、红队、Trace Replay、失败聚类和 Release Gate 做成 Agent 生产化项目。',
-    href: '/projects/project-d-agent-evaluation-redteam-lab',
-  },
-  {
-    tag: 'PROJECT C',
-    title: 'Project C MCP Gateway / Skill Hub',
-    desc: '把 MCP Server、Tool Registry、Skill Hub、安全扫描和评测门禁组合成企业 Agent 平台项目。',
-    href: '/projects/project-c-mcp-gateway-skill-hub',
-  },
-  {
-    tag: 'LEARNING MAP',
-    title: 'AI Agent 学习路径看板',
-    desc: '把学习、工程、项目、面试四段路径组织成可扫读的能力导航。',
-    href: '/learning-paths',
-  },
-  {
-    tag: 'PROJECT B',
-    title: 'Project B 多 Agent Copilot',
-    desc: '把运营中台 Copilot 做成包含架构、Demo、Trace/Eval 和面试故事的主力作品集项目。',
-    href: '/projects/project-b-agent-copilot',
-  },
-  {
-    tag: 'INTERVIEW READY',
-    title: 'AI Agent 安全面试指南',
-    desc: '把 OWASP LLM Top 10、权限边界、工具调用风控和上线门禁整理成可讲的面试答案。',
-    href: '/topics/ai-agent-security-interview-guide',
-  },
-  {
-    tag: 'UI / UX',
-    title: '个人站 UI 优化路线',
-    desc: '基于 VitePress 默认主题扩展，规划首页、专题页、项目页和证据卡片的信息架构。',
-    href: '/topics/ai-agent-site-ui-optimization-playbook',
-  },
-  {
-    tag: 'PRODUCT UI',
-    title: 'Agent UI Pattern Library',
-    desc: '沉淀 Chat、Trace、审批、引用、工具调用和人工接管的可复用界面模式。',
-    href: '/topics/agent-ui-pattern-library',
-  },
-  {
-    tag: 'PORTFOLIO',
-    title: 'AI Agent 求职证据地图',
-    desc: '把简历关键词映射到项目代码、架构图、评测记录、Demo 脚本和复盘材料。',
-    href: '/topics/ai-agent-job-search-evidence-map',
-  },
-  {
-    tag: 'OBSERVABILITY',
-    title: 'Agent 可观测性 Dashboard',
-    desc: '从 Trace、Span、Token、工具耗时、失败聚类到 Release Gate 的展示设计。',
-    href: '/note/Engineering/agent-observability-dashboard-design',
-  },
-  {
-    tag: 'GENAI OPS',
-    title: 'OpenTelemetry GenAI 可观测性',
-    desc: '把模型调用、RAG、工具执行和 Agent 决策纳入统一追踪与指标体系。',
-    href: '/note/Engineering/opentelemetry-genai-observability',
-  },
-  {
-    tag: 'GUARDRAILS',
-    title: 'Agent Guardrails Pipeline',
-    desc: '用输入校验、权限审批、输出检查、审计回放构成生产级防护链路。',
-    href: '/note/Engineering/agent-guardrails-pipeline',
-  },
-  {
-    tag: 'MCP / SKILLS',
-    title: 'MCP 与 Skills 组合开发',
-    desc: '把外部工具协议、Skill 工作流、测试门禁和面试表达串成可展示能力。',
-    href: '/topics/mcp-skills-agent-extension-strategy',
-  },
-]
-
-const evidenceLinks = [
-  ['能力证据地图', '/topics/ai-agent-job-search-evidence-map'],
-  ['作品集路线', '/topics/ai-agent-portfolio-roadmap'],
-  ['Demo 验收脚本', '/topics/ai-agent-demo-acceptance-script'],
-  ['Offer Review', '/topics/ai-agent-offer-portfolio-review'],
-  ['UI 优化路线', '/topics/ai-agent-site-ui-optimization-playbook'],
 ]
 </script>
 
 <template>
   <div class="home-lab-shell">
-    <section class="lab-hero-panel">
+    <section class="lab-hero-panel lab-hero-organized">
       <div class="lab-hero-copy">
         <p class="lab-eyebrow">AI Agent Engineering Lab</p>
         <h2 class="lab-hero-title">
-          <span>把 AI Agent 学成</span>
-          <span>可展示的工程作品集</span>
+          <span>不再堆文章，</span>
+          <span>按目标进入内容</span>
         </h2>
         <p class="lab-hero-desc">
-          面向 AI Agent / RAG / Multi-Agent / MCP / Evaluation 的个人知识库与求职作品集：既有学习路线，也有架构拆解、工程清单、评测闭环和面试表达。
+          这个站点现在按“学习 → 工程 → 项目 → 面试”组织。内容不会删除，但入口会分层：先给你 4 条主路径，再进入项目、工程、安全和求职证据地图。
         </p>
         <div class="lab-action-row">
-          <a class="lab-primary-link" href="/projects">查看项目作品</a>
-          <a class="lab-secondary-link" href="/topics/">浏览专题地图</a>
-          <a class="lab-ghost-link" href="/topics/ai-agent-job-search-evidence-map">能力证据地图</a>
+          <a class="lab-primary-link" href="/content-map">查看内容地图</a>
+          <a class="lab-secondary-link" href="/projects">项目作品集</a>
+          <a class="lab-ghost-link" href="/note/Interview/">面试表达</a>
         </div>
       </div>
 
-      <div class="agent-console" aria-label="Agent 工程能力面板">
-        <div class="console-topbar">
-          <span></span>
-          <span></span>
-          <span></span>
-          <strong>agent-runtime.trace</strong>
+      <div class="content-router-panel" aria-label="内容路由器">
+        <div class="router-topbar">
+          <span></span><span></span><span></span>
+          <strong>content-router.map</strong>
         </div>
-        <div class="console-pipeline">
-          <div class="pipeline-row active">
-            <small>01 / Understand</small>
-            <strong>Task Brief + Constraints</strong>
-            <span>任务目标、权限边界、输出契约</span>
-          </div>
-          <div class="pipeline-row">
-            <small>02 / Retrieve</small>
-            <strong>RAG Evidence Pack</strong>
-            <span>Metadata、ACL、Citation、Freshness</span>
-          </div>
-          <div class="pipeline-row">
-            <small>03 / Act</small>
-            <strong>Tool + MCP Governance</strong>
-            <span>风险分级、审批、幂等、沙箱</span>
-          </div>
-          <div class="pipeline-row success">
-            <small>04 / Verify</small>
-            <strong>Eval + Release Gate</strong>
-            <span>评分卡、失败聚类、回归样本</span>
-          </div>
+        <div class="router-stack">
+          <a v-for="item in entryCards" :key="item.href" class="router-row" :href="item.href">
+            <small>{{ item.eyebrow }}</small>
+            <strong>{{ item.title }}</strong>
+            <span>{{ item.cta }} →</span>
+          </a>
         </div>
       </div>
     </section>
 
     <section class="lab-metrics" aria-label="站点内容概览">
       <div>
-        <strong>274</strong>
+        <strong>283</strong>
         <span>Markdown 内容页</span>
       </div>
       <div>
-        <strong>116</strong>
-        <span>工程化笔记</span>
+        <strong>6</strong>
+        <span>项目作品主线</span>
       </div>
       <div>
-        <strong>70</strong>
-        <span>专题长文</span>
+        <strong>4</strong>
+        <span>内容阅读路径</span>
       </div>
       <div>
-        <strong>8</strong>
+        <strong>9</strong>
         <span>能力证据域</span>
       </div>
     </section>
@@ -220,11 +170,11 @@ const evidenceLinks = [
     <section class="lab-section lab-audience-section">
       <div class="lab-section-heading">
         <p class="lab-eyebrow">Start Here</p>
-        <h2>按你的目标选择入口</h2>
-        <p class="lab-section-desc">首页不再只展示栏目，而是把“学习、落地、求职证明”三类路径拆开，让读者一眼知道下一步看什么。</p>
+        <h2>先选你的当前目标</h2>
+        <p class="lab-section-desc">内容多了以后，不再让读者从导航里猜。先按目标分流，再进入具体专题或项目。</p>
       </div>
-      <div class="lab-audience-grid">
-        <a v-for="item in quickStarts" :key="item.href" class="lab-audience-card" :href="item.href">
+      <div class="home-entry-grid">
+        <a v-for="item in entryCards" :key="item.href" class="home-entry-card" :href="item.href">
           <span>{{ item.eyebrow }}</span>
           <h3>{{ item.title }}</h3>
           <p>{{ item.desc }}</p>
@@ -233,58 +183,51 @@ const evidenceLinks = [
       </div>
     </section>
 
-
-    <section class="lab-section lab-featured-section">
+    <section class="lab-section">
       <div class="lab-section-heading">
-        <p class="lab-eyebrow">Featured Evidence</p>
-        <h2>先给招聘方和读者看的 13 个强证据入口</h2>
-        <p class="lab-section-desc">首页优先呈现能证明工程能力的内容：安全、可观测性、Guardrails、UI 设计、项目路线和面试表达，减少读者在导航里寻找重点的成本。</p>
+        <p class="lab-eyebrow">Content Atlas</p>
+        <h2>把全站内容分成 4 条线</h2>
+        <p class="lab-section-desc">所有旧内容保留，但首页只暴露可决策的分类入口：作品、工程、安全、求职。每条线给 5 个高价值入口，避免信息噪音。</p>
       </div>
-      <div class="featured-evidence-grid">
-        <a v-for="item in featuredEvidence" :key="item.href" class="featured-evidence-card" :href="item.href">
-          <span>{{ item.tag }}</span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.desc }}</p>
-          <strong>查看证据 →</strong>
-        </a>
+      <div class="content-atlas-grid">
+        <section v-for="group in contentAtlas" :key="group.title" class="content-atlas-card">
+          <h3>{{ group.title }}</h3>
+          <p>{{ group.desc }}</p>
+          <div class="atlas-link-list">
+            <a v-for="link in group.links" :key="link[1]" :href="link[1]">{{ link[0] }}</a>
+          </div>
+        </section>
       </div>
     </section>
 
-    <section class="lab-section lab-roadmap-section">
+    <section class="lab-section">
       <div class="lab-section-heading">
-        <p class="lab-eyebrow">Reading Flow</p>
-        <h2>从学习路线到面试表达的 4 步路径</h2>
+        <p class="lab-eyebrow">Project Ladder</p>
+        <h2>项目按能力递进，而不是散列表</h2>
+        <p class="lab-section-desc">A-F 六个项目构成一个作品集梯度：从 RAG 到多 Agent，再到 MCP、评测、代码代理和多模态文档智能。</p>
       </div>
-      <div class="lab-timeline">
-        <div v-for="item in timeline" :key="item[0]" class="timeline-item">
-          <div class="timeline-index">{{ item[0] }}</div>
+      <div class="project-ladder-grid">
+        <a v-for="project in projectLadder" :key="project[0]" class="project-ladder-card" :href="project[3]">
+          <b>{{ project[0] }}</b>
           <div>
-            <h3>{{ item[1] }}</h3>
-            <p>{{ item[2] }}</p>
+            <h3>{{ project[1] }}</h3>
+            <p>{{ project[2] }}</p>
           </div>
-        </div>
+        </a>
       </div>
     </section>
 
     <section class="lab-section">
       <div class="lab-section-heading">
         <p class="lab-eyebrow">Capability Map</p>
-        <h2>围绕 Agent 工程能力组织内容</h2>
+        <h2>核心能力域只保留 4 个总入口</h2>
       </div>
-      <div class="lab-card-grid">
+      <div class="lab-card-grid capability-condensed-grid">
         <a v-for="card in capabilityCards" :key="card.href" class="lab-card" :href="card.href">
           <span>{{ card.tag }}</span>
           <h3>{{ card.title }}</h3>
           <p>{{ card.desc }}</p>
         </a>
-        <div class="lab-card lab-card-accent lab-card-wide">
-          <span>JOB SEARCH EVIDENCE</span>
-          <h3>把每个技术关键词变成可验证证据</h3>
-          <p>作品集页面要能对应项目、代码、架构图、评测结果、失败复盘和面试故事，而不是只列“熟悉 RAG / Agent / MCP”。</p>
-          <div class="evidence-link-list">
-            <a v-for="link in evidenceLinks" :key="link[1]" :href="link[1]">{{ link[0] }}</a>
-          </div>
-        </div>
       </div>
     </section>
   </div>

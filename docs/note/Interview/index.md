@@ -1,4 +1,4 @@
-# 项目面试表达
+﻿# 项目面试表达
 
 ## 这个模块解决什么问题
 
@@ -54,6 +54,49 @@
 
 > 我没有把多 Agent 设计成自由对话，而是按照业务流程拆分角色，并通过状态机约束每个 Agent 的输入输出和执行顺序，从而保证系统可控。
 
+## 推荐阅读路径
+
+| 当前目标 | 先看 | 再看 | 输出结果 |
+|---|---|---|---|
+| 快速介绍最新项目 | [Project F 一分钟介绍](/note/Interview/project-f-one-minute) | [Project F 深挖问答](/note/Interview/project-f-deep-dive) | 30 秒 / 1 分钟 / 深挖版话术 |
+| 准备主力作品集 | Project F / E / D / C / B 项目入口 | 架构、UI、Eval、Demo、Security 证据页 | 可答辩项目包 |
+| 改简历 | [简历描述模板](/note/Interview/resume-bullets) | [AI Agent Resume Project Matrix](/topics/ai-agent-resume-project-matrix) | 2-4 条高密度 bullet |
+| 准备技术追问 | [AI Agent 面试题库](/note/AI-Interview/) | [AI Agent 面试追问地图](/topics/ai-agent-interview-followup-map) | RAG / Agent / MCP / Eval / Security 问答 |
+
+## 核心入口分组
+
+### 最新项目：Project F 多模态文档智能
+
+- [Project F 一分钟介绍](/note/Interview/project-f-one-minute)
+- [Project F 深挖问答](/note/Interview/project-f-deep-dive)
+- [Project F 项目主入口](/projects/project-f-multimodal-document-agent)
+- [Project F Review Console UI](/projects/project-f-document-review-console-ui)
+
+### 主力项目讲法
+
+- [Project E 一分钟介绍](/note/Interview/project-e-one-minute) / [Project E 深挖问答](/note/Interview/project-e-deep-dive)
+- [Project D 一分钟介绍](/note/Interview/project-d-one-minute) / [Project D 深挖问答](/note/Interview/project-d-deep-dive)
+- [Project C 一分钟介绍](/note/Interview/project-c-one-minute) / [Project C 深挖问答](/note/Interview/project-c-deep-dive)
+- [Project B 一分钟介绍](/note/Interview/project-b-one-minute) / [Project B 深挖版](/note/Interview/project-b-deep-dive) / [STAR 故事库](/note/Interview/project-b-star-story-bank)
+
+### 简历与证据映射
+
+- [简历描述模板](/note/Interview/resume-bullets)
+- [AI Agent Job Search Evidence Map](/topics/ai-agent-job-search-evidence-map)
+- [AI Agent Resume Project Matrix](/topics/ai-agent-resume-project-matrix)
+- [AI Agent Offer Portfolio Review](/topics/ai-agent-offer-portfolio-review)
+
+## Project F 作品集表达入口
+
+- [Project F 主入口](/projects/project-f-multimodal-document-agent)
+- [Project F 架构设计](/projects/project-f-architecture)
+- [Project F Document Review Console UI](/projects/project-f-document-review-console-ui)
+- [Project F Ingestion Eval Plan](/projects/project-f-ingestion-eval-plan)
+- [Project F Demo 验收脚本](/projects/project-f-demo-script)
+- [Project F 安全与治理方案](/projects/project-f-security-governance)
+- [Project F 一分钟介绍](/note/Interview/project-f-one-minute)
+- [Project F 深挖问答](/note/Interview/project-f-deep-dive)
+
 ## Project E 作品集表达入口
 
 - [Project E 主入口](/projects/project-e-ai-coding-agent-workbench)
@@ -74,8 +117,6 @@
 - [Project D Demo 验收脚本](/projects/project-d-demo-script)
 - [Project D 一分钟介绍](/note/Interview/project-d-one-minute)
 - [Project D 深挖问答](/note/Interview/project-d-deep-dive)
-- [Project E 一分钟介绍](/note/Interview/project-e-one-minute)
-- [Project E 深挖问答](/note/Interview/project-e-deep-dive)
 
 ## Project C 作品集表达入口
 
@@ -86,8 +127,6 @@
 - [Project C 安全与评测方案](/projects/project-c-security-eval-plan)
 - [Project C 一分钟介绍](/note/Interview/project-c-one-minute)
 - [Project C 深挖问答](/note/Interview/project-c-deep-dive)
-- [Project D 一分钟介绍](/note/Interview/project-d-one-minute)
-- [Project D 深挖问答](/note/Interview/project-d-deep-dive)
 
 ## Project B 作品集表达入口
 
@@ -96,8 +135,18 @@
 - [Project B Demo 验收脚本](/projects/project-b-demo-script)
 - [Project B Trace / Eval 方案](/projects/project-b-trace-eval-plan)
 
-## 当前内容
+## 全量链接归档
 
+::: details 展开查看全部历史链接与素材索引（内容不删除，只折叠归档）
+
+### 当前内容
+
+- [Project F 一分钟介绍](/note/Interview/project-f-one-minute)
+- [Project F 深挖问答](/note/Interview/project-f-deep-dive)
+- [Project E 一分钟介绍](/note/Interview/project-e-one-minute)
+- [Project E 深挖问答](/note/Interview/project-e-deep-dive)
+- [Project D 一分钟介绍](/note/Interview/project-d-one-minute)
+- [Project D 深挖问答](/note/Interview/project-d-deep-dive)
 - [项目 B 一分钟介绍](/note/Interview/project-b-one-minute)
 - [项目 B 深挖版](/note/Interview/project-b-deep-dive)
 - [Project B STAR 故事库](/note/Interview/project-b-star-story-bank)
@@ -321,6 +370,8 @@
 - **LLM Output Safety Filter**：不要只做输入安全，要讲输出 schema、citation、PII、policy、grounding 和 compliance 检查。
 - **Prompt Regression Testing**：不要说“Prompt 改完我看过”，要讲 smoke、golden、failure replay、adversarial 和 schema/citation/tool assertion。
 - **SaaS Tenant / RBAC / Quota**：不要只说“支持团队使用”，要讲 tenant、workspace、role、permission、quota、usage、billing 和审计隔离。
+
+:::
 
 ## 后续补充方向
 
