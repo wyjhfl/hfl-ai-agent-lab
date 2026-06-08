@@ -21,6 +21,82 @@
   <div class="screen-wire-card"><span>Screen 06</span><h3>Eval Dashboard</h3><p>展示关键 case 通过率、回归状态、成本、延迟和失败分类。</p></div>
 </div>
 
+
+## 静态产品 Mockup
+
+下面是一个不依赖前端框架的静态 mockup，用来在作品集页面里展示 Project B 的产品形态。后续如果要做真实 Demo，可以把这些区块拆成 Vue / React 组件。
+
+<div class="agent-product-shell">
+  <div class="agent-product-topbar">
+    <div><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
+    <strong>Project B Copilot Console</strong>
+    <em>run_20260608_运营诊断</em>
+  </div>
+  <div class="agent-product-grid">
+    <section class="copilot-panel">
+      <p class="mock-eyebrow">Task</p>
+      <h3>分析昨天 A 活动转化率下降原因</h3>
+      <p>如果确认是库存问题，生成一条给运营负责人的工单草稿，并准备用户通知文案，但不要直接发送。</p>
+      <div class="mock-badge-row">
+        <span>Risk: Medium</span>
+        <span>Tenant: ops-cn</span>
+        <span>Mode: Draft only</span>
+      </div>
+      <div class="mock-input">Ask follow-up: 是否需要按渠道拆分？</div>
+    </section>
+    <section class="timeline-panel">
+      <p class="mock-eyebrow">Agent Timeline</p>
+      <div class="agent-step done"><b>Understand</b><span>Router 已识别为 operation_diagnosis</span></div>
+      <div class="agent-step done"><b>Retrieve</b><span>找到 4 条指标口径与 SOP 证据</span></div>
+      <div class="agent-step active"><b>Execute</b><span>3 个工具调用成功，0 个失败</span></div>
+      <div class="agent-step waiting"><b>Approval</b><span>工单草稿等待确认，不直接发送通知</span></div>
+      <div class="agent-step"><b>Review</b><span>检查证据和安全边界</span></div>
+    </section>
+    <section class="evidence-panel">
+      <p class="mock-eyebrow">Evidence</p>
+      <div class="evidence-item"><strong>Metric Definition</strong><span>转化率 = 下单用户数 / 活动访问用户数</span></div>
+      <div class="evidence-item"><strong>Data Snapshot</strong><span>转化率较 7 日均值下降 18.2%</span></div>
+      <div class="evidence-item"><strong>Root Cause</strong><span>库存不足 SKU 占比从 2.1% 上升到 14.7%</span></div>
+    </section>
+    <section class="approval-panel">
+      <p class="mock-eyebrow">Human Approval</p>
+      <h3>创建库存排查工单草稿</h3>
+      <p>影响范围：运营负责人可见；不会自动发送用户通知。</p>
+      <div class="approval-actions"><span>Approve</span><span>Edit</span><span>Reject</span></div>
+    </section>
+  </div>
+</div>
+
+<div class="trace-eval-mock-grid">
+  <div class="trace-card">
+    <p class="mock-eyebrow">Trace Spans</p>
+    <div><strong>router.classify</strong><span>12ms · risk=medium</span></div>
+    <div><strong>retriever.search</strong><span>184ms · citations=4</span></div>
+    <div><strong>tool.query_operation_snapshot</strong><span>420ms · ok</span></div>
+    <div><strong>reviewer.check</strong><span>88ms · pass_with_approval</span></div>
+  </div>
+  <div class="eval-card">
+    <p class="mock-eyebrow">Eval Gate</p>
+    <div class="eval-metric"><strong>8/8</strong><span>critical cases passed</span></div>
+    <div class="eval-metric"><strong>100%</strong><span>approval policy pass</span></div>
+    <div class="eval-metric"><strong>0</strong><span>no-evidence answers</span></div>
+  </div>
+</div>
+
+## 开源 UI 参考映射
+
+| 参考方向 | 可借鉴点 | Project B 对应实现 |
+|---|---|---|
+| assistant-ui | Thread、message、runtime abstraction | Copilot Panel、消息流和后续多轮上下文 |
+| Vercel AI Elements | Message、Reasoning、Response Actions、Conversation primitives | Agent Timeline、Reasoning/Trace 展开区、结果操作按钮 |
+| CopilotKit | Chat、Generative UI、shared state、Human-in-the-loop | Approval Modal、业务状态联动、工具调用结果 UI |
+| LangGraph Studio | 图状态、调试、运行可视化 | Trace spans、状态机和 replay 视图 |
+
+## 作品集讲法补充
+
+> 我没有把 Project B UI 设计成普通聊天框，而是拆成 Copilot Panel、Agent Timeline、Evidence Drawer、Tool Inspector、Approval Modal 和 Eval Gate。这样用户能知道 Agent 做了什么，工程上也能展示状态机、工具治理、证据引用、人审和评测闭环。
+
+
 ## 状态设计
 
 | 状态 | 用户看到什么 | 工程含义 |

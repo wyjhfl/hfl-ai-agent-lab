@@ -35,3 +35,17 @@ Keep extending VitePress default theme instead of replacing the whole theme. The
 - Eval Dashboard static cards.
 - Topic atlas grouping by learner intent.
 - Accessibility pass: focus states, contrast, mobile card spacing.
+
+## Agent product UI patterns
+
+For Project B and future Agent portfolio pages, prefer product UI sections over plain text:
+
+- Copilot task panel
+- Agent progress timeline
+- Evidence drawer
+- Tool call inspector
+- Human approval modal
+- Trace / replay spans
+- Eval / release gate summary
+
+Useful external references: assistant-ui, Vercel AI Elements, CopilotKit, LangGraph Studio.

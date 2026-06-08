@@ -74,6 +74,38 @@ hfl-vitepress-ui-review/
 4. 更新 `custom.css` 时优先复用现有 design tokens。
 5. 构建验证后再提交推送。
 
+
+## Agent UI 开源组件补充调研
+
+| 项目 | 定位 | 对本站启发 |
+|---|---|---|
+| assistant-ui | 面向生产 AI Chat 的 React 组件和 runtime 抽象 | 说明 Agent UI 不只是消息气泡，还需要 thread、tool result、runtime、attachments 和 actions |
+| Vercel AI Elements | 基于 shadcn/ui 的 AI UI primitives | 可借鉴 Reasoning、Conversation、Prompt Input、Response Actions 等组合方式 |
+| CopilotKit | 面向应用内 Copilot、Generative UI、shared state 和 HITL | Project B 的审批卡、业务状态联动和 agentic UI 可以参考其模式 |
+| LangGraph Studio | 面向 LangGraph 应用的调试和可视化 | Project B Trace Drawer / 状态机视图可以参考其 run debugging 思路 |
+
+## 更新后的 UI Skill 建议
+
+HFL UI Review Skill 后续不只检查博客页面美观，还要检查 Agent 产品页面是否包含：
+
+- chat / task input
+- agent progress timeline
+- tool call inspector
+- evidence drawer
+- human approval modal
+- trace / replay view
+- eval / release gate summary
+
+这类结构可以让作品集页面更接近真实 Agent 产品，而不是纯文字架构图。
+
+## 新增参考资料
+
+- [assistant-ui Documentation](https://www.assistant-ui.com/docs)
+- [Vercel AI Elements](https://ai-sdk.dev/elements/overview)
+- [CopilotKit Documentation](https://docs.copilotkit.ai/)
+- [LangGraph Studio](https://docs.langchain.com/langgraph-platform/langgraph-studio)
+
+
 ## 面试表达
 
 > 我把个人站 UI 优化当成一个可复用工作流，而不是每次凭感觉改样式。每次新增内容后，我会检查首页入口、专题地图、项目证据链、面试表达路径和构建结果，确保站点持续从知识库升级成作品集。
