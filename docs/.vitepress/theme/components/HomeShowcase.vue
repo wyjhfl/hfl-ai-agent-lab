@@ -57,6 +57,57 @@ const timeline = [
   ['04', '项目表达', '最后沉淀简历 bullet、Demo 脚本、STAR 故事和面试追问。'],
 ]
 
+const featuredEvidence = [
+  {
+    tag: 'INTERVIEW READY',
+    title: 'AI Agent 安全面试指南',
+    desc: '把 OWASP LLM Top 10、权限边界、工具调用风控和上线门禁整理成可讲的面试答案。',
+    href: '/topics/ai-agent-security-interview-guide',
+  },
+  {
+    tag: 'UI / UX',
+    title: '个人站 UI 优化路线',
+    desc: '基于 VitePress 默认主题扩展，规划首页、专题页、项目页和证据卡片的信息架构。',
+    href: '/topics/ai-agent-site-ui-optimization-playbook',
+  },
+  {
+    tag: 'PRODUCT UI',
+    title: 'Agent UI Pattern Library',
+    desc: '沉淀 Chat、Trace、审批、引用、工具调用和人工接管的可复用界面模式。',
+    href: '/topics/agent-ui-pattern-library',
+  },
+  {
+    tag: 'PORTFOLIO',
+    title: 'AI Agent 求职证据地图',
+    desc: '把简历关键词映射到项目代码、架构图、评测记录、Demo 脚本和复盘材料。',
+    href: '/topics/ai-agent-job-search-evidence-map',
+  },
+  {
+    tag: 'OBSERVABILITY',
+    title: 'Agent 可观测性 Dashboard',
+    desc: '从 Trace、Span、Token、工具耗时、失败聚类到 Release Gate 的展示设计。',
+    href: '/note/Engineering/agent-observability-dashboard-design',
+  },
+  {
+    tag: 'GENAI OPS',
+    title: 'OpenTelemetry GenAI 可观测性',
+    desc: '把模型调用、RAG、工具执行和 Agent 决策纳入统一追踪与指标体系。',
+    href: '/note/Engineering/opentelemetry-genai-observability',
+  },
+  {
+    tag: 'GUARDRAILS',
+    title: 'Agent Guardrails Pipeline',
+    desc: '用输入校验、权限审批、输出检查、审计回放构成生产级防护链路。',
+    href: '/note/Engineering/agent-guardrails-pipeline',
+  },
+  {
+    tag: 'PROJECTS',
+    title: '项目实战作品集',
+    desc: '集中展示 RAG、Multi-Agent Copilot、路线图、Demo 验收和项目答辩材料。',
+    href: '/projects',
+  },
+]
+
 const evidenceLinks = [
   ['能力证据地图', '/topics/ai-agent-job-search-evidence-map'],
   ['作品集路线', '/topics/ai-agent-portfolio-roadmap'],
@@ -148,6 +199,23 @@ const evidenceLinks = [
           <h3>{{ item.title }}</h3>
           <p>{{ item.desc }}</p>
           <strong>{{ item.cta }} →</strong>
+        </a>
+      </div>
+    </section>
+
+
+    <section class="lab-section lab-featured-section">
+      <div class="lab-section-heading">
+        <p class="lab-eyebrow">Featured Evidence</p>
+        <h2>先给招聘方和读者看的 8 个强证据入口</h2>
+        <p class="lab-section-desc">首页优先呈现能证明工程能力的内容：安全、可观测性、Guardrails、UI 设计、项目路线和面试表达，减少读者在导航里寻找重点的成本。</p>
+      </div>
+      <div class="featured-evidence-grid">
+        <a v-for="item in featuredEvidence" :key="item.href" class="featured-evidence-card" :href="item.href">
+          <span>{{ item.tag }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+          <strong>查看证据 →</strong>
         </a>
       </div>
     </section>
