@@ -9,6 +9,7 @@
 | Claude Code 拆解 | 仓库级修改、批量重构、文档整理、构建检查、Git 提交 |
 | Codex 拆解 | IDE 内代码生成、局部实现、函数级修改、教学式开发 |
 | AI Coding Workflow | ChatGPT 规划 + Claude Code / Codex 执行的完整工作流 |
+| AI Coding Agent Workbench | 把代码代理任务分派、上下文打包、测试门禁、代码审查和 PR 交付组织成作品集项目 |
 | UI Design Skill 调研 | 把 VitePress、开源主题和 UI Review Checklist 转化成本站可复用界面优化流程 |
 | Skills 编写 | 把重复提示词沉淀成可复用工作流，包含 `SKILL.md`、脚本、参考资料和验收标准 |
 | Skill 与 MCP 组合实战 | 用 Skill 固化 MCP Server 创建、测试和上线流程，让 Agent 既会调用工具，也会按流程做对 |
@@ -48,6 +49,7 @@
 | 目标 | 推荐内容 |
 |---|---|
 | 建立 AI 编程工具分工 | [AI Coding Workflow](/note/AI-Tools/ai-coding-workflow) |
+| 做代码代理作品集 | [Project E：AI Coding Agent Workbench](/projects/project-e-ai-coding-agent-workbench) → [Code Review Bench](/projects/project-e-code-review-bench) → [Repo Automation Console UI](/projects/project-e-repo-automation-console-ui) |
 | 优化博客 UI 工作流 | [UI Design Skill 调研](/note/AI-Tools/ui-design-skill-research) → [站点界面优化路线](/topics/ai-agent-site-ui-optimization-playbook) → [AI Agent 学习路径看板](/learning-paths) |
 | 学仓库级协作 | [Claude Code 拆解](/note/AI-Tools/claude-code) |
 | 学局部代码实现 | [Codex 拆解](/note/AI-Tools/codex) |

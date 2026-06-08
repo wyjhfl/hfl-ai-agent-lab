@@ -54,6 +54,17 @@
 
 > 我没有把多 Agent 设计成自由对话，而是按照业务流程拆分角色，并通过状态机约束每个 Agent 的输入输出和执行顺序，从而保证系统可控。
 
+## Project E 作品集表达入口
+
+- [Project E 主入口](/projects/project-e-ai-coding-agent-workbench)
+- [Project E 架构设计](/projects/project-e-architecture)
+- [Project E Code Review Bench](/projects/project-e-code-review-bench)
+- [Project E Repo Automation Console UI](/projects/project-e-repo-automation-console-ui)
+- [Project E Demo 验收脚本](/projects/project-e-demo-script)
+- [Project E 安全与评测方案](/projects/project-e-safety-eval-plan)
+- [Project E 一分钟介绍](/note/Interview/project-e-one-minute)
+- [Project E 深挖问答](/note/Interview/project-e-deep-dive)
+
 ## Project D 作品集表达入口
 
 - [Project D 主入口](/projects/project-d-agent-evaluation-redteam-lab)
@@ -63,6 +74,8 @@
 - [Project D Demo 验收脚本](/projects/project-d-demo-script)
 - [Project D 一分钟介绍](/note/Interview/project-d-one-minute)
 - [Project D 深挖问答](/note/Interview/project-d-deep-dive)
+- [Project E 一分钟介绍](/note/Interview/project-e-one-minute)
+- [Project E 深挖问答](/note/Interview/project-e-deep-dive)
 
 ## Project C 作品集表达入口
 

@@ -22,3 +22,10 @@
 - [Project D 红队样本库](/projects/project-d-redteam-playbook)
 - [Project D Eval Dashboard UI](/projects/project-d-eval-dashboard-ui)
 - [Project D Demo 验收脚本](/projects/project-d-demo-script)
+
+- [Project E：AI Coding Agent Workbench](/projects/project-e-ai-coding-agent-workbench)
+- [Project E 架构设计](/projects/project-e-architecture)
+- [Project E Code Review Bench](/projects/project-e-code-review-bench)
+- [Project E Repo Automation Console UI](/projects/project-e-repo-automation-console-ui)
+- [Project E Demo 验收脚本](/projects/project-e-demo-script)
+- [Project E 安全与评测方案](/projects/project-e-safety-eval-plan)
