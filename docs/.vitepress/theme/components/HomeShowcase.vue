@@ -59,6 +59,12 @@ const timeline = [
 
 const featuredEvidence = [
   {
+    tag: 'PROJECT C',
+    title: 'Project C MCP Gateway / Skill Hub',
+    desc: '把 MCP Server、Tool Registry、Skill Hub、安全扫描和评测门禁组合成企业 Agent 平台项目。',
+    href: '/projects/project-c-mcp-gateway-skill-hub',
+  },
+  {
     tag: 'LEARNING MAP',
     title: 'AI Agent 学习路径看板',
     desc: '把学习、工程、项目、面试四段路径组织成可扫读的能力导航。',
@@ -182,7 +188,7 @@ const evidenceLinks = [
 
     <section class="lab-metrics" aria-label="站点内容概览">
       <div>
-        <strong>252</strong>
+        <strong>259</strong>
         <span>Markdown 内容页</span>
       </div>
       <div>
@@ -219,7 +225,7 @@ const evidenceLinks = [
     <section class="lab-section lab-featured-section">
       <div class="lab-section-heading">
         <p class="lab-eyebrow">Featured Evidence</p>
-        <h2>先给招聘方和读者看的 10 个强证据入口</h2>
+        <h2>先给招聘方和读者看的 11 个强证据入口</h2>
         <p class="lab-section-desc">首页优先呈现能证明工程能力的内容：安全、可观测性、Guardrails、UI 设计、项目路线和面试表达，减少读者在导航里寻找重点的成本。</p>
       </div>
       <div class="featured-evidence-grid">

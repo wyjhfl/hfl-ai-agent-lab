@@ -54,6 +54,16 @@
 
 > 我没有把多 Agent 设计成自由对话，而是按照业务流程拆分角色，并通过状态机约束每个 Agent 的输入输出和执行顺序，从而保证系统可控。
 
+## Project C 作品集表达入口
+
+- [Project C 主入口](/projects/project-c-mcp-gateway-skill-hub)
+- [Project C 架构设计](/projects/project-c-architecture)
+- [Project C Gateway Console UI](/projects/project-c-gateway-console-ui)
+- [Project C Demo 验收脚本](/projects/project-c-demo-script)
+- [Project C 安全与评测方案](/projects/project-c-security-eval-plan)
+- [Project C 一分钟介绍](/note/Interview/project-c-one-minute)
+- [Project C 深挖问答](/note/Interview/project-c-deep-dive)
+
 ## Project B 作品集表达入口
 
 - [Project B 主入口](/projects/project-b-agent-copilot)
@@ -66,6 +76,8 @@
 - [项目 B 一分钟介绍](/note/Interview/project-b-one-minute)
 - [项目 B 深挖版](/note/Interview/project-b-deep-dive)
 - [Project B STAR 故事库](/note/Interview/project-b-star-story-bank)
+- [Project C 一分钟介绍](/note/Interview/project-c-one-minute)
+- [Project C 深挖问答](/note/Interview/project-c-deep-dive)
 - [简历描述模板](/note/Interview/resume-bullets)
 - [Agent Capability Matrix](/topics/agent-capability-matrix)
 - [AI Agent Resume Project Matrix](/topics/ai-agent-resume-project-matrix)

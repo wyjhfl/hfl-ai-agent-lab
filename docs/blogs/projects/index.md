@@ -10,3 +10,9 @@
 - [Project B 产品 UI 蓝图](/projects/project-b-ui-blueprint)
 - [Project B 路线图](/projects/project-b-roadmap)
 - [Project A：设备售后诊断与工单 RAG 系统](/projects/project-a-rag-workorder)
+
+- [Project C：企业 MCP Gateway 与 Skill Hub](/projects/project-c-mcp-gateway-skill-hub)
+- [Project C 架构设计](/projects/project-c-architecture)
+- [Project C Gateway Console UI](/projects/project-c-gateway-console-ui)
+- [Project C Demo 验收脚本](/projects/project-c-demo-script)
+- [Project C 安全与评测方案](/projects/project-c-security-eval-plan)

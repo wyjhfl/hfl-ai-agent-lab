@@ -10,6 +10,11 @@ sidebar: false
 </div>
 
 <div class="project-card-grid">
+  <a class="project-card project-card-featured" href="/projects/project-c-mcp-gateway-skill-hub">
+    <span>Project C / MCP Gateway</span>
+    <h3>企业 MCP Gateway 与 Skill Hub</h3>
+    <p>把 MCP Server、Tool Registry、Skill Hub、安全扫描、审批、审计和 Eval Gate 组合成企业 Agent 扩展平台。</p>
+  </a>
   <a class="project-card project-card-featured" href="/projects/project-b-agent-copilot">
     <span>Project B / Multi-Agent Copilot</span>
     <h3>运营中台多 Agent Copilot</h3>
@@ -50,6 +55,7 @@ sidebar: false
 
 <div class="evidence-matrix">
   <div class="matrix-row matrix-head"><span>项目</span><span>核心能力</span><span>可展示证据</span><span>面试表达</span></div>
+  <div class="matrix-row"><span><strong>Project C</strong><br />企业 MCP Gateway / Skill Hub</span><span>MCP Gateway、Tool Registry、Skill Hub、安全扫描、Approval、Eval Gate</span><span><a href="/projects/project-c-architecture">架构设计</a>、<a href="/projects/project-c-gateway-console-ui">控制台 UI</a>、<a href="/projects/project-c-demo-script">Demo 脚本</a>、<a href="/projects/project-c-security-eval-plan">安全评测</a></span><span><a href="/note/Interview/project-c-one-minute">一分钟介绍</a>、<a href="/note/Interview/project-c-deep-dive">深挖问答</a></span></div>
   <div class="matrix-row"><span><strong>Project B</strong><br />运营中台 Multi-Agent Copilot</span><span>多 Agent 编排、工具治理、人工审批、Trace / Eval、Release Gate</span><span><a href="/projects/project-b-architecture">架构设计</a>、<a href="/projects/project-b-demo-script">Demo 脚本</a>、<a href="/projects/project-b-trace-eval-plan">Trace / Eval</a>、<a href="/projects/project-b-roadmap">路线图</a></span><span><a href="/note/Interview/project-b-one-minute">一分钟介绍</a>、<a href="/note/Interview/project-b-deep-dive">深挖问答</a>、<a href="/note/Interview/project-b-star-story-bank">STAR 故事库</a></span></div>
   <div class="matrix-row"><span><strong>Project A</strong><br />设备售后 RAG 工单</span><span>RAG 检索、引用、工单生成、后端工程化</span><span>项目详情、RAG 系统设计、Demo 验收脚本</span><span><a href="/topics/rag-project-interview">RAG 项目面试讲法</a></span></div>
   <div class="matrix-row"><span><strong>Portfolio Site</strong><br />AI Agent Engineering Lab</span><span>内容架构、UI 信息层级、求职证据打包</span><span>UI 优化路线、专题地图、首页精选证据区</span><span><a href="/topics/ai-agent-offer-portfolio-review">Offer Review 清单</a></span></div>
