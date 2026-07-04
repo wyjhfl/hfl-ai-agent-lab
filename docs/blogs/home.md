@@ -2,56 +2,51 @@
 layout: home
 
 hero:
-  name: HFL AI Agent Lab
-  text: AI Agent 工程知识库与求职作品集
-  tagline: 以 Project A Agentic RAG 和 Project B Multi-Agent Runtime 为核心，组织 AI Agent / RAG / Tool Governance / Evaluation 工程能力证据。
+  name: 两个项目 · 一个 AI Agent 作品集
+  text: 设备售后诊断 RAG 系统 × 运营中台多 Agent Copilot
+  tagline: 首页已收敛为 Project A / Project B 两条真实仓库主线，用项目证据、架构、评测、Demo 和面试表达证明工程能力。
   actions:
     - theme: brand
-      text: 查看项目作品
+      text: 查看 A/B 项目作品
       link: /projects
     - theme: alt
-      text: 进入学习路线
-      link: /learning-paths
+      text: Project A：RAG 工单系统
+      link: /projects/project-a-rag-workorder
     - theme: alt
-      text: 阅读专题地图
-      link: /topics/
+      text: Project B：多 Agent Copilot
+      link: /projects/project-b-agent-copilot
 
 features:
+  - icon: "A"
+    title: 设备售后诊断与工单 RAG 系统
+    details: 聚焦知识库、引用、Trace、GraphRAG、质量评测和工单升级，证明 Agentic RAG 工程闭环。
+    link: /projects/project-a-rag-workorder
+    linkText: 查看 Project A →
+  - icon: "B"
+    title: 运营中台多 Agent Copilot
+    details: 聚焦 Coordinator、ToolGateway、PolicyEngine、HITL、Audit、Trajectory 和 Operator Console。
+    link: /projects/project-b-agent-copilot
+    linkText: 查看 Project B →
+  - icon: "UI"
+    title: 首页已改成作品集控制台
+    details: 首屏下方新增 portfolio.console、项目证据卡和 GitHub 热门 UI 调研落地原则，刷新后应能明显看到变化。
+    link: /home#start-here
+    linkText: 查看新首页结构 →
   - icon: "01"
     title: 路线清晰
-    details: 从学习看板进入 Agent 基础、RAG、Tool Calling、Multi-Agent、Evaluation、Production 和项目证据链。
-    link: /learning-paths
-    linkText: 查看路线 →
-
+    details: 不再铺开 C-F 项目矩阵，只保留两个真实仓库对应的主线项目，降低招聘方阅读成本。
+    link: /content-map
+    linkText: 查看内容地图 →
   - icon: "02"
-    title: 工程可落地
-    details: 聚焦后端、数据库、Trace、MCP、权限、成本、延迟、评测和上线门禁，而不是泛泛讲趋势。
-    link: /note/Engineering/
-    linkText: 工程笔记 →
-
+    title: 证据优先
+    details: 每个项目都补齐主入口、架构、评测、Demo、简历 bullet 和深挖问答，不只展示技术名词。
+    link: /note/Interview/
+    linkText: 查看面试表达 →
   - icon: "03"
-    title: 专题可串联
-    details: 用专题页把 RAG、Agent Runtime、工具治理、源码拆解、AI 编程协作和面试表达串成阅读路径。
-    link: /topics/
-    linkText: 阅读专题 →
-
-  - icon: "04"
-    title: 作品集可证明
-    details: 作品集聚焦两个真实仓库：Project A 证明 Agentic RAG 工程闭环，Project B 证明 Multi-Agent Runtime 与工具治理。
-    link: /topics/ai-agent-job-search-evidence-map
-    linkText: 能力证据地图 →
-
-  - icon: "05"
-    title: 面试可表达
-    details: 将 Agent、RAG、工具调用、LangGraph 和大模型工程整理成题解、追问地图和 STAR 故事。
-    link: /note/AI-Interview/
-    linkText: 查看题库 →
-
-  - icon: "06"
-    title: UI 持续优化
-    details: 站点采用 VitePress 默认主题扩展、自定义卡片、路径地图和内容证据入口，后续继续向作品集模板演进。
+    title: 工程可验证
+    details: 项目页围绕业务问题、技术链路、质量门禁和演示脚本组织，便于面试和作品集审查。
     link: /topics/ai-agent-site-ui-optimization-playbook
-    linkText: UI 设计思路 →
+    linkText: UI 优化说明 →
 ---
 
 <HomeShowcase />
