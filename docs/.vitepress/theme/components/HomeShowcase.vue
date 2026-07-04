@@ -1,183 +1,190 @@
 <script setup lang="ts">
-const projectTracks = [
+const projectCards = [
   {
     code: 'A',
-    name: '设备售后诊断与工单 RAG 系统',
-    label: 'Agentic RAG Diagnosis',
-    desc: '把设备手册、故障案例、工单规则和引用证据串成诊断闭环，重点展示检索质量、可追溯回答和工单升级。',
+    title: '设备售后诊断与工单 RAG 系统',
+    subtitle: 'Agentic RAG Diagnosis Platform',
+    desc: '面向设备售后场景，把故障手册、历史工单、引用证据、诊断 Trace 和工单升级串成一条可验收链路。',
     href: '/projects/project-a-rag-workorder',
     repo: 'https://github.com/wyjhfl/project-a-rag-platform',
-    tone: 'cyan',
-    tags: ['RAG Pipeline', 'Citations', 'Trace', 'E2E'],
-    proofs: ['架构设计', 'Quality / Eval', 'Demo 脚本'],
+    accent: 'cyan',
+    stats: ['Citation Trace', 'GraphRAG', 'Quality Gate', 'E2E Demo'],
+    flows: ['Query Router', 'Retrieval', 'Diagnosis', 'Ticket'],
   },
   {
     code: 'B',
-    name: '运营中台多 Agent Copilot',
-    label: 'Multi-Agent Runtime',
-    desc: '用 Coordinator、ToolGateway、PolicyEngine、HITL 和 Trajectory 展示多 Agent 编排、工具治理与审计能力。',
+    title: '运营中台多 Agent Copilot',
+    subtitle: 'Multi-Agent Runtime Console',
+    desc: '面向运营中台场景，用角色编排、工具治理、人审、审计和轨迹回放证明多 Agent 工程控制力。',
     href: '/projects/project-b-agent-copilot',
     repo: 'https://github.com/wyjhfl/project-b-multi-agent',
-    tone: 'violet',
-    tags: ['Coordinator', 'Tool Gateway', 'HITL', 'Trajectory'],
-    proofs: ['Operator Console', 'Trace / Eval', 'Roadmap'],
-  },
-]
-
-const entryCards = [
-  {
-    eyebrow: '01 / Recruiter Route',
-    title: '15 分钟看懂作品集',
-    desc: '先看 A/B 两个真实仓库，再看架构、评测、Demo 和面试表达。',
-    href: '/projects',
-    cta: '进入项目证据链',
-  },
-  {
-    eyebrow: '02 / Learning Route',
-    title: '按工程路线补能力',
-    desc: '从 RAG、Tool Calling、Multi-Agent 到 Evaluation、Production Gate。',
-    href: '/learning-paths',
-    cta: '进入学习路线',
-  },
-  {
-    eyebrow: '03 / Builder Route',
-    title: '搭一个可上线 Agent',
-    desc: '按 PRD、数据、工具治理、评测、发布门禁组织工程实践。',
-    href: '/topics/agent-builder-hub',
-    cta: '进入 Builder Hub',
+    accent: 'violet',
+    stats: ['Coordinator', 'ToolGateway', 'HITL', 'Trajectory'],
+    flows: ['Plan', 'Act', 'Approve', 'Replay'],
   },
 ]
 
 const designSignals = [
-  'Open Code：页面直接给可验证入口',
-  'Enterprise：项目卡片先讲业务闭环',
-  'Accessible：短路径、清晰层级、弱动效',
+  {
+    tag: 'shadcn/ui',
+    title: 'Open Code 组件感',
+    desc: '用清晰边框、紧凑信息卡、可点击入口和状态标签，让作品集像可复用产品组件。',
+  },
+  {
+    tag: 'Magic UI',
+    title: '首屏光效与动势',
+    desc: '使用网格背景、glow、扫描线和浮动状态卡，第一眼就能看到视觉变化。',
+  },
+  {
+    tag: 'Aceternity',
+    title: '深色 Hero + Bento',
+    desc: '用深色视觉中心和不规则 Bento 网格承载项目、评测、Demo 和面试证据。',
+  },
+  {
+    tag: 'Dashboard UI',
+    title: '工程控制台表达',
+    desc: '把 RAG、Agent、Trace、Eval 做成控制台，不再只是普通博客卡片。',
+  },
+]
+
+const evidenceCards = [
+  ['Trace', '每条回答能追踪检索、工具调用、人审和最终输出。'],
+  ['Eval', '项目页补齐质量门禁、验收脚本和失败路径表达。'],
+  ['Demo', 'A/B 两个项目都有可演示路径和面试讲法。'],
+  ['Repo', '所有主项目入口都指向真实 GitHub 仓库。'],
+]
+
+const timeline = [
+  ['01', '读取业务问题', '设备故障 / 运营任务进入 Agent 工作台'],
+  ['02', '拆解执行链路', 'RAG 检索或多 Agent 编排生成可追踪步骤'],
+  ['03', '质量门禁', '引用、Trace、审批、Eval 和 Demo 验收'],
+  ['04', '沉淀表达', '项目页、简历 bullet、深挖问答和 STAR 故事'],
 ]
 </script>
 
 <template>
-  <div class="home-lab-shell">
-    <section class="lab-hero-panel lab-hero-organized">
-      <div class="lab-hero-copy">
-        <p class="lab-eyebrow">AI Agent Engineering Lab</p>
-        <h2 class="lab-hero-title">
-          <span>用两个真实仓库</span>
-          <span>证明 AI Agent 工程能力</span>
-        </h2>
-        <p class="lab-hero-desc">
-          站点现在聚焦 Project A「设备售后诊断与工单 RAG 系统」和 Project B「运营中台多 Agent Copilot」。首页不再堆概念，而是把业务问题、技术闭环、评测证据和面试表达放在同一条阅读路径里。
+  <div class="hfl24-shell">
+    <section class="hfl24-hero" aria-label="AI Agent portfolio command center">
+      <div class="hfl24-hero-copy">
+        <p class="hfl24-kicker">
+          <span></span>
+          GitHub Trending UI Applied · shadcn / Magic UI / Bento Dashboard
         </p>
-        <div class="lab-hero-badges" aria-label="作品集定位">
-          <span>Agentic RAG</span>
-          <span>Multi-Agent Runtime</span>
-          <span>Trace / Eval</span>
+        <h2>
+          两个真实 AI Agent 项目，
+          <em>做成一个工程控制台。</em>
+        </h2>
+        <p class="hfl24-hero-desc">
+          这版首页不再沿用普通博客卡片，而是按 GitHub 爆火 UI 的共同模式重做：深色 Command Center、Bento Grid、状态标签、Trace 面板、强对比 CTA 和项目证据卡。
+        </p>
+        <div class="hfl24-action-row">
+          <a class="hfl24-primary" href="/projects">进入 A/B 项目证据链</a>
+          <a class="hfl24-secondary" href="/content-map">查看内容地图</a>
+          <a class="hfl24-ghost" href="/note/Interview/">面试表达</a>
         </div>
-        <div class="lab-action-row">
-          <a class="lab-primary-link" href="/projects">查看项目作品</a>
-          <a class="lab-secondary-link" href="/content-map">内容地图</a>
-          <a class="lab-ghost-link" href="/note/Interview/">面试表达</a>
+        <div class="hfl24-proof-strip">
+          <span>2 Real Repos</span>
+          <span>RAG + Multi-Agent</span>
+          <span>Trace / Eval / Demo</span>
         </div>
       </div>
 
-      <div class="lab-command-panel" aria-label="AI Agent 项目控制台示意">
-        <div class="router-topbar">
-          <span></span><span></span><span></span>
-          <strong>portfolio.console</strong>
+      <div class="hfl24-command-center">
+        <div class="hfl24-window-bar">
+          <i></i><i></i><i></i>
+          <strong>agent-portfolio.command</strong>
+          <span>LIVE</span>
         </div>
-        <div class="lab-status-strip">
-          <b>Scope</b>
-          <strong>2 Projects</strong>
-          <em>ready for review</em>
-        </div>
-        <div class="command-tabs">
-          <span class="active">Evidence</span>
-          <span>Architecture</span>
-          <span>Demo</span>
-        </div>
-        <div class="command-project-list">
-          <a v-for="project in projectTracks" :key="project.code" class="command-project" :class="project.tone" :href="project.href">
-            <b>{{ project.code }}</b>
-            <span>
-              <strong>{{ project.name }}</strong>
-              <em>{{ project.tags.join(' / ') }}</em>
-            </span>
-          </a>
-        </div>
-        <div class="command-proof-grid">
-          <div><strong>RAG</strong><span>引用、追踪、评测</span></div>
-          <div><strong>Agent</strong><span>编排、治理、人审</span></div>
-          <div><strong>Story</strong><span>Demo、简历、深挖</span></div>
+
+        <div class="hfl24-command-grid">
+          <div class="hfl24-command-main">
+            <div class="hfl24-command-title">
+              <span>RUN STATUS</span>
+              <strong>Portfolio Evidence Graph</strong>
+            </div>
+            <div class="hfl24-signal-bars" aria-hidden="true">
+              <b style="height: 48%"></b>
+              <b style="height: 72%"></b>
+              <b style="height: 56%"></b>
+              <b style="height: 88%"></b>
+              <b style="height: 64%"></b>
+              <b style="height: 92%"></b>
+              <b style="height: 74%"></b>
+              <b style="height: 58%"></b>
+            </div>
+          </div>
+
+          <div class="hfl24-kpi-card cyan">
+            <span>Project A</span>
+            <strong>RAG</strong>
+            <em>Diagnosis · Citation · Ticket</em>
+          </div>
+          <div class="hfl24-kpi-card violet">
+            <span>Project B</span>
+            <strong>Agent</strong>
+            <em>Runtime · Tool · HITL</em>
+          </div>
+
+          <div class="hfl24-trace-panel">
+            <div v-for="item in timeline" :key="item[0]" class="hfl24-trace-row">
+              <b>{{ item[0] }}</b>
+              <span>
+                <strong>{{ item[1] }}</strong>
+                <em>{{ item[2] }}</em>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="lab-metrics" aria-label="站点内容概览">
-      <div>
-        <strong>2</strong>
-        <span>真实仓库主线</span>
-      </div>
-      <div>
-        <strong>A</strong>
-        <span>设备诊断 RAG</span>
-      </div>
-      <div>
-        <strong>B</strong>
-        <span>运营中台 Copilot</span>
-      </div>
-      <div>
-        <strong>1</strong>
-        <span>统一证据链</span>
-      </div>
+    <section class="hfl24-design-grid" aria-label="GitHub 热门 UI 调研落地">
+      <article v-for="signal in designSignals" :key="signal.tag" class="hfl24-design-card">
+        <span>{{ signal.tag }}</span>
+        <h3>{{ signal.title }}</h3>
+        <p>{{ signal.desc }}</p>
+      </article>
     </section>
 
-    <section class="lab-research-strip" aria-label="UI 调研落地原则">
-      <p class="lab-eyebrow">UI Research Applied</p>
-      <div>
-        <span v-for="signal in designSignals" :key="signal">{{ signal }}</span>
-      </div>
+    <section class="hfl24-project-grid" aria-label="Project A and Project B">
+      <article v-for="project in projectCards" :key="project.code" class="hfl24-project-card" :class="project.accent">
+        <div class="hfl24-project-head">
+          <b>{{ project.code }}</b>
+          <span>
+            <em>{{ project.subtitle }}</em>
+            <strong>{{ project.title }}</strong>
+          </span>
+        </div>
+        <p>{{ project.desc }}</p>
+
+        <div class="hfl24-chip-row">
+          <i v-for="stat in project.stats" :key="stat">{{ stat }}</i>
+        </div>
+
+        <div class="hfl24-flow">
+          <span v-for="flow in project.flows" :key="flow">{{ flow }}</span>
+        </div>
+
+        <div class="hfl24-project-actions">
+          <a :href="project.href">查看项目页</a>
+          <a :href="project.repo">GitHub Repo</a>
+        </div>
+      </article>
     </section>
 
-    <section class="lab-section lab-audience-section">
-      <div class="lab-section-heading">
-        <p class="lab-eyebrow">Start Here</p>
-        <h2>三条入口，减少选择成本</h2>
-        <p class="lab-section-desc">热门 UI 项目的共同点是组件化、证据清晰、路径短。这里把首页入口压缩成项目、学习、构建三条主路线。</p>
+    <section class="hfl24-evidence-board" aria-label="作品集证据看板">
+      <div class="hfl24-board-copy">
+        <p class="hfl24-kicker"><span></span>Evidence First</p>
+        <h2>不是“博客换皮”，而是把作品集做成可验证系统。</h2>
+        <p>
+          页面结构按招聘方阅读路径设计：第一眼看定位，第二屏看项目，第三屏看证据。每个入口都能继续跳到架构、评测、Demo 或面试表达。
+        </p>
       </div>
-      <div class="home-entry-grid home-entry-grid-compact">
-        <a v-for="item in entryCards" :key="item.href" class="home-entry-card" :href="item.href">
-          <span>{{ item.eyebrow }}</span>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.desc }}</p>
-          <strong>{{ item.cta }} →</strong>
-        </a>
-      </div>
-    </section>
-
-    <section class="lab-section">
-      <div class="lab-section-heading">
-        <p class="lab-eyebrow">Project Tracks</p>
-        <h2>两个项目就是首页主视觉</h2>
-        <p class="lab-section-desc">每张卡片都按“业务问题 → 工程能力 → 可验证证据”组织，避免只展示技术名词。</p>
-      </div>
-      <div class="project-showcase-grid">
-        <article v-for="project in projectTracks" :key="project.code" class="project-showcase-card" :class="project.tone">
-          <div class="project-showcase-head">
-            <b>{{ project.code }}</b>
-            <span>{{ project.label }}</span>
-          </div>
-          <h3>{{ project.name }}</h3>
-          <p>{{ project.desc }}</p>
-          <div class="project-tag-row">
-            <em v-for="tag in project.tags" :key="tag">{{ tag }}</em>
-          </div>
-          <div class="project-proof-list">
-            <span v-for="proof in project.proofs" :key="proof">{{ proof }}</span>
-          </div>
-          <div class="project-card-actions">
-            <a :href="project.href">阅读主入口</a>
-            <a :href="project.repo">GitHub Repo</a>
-          </div>
-        </article>
+      <div class="hfl24-evidence-grid">
+        <div v-for="card in evidenceCards" :key="card[0]">
+          <strong>{{ card[0] }}</strong>
+          <span>{{ card[1] }}</span>
+        </div>
       </div>
     </section>
   </div>
