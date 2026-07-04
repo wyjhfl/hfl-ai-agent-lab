@@ -278,7 +278,7 @@ RAG 效果不好时，我不会盲目调参数，而是先定位问题出在哪�
 
 **项目 B（多 Agent 运营中台 Copilot）：**
 
-多 Agent 使用知识库时也需要引用溯源。Agent 调用 RAG 工具时要记录 run_id 和 citation，这样可以追踪哪个 Agent 基于什么来源做了什么决策。不展开项目 B 实现。
+多 Agent 使用知识库时也需要引用溯源。Agent 调用 RAG 工具时要记录 run_id 和 citation，这样可以追踪哪个 Agent 基于什么来源做了什么决策。本文只说明 Project B 可复用的 RAG 迁移方向。
 
 面试时可以这样表达：在多 Agent 系统中，RAG 不只是单个 Agent 的能力，而是多个 Agent 共享的知识服务。每个 Agent 调用 RAG 工具时都会记录 run_id、agent_id 和 citation，这样可以追踪知识的使用链路。
 

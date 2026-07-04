@@ -19,7 +19,7 @@
 | 简历/岗位匹配 Agent | 读取岗位 JD、匹配项目证据、生成追问清单 | 和求职目标强相关 |
 | 代码仓库分析 Agent | 读取 repo 结构、测试命令、最近 diff、风险文件 | 能连接 Coding Agent 项目 |
 | 企业知识库 Agent | 查询知识库、返回 citation、检查 ACL | 能连接 RAG 工程体系 |
-| 文档智能 Agent | 查询抽取字段、复核状态、PII 风险 | 能连接 Project F |
+| Multi-Agent Runtime | 查询工具状态、审批状态、审计事件 | 能连接 Project B |
 | 运维排障 Agent | 查询日志、指标、runbook、变更记录 | 能体现生产级能力 |
 
 **推荐个人作品集优先做：Repo Context MCP Server。**
@@ -201,7 +201,7 @@ Coding Agent 做任务前缺少稳定 repo context，容易误改文件、漏跑
 
 - [Agent Builder Hub](/topics/agent-builder-hub)
 - [MCP Server Template for Agents](/note/Engineering/mcp-server-template-for-agents)
-- [Project C：MCP Gateway 与 Skill Hub](/projects/project-c-mcp-gateway-skill-hub)
+- [Project B：Multi-Agent Runtime](/projects/project-b-agent-copilot)
 - [MCP Server 面试答辩](/topics/mcp-server-interview-playbook)
 
 ---

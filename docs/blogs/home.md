@@ -4,7 +4,7 @@ layout: home
 hero:
   name: HFL AI Agent Lab
   text: AI Agent 工程知识库与求职作品集
-  tagline: 以学习路线、工程化笔记、源码拆解、专题长文、面试题库和项目实战组织 AI Agent / RAG / MCP / Evaluation 能力证据。
+  tagline: 以 Project A Agentic RAG 和 Project B Multi-Agent Runtime 为核心，组织 AI Agent / RAG / Tool Governance / Evaluation 工程能力证据。
   actions:
     - theme: brand
       text: 查看项目作品
@@ -37,7 +37,7 @@ features:
 
   - icon: "04"
     title: 作品集可证明
-    details: 每个技术关键词都尽量映射到项目、代码、架构图、评测结果、失败复盘和 Demo 脚本。
+    details: 作品集聚焦两个真实仓库：Project A 证明 Agentic RAG 工程闭环，Project B 证明 Multi-Agent Runtime 与工具治理。
     link: /topics/ai-agent-job-search-evidence-map
     linkText: 能力证据地图 →
 

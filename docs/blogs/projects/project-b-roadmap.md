@@ -1,134 +1,33 @@
-﻿# 项目 B 路线图：从 Copilot Demo 到求职展示版本
+# Project B 路线图：从 Runtime 原型到可答辩作品
 
-> 路线图目标不是“做很多功能”，而是把 Agent 项目迭代拆成可展示证据：每个版本都有能力、验收标准和面试讲法。
+## 当前基线
 
-## 总览
+- FastAPI + custom Harness。
+- Coordinator、Analyst、Executor、Reviewer 角色编排。
+- ToolGateway、PolicyEngine、OperationWhitelist。
+- Human approval、audit trail、trace、trajectory visualization。
+- Next.js Operator Console。
+- SQLite demo 默认路径。
+- fake/offline LLM 默认模式。
 
-| 版本 | 目标 | 可展示证据 |
+## 后续演进
+
+| 阶段 | 目标 | 不做什么 |
 |---|---|---|
-| v0.1 | 基础 Copilot 链路 | 自然语言任务 → task brief → 初版答案 |
-| v0.2 | 业务数据查询与上下文检索 | 指标口径、业务 SOP、数据快照引用 |
-| v0.3 | 多工具编排 | Tool Registry、schema、错误码、工具 Trace |
-| v0.4 | Human-in-the-loop 审批 | Action Preview、审批记录、拒绝/修改路径 |
-| v0.5 | Trace / Eval / Replay | run trace、评测集、失败样本回放 |
-| v1.0 | 求职展示版本 | 架构图、Demo、文档、面试故事、简历 bullet |
+| v0.5 面试展示版 | 稳定 demo flow、补齐截图和讲解稿 | 不接真实生产系统 |
+| v0.6 Pilot Path | PostgreSQL / Redis pilot path、更多策略样例 | 不声明 public production ready |
+| v0.7 Provider Opt-in | 可选真实 LLM provider、budget、cache、fallback | 不默认依赖真实 LLM |
+| v0.8 MCP 深化 | stdio MCP client skeleton、更多 fake MCP tools | 不接未知外部工具 |
 
-## v0.1：基础 Copilot 链路
+## 作品集重点
 
-### 能力
+Project B 的卖点不是“自动化程度最高”，而是：
 
-- Copilot UI 输入自然语言任务。
-- 后端创建 run，并生成 task brief。
-- Router 判断任务类型和风险。
-- 返回结构化答复。
-
-### 验收
-
-- 能稳定处理 5 个运营任务样例。
-- 每次 run 有唯一 run id。
-- 输出包含任务理解和下一步建议。
-
-### 面试讲法
-
-> v0.1 我先没有急着做复杂工具，而是把 run controller、task brief 和任务分类打通，让后续所有工具调用和 Trace 都有统一入口。
-
-## v0.2：业务数据查询与上下文检索
-
-### 能力
-
-- 接入指标口径和业务 SOP。
-- 查询活动、订单、库存或工单数据快照。
-- 输出必须带引用和数据来源。
-
-### 验收
-
-- 转化率、库存、投诉等常见问题能找到口径。
-- 无证据时不输出确定结论。
-- 权限不够时拒绝查询。
-
-### 面试讲法
-
-> v0.2 的重点是 grounding。Agent 不能只靠模型常识回答运营问题，必须先查指标口径和业务数据，再生成诊断。
-
-## v0.3：多工具编排
-
-### 能力
-
-- 建立 Tool Registry。
-- 工具具备 schema、risk level、timeout、error code。
-- Planner 可以规划多个工具调用。
-
-### 验收
-
-- 工具参数错误能被校验。
-- 上游超时能降级。
-- 工具调用记录进入 Trace。
-
-### 面试讲法
-
-> 我把工具调用设计成受控后端能力，而不是让模型直接拼 API。模型只负责选择工具和生成参数，执行、权限和审计都在工具层完成。
-
-## v0.4：Human-in-the-loop 审批
-
-### 能力
-
-- 中高风险动作生成 action preview。
-- 用户可以 approve / reject / edit。
-- 审批结果进入 audit log。
-
-### 验收
-
-- 外部副作用动作不能绕过审批。
-- 拒绝后 Agent 能给替代建议。
-- 修改参数后重新生成执行计划。
-
-### 面试讲法
-
-> v0.4 展示的是 Agent 安全边界。真实企业系统里，Agent 不应该直接发通知、改配置或创建高风险工单，必须有人工确认和审计记录。
-
-## v0.5：Trace / Eval / Replay
-
-### 能力
-
-- 每个 run 记录 router、planner、retriever、tool、approval、reviewer spans。
-- 形成 8-15 个关键评测样例。
-- 支持失败样本 replay。
-
-### 验收
-
-- 关键评测 100% 通过。
-- 高风险审批断言 100% 通过。
-- trace 能定位工具失败、无证据和权限拒绝。
-
-### 面试讲法
-
-> v0.5 让项目从“能跑”变成“可维护”。我可以用 Trace 排查问题，用 Eval 防止模型和 Prompt 改动造成能力回归。
-
-## v1.0：求职展示版本
-
-### 能力
-
-- 完整项目文档。
-- 5 分钟 Demo 脚本。
-- 架构图和状态机。
-- Trace / Eval 截图或模拟数据。
-- 一分钟介绍、深挖回答和 STAR 故事。
-
-### 验收
-
-- 面试官不用看代码，也能理解系统设计。
-- 看代码时能找到对应模块。
-- 简历 bullet 有证据链接支撑。
-
-### 面试讲法
-
-> v1.0 不是功能堆满，而是把项目整理成可被验证的作品集：业务问题、系统架构、核心难点、工程取舍、演示路径和复盘材料都能闭环。
-
-## 当前重点
-
-下一批优先实现：
-
-1. Project B Demo 页面与验收脚本。
-2. Project B Trace / Eval 数据结构。
-3. Project B 面试表达素材。
-4. Copilot UI 的状态卡片和 Trace Drawer 草图。
+- 可解释 orchestration。
+- governed tool execution。
+- HITL approval / resume。
+- audit trail。
+- LLM fallback / offline boundary。
+- NL2SQL demo。
+- operator console。
+- trajectory visualization。

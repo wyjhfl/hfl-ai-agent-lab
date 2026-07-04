@@ -60,10 +60,8 @@ Reading Paths：做项目 / 看作品 / 准备面试
 
 展示项目时优先放“证明能力”的信息：
 
-- Project F：多模态文档智能、RAG 入库、PII 治理。
-- Project E：Coding Agent、测试门禁、PR 协作。
-- Project D：Eval、红队、Release Gate。
-- Project C：MCP Gateway、Skill Hub、审批审计。
+- Project A：Agentic RAG 诊断、引用证据、Trace、质量评测、生产验收。
+- Project B：Multi-Agent Runtime、ToolGateway、HITL、Audit、Trajectory、Operator Console。
 
 ### Capability Map
 

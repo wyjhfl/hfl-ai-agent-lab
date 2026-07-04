@@ -1,22 +1,19 @@
 # 简历描述模板
 
-## 项目 B 描述（简历 bullet）
+## Project A：设备售后诊断 Agentic RAG 平台
 
-- 设计并实现面向运营中台的多 Agent Copilot 系统，使用 LangGraph 状态机编排 Supervisor、Data Analyst、Tool Executor、Risk Reviewer 四个核心 Agent
-- 实现 NL2SQL 数据分析能力，支持运营人员通过自然语言查询业务数据
-- 设计 Human-in-the-loop 审批机制，识别高风险操作并暂停执行等待人工确认
-- 构建 Tool Calling 工具调用框架，支持业务工具的注册、选择和执行结果追踪
-- 实现 Trace 与 Evaluator 模块，记录 Agent 执行轨迹并评估结果质量
+- 构建企业设备售后诊断 Agentic RAG 平台，基于 FastAPI、Vue 3、Chroma/SQLite、LangChain/LangGraph 实现单诊断控制器、动态检索、query rewrite、GraphRAG 关系展示、grounded answer、citations 和 trace_id。
+- 设计资料不足拒答与高风险工单升级链路，将设备型号、故障码、现场现象转化为可追溯诊断建议、引用证据、审计事件和人工处理工单。
+- 补齐工程交付闭环：Jobs、Audit、Prometheus/Grafana、Alembic skeleton、OpenAPI 类型同步、Docker Compose、Redis/PostgreSQL smoke、Playwright E2E 和 final production acceptance；`v1.0.5` 基线通过 185 个后端测试、35 个 E2E 测试和 13/13 生产验收检查。
 
-## 项目 A 描述（简历 bullet）
+## Project B：运营中台 Multi-Agent Runtime
 
-- 构建设备售后诊断与工单 RAG 系统，基于向量数据库实现设备故障知识库的智能检索
-- 设计 RAG Pipeline，包含文档分块、向量化、检索、重排序和上下文注入等环节
-- 实现工单生成与状态流转功能，将诊断结果自动转化为可追踪的工单
+- 设计企业级 Multi-Agent Runtime 工程原型，基于 FastAPI、custom Harness、Coordinator / Analyst / Executor / Reviewer 实现可解释角色编排和任务轨迹记录。
+- 建立 ToolGateway、PolicyEngine、OperationWhitelist、Human Approval 和 Audit Trail，将工具执行从模型输出中隔离，控制高风险动作并保留审批证据。
+- 构建 Next.js Operator Console，覆盖 Tasks、Approvals、Trace、Audit、Metrics、Tools、NL2SQL、RBAC、LLM status 和 Multi-Agent Trajectory；默认 fake/offline 模式，稳定支持面试演示且避免过度声明生产能力。
 
 ## 通用技术点描述
 
-- 熟悉 AI Agent 系统设计，具备多 Agent 编排、Tool Calling、状态管理和 Human-in-the-loop 工程经验
-- 熟悉 RAG 工程化，具备文档解析、向量检索、重排序和检索评估实践经验
-- 熟悉 LangGraph 状态机，能够将复杂业务流程建模为可控的执行链路
-- 具备 FastAPI 后端开发、数据库设计、Docker 部署和日志可观测性工程能力
+- 熟悉 Agentic RAG 工程化，具备动态检索、引用证据、拒答边界、Trace、评测和生产验收实践。
+- 熟悉 Multi-Agent Runtime 设计，理解角色编排、工具治理、人审、审计、Trajectory 和离线可复现 Demo。
+- 具备 FastAPI / Vue / Next.js / TypeScript / pytest / Playwright / Docker / Prometheus 等大模型应用工程经验。

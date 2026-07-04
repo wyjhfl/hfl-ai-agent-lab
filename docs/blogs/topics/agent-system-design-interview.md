@@ -346,7 +346,7 @@ RAG 查询可以设计成可追踪的 run。从用户提问到返回答案，整
 
 **项目 B（多 Agent 运营中台 Copilot）：**
 
-后续可以围绕 Runtime、Tool、State、Trace、Evaluation 设计多 Agent 协作。不能只讲多角色协作，要讲任务分派、工具权限、状态共享和结果聚合。项目 B 仍保持占位，不在本轮展开实现，但面试表达时可以讲清楚规划思路。
+后续可以围绕 Runtime、Tool、State、Trace、Evaluation 设计多 Agent 协作。不能只讲多角色协作，要讲任务分派、工具权限、状态共享和结果聚合。Project B 已整理为作品集入口，面试表达时可以结合该项目讲清楚规划思路。
 
 面试时可以这样表达：我的多 Agent 设计思路是围绕 Runtime 展开的——Planner 负责任务拆解，Executor 负责执行操作，Reviewer 负责审查结果，Aggregator 负责汇总输出。每个 Agent 有独立的工具权限，通过 Shared State 共享必要信息，通过 Trace 记录完整执行过程。
 

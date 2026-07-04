@@ -202,5 +202,6 @@ next:
 
 - [Evaluation Pipeline](/topics/evaluation-pipeline)
 - [Agent Demo Evidence Dashboard](/topics/agent-demo-evidence-dashboard)
-- [Project D：Agent Evaluation & Red Team Lab](/projects/project-d-agent-evaluation-redteam-lab)
+- [Project A Quality / Evaluation 方案](/projects/project-a-eval-plan)
+- [Project B Trace / Evaluation 方案](/projects/project-b-trace-eval-plan)
 - [Agent Observability Dashboard Design](/note/Engineering/agent-observability-dashboard-design)

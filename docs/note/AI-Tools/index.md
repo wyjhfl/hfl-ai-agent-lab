@@ -49,7 +49,7 @@
 | 目标 | 推荐内容 |
 |---|---|
 | 建立 AI 编程工具分工 | [AI Coding Workflow](/note/AI-Tools/ai-coding-workflow) |
-| 做代码代理作品集 | [Project E：AI Coding Agent Workbench](/projects/project-e-ai-coding-agent-workbench) → [Code Review Bench](/projects/project-e-code-review-bench) → [Repo Automation Console UI](/projects/project-e-repo-automation-console-ui) |
+| 做 Agent 工程作品集 | [Project B：Multi-Agent Runtime](/projects/project-b-agent-copilot) → [Operator Console](/projects/project-b-ui-blueprint) → [Trace / Evaluation](/projects/project-b-trace-eval-plan) |
 | 优化博客 UI 工作流 | [UI Design Skill 调研](/note/AI-Tools/ui-design-skill-research) → [站点界面优化路线](/topics/ai-agent-site-ui-optimization-playbook) → [AI Agent 学习路径看板](/learning-paths) |
 | 学仓库级协作 | [Claude Code 拆解](/note/AI-Tools/claude-code) |
 | 学局部代码实现 | [Codex 拆解](/note/AI-Tools/codex) |

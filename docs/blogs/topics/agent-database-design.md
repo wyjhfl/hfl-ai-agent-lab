@@ -206,7 +206,7 @@ Agent 能调用工具后，必须记录审计信息：
 
 **项目 B（多 Agent 运营中台 Copilot）：**
 
-多 Agent Copilot 需要 task / run / step / tool_call / audit_log。每个 Agent 的执行都需要记录，不同 Agent 的工具调用需要隔离。不展开项目 B 实现，只说明数据库建模方向。
+多 Agent Copilot 需要 task / run / step / tool_call / audit_log。每个 Agent 的执行都需要记录，不同 Agent 的工具调用需要隔离。本文不展开 Project B 具体页面，只说明数据库建模方向。
 
 ---
 

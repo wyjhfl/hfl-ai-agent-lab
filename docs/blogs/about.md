@@ -34,7 +34,7 @@ AI Agent 不只是 Prompt 或多个角色聊天。真正可落地的 Agent 系�
 | [工程化笔记](/note/Engineering/) | 记录 FastAPI、RAG、Trace、MCP、Docker、上线检查等工程能力 |
 | [面试题库](/note/AI-Interview/) | 将技术理解整理成通用技术题、标准回答和追问框架 |
 | [项目面试表达](/note/Interview/) | 将项目实践整理成简历描述、一分钟介绍、深挖回答和项目追问 |
-| [项目实战](/projects) | 项目 A / 项目 B 的展示入口，项目 B 当前保持占位 |
+| [项目实战](/projects) | 只保留 Project A / Project B 两个真实仓库对应的作品集主线 |
 
 ## 适合谁阅读
 
@@ -48,7 +48,8 @@ AI Agent 不只是 Prompt 或多个角色聊天。真正可落地的 Agent 系�
 - 持续完善 AI Agent 学习路线内容
 - 继续扩展专题文章和源码拆解深度
 - 补齐工程化笔记中的安全、评测、部署和可观测性内容
-- 后续再展开项目 B（运营中台多 Agent Copilot）
+- 继续打磨 Project A 的 Agentic RAG 诊断样例、质量评测和生产验收表达
+- 继续打磨 Project B 的 Multi-Agent Runtime、Operator Console、Trace / Trajectory 和工具治理表达
 - 让站点逐步成为可放入简历和 GitHub 主页的公开技术作品集
 
 ## 建设记录

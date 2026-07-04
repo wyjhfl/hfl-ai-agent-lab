@@ -1,12 +1,12 @@
 <div class="topic-hero topic-atlas-hero">
   <p class="topic-eyebrow">Topic Atlas</p>
   <h1>博客专题导航</h1>
-  <p>专题页不再把所有文章一次性铺开，而是先按“建设 Agent、补 RAG、做 MCP/Skills、做评测治理、准备面试、优化 UI”六个目标分流。旧索引与所有链接完整保留在下方折叠区。</p>
+  <p>按六个常见目标进入专题：建设 Agent、补 RAG、做 MCP/Skills、做评测治理、准备面试、查看产品界面。每个入口都连接到项目、工程笔记和面试材料。</p>
 </div>
 
 <div class="topic-route-strip">
   <a href="/topics/agent-builder-hub"><strong>Build</strong><span>从想法到可上线 Agent</span></a>
-  <a href="/projects"><strong>Portfolio</strong><span>A-F 项目作品证据</span></a>
+  <a href="/projects"><strong>Portfolio</strong><span>A/B 项目作品证据</span></a>
   <a href="/learning-paths"><strong>Learn</strong><span>AI Agent 学习路线</span></a>
   <a href="/note/Interview/"><strong>Interview</strong><span>项目表达与求职材料</span></a>
 </div>
@@ -28,10 +28,10 @@
   <section class="content-route-card featured-route"><span>30 天</span><h3>做一个可展示 Agent Demo</h3><ol><li><a href="/topics/agent-builder-demo-roadmap">30 天 Agent Builder Demo 路线</a></li><li><a href="/topics/mcp-server-from-zero-to-portfolio">MCP Server 从零到作品集</a></li><li><a href="/topics/agent-skill-playbook">Agent Skill Playbook</a></li><li><a href="/topics/ai-agent-demo-acceptance-script">Demo 验收脚本</a></li></ol></section>
   <section class="content-route-card"><span>做项目</span><h3>把一个 Agent 做成作品集</h3><ol><li><a href="/topics/ai-agent-prd-template">AI Agent PRD 模板</a></li><li><a href="/topics/mcp-server-from-zero-to-portfolio">MCP Server 作品集</a></li><li><a href="/note/Engineering/llm-evaluation-scorecard">LLM Evaluation Scorecard</a></li><li><a href="/topics/ai-agent-portfolio-case-study-template">Case Study 模板</a></li></ol></section>
   <section class="content-route-card"><span>准备面试</span><h3>把散知识转成回答体系</h3><ol><li><a href="/topics/agent-system-design-interview">Agent 系统设计面试</a></li><li><a href="/topics/ai-agent-interview-followup-map">面试追问地图</a></li><li><a href="/topics/ai-agent-resume-project-matrix">简历项目矩阵</a></li><li><a href="/topics/ai-agent-offer-portfolio-review">Offer Portfolio Review</a></li></ol></section>
-  <section class="content-route-card"><span>优化 UI</span><h3>把页面做成作品集证据面板</h3><ol><li><a href="/topics/agent-ui-review-checklist">Agent UI Review Checklist</a></li><li><a href="/topics/agent-demo-evidence-dashboard">Demo Evidence Dashboard</a></li><li><a href="/topics/agent-eval-observability-playbook">Eval & Observability Playbook</a></li><li><a href="/topics/agent-ui-pattern-library">Agent UI Pattern Library</a></li></ol></section>
+  <section class="content-route-card"><span>产品界面</span><h3>查看 Agent 控制台与证据面板</h3><ol><li><a href="/topics/agent-ui-product-design">Agent UI 产品化设计</a></li><li><a href="/topics/agent-ui-pattern-library">Agent UI Pattern Library</a></li><li><a href="/topics/agent-demo-evidence-dashboard">Demo Evidence Dashboard</a></li><li><a href="/topics/human-takeover-operations-console">Human Takeover 运营台</a></li></ol></section>
 </div>
 
-::: details 展开完整专题索引（保留全部旧路径与链接）
+::: details 展开更多专题索引
 
 <div class="topic-hero">
   <p class="topic-eyebrow">Topic Atlas</p>
@@ -46,8 +46,8 @@
   <a class="topic-card" href="/topics/rag-engineering-system"><span>RAG</span><h3>RAG 工程化路径</h3><p>从入库、metadata、权限、引用、freshness 到 query router 和评测报告。</p></a>
   <a class="topic-card" href="/topics/agent-development-playbook"><span>Agent</span><h3>生产级 Agent 路线</h3><p>从 Runtime、状态机、工具风险、审批、Trace 到 Release Gate。</p></a>
   <a class="topic-card" href="/topics/ai-agent-job-search-evidence-map"><span>Career</span><h3>求职作品集证据</h3><p>把项目、代码、文章、Demo、评测和面试故事映射到简历关键词。</p></a>
-  <a class="topic-card" href="/topics/ai-agent-site-ui-optimization-playbook"><span>UI/UX</span><h3>站点界面优化路线</h3><p>参考 VitePress、开源主题和 Skills，把知识库升级成作品集级导航体验。</p></a>
-  <a class="topic-card" href="/note/AI-Tools/ui-design-skill-research"><span>UI Skill</span><h3>UI Design Skill 调研</h3><p>把界面优化沉淀成可复用检查流程：信息架构、可访问性、响应式和构建验证。</p></a>
+  <a class="topic-card" href="/topics/agent-ui-product-design"><span>Product UI</span><h3>Agent UI 产品化设计</h3><p>用任务面板、证据面板、审批队列和反馈闭环展示真实 Agent 产品能力。</p></a>
+  <a class="topic-card" href="/topics/agent-ui-pattern-library"><span>Pattern</span><h3>Agent UI Pattern Library</h3><p>整理 Agent 控制台常用组件：任务流、Trace、工具调用、审批、评测和错误恢复。</p></a>
 </div>
 
 ---
@@ -74,7 +74,7 @@
 | 想做商业化产品 | [Agent SaaS 产品化](/topics/agent-saas-productization) → [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota) → [LLM Request Ledger](/note/Engineering/llm-request-ledger) → [LLM Cost Chargeback](/note/Engineering/llm-cost-chargeback) → [LLM Cost Anomaly Detection](/note/Engineering/llm-cost-anomaly-detection) → [Agent Product Metrics](/topics/agent-product-metrics) → [Agent UI 产品化设计](/topics/agent-ui-product-design) → [Agent UI Pattern Library](/topics/agent-ui-pattern-library) → [Agent UI State Machine](/note/Engineering/agent-ui-state-machine) |
 | 想写项目设计文档 | [AI 项目设计文档模板](/topics/ai-project-design-doc-template) → [Agent System Design Whiteboard Template](/topics/agent-system-design-whiteboard-template) → [Agent 系统设计案例库](/topics/agent-system-design-casebook) → [生产级 Agent Readiness Review](/topics/agent-production-readiness-review) → [AI Agent Enterprise Pilot Plan](/topics/ai-agent-enterprise-pilot-plan) → [AI Agent 项目包装](/topics/ai-agent-project-packaging) |
 | 想做 Agent 产品需求 | [AI Agent PRD 模板](/topics/ai-agent-prd-template) → [Agent Product Metrics](/topics/agent-product-metrics) → [Agent UI 产品化设计](/topics/agent-ui-product-design) → [Agent UI Pattern Library](/topics/agent-ui-pattern-library) → [Agent UI State Machine](/note/Engineering/agent-ui-state-machine) → [Agent Frontend Telemetry](/note/Engineering/agent-frontend-telemetry) → [Human Takeover 运营台](/topics/human-takeover-operations-console) |
-| 想重点优化站点 UI | [AI Agent Portfolio UI Blueprint](/topics/ai-agent-portfolio-ui-blueprint) → [AI Agent Site UI Optimization Playbook](/topics/ai-agent-site-ui-optimization-playbook) → [Agent UI Pattern Library](/topics/agent-ui-pattern-library) → [Agent UI State Machine](/note/Engineering/agent-ui-state-machine) → [Agent Frontend Telemetry](/note/Engineering/agent-frontend-telemetry) |
+| 想查看 Agent 产品界面 | [Agent UI 产品化设计](/topics/agent-ui-product-design) → [Agent UI Pattern Library](/topics/agent-ui-pattern-library) → [Human Takeover 运营台](/topics/human-takeover-operations-console) → [Project B Operator Console](/projects/project-b-ui-blueprint) |
 
 ---
 
@@ -153,7 +153,7 @@
 | [Prompt Injection 纵深防御](/note/Engineering/prompt-injection-defense-in-depth) | 把外部证据降权、检索清洗、tool policy、审批、沙箱和对抗回归组合成多层防线。 | 想把 Agent 安全从提示词提升到系统治理的人 |
 | [Agent 红队演练](/note/Engineering/agent-red-team-playbook) | 用 Prompt Injection、越权、危险工具、路径逃逸、审批绕过和 Memory 污染主动攻击系统。 | 想做 Agent 安全上线前验证的人 |
 | [Agent UI 产品化设计：不要只做一个聊天框](/topics/agent-ui-product-design) | 设计任务面板、证据面板、工具调用审批、反馈和失败重跑，让 Agent 可控可解释。 | 想把 Agent 做成真实产品的人 |
-| [AI Agent Site UI Optimization Playbook](/topics/ai-agent-site-ui-optimization-playbook) | 调研 VitePress 默认主题、开源博客主题、Nólëbase 插件和 Skills，把站点 UI 优化拆成可执行批次。 | 想把个人博客升级成作品集导航体验的人 |
+| [AI Agent Site UI Optimization Playbook](/topics/ai-agent-site-ui-optimization-playbook) | 总结作品集级导航体验：首页入口、项目证据、专题索引、Demo 和面试材料串联。 | 想快速理解作品集导航结构的人 |
 | [Agent SaaS 产品化：从个人 Demo 到可卖的产品](/topics/agent-saas-productization) | 从多租户、额度计费、团队权限、onboarding、产品指标和运营后台理解 Agent 商业化。 | 想把 Agent 项目做成产品的人 |
 | [Agent SaaS 多租户、RBAC 与配额设计](/topics/agent-saas-tenant-rbac-quota) | 设计 tenant、workspace、role、permission、quota、usage、billing 和审计，让 Agent SaaS 可售卖、可隔离。 | 想把个人 Agent Demo 做成团队版 SaaS 的人 |
 | [Agent Product Metrics](/topics/agent-product-metrics) | 用 task success、handoff、correction、trust signal、cost、latency 衡量 Agent 产品是否真的有价值。 | 想用指标证明 Agent 产品效果的人 |

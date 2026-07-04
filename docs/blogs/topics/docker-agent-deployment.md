@@ -257,7 +257,7 @@ RAG 工单系统可以拆成 API、Worker、Postgres、Redis、Vector DB。文�
 
 **项目 B（多 Agent 运营中台 Copilot）：**
 
-多 Agent Copilot 未来更需要服务拆分、状态存储、队列和观测。每个 Agent 的执行都需要 Worker 资源，不同 Agent 的任务需要隔离。不展开项目 B 实现，只说明部署方向。
+多 Agent Copilot 更需要服务拆分、状态存储、队列和观测。每个 Agent 的执行都需要 Worker 资源，不同 Agent 的任务需要隔离。本文不展开 Project B 具体页面，只说明部署方向。
 
 ---
 

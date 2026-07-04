@@ -255,7 +255,7 @@ RAG 工单系统可以设计 `/rag/query`、`/documents/upload`、`/runs/{run_id
 
 **项目 B（多 Agent 运营中台 Copilot）：**
 
-多 Agent Copilot 更需要清晰的任务入口和状态查询接口。每个 Agent 的执行都需要 `run_id` 和 `step_id`，通过 Trace 查询完整过程。不展开项目 B 实现，只保留设计迁移方向。
+多 Agent Copilot 更需要清晰的任务入口和状态查询接口。每个 Agent 的执行都需要 `run_id` 和 `step_id`，通过 Trace 查询完整过程。本文不展开 Project B 具体页面，只保留设计迁移方向。
 
 ---
 

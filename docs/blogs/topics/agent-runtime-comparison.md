@@ -211,7 +211,7 @@ Evaluation 不是 Runtime 的一部分，但 Runtime 的输出要能被 Evaluati
 - 多 Agent Copilot 需要更明确的 Runtime。
 - Runtime 应该管理任务分派、Agent step、工具调用、状态共享和最终聚合。
 - 每个 Agent 的执行都应该有 run_id 和 step_id，通过 Trace 记录完整过程。
-- 项目 B 仍保持占位，不展开实现。
+- Project B 已有作品集入口，本文只保留 Runtime 迁移方向，不展开具体项目页面。
 
 ---
 

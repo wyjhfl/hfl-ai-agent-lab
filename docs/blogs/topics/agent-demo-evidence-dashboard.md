@@ -35,10 +35,10 @@ Agent Demo Evidence Dashboard 的目标，是把项目从“文章”升级成�
 示例：
 
 ```text
-Project C：企业 MCP Gateway 与 Skill Hub
-定位：为企业 Agent 提供可治理工具扩展平台
-技术栈：FastAPI / MCP / Tool Registry / OAuth / Audit Log / Eval Gate
-核心证据：Gateway Console、Tool Risk Classification、Approval Workflow、Security Eval
+Project B：运营中台 Multi-Agent Runtime
+定位：为企业 Agent 提供可解释编排、工具治理、人审、审计和轨迹可视化
+技术栈：FastAPI / custom Harness / ToolGateway / PolicyEngine / Next.js / SQLite
+核心证据：Operator Console、Trace、Trajectory、Approval、Audit、Tools、NL2SQL
 ```
 
 Snapshot 卡片需要避免泛泛而谈：

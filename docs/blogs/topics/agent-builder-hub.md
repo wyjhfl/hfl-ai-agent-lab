@@ -6,7 +6,7 @@ sidebar: false
 <div class="project-hero agent-builder-hero">
   <p class="project-eyebrow">Agent Builder Hub</p>
   <h1>从想法到可上线 Agent 的建设路线</h1>
-  <p>这里不是再新增一堆散文，而是把站内已有的 PRD、RAG、MCP Server、Skill、Eval、Release Gate、安全治理和面试表达串成一条可执行路线。适合做项目、准备作品集、写简历和回答系统设计面试。</p>
+  <p>这条路线把 PRD、RAG、MCP Server、Skill、Eval、Release Gate、安全治理和面试表达串成一条可执行工程路径。适合做项目、准备作品集、写简历和回答系统设计面试。</p>
 </div>
 
 <div class="project-read-flow builder-read-flow">
@@ -18,7 +18,7 @@ sidebar: false
 <div class="portfolio-section-heading">
   <p class="project-eyebrow">Builder Workflow</p>
   <h2>把 Agent 系统拆成 6 个阶段</h2>
-  <p>每个阶段都对应站内已有内容，不删除旧内容，只把入口按工程流程重新组织。</p>
+  <p>每个阶段都提供清晰入口：先明确需求边界，再补 RAG / MCP / Eval / 安全 / 面试表达证据。</p>
 </div>
 
 <div class="builder-stage-grid">
@@ -27,7 +27,7 @@ sidebar: false
   <section class="builder-stage-card"><span>Stage 3</span><h3>工具 / MCP 设计</h3><p>把工具边界、schema、sandbox、OAuth、审计和版本治理放在 Agent 可控范围内。</p><a href="/topics/mcp-server-from-zero-to-portfolio">MCP Server 从零到作品集 →</a></section>
   <section class="builder-stage-card"><span>Stage 4</span><h3>Skill 工作流封装</h3><p>把可复用流程写进 Skill：前置条件、脚本、资产、参考资料、测试和版本策略。</p><a href="/topics/agent-skill-playbook">Agent Skill Playbook →</a></section>
   <section class="builder-stage-card"><span>Stage 5</span><h3>评测 / 回归 / 可观测</h3><p>用 scorecard、regression set、trace replay、失败聚类和 dashboard 驱动迭代。</p><a href="/note/Engineering/agent-release-gate">Agent Release Gate →</a></section>
-  <section class="builder-stage-card"><span>Stage 6</span><h3>发布 / 安全 / 面试证据</h3><p>沉淀 demo、指标、风险清单、runbook 和项目讲法，把工程过程变成作品集证据。</p><a href="/topics/ai-agent-job-search-evidence-map">能力证据地图 →</a></section>
+  <section class="builder-stage-card"><span>Stage 6</span><h3>发布 / 安全 / 面试证据</h3><p>沉淀 demo、指标、风险清单、runbook 和项目讲法，把工程成果变成作品集证据。</p><a href="/topics/ai-agent-job-search-evidence-map">能力证据地图 →</a></section>
 </div>
 
 <div class="portfolio-section-heading">
@@ -53,7 +53,7 @@ sidebar: false
       <li><a href="/topics/mcp-server-from-zero-to-portfolio">MCP Server 从零到作品集</a></li>
       <li><a href="/topics/mcp-skills-agent-extension-strategy">MCP / Skills 选型</a></li>
       <li><a href="/note/Engineering/tool-registry-engineering">Tool Registry 工程化</a></li>
-      <li><a href="/projects/project-c-mcp-gateway-skill-hub">Project C 作品入口</a></li>
+      <li><a href="/projects/project-b-agent-copilot">Project B 工具治理入口</a></li>
     </ol>
   </section>
   <section class="content-route-card">
@@ -63,7 +63,7 @@ sidebar: false
       <li><a href="/topics/agent-eval-observability-playbook">Agent Eval & Observability Playbook</a></li>
       <li><a href="/note/Engineering/agent-observability-dashboard-design">Observability Dashboard</a></li>
       <li><a href="/topics/agent-production-readiness-review">Production Readiness Review</a></li>
-      <li><a href="/projects/project-d-agent-evaluation-redteam-lab">Project D 评测红队 Lab</a></li>
+      <li><a href="/projects/project-a-eval-plan">Project A Quality / Eval</a></li>
     </ol>
   </section>
   <section class="content-route-card">
@@ -91,13 +91,12 @@ sidebar: false
 <div class="project-status-card builder-next-card">
   <div>
     <p class="project-eyebrow">Portfolio Evidence</p>
-    <h2>推荐下一步：把 Project C / D / E / F 串成一条 Agent 平台故事</h2>
-    <p>Project C 负责工具与 Skill 扩展，Project D 负责评测红队，Project E 负责代码代理协作，Project F 负责多模态知识运营。四个项目可以共同证明“我能把 Agent 从 Demo 做到可上线系统”。</p>
+    <h2>推荐下一步：围绕 Project A / B 打磨一条清晰作品集故事</h2>
+    <p>Project A 负责证明 Agentic RAG 的诊断、引用、评测和生产验收能力；Project B 负责证明 Multi-Agent Runtime 的角色编排、工具治理、人审、审计和轨迹可视化能力。两个项目共同证明“我能把 Agent 从 Demo 做到可解释、可验证、可治理的工程系统”。</p>
   </div>
   <ul>
-    <li><a href="/projects/project-c-mcp-gateway-skill-hub">Project C：MCP Gateway 与 Skill Hub</a></li>
-    <li><a href="/projects/project-d-agent-evaluation-redteam-lab">Project D：Agent Evaluation Lab</a></li>
-    <li><a href="/projects/project-e-ai-coding-agent-workbench">Project E：AI Coding Agent Workbench</a></li>
-    <li><a href="/projects/project-f-multimodal-document-agent">Project F：Document Intelligence Agent</a></li>
+    <li><a href="/projects/project-a-rag-workorder">Project A：Agentic RAG Diagnosis Platform</a></li>
+    <li><a href="/projects/project-b-agent-copilot">Project B：Multi-Agent Runtime Prototype</a></li>
+    <li><a href="/note/Interview/resume-bullets">A/B 简历 bullet</a></li>
   </ul>
 </div>
