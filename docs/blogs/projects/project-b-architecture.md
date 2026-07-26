@@ -1,5 +1,8 @@
 # Project B 架构设计：Multi-Agent Runtime Prototype
 
+![Project B 系统架构图](/src/projects/project-b-architecture.svg)
+*图 1：Next.js Operator Console、FastAPI、四角色 Runtime、工具治理与可观测审计的五层架构总览*
+
 ## 架构目标
 
 Project B 的核心不是“Agent 数量多”，而是把多角色协作、工具治理、人审、审计和轨迹可视化放进一个可演示的 Runtime。
@@ -24,6 +27,9 @@ flowchart LR
 ```
 
 ## 角色分工
+
+![Project B 治理执行主链路图](/src/projects/project-b-flow.svg)
+*图 2：任务创建 → 计划分析 → 工具调用 → 人工审批 → 受控执行 → 轨迹回放的治理执行链路*
 
 | 角色 | 职责 | 输出 |
 |---|---|---|

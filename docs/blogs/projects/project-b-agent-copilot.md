@@ -1,7 +1,25 @@
+---
+description: Project B：运营中台 Multi-Agent Runtime，四角色编排，ToolGateway / PolicyEngine / HITL 审批治理工具调用，Trajectory 可回放，Operator Console 默认离线可演示。
+---
+
 # Project B：运营中台 Multi-Agent Runtime
 
 > GitHub：<https://github.com/wyjhfl/project-b-multi-agent>
 > 定位：企业级 Multi-Agent Runtime 工程原型，用于简历和面试展示；默认 fake / offline 模式，不依赖真实 LLM、外部 MCP Server、业务系统、PostgreSQL 或 Redis。
+
+<div class="project-status-card">
+  <div>
+    <p class="project-eyebrow">10 秒速读</p>
+    <p><strong>可解释、可治理、可审计的 Multi-Agent Runtime：Coordinator / Analyst / Executor / Reviewer 四角色协作，工具调用统一经过 ToolGateway、PolicyEngine 与 HITL 审批并留存审计，轨迹全程可回放。</strong></p>
+    <div class="project-pill-row"><b>4-Role Runtime</b><b>ToolGateway + HITL</b><b>Trajectory Replay</b></div>
+    <p>岗位相关性：对应 AI Agent · Multi-Agent · 大模型应用工程岗，覆盖编排、治理与可观测；默认离线即可完整演示。</p>
+  </div>
+  <ul>
+    <li><a href="https://github.com/wyjhfl/project-b-multi-agent">GitHub Repo</a></li>
+    <li><a href="/projects/project-b-demo-script">Demo 脚本</a></li>
+    <li><a href="/note/Interview/project-b-deep-dive">深挖问答</a></li>
+  </ul>
+</div>
 
 ## 项目一句话
 

@@ -1,12 +1,14 @@
 ---
 layout: page
 sidebar: false
+title: 项目实战
+description: AI Agent 求职作品集：Project A 展示 Agentic RAG 工程闭环（v1.0.5、185 后端测试、35 E2E），Project B 展示 Multi-Agent Runtime 的编排、治理与可观测，两个项目均可演示。
 ---
 
 <div class="project-hero project-hero-organized">
   <p class="project-eyebrow">Project Portfolio</p>
   <h1>项目实战</h1>
-  <p>这里不再铺开多项目矩阵，只保留两个真实仓库对应的主线项目：Project A 证明 Agentic RAG 工程闭环，Project B 证明 Multi-Agent Runtime、工具治理、人审、审计和轨迹可视化。</p>
+  <p>两条主线：Project A 证明 Agentic RAG 工程闭环，Project B 证明 Multi-Agent Runtime 的编排、治理与可观测。</p>
 </div>
 
 <div class="project-read-flow">
@@ -69,13 +71,14 @@ sidebar: false
 
 <div class="project-status-card">
   <div>
-    <p class="project-eyebrow">Commit Focus</p>
-    <h2>本轮只提交 A/B 双项目作品集</h2>
-    <p>删除 C-G 项目入口和页面，避免作品集分散；将 Project A / B 与真实 GitHub 仓库对齐，突出可演示、可验证、可面试表达。</p>
+    <p class="project-eyebrow">Project Status</p>
+    <h2>两个项目都处于可演示状态</h2>
+    <p>Project A 已发布 v1.0.5，185 个后端测试与 35 条 E2E（12 个文件）通过，生产验收脚本齐备；Project B 以 Coordinator / Analyst / Executor / Reviewer 四角色 Runtime 搭配 Next.js Operator Console，默认离线模式即可完整演示。</p>
   </div>
   <ul>
     <li><a href="https://github.com/wyjhfl/project-a-rag-platform">Project A GitHub</a></li>
     <li><a href="https://github.com/wyjhfl/project-b-multi-agent">Project B GitHub</a></li>
+    <li><a href="/projects/project-b-roadmap">Project B 路线图</a></li>
     <li><a href="/note/Interview/resume-bullets">简历 bullet</a></li>
   </ul>
 </div>

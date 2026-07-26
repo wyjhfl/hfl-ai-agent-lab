@@ -2,6 +2,9 @@
 
 > 目标：把设备售后诊断从“文档问答”升级为可追溯、可评测、可运维、可验收的 Agentic RAG 工程系统。
 
+![Project A 系统架构图](/src/projects/project-a-architecture.svg)
+*图 1：从 Vue 3 控制台到 FastAPI、Agentic RAG 核心、数据与任务、可观测与交付的五层架构总览*
+
 ## 系统架构
 
 ```mermaid
@@ -42,6 +45,9 @@ flowchart LR
 - **验收脚本优先于口头承诺**：用 final production acceptance 串起测试、构建、Docker、smoke、E2E 和安全扫描。
 
 ## API 与运行边界
+
+![Project A 诊断主链路图](/src/projects/project-a-flow.svg)
+*图 2：提问 → 检索与诊断 → 引用回答 → 拒答或工单升级 → 评测与审计的诊断主链路*
 
 | 能力 | 说明 |
 |---|---|

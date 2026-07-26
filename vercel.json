@@ -1,14 +1,14 @@
 {
-  "buildCommand": "npm run docs:build",
+  "buildCommand": "npm run docs:build:ci",
   "outputDirectory": "docs/.vitepress/dist",
   "framework": null,
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
     {
-      "source": "/",
-      "destination": "/home",
-      "permanent": false
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [

@@ -190,17 +190,24 @@ function sanitizeNoteMarkdown(content: string): string {
 
 export default defineConfigWithTheme<ThemeConfig>({
   title: 'HFL AI Agent Lab',
+  titleTemplate: ':title · HFL AI Agent Lab',
   description: 'AI Agent 工程知识库 · 多 Agent 项目展示 · 求职作品集',
   srcDir: '.',
-  srcExclude: ['.obsidian/**', 'local/**', 'self/**'],
+  srcExclude: ['.obsidian/**', 'local/**', 'self/**', 'superpowers/**'],
   rewrites: {
     'blogs/:path(.*)': ':path',
   },
   head: [
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'icon', href: '/favicon-32.png', type: 'image/png', sizes: '32x32' }],
+    ['link', { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' }],
     ['meta', { name: 'theme-color', content: '#0ea5e9' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'HFL AI Agent Lab' }],
     ['meta', { property: 'og:description', content: 'AI Agent 工程知识库 · 多 Agent 项目展示 · 求职作品集' }],
+    ['meta', { property: 'og:image', content: 'https://hfl-ai-agent-lab.vercel.app/og-cover.png' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: 'https://hfl-ai-agent-lab.vercel.app/og-cover.png' }],
   ],
 
   base: '/',
@@ -241,16 +248,16 @@ export default defineConfigWithTheme<ThemeConfig>({
     // giscus 暂时关闭，v0.5 再接入自己的 GitHub Discussions
     // giscus: { ... },
     nav: [
-      { text: '首页', link: '/home' },
-      { text: '内容地图', link: '/content-map' },
-      { text: '项目实战', link: '/projects' },
+      { text: '首页', link: '/' },
+      { text: '项目作品', link: '/projects' },
       { text: '学习路线', link: '/learning-paths' },
       {
-        text: '工程体系',
+        text: '专题库',
         items: [
+          { text: '专题总览', link: '/topics/' },
+          { text: '最新文章', link: '/articles' },
           { text: 'Agent Builder Hub', link: '/topics/agent-builder-hub' },
           { text: '工程笔记', link: '/note/Engineering/' },
-          { text: '专题枢纽', link: '/topics/' },
           { text: '源码拆解', link: '/note/Source-Reading/' },
           { text: 'AI 工具', link: '/note/AI-Tools/' },
         ],
@@ -260,10 +267,11 @@ export default defineConfigWithTheme<ThemeConfig>({
         items: [
           { text: '面试题库', link: '/note/AI-Interview/' },
           { text: '项目面试表达', link: '/note/Interview/' },
+          { text: '简历', link: '/resume' },
           { text: '能力证据地图', link: '/topics/ai-agent-job-search-evidence-map' },
-          { text: '关于我', link: '/about' },
         ],
       },
+      { text: '关于我', link: '/about' },
       { text: 'GitHub', link: 'https://github.com/wyjhfl' },
     ],
     sidebar: {
@@ -620,7 +628,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     footer: {
-      message: 'HFL AI Agent Lab',
+      message: 'HFL AI Agent Lab · <a href="/content-map">内容地图</a> · <a href="/articles">最新文章</a>',
       copyright: 'Copyright © 2026 HFL',
     },
 

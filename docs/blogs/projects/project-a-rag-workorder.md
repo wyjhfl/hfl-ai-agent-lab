@@ -1,7 +1,25 @@
+---
+description: Project A：设备售后诊断与工单 Agentic RAG 平台，v1.0.5 发布，185 个后端测试与 35 条 E2E（12 个文件）通过，覆盖检索、引用、拒答、工单升级与生产验收的完整工程闭环。
+---
+
 # Project A：设备售后诊断与工单 Agentic RAG 平台
 
 > GitHub：<https://github.com/wyjhfl/project-a-rag-platform>
 > 定位：企业设备售后诊断与工单闭环 Agentic RAG 平台，用于展示 AI Agent / RAG / 大模型工程岗位需要的工程闭环能力。
+
+<div class="project-status-card">
+  <div>
+    <p class="project-eyebrow">10 秒速读</p>
+    <p><strong>可验收的企业级 Agentic RAG 诊断平台：从检索、引用、拒答到工单升级与生产验收，全链路可追溯、可验证。</strong></p>
+    <div class="project-pill-row"><b>v1.0.5</b><b>185 Backend Tests</b><b>35 E2E</b></div>
+    <p>岗位相关性：对应 AI Agent · RAG · 大模型应用工程岗，覆盖检索质量、可观测性与生产交付三条主线。</p>
+  </div>
+  <ul>
+    <li><a href="https://github.com/wyjhfl/project-a-rag-platform">GitHub Repo</a></li>
+    <li><a href="/projects/project-a-demo-script">Demo 脚本</a></li>
+    <li><a href="/note/Interview/project-a-deep-dive">深挖问答</a></li>
+  </ul>
+</div>
 
 ## 项目一句话
 

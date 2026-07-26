@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="Project B Multi-Agent Runtime 分层架构图" font-family="ui-sans-serif, system-ui, 'Microsoft YaHei', sans-serif">
+  <title>Project B · Multi-Agent Runtime 系统架构</title>
+  <defs>
+    <linearGradient id="mainB" gradientUnits="userSpaceOnUse" x1="0" y1="64" x2="0" y2="600">
+      <stop offset="0" stop-color="#c4b5fd"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <marker id="arrB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c4b5fd"/>
+    </marker>
+    <marker id="arrDimB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="640" rx="16" fill="#0f172a" stroke="rgba(148,163,184,0.25)"/>
+
+  <text x="40" y="42" font-size="22" font-weight="700" fill="#c4b5fd">Project B · Multi-Agent Runtime 系统架构</text>
+  <line x1="866" y1="36" x2="910" y2="36" stroke="#c4b5fd" stroke-width="3.5"/>
+  <text x="918" y="41" font-size="15" fill="#94a3b8">主链路</text>
+  <line x1="1020" y1="36" x2="1056" y2="36" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.8"/>
+  <text x="1064" y="41" font-size="15" fill="#94a3b8">辅助链路</text>
+
+  <!-- L1 客户端层 y=64 -->
+  <rect x="36" y="64" width="1104" height="96" rx="10" fill="rgba(148,163,184,0.05)" stroke="rgba(148,163,184,0.35)"/>
+  <rect x="36" y="64" width="196" height="96" rx="10" fill="rgba(196,181,253,0.07)"/>
+  <rect x="230" y="76" width="2" height="72" fill="rgba(196,181,253,0.3)"/>
+  <text x="52" y="106" font-size="20" font-weight="600" fill="#c4b5fd">客户端层</text>
+  <text x="52" y="130" font-size="15" fill="rgba(196,181,253,0.55)">Client Layer</text>
+  <rect x="248" y="84" width="232" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="364" y="108" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Operator</text>
+  <text x="364" y="130" text-anchor="middle" font-size="15" fill="#94a3b8">运营操作员</text>
+  <rect x="516" y="84" width="324" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="678" y="108" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Next.js Operator Console</text>
+  <text x="678" y="130" text-anchor="middle" font-size="15" fill="#94a3b8">Tasks · Approvals · Trace · Audit 页面</text>
+  <rect x="856" y="84" width="268" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="990" y="108" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Metrics / LLM Status / RBAC</text>
+  <text x="990" y="130" text-anchor="middle" font-size="15" fill="#94a3b8">运行状态与权限视图</text>
+
+  <!-- L2 API 层 y=174 -->
+  <rect x="36" y="174" width="1104" height="96" rx="10" fill="rgba(148,163,184,0.05)" stroke="rgba(148,163,184,0.35)"/>
+  <rect x="36" y="174" width="196" height="96" rx="10" fill="rgba(196,181,253,0.07)"/>
+  <rect x="230" y="186" width="2" height="72" fill="rgba(196,181,253,0.3)"/>
+  <text x="52" y="216" font-size="20" font-weight="600" fill="#c4b5fd">API 层</text>
+  <text x="52" y="240" font-size="15" fill="rgba(196,181,253,0.55)">API Layer</text>
+  <rect x="248" y="194" width="380" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="438" y="218" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">FastAPI API</text>
+  <text x="438" y="240" text-anchor="middle" font-size="15" fill="#94a3b8">Runtime 统一服务入口</text>
+  <rect x="644" y="194" width="480" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="884" y="218" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">SQLite default / PostgreSQL optional</text>
+  <text x="884" y="240" text-anchor="middle" font-size="15" fill="#94a3b8">demo 默认 · pilot 演进路径</text>
+
+  <!-- L3 Runtime 核心层 y=284 -->
+  <rect x="36" y="284" width="1104" height="96" rx="10" fill="rgba(148,163,184,0.05)" stroke="rgba(148,163,184,0.35)"/>
+  <rect x="36" y="284" width="196" height="96" rx="10" fill="rgba(196,181,253,0.07)"/>
+  <rect x="230" y="296" width="2" height="72" fill="rgba(196,181,253,0.3)"/>
+  <text x="52" y="326" font-size="20" font-weight="600" fill="#c4b5fd">Runtime 核心层</text>
+  <text x="52" y="350" font-size="15" fill="rgba(196,181,253,0.55)">Custom Harness</text>
+  <rect x="248" y="304" width="196" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="346" y="328" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Coordinator</text>
+  <text x="346" y="350" text-anchor="middle" font-size="15" fill="#94a3b8">任务计划 · handoff</text>
+  <rect x="472" y="304" width="196" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="570" y="328" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Analyst</text>
+  <text x="570" y="350" text-anchor="middle" font-size="15" fill="#94a3b8">分析 · NL2SQL 草案</text>
+  <rect x="696" y="304" width="196" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="794" y="328" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Executor</text>
+  <text x="794" y="350" text-anchor="middle" font-size="15" fill="#94a3b8">受控工具调用</text>
+  <rect x="920" y="304" width="204" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="1022" y="328" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Reviewer</text>
+  <text x="1022" y="350" text-anchor="middle" font-size="15" fill="#94a3b8">verdict · 最终响应</text>
+
+  <!-- L4 工具治理层 y=394 -->
+  <rect x="36" y="394" width="1104" height="96" rx="10" fill="rgba(148,163,184,0.05)" stroke="rgba(148,163,184,0.35)"/>
+  <rect x="36" y="394" width="196" height="96" rx="10" fill="rgba(196,181,253,0.07)"/>
+  <rect x="230" y="406" width="2" height="72" fill="rgba(196,181,253,0.3)"/>
+  <text x="52" y="436" font-size="20" font-weight="600" fill="#c4b5fd">工具治理层</text>
+  <text x="52" y="460" font-size="15" fill="rgba(196,181,253,0.55)">Tool Governance</text>
+  <rect x="248" y="414" width="184" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="340" y="438" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">ToolGateway</text>
+  <text x="340" y="460" text-anchor="middle" font-size="15" fill="#94a3b8">统一工具入口</text>
+  <rect x="452" y="414" width="296" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="600" y="438" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">PolicyEngine + OperationWhitelist</text>
+  <text x="600" y="460" text-anchor="middle" font-size="15" fill="#94a3b8">策略判断 · 操作白名单</text>
+  <rect x="768" y="414" width="160" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="848" y="438" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">HITL Approval</text>
+  <text x="848" y="460" text-anchor="middle" font-size="15" fill="#94a3b8">人工审批 · resume</text>
+  <rect x="948" y="414" width="176" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="1036" y="438" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Fake MCP / stdio MCP</text>
+  <text x="1036" y="460" text-anchor="middle" font-size="15" fill="#94a3b8">工具协议骨架</text>
+
+  <!-- L5 可观测与审计层 y=504 -->
+  <rect x="36" y="504" width="1104" height="96" rx="10" fill="rgba(148,163,184,0.05)" stroke="rgba(148,163,184,0.35)"/>
+  <rect x="36" y="504" width="196" height="96" rx="10" fill="rgba(196,181,253,0.07)"/>
+  <rect x="230" y="516" width="2" height="72" fill="rgba(196,181,253,0.3)"/>
+  <text x="52" y="546" font-size="20" font-weight="600" fill="#c4b5fd">可观测与审计层</text>
+  <text x="52" y="570" font-size="15" fill="rgba(196,181,253,0.55)">Observability</text>
+  <rect x="248" y="524" width="300" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="398" y="548" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Task Trace + Trajectory</text>
+  <text x="398" y="570" text-anchor="middle" font-size="15" fill="#94a3b8">多 Agent 轨迹可视化</text>
+  <rect x="564" y="524" width="240" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="684" y="548" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Audit Trail</text>
+  <text x="684" y="570" text-anchor="middle" font-size="15" fill="#94a3b8">任务 · 工具 · 审批证据</text>
+  <text x="1116" y="546" text-anchor="end" font-size="15" fill="rgba(196,181,253,0.5)">默认 fake / offline 演示</text>
+  <text x="1116" y="570" text-anchor="end" font-size="15" fill="rgba(196,181,253,0.5)">真实 provider 显式 opt-in</text>
+
+  <!-- 主链路（紫色渐变） -->
+  <path d="M484,112 L510,112" fill="none" stroke="rgba(148,163,184,0.6)" stroke-width="1.8" marker-end="url(#arrDimB)"/>
+  <path d="M678,140 C678,168 438,166 438,194" fill="none" stroke="url(#mainB)" stroke-width="3.5" marker-end="url(#arrB)"/>
+  <path d="M438,250 C438,278 346,276 346,304" fill="none" stroke="url(#mainB)" stroke-width="3.5" marker-end="url(#arrB)"/>
+  <path d="M448,332 L464,332" fill="none" stroke="url(#mainB)" stroke-width="2.5" marker-end="url(#arrB)"/>
+  <path d="M672,332 L688,332" fill="none" stroke="url(#mainB)" stroke-width="2.5" marker-end="url(#arrB)"/>
+  <path d="M896,332 L912,332" fill="none" stroke="url(#mainB)" stroke-width="2.5" marker-end="url(#arrB)"/>
+  <path d="M770,360 C770,394 340,382 340,414" fill="none" stroke="url(#mainB)" stroke-width="3.5" marker-end="url(#arrB)"/>
+
+  <!-- 辅助链路 -->
+  <path d="M630,222 L637,222" fill="none" stroke="rgba(148,163,184,0.6)" stroke-width="1.8" marker-end="url(#arrDimB)"/>
+  <path d="M436,442 L446,442" fill="none" stroke="rgba(148,163,184,0.6)" stroke-width="1.8" marker-end="url(#arrDimB)"/>
+  <path d="M752,442 L762,442" fill="none" stroke="rgba(148,163,184,0.6)" stroke-width="1.8" marker-end="url(#arrDimB)"/>
+  <path d="M340,470 C420,490 960,490 1036,470" fill="none" stroke="rgba(148,163,184,0.5)" stroke-width="1.8" stroke-dasharray="4 4" marker-end="url(#arrDimB)"/>
+  <path d="M848,414 C848,392 818,388 818,366" fill="none" stroke="rgba(196,181,253,0.7)" stroke-width="1.8" stroke-dasharray="4 4" marker-end="url(#arrB)"/>
+  <text x="862" y="386" font-size="15" fill="rgba(196,181,253,0.6)">resume</text>
+  <path d="M398,492 L398,516" fill="none" stroke="rgba(148,163,184,0.55)" stroke-width="1.8" stroke-dasharray="4 4" marker-end="url(#arrDimB)"/>
+  <path d="M684,492 L684,516" fill="none" stroke="rgba(148,163,184,0.55)" stroke-width="1.8" stroke-dasharray="4 4" marker-end="url(#arrDimB)"/>
+
+  <text x="1160" y="624" text-anchor="end" font-size="15" fill="rgba(148,163,184,0.45)">HFL AI Agent Lab</text>
+</svg>

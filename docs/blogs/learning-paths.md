@@ -1,12 +1,19 @@
 ﻿---
 layout: page
 sidebar: false
+title: AI Agent 学习路径看板
+description: 按阶段组织的 AI Agent 学习路线看板。
 ---
 
 <div class="path-hero">
   <p class="path-eyebrow">Learning Dashboard</p>
   <h1>AI Agent 学习路径看板</h1>
-  <p>这个页面把站内内容重新组织成“学什么 → 做什么项目 → 怎么验证 → 怎么面试表达”的路径。它不是文章列表，而是给读者和招聘方看的能力导航。</p>
+  <p>这个页面把站内内容组织成“学什么 → 做什么项目 → 怎么验证 → 怎么面试表达”的路径。它不是文章列表，而是给读者和招聘方看的能力导航。</p>
+</div>
+
+<div class="sprint-timeline">
+  <div><strong>定位</strong><span>这页解决“按什么顺序学”：把站内内容按阶段组织成从基础认知到工程化、作品集与面试表达的路线。</span></div>
+  <div><strong>去哪</strong><span>不在这页的去哪：想逐篇读文章去 <a href="/topics/">专题索引</a>，想直接看成品去 <a href="/projects">项目作品集</a>，想按场景总览全站去 <a href="/content-map">内容地图</a>。</span></div>
 </div>
 
 <div class="path-stage-grid">

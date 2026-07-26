@@ -1,6 +1,7 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import { inject } from '@vercel/analytics'
 
 import './tailwind.css'
 import './custom.css'
@@ -10,6 +11,7 @@ import GiscusComments from './components/GiscusComments.vue'
 import ReadingProgress from './components/ReadingProgress.vue'
 import BackToTop from './components/BackToTop.vue'
 import HomeShowcase from './components/HomeShowcase.vue'
+import LatestArticles from './components/LatestArticles.vue'
 
 export default {
   extends: DefaultTheme,
@@ -22,5 +24,9 @@ export default {
   enhanceApp({ app }) {
     app.component('MyComponent', Mycomponent)
     app.component('HomeShowcase', HomeShowcase)
+    app.component('LatestArticles', LatestArticles)
+    if (!import.meta.env.SSR) {
+      inject()
+    }
   },
 } satisfies Theme

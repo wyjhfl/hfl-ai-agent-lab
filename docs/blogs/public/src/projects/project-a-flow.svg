@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="Project A 诊断主链路：提问、检索与诊断、引用回答、拒答或工单升级、评测与审计" font-family="ui-sans-serif, system-ui, 'Microsoft YaHei', sans-serif">
+  <title>Project A · 诊断主链路 Diagnosis Flow</title>
+  <defs>
+    <linearGradient id="flowA" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="1160" y2="0">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <marker id="arrFA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#67e8f9"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="420" rx="16" fill="#0f172a" stroke="rgba(148,163,184,0.25)"/>
+
+  <text x="40" y="44" font-size="22" font-weight="700" fill="#67e8f9">Project A · 诊断主链路 Diagnosis Flow</text>
+  <text x="40" y="72" font-size="15" fill="#94a3b8">提问 → 检索 / 诊断 → 引用回答 → 拒答或工单升级 → 评测与审计</text>
+
+  <!-- Step 1 提问 -->
+  <rect x="40" y="110" width="192" height="190" rx="10" fill="#1e293b" stroke="rgba(148,163,184,0.35)"/>
+  <circle cx="136" cy="142" r="16" fill="rgba(103,232,249,0.12)" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="136" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#67e8f9">1</text>
+  <text x="136" y="190" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc">提问</text>
+  <text x="136" y="214" text-anchor="middle" font-size="15" fill="rgba(103,232,249,0.8)">Query Intake</text>
+  <text x="136" y="246" text-anchor="middle" font-size="15" fill="#94a3b8">设备型号 · 故障码</text>
+  <text x="136" y="270" text-anchor="middle" font-size="15" fill="#94a3b8">现场现象输入</text>
+
+  <!-- Step 2 检索与诊断 -->
+  <rect x="272" y="110" width="192" height="190" rx="10" fill="#1e293b" stroke="rgba(148,163,184,0.35)"/>
+  <circle cx="368" cy="142" r="16" fill="rgba(103,232,249,0.12)" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="368" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#67e8f9">2</text>
+  <text x="368" y="190" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc">检索与诊断</text>
+  <text x="368" y="214" text-anchor="middle" font-size="15" fill="rgba(103,232,249,0.8)">Agentic Retrieval</text>
+  <text x="368" y="246" text-anchor="middle" font-size="15" fill="#94a3b8">query rewrite · 动态检索</text>
+  <text x="368" y="270" text-anchor="middle" font-size="15" fill="#94a3b8">GraphRAG 关系增强</text>
+
+  <!-- Step 3 引用回答 -->
+  <rect x="504" y="110" width="192" height="190" rx="10" fill="#1e293b" stroke="rgba(148,163,184,0.35)"/>
+  <circle cx="600" cy="142" r="16" fill="rgba(103,232,249,0.12)" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="600" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#67e8f9">3</text>
+  <text x="600" y="190" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc">引用回答</text>
+  <text x="600" y="214" text-anchor="middle" font-size="15" fill="rgba(103,232,249,0.8)">Grounded Answer</text>
+  <text x="600" y="246" text-anchor="middle" font-size="15" fill="#94a3b8">grounded answer</text>
+  <text x="600" y="270" text-anchor="middle" font-size="15" fill="#94a3b8">citations + trace_id</text>
+
+  <!-- Step 4 拒答或工单升级 -->
+  <rect x="736" y="110" width="192" height="190" rx="10" fill="#1e293b" stroke="rgba(148,163,184,0.35)"/>
+  <circle cx="832" cy="142" r="16" fill="rgba(103,232,249,0.12)" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="832" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#67e8f9">4</text>
+  <text x="832" y="190" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc">拒答或工单升级</text>
+  <text x="832" y="214" text-anchor="middle" font-size="15" fill="rgba(103,232,249,0.8)">Refuse · Escalate</text>
+  <text x="832" y="246" text-anchor="middle" font-size="15" fill="#94a3b8">资料不足拒答</text>
+  <text x="832" y="270" text-anchor="middle" font-size="15" fill="#94a3b8">高风险升级人工工单</text>
+
+  <!-- Step 5 评测与审计 -->
+  <rect x="968" y="110" width="192" height="190" rx="10" fill="#1e293b" stroke="rgba(148,163,184,0.35)"/>
+  <circle cx="1064" cy="142" r="16" fill="rgba(103,232,249,0.12)" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="1064" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#67e8f9">5</text>
+  <text x="1064" y="190" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc">评测与审计</text>
+  <text x="1064" y="214" text-anchor="middle" font-size="15" fill="rgba(103,232,249,0.8)">Eval · Audit</text>
+  <text x="1064" y="246" text-anchor="middle" font-size="15" fill="#94a3b8">regression · bad case</text>
+  <text x="1064" y="270" text-anchor="middle" font-size="15" fill="#94a3b8">Audit · Prometheus</text>
+
+  <!-- 主链路箭头 -->
+  <path d="M238,205 L262,205" fill="none" stroke="url(#flowA)" stroke-width="3.5" marker-end="url(#arrFA)"/>
+  <path d="M470,205 L494,205" fill="none" stroke="url(#flowA)" stroke-width="3.5" marker-end="url(#arrFA)"/>
+  <path d="M702,205 L726,205" fill="none" stroke="url(#flowA)" stroke-width="3.5" marker-end="url(#arrFA)"/>
+  <path d="M934,205 L958,205" fill="none" stroke="url(#flowA)" stroke-width="3.5" marker-end="url(#arrFA)"/>
+
+  <text x="600" y="344" text-anchor="middle" font-size="15" fill="rgba(103,232,249,0.55)">trace_id 贯穿全链路：诊断、工单升级、评测与审计均可回放</text>
+
+  <text x="1160" y="392" text-anchor="end" font-size="15" fill="rgba(148,163,184,0.45)">HFL AI Agent Lab</text>
+</svg>

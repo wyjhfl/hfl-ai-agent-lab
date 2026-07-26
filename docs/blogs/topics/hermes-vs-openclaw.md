@@ -186,7 +186,6 @@
 - 可以借鉴 OpenClaw 的 Runtime / Tool / Workspace / Memory / Security 分层。
 - 可以借鉴 Hermes 的多代理协作和开发工作流表达。
 - 多 Agent 需要确定性路由、隔离 workspace、隔离 session、隔离工具权限。
-- 项目 B 当前仍保持占位，不在本轮展开实现。
 
 ---
 

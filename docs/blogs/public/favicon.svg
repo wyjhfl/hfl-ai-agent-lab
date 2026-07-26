@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="hflTile" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="hflH" x1="8.5" y1="7.5" x2="23.5" y2="24.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#c4b5fd"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="6.5" fill="url(#hflTile)" stroke="#334155" stroke-opacity="0.7" stroke-width="1"/>
+  <path fill="url(#hflH)" d="M8.5 7.5 h5 v6 h5 v-6 h5 v17 h-5 v-6 h-5 v6 h-5 Z"/>
+  <circle cx="25.5" cy="6.5" r="1.5" fill="#22c55e"/>
+</svg>

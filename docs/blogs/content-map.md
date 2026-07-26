@@ -1,12 +1,20 @@
 ---
 layout: page
 sidebar: false
+title: 全站内容地图
+description: 全站内容地图，按场景进入项目、路线、专题与面试内容。
 ---
 
 <div class="project-hero content-map-hero">
   <p class="project-eyebrow">Content Map</p>
   <h1>全站内容地图</h1>
-  <p>按使用场景进入全站内容：项目作品、学习路线、工程体系、面试求职。项目作品区只保留 Project A 和 Project B 两条主线。</p>
+  <p>按使用场景进入全站内容：项目作品、学习路线、工程体系、面试求职。项目作品聚焦 Project A 与 Project B 两条主线。</p>
+</div>
+
+<div class="project-read-flow">
+  <div><strong>定位</strong><span>这页解决“从哪进站”：全站内容地图，按场景找到项目、路线、专题与面试内容的入口。</span></div>
+  <div><strong>学习</strong><span>系统学习不在这页：想按阶段推进去 <a href="/learning-paths">学习路线看板</a>，想逐篇深读去 <a href="/topics/">专题索引</a>。</span></div>
+  <div><strong>作品</strong><span>想直接看成品，去 <a href="/projects">项目作品集</a> 看 Project A / B 的架构、Demo 与证据。</span></div>
 </div>
 
 <div class="project-read-flow">

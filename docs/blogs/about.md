@@ -1,91 +1,44 @@
 ---
 layout: page
 sidebar: false
+description: "HFL：面向 AI Agent / RAG / 大模型应用工程方向的开发者。本页汇总能力证据、Project A / B 两个项目与站内导览。"
 ---
 
-# 关于 HFL AI Agent Lab
+# 关于我
 
-## 我在构建什么
+我是 HFL，一名面向 AI Agent / RAG / 大模型应用工程方向的开发者。
 
-HFL AI Agent Lab 是一个面向 AI Agent 工程方向的个人知识库、项目展示站和求职作品集。
+这个站点是我的工程知识库与作品集：目前有 265 个页面、116 篇工程化笔记、77 篇专题、7 类面试题库，以及 Project A / Project B 两个项目主线。本页的每一条能力表述，都附上对应的站内证据链接。
 
-它的目标不是单纯记录零散学习笔记，而是把 AI Agent 学习路线、工程化笔记、源码拆解、专题文章、面试题库和项目实战组织成一个可持续维护的技术作品集。
+## 我能做什么
 
-## 为什么关注 AI Agent 工程
-
-AI Agent 不只是 Prompt 或多个角色聊天。真正可落地的 Agent 系统需要同时处理：
-
-- RAG 与外部知识连接
-- Tool Calling 与工具权限
-- LangGraph / Multi-Agent 的流程编排
-- Trace / Evaluation 的质量闭环
-- API 安全、异步任务、部署和可观测性
-- 面试中能讲清楚的工程边界和架构取舍
-
-这个网站就是围绕这些能力逐步沉淀的。
-
-## 当前内容地图
-
-| 模块 | 说明 |
+| 能力 | 站内证据 |
 |---|---|
-| [AI Agent 学习路线](/note/AI-Agent/) | 回答“学什么、按什么顺序学、学到什么程度” |
-| [专题文章](/topics/) | 把学习路线、源码拆解和工程化笔记串成长文专题 |
-| [源码拆解](/note/Source-Reading/) | 拆解 Hermes Agent、Harness Engineering、OpenClaw 等项目 |
-| [工程化笔记](/note/Engineering/) | 记录 FastAPI、RAG、Trace、MCP、Docker、上线检查等工程能力 |
-| [面试题库](/note/AI-Interview/) | 将技术理解整理成通用技术题、标准回答和追问框架 |
-| [项目面试表达](/note/Interview/) | 将项目实践整理成简历描述、一分钟介绍、深挖回答和项目追问 |
-| [项目实战](/projects) | 只保留 Project A / Project B 两个真实仓库对应的作品集主线 |
+| Agentic RAG 工程化 | [Project A 主入口](/projects/project-a-rag-workorder) · [RAG 工程化](/note/Engineering/rag-engineering) |
+| Multi-Agent Runtime 与编排 | [Project B 主入口](/projects/project-b-agent-copilot) · [Multi-Agent 架构](/note/AI-Agent/multi-agent) |
+| 工具治理与 MCP | [Tool Registry 工程化](/note/Engineering/tool-registry-engineering) · [MCP Server 工程化](/note/Engineering/mcp-server) |
+| 评测与可观测（Eval / Trace） | [Evaluation Pipeline](/note/Engineering/eval-pipeline) · [Agent Trace 执行轨迹](/note/Engineering/agent-trace) |
+| 安全与治理（Guardrails / 审计） | [Agent Guardrails Pipeline](/note/Engineering/agent-guardrails-pipeline) · [Agent 审计日志设计](/note/Engineering/agent-audit-log-design) |
+| 工程交付（Docker / CI / E2E） | [Docker 部署](/note/Engineering/docker-deploy) · [上线检查清单](/note/Engineering/production-checklist) |
 
-## 适合谁阅读
+## 两个项目
 
-- 正在系统学习 AI Agent 工程的同学
-- 准备 AI Agent / 大模型应用开发岗位面试的人
-- 想理解 RAG、Tool Calling、Multi-Agent、Evaluation 工程化的人
-- 想参考个人技术作品集结构的人
+**Project A：设备售后诊断与工单 Agentic RAG 平台。** 当前版本 v1.0.5，有 185 个后端测试和 35 个 E2E 用例；技术栈为 FastAPI / Vue3 / LangGraph / Chroma / Prometheus / Playwright / Docker。[项目页](/projects/project-a-rag-workorder) · [仓库](https://github.com/wyjhfl/project-a-rag-platform)
 
-## 后续计划
+**Project B：运营中台 Multi-Agent Runtime。** 运行时包含 Coordinator / ToolGateway / PolicyEngine / HITL / Audit / Trajectory，配套 Next.js Operator Console。[项目页](/projects/project-b-agent-copilot) · [仓库](https://github.com/wyjhfl/project-b-multi-agent)
 
-- 持续完善 AI Agent 学习路线内容
-- 继续扩展专题文章和源码拆解深度
-- 补齐工程化笔记中的安全、评测、部署和可观测性内容
-- 继续打磨 Project A 的 Agentic RAG 诊断样例、质量评测和生产验收表达
-- 继续打磨 Project B 的 Multi-Agent Runtime、Operator Console、Trace / Trajectory 和工具治理表达
-- 让站点逐步成为可放入简历和 GitHub 主页的公开技术作品集
+## 我在找什么
 
-## 建设记录
+目标岗位：AI Agent / RAG / 大模型应用工程师。匹配理由：有可验证的项目（公开仓库、测试数字、站内架构与评测文档），也有系统化的工程笔记支撑面试中的深挖追问。
 
-<details>
-<summary>展开查看阶段记录</summary>
+## 联系与导览
 
-- v0.1：站点基础改造完成
-- v0.2：知识库骨架完成
-- v0.3-lite：非项目 B 内容初稿完成，项目 B 仅保留占位
-- v0.3.1：旧内容隔离与公开展示准备完成
-- v0.3.2：公开展示页面优化完成
-- v0.4：Vercel 部署上线完成
-- v0.5：线上展示体验基础优化完成
-- v0.6：AI Agent 核心知识文章打磨完成
-- v0.7：工程化笔记质量提升完成
-- v0.8：GitHub README 与网站首页展示优化完成
-- v0.9：源码拆解栏目质量提升完成
-- v1.0：网站导航、搜索、外链和公开访问体验检查完成
-- v1.1-v1.4 修正版：Agent 拆解历史对话素材第一轮整理完成
-- v1.5：AI Agent 面试题库模块改造完成
-- v1.6：AI Agent 面试题库第一轮原创题解完成
-- v1.7：AI Agent 学习路线总览升级完成
-- v1.8：工程化笔记第二轮扩展完成
-- v1.9：学习路线、工程化笔记、面试题库互链完成
-- v2.0：GitHub README 与网站页面装饰优化完成
-- v2.1：博客专题《从 RAG 到生产级 Agent Harness 的工程化学习路线》完成
-- v2.3：Hermes Agent 高级用法与进阶玩法专题完成
-- v2.4：OpenClaw 架构拆解专题完成
-- v2.6：README 与首页 UI 作品集风格优化
-- v2.8：Engineering 博客专题第一批完成，新增 RAG 工程化、Agent Trace、Evaluation Pipeline 三篇专题
-- v2.9：AI Agent 核心概念专题第一批完成，新增 Agent Runtime、Tool Calling、Memory 与 State 三篇专题
-- v3.0：AI 工具工作流专题第一批完成，新增 Claude Code 实战工作流、AI 编程审查清单、避免 AI 误提交和假验证三篇专题
-- v3.1：面试表达专题第一批完成，新增 Agent 系统设计面试题、RAG 项目面试表达、多 Agent 项目面试表达三篇专题
-- v3.2：专题入口重组与阅读路径优化完成，将专题页按 Engineering、AI Agent 核心概念、AI 工具工作流、面试表达、源码与架构进行分组，并补充推荐阅读路径
-- v3.3：源码与架构横向对比专题完成，新增 Hermes vs OpenClaw、Agent Runtime 横向对比、Tool System 横向对比三篇专题
-- v3.4：Engineering 工程化专题第二批完成，新增 FastAPI 到 Agent Backend、Agent 数据库设计、Docker 部署工程化三篇专题
+- GitHub：[github.com/wyjhfl](https://github.com/wyjhfl)
 
-</details>
+<!-- TODO(作者): 补充公开邮箱或其它联系方式 -->
+
+三条导览入口：
+
+- [项目实战](/projects)：Project A / B 的架构、评测与验收文档
+- [学习路径看板](/learning-paths)：学什么、做什么项目、怎么验证、怎么面试表达的分阶段导航
+- [专题枢纽](/topics/)：77 篇专题的分组入口

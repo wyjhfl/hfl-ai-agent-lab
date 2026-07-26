@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="Project B 治理执行主链路：任务创建、计划分析、工具调用、人工审批、受控执行、轨迹回放" font-family="ui-sans-serif, system-ui, 'Microsoft YaHei', sans-serif">
+  <title>Project B · 治理执行主链路 Governed Flow</title>
+  <defs>
+    <linearGradient id="flowB" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="1160" y2="0">
+      <stop offset="0" stop-color="#c4b5fd"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <marker id="arrFB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c4b5fd"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="420" rx="16" fill="#0f172a" stroke="rgba(148,163,184,0.25)"/>
+
+  <text x="40" y="44" font-size="22" font-weight="700" fill="#c4b5fd">Project B · 治理执行主链路 Governed Flow</text>
+  <text x="40" y="72" font-size="15" fill="#94a3b8">任务 → 计划 → 工具调用（网关 + 策略）→ 人工审批 → 受控执行 → 轨迹回放</text>
+
+  <!-- Step 1 任务创建 -->
+  <rect x="40" y="110" width="160" height="190" rx="10" fill="#1e293b" stroke="rgba(148,163,184,0.35)"/>
+  <circle cx="120" cy="142" r="16" fill="rgba(196,181,253,0.12)" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="120" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#c4b5fd">1</text>
+  <text x="120" y="190" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc">任务创建</text>
+  <text x="120" y="214" text-anchor="middle" font-size="15" fill="rgba(196,181,253,0.85)">Task Intake</text>
+  <text x="120" y="246" text-anchor="middle" font-size="15" fill="#94a3b8">Tasks 页面创建</text>
+  <text x="120" y="270" text-anchor="middle" font-size="15" fill="#94a3b8">multi_agent task</text>
+
+  <!-- Step 2 计划分析 -->
+  <rect x="232" y="110" width="160" height="190" rx="10" fill="#1e293b" stroke="rgba(148,163,184,0.35)"/>
+  <circle cx="312" cy="142" r="16" fill="rgba(196,181,253,0.12)" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="312" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#c4b5fd">2</text>
+  <text x="312" y="190" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc">计划分析</text>
+  <text x="312" y="214" text-anchor="middle" font-size="15" fill="rgba(196,181,253,0.85)">Plan · Handoff</text>
+  <text x="312" y="246" text-anchor="middle" font-size="15" fill="#94a3b8">Coordinator 组织</text>
+  <text x="312" y="270" text-anchor="middle" font-size="15" fill="#94a3b8">Analyst 生成分析</text>
+
+  <!-- Step 3 工具调用 -->
+  <rect x="424" y="110" width="160" height="190" rx="10" fill="#1e293b" stroke="rgba(148,163,184,0.35)"/>
+  <circle cx="504" cy="142" r="16" fill="rgba(196,181,253,0.12)" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="504" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#c4b5fd">3</text>
+  <text x="504" y="190" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc">工具调用</text>
+  <text x="504" y="214" text-anchor="middle" font-size="15" fill="rgba(196,181,253,0.85)">Tool Call</text>
+  <text x="504" y="246" text-anchor="middle" font-size="15" fill="#94a3b8">ToolGateway 入口</text>
+  <text x="504" y="270" text-anchor="middle" font-size="15" fill="#94a3b8">策略 + 操作白名单</text>
+
+  <!-- Step 4 人工审批 -->
+  <rect x="616" y="110" width="160" height="190" rx="10" fill="#1e293b" stroke="rgba(148,163,184,0.35)"/>
+  <circle cx="696" cy="142" r="16" fill="rgba(196,181,253,0.12)" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="696" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#c4b5fd">4</text>
+  <text x="696" y="190" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc">人工审批</text>
+  <text x="696" y="214" text-anchor="middle" font-size="15" fill="rgba(196,181,253,0.85)">HITL Approval</text>
+  <text x="696" y="246" text-anchor="middle" font-size="15" fill="#94a3b8">高风险人工确认</text>
+  <text x="696" y="270" text-anchor="middle" font-size="15" fill="#94a3b8">通过后可 resume</text>
+
+  <!-- Step 5 受控执行 -->
+  <rect x="808" y="110" width="160" height="190" rx="10" fill="#1e293b" stroke="rgba(148,163,184,0.35)"/>
+  <circle cx="888" cy="142" r="16" fill="rgba(196,181,253,0.12)" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="888" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#c4b5fd">5</text>
+  <text x="888" y="190" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc">受控执行</text>
+  <text x="888" y="214" text-anchor="middle" font-size="15" fill="rgba(196,181,253,0.85)">Governed Execute</text>
+  <text x="888" y="246" text-anchor="middle" font-size="15" fill="#94a3b8">白名单内执行</text>
+  <text x="888" y="270" text-anchor="middle" font-size="15" fill="#94a3b8">Reviewer verdict</text>
+
+  <!-- Step 6 轨迹回放 -->
+  <rect x="1000" y="110" width="160" height="190" rx="10" fill="#1e293b" stroke="rgba(148,163,184,0.35)"/>
+  <circle cx="1080" cy="142" r="16" fill="rgba(196,181,253,0.12)" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="1080" y="148" text-anchor="middle" font-size="16" font-weight="700" fill="#c4b5fd">6</text>
+  <text x="1080" y="190" text-anchor="middle" font-size="19" font-weight="700" fill="#f8fafc">轨迹回放</text>
+  <text x="1080" y="214" text-anchor="middle" font-size="15" fill="rgba(196,181,253,0.85)">Trajectory Replay</text>
+  <text x="1080" y="246" text-anchor="middle" font-size="15" fill="#94a3b8">Trace + Trajectory</text>
+  <text x="1080" y="270" text-anchor="middle" font-size="15" fill="#94a3b8">Audit 证据可回放</text>
+
+  <!-- 主链路箭头 -->
+  <path d="M206,205 L222,205" fill="none" stroke="url(#flowB)" stroke-width="3.5" marker-end="url(#arrFB)"/>
+  <path d="M398,205 L414,205" fill="none" stroke="url(#flowB)" stroke-width="3.5" marker-end="url(#arrFB)"/>
+  <path d="M590,205 L606,205" fill="none" stroke="url(#flowB)" stroke-width="3.5" marker-end="url(#arrFB)"/>
+  <path d="M782,205 L798,205" fill="none" stroke="url(#flowB)" stroke-width="3.5" marker-end="url(#arrFB)"/>
+  <path d="M974,205 L990,205" fill="none" stroke="url(#flowB)" stroke-width="3.5" marker-end="url(#arrFB)"/>
+
+  <text x="600" y="344" text-anchor="middle" font-size="15" fill="rgba(196,181,253,0.55)">所有工具调用经过 ToolGateway · PolicyEngine · OperationWhitelist，审批与结果全部留痕审计</text>
+
+  <text x="1160" y="392" text-anchor="end" font-size="15" fill="rgba(148,163,184,0.45)">HFL AI Agent Lab</text>
+</svg>

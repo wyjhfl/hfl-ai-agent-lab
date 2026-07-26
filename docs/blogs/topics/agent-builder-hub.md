@@ -1,6 +1,8 @@
 ---
 layout: page
 sidebar: false
+title: Agent Builder Hub
+description: 从 PRD、RAG、MCP、Skill、Eval 到 Release Gate，把想法建设成可上线 Agent 的完整路线枢纽。
 ---
 
 <div class="project-hero agent-builder-hero">

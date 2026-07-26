@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="Project A Agentic RAG Diagnosis Platform 分层架构图" font-family="ui-sans-serif, system-ui, 'Microsoft YaHei', sans-serif">
+  <title>Project A · Agentic RAG Diagnosis Platform 系统架构</title>
+  <defs>
+    <linearGradient id="mainA" gradientUnits="userSpaceOnUse" x1="0" y1="64" x2="0" y2="600">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <marker id="arrA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#67e8f9"/>
+    </marker>
+    <marker id="arrDimA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="640" rx="16" fill="#0f172a" stroke="rgba(148,163,184,0.25)"/>
+
+  <text x="40" y="42" font-size="22" font-weight="700" fill="#67e8f9">Project A · Agentic RAG Diagnosis Platform 系统架构</text>
+  <line x1="866" y1="36" x2="910" y2="36" stroke="#67e8f9" stroke-width="3.5"/>
+  <text x="918" y="41" font-size="15" fill="#94a3b8">主链路</text>
+  <line x1="1020" y1="36" x2="1056" y2="36" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5 4" opacity="0.8"/>
+  <text x="1064" y="41" font-size="15" fill="#94a3b8">辅助链路</text>
+
+  <!-- L1 客户端层 y=64 -->
+  <rect x="36" y="64" width="1104" height="96" rx="10" fill="rgba(148,163,184,0.05)" stroke="rgba(148,163,184,0.35)"/>
+  <rect x="36" y="64" width="196" height="96" rx="10" fill="rgba(103,232,249,0.07)"/>
+  <rect x="230" y="76" width="2" height="72" fill="rgba(103,232,249,0.3)"/>
+  <text x="52" y="106" font-size="20" font-weight="600" fill="#67e8f9">客户端层</text>
+  <text x="52" y="130" font-size="15" fill="rgba(103,232,249,0.55)">Client Layer</text>
+  <rect x="248" y="84" width="232" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="364" y="108" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">User / Interviewer</text>
+  <text x="364" y="130" text-anchor="middle" font-size="15" fill="#94a3b8">使用者 / 面试官</text>
+  <rect x="516" y="84" width="324" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="678" y="108" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Vue 3 Ops Console</text>
+  <text x="678" y="130" text-anchor="middle" font-size="15" fill="#94a3b8">Acceptance · Quality · Jobs 演示页</text>
+  <rect x="856" y="84" width="268" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="990" y="108" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">OpenAPI-generated Types</text>
+  <text x="990" y="130" text-anchor="middle" font-size="15" fill="#94a3b8">前后端类型契约</text>
+
+  <!-- L2 API 层 y=174 -->
+  <rect x="36" y="174" width="1104" height="96" rx="10" fill="rgba(148,163,184,0.05)" stroke="rgba(148,163,184,0.35)"/>
+  <rect x="36" y="174" width="196" height="96" rx="10" fill="rgba(103,232,249,0.07)"/>
+  <rect x="230" y="186" width="2" height="72" fill="rgba(103,232,249,0.3)"/>
+  <text x="52" y="216" font-size="20" font-weight="600" fill="#67e8f9">API 层</text>
+  <text x="52" y="240" font-size="15" fill="rgba(103,232,249,0.55)">FastAPI Boundary</text>
+  <rect x="248" y="194" width="200" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="348" y="218" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">X-API-Key Roles</text>
+  <text x="348" y="240" text-anchor="middle" font-size="15" fill="#94a3b8">角色鉴权</text>
+  <rect x="464" y="194" width="260" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="594" y="218" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">FastAPI API</text>
+  <text x="594" y="240" text-anchor="middle" font-size="15" fill="#94a3b8">诊断 / 工单 / 评测 / 审计接口</text>
+  <rect x="740" y="194" width="180" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="830" y="218" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Redis Rate Limit</text>
+  <text x="830" y="240" text-anchor="middle" font-size="15" fill="#94a3b8">接口限流</text>
+  <rect x="936" y="194" width="188" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="1030" y="218" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">healthz / readyz</text>
+  <text x="1030" y="240" text-anchor="middle" font-size="15" fill="#94a3b8">存活 / 就绪探针</text>
+
+  <!-- L3 Agent·RAG 核心层 y=284 -->
+  <rect x="36" y="284" width="1104" height="96" rx="10" fill="rgba(148,163,184,0.05)" stroke="rgba(148,163,184,0.35)"/>
+  <rect x="36" y="284" width="196" height="96" rx="10" fill="rgba(103,232,249,0.07)"/>
+  <rect x="230" y="296" width="2" height="72" fill="rgba(103,232,249,0.3)"/>
+  <text x="52" y="326" font-size="20" font-weight="600" fill="#67e8f9">Agent·RAG 核心</text>
+  <text x="52" y="350" font-size="15" fill="rgba(103,232,249,0.55)">Agentic Core</text>
+  <rect x="248" y="304" width="220" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="358" y="328" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">RAG Pipeline</text>
+  <text x="358" y="350" text-anchor="middle" font-size="15" fill="#94a3b8">rewrite · 混合检索 · citations</text>
+  <rect x="484" y="304" width="258" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="613" y="328" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Agentic Diagnosis Controller</text>
+  <text x="613" y="350" text-anchor="middle" font-size="15" fill="#94a3b8">查询路由 / 风险识别 / trace 持久化</text>
+  <rect x="758" y="304" width="184" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="850" y="328" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">GraphRAG Relations</text>
+  <text x="850" y="350" text-anchor="middle" font-size="15" fill="#94a3b8">知识关系增强</text>
+  <rect x="958" y="304" width="166" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="1041" y="328" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">LLM Provider</text>
+  <text x="1041" y="350" text-anchor="middle" font-size="15" fill="#94a3b8">生成模型服务</text>
+
+  <!-- L4 数据与任务层 y=394 -->
+  <rect x="36" y="394" width="1104" height="96" rx="10" fill="rgba(148,163,184,0.05)" stroke="rgba(148,163,184,0.35)"/>
+  <rect x="36" y="394" width="196" height="96" rx="10" fill="rgba(103,232,249,0.07)"/>
+  <rect x="230" y="406" width="2" height="72" fill="rgba(103,232,249,0.3)"/>
+  <text x="52" y="436" font-size="20" font-weight="600" fill="#67e8f9">数据与任务层</text>
+  <text x="52" y="460" font-size="15" fill="rgba(103,232,249,0.55)">Data · Jobs</text>
+  <rect x="248" y="414" width="260" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="378" y="438" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Chroma</text>
+  <text x="378" y="460" text-anchor="middle" font-size="15" fill="#94a3b8">向量库 · Hybrid Retrieval</text>
+  <rect x="524" y="414" width="300" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="674" y="438" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">SQLite / PostgreSQL</text>
+  <text x="674" y="460" text-anchor="middle" font-size="15" fill="#94a3b8">demo 存储 · smoke 验证</text>
+  <rect x="840" y="414" width="284" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="982" y="438" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">JobService / Worker</text>
+  <text x="982" y="460" text-anchor="middle" font-size="15" fill="#94a3b8">claim · heartbeat · retry · timeout</text>
+
+  <!-- L5 可观测与交付层 y=504 -->
+  <rect x="36" y="504" width="1104" height="96" rx="10" fill="rgba(148,163,184,0.05)" stroke="rgba(148,163,184,0.35)"/>
+  <rect x="36" y="504" width="196" height="96" rx="10" fill="rgba(103,232,249,0.07)"/>
+  <rect x="230" y="516" width="2" height="72" fill="rgba(103,232,249,0.3)"/>
+  <text x="52" y="546" font-size="20" font-weight="600" fill="#67e8f9">可观测与交付层</text>
+  <text x="52" y="570" font-size="15" fill="rgba(103,232,249,0.55)">Observability</text>
+  <rect x="248" y="524" width="190" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="343" y="548" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Audit Events</text>
+  <text x="343" y="570" text-anchor="middle" font-size="15" fill="#94a3b8">诊断 / 工单 / 评测审计</text>
+  <rect x="454" y="524" width="238" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="573" y="548" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Prometheus + Grafana</text>
+  <text x="573" y="570" text-anchor="middle" font-size="15" fill="#94a3b8">/metrics 指标与监控面板</text>
+  <rect x="708" y="524" width="196" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="806" y="548" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">Docker + Alembic</text>
+  <text x="806" y="570" text-anchor="middle" font-size="15" fill="#94a3b8">容器交付 · 迁移骨架</text>
+  <rect x="920" y="524" width="204" height="56" rx="8" fill="#1e293b" stroke="rgba(148,163,184,0.4)"/>
+  <text x="1022" y="548" text-anchor="middle" font-size="16" font-weight="600" fill="#f8fafc">pytest + Playwright E2E</text>
+  <text x="1022" y="570" text-anchor="middle" font-size="15" fill="#94a3b8">测试与生产验收门</text>
+
+  <!-- 主链路（青色渐变） -->
+  <path d="M484,112 L510,112" fill="none" stroke="rgba(148,163,184,0.6)" stroke-width="1.8" marker-end="url(#arrDimA)"/>
+  <path d="M678,140 C678,168 594,166 594,194" fill="none" stroke="url(#mainA)" stroke-width="3.5" marker-end="url(#arrA)"/>
+  <path d="M594,250 C594,278 613,276 613,304" fill="none" stroke="url(#mainA)" stroke-width="3.5" marker-end="url(#arrA)"/>
+  <path d="M613,360 C613,392 378,382 378,414" fill="none" stroke="url(#mainA)" stroke-width="3.5" marker-end="url(#arrA)"/>
+
+  <!-- 辅助链路 -->
+  <path d="M560,250 C560,282 358,278 358,304" fill="none" stroke="rgba(148,163,184,0.6)" stroke-width="1.8" marker-end="url(#arrDimA)"/>
+  <path d="M650,360 C650,390 674,388 674,414" fill="none" stroke="rgba(148,163,184,0.6)" stroke-width="1.8" marker-end="url(#arrDimA)"/>
+  <path d="M1141,222 L1162,222 Q1170,222 1170,230 L1170,434 Q1170,442 1162,442 L1134,442" fill="none" stroke="rgba(148,163,184,0.6)" stroke-width="1.8" marker-end="url(#arrDimA)"/>
+  <text transform="rotate(90 1184 300)" x="1184" y="300" text-anchor="middle" font-size="15" fill="rgba(148,163,184,0.6)">async 异步任务</text>
+  <path d="M343,492 L343,516" fill="none" stroke="rgba(148,163,184,0.55)" stroke-width="1.8" stroke-dasharray="4 4" marker-end="url(#arrDimA)"/>
+  <path d="M573,492 L573,516" fill="none" stroke="rgba(148,163,184,0.55)" stroke-width="1.8" stroke-dasharray="4 4" marker-end="url(#arrDimA)"/>
+
+  <text x="1160" y="624" text-anchor="end" font-size="15" fill="rgba(148,163,184,0.45)">HFL AI Agent Lab</text>
+</svg>

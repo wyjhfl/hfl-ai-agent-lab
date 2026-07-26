@@ -1,4 +1,13 @@
 <script setup lang="ts">
+const metrics = [
+  ['185', 'Backend Tests'],
+  ['35', 'E2E Tests'],
+  ['265', '站内页面'],
+  ['116', '工程化笔记'],
+  ['v1.0.5', 'Release'],
+  ['2', 'Real Repos'],
+]
+
 const projectCards = [
   {
     code: 'A',
@@ -24,34 +33,48 @@ const projectCards = [
   },
 ]
 
-const designSignals = [
+const evidenceCards = [
   {
-    tag: 'shadcn/ui',
-    title: 'Open Code 组件感',
-    desc: '用清晰边框、紧凑信息卡、可点击入口和状态标签，让作品集像可复用产品组件。',
+    tag: 'Trace',
+    desc: 'Project A 架构页：检索、引用、trace_id 与工单升级如何串成一条可追踪链路。',
+    href: '/projects/project-a-architecture',
   },
   {
-    tag: 'Magic UI',
-    title: '首屏光效与动势',
-    desc: '使用网格背景、glow、扫描线和浮动状态卡，第一眼就能看到视觉变化。',
+    tag: 'Eval',
+    desc: 'Project A 评测方案：质量门禁、指标定义与失败路径的验收标准。',
+    href: '/projects/project-a-eval-plan',
   },
   {
-    tag: 'Aceternity',
-    title: '深色 Hero + Bento',
-    desc: '用深色视觉中心和不规则 Bento 网格承载项目、评测、Demo 和面试证据。',
+    tag: 'Demo',
+    desc: 'Project B 演示脚本：从计划、执行、审批到轨迹回放的完整演示路径。',
+    href: '/projects/project-b-demo-script',
   },
   {
-    tag: 'Dashboard UI',
-    title: '工程控制台表达',
-    desc: '把 RAG、Agent、Trace、Eval 做成控制台，不再只是普通博客卡片。',
+    tag: 'Repo',
+    desc: 'GitHub 主页：2 个真实仓库，代码、测试与 Release 记录都可直接查看。',
+    href: 'https://github.com/wyjhfl',
   },
 ]
 
-const evidenceCards = [
-  ['Trace', '每条回答能追踪检索、工具调用、人审和最终输出。'],
-  ['Eval', '项目页补齐质量门禁、验收脚本和失败路径表达。'],
-  ['Demo', 'A/B 两个项目都有可演示路径和面试讲法。'],
-  ['Repo', '所有主项目入口都指向真实 GitHub 仓库。'],
+const readingPaths = [
+  {
+    tag: '招聘方 · 10 分钟',
+    title: '看项目证据链',
+    desc: '从两个项目页进入架构、评测、Demo 与验收记录，快速判断工程深度。',
+    href: '/projects',
+  },
+  {
+    tag: '学习者 · 按路线',
+    title: '从基础到生产',
+    desc: '沿学习路线阅读 116 篇工程化笔记，从 RAG 基础走到多 Agent 生产实践。',
+    href: '/learning-paths',
+  },
+  {
+    tag: '求职者 · 面试准备',
+    title: '题库与项目表达',
+    desc: '面试题库、深挖问答与项目表达讲法，按主题整理，可直接套用。',
+    href: '/note/Interview/',
+  },
 ]
 
 const timeline = [
@@ -68,24 +91,25 @@ const timeline = [
       <div class="hfl24-hero-copy">
         <p class="hfl24-kicker">
           <span></span>
-          GitHub Trending UI Applied · shadcn / Magic UI / Bento Dashboard
+          HFL · AI Agent 工程师作品集
         </p>
-        <h2>
-          两个真实 AI Agent 项目，
-          <em>做成一个工程控制台。</em>
-        </h2>
+        <h1>
+          把 AI Agent 做成可验证的工程系统
+          <em>两个真实项目，全链路可查。</em>
+        </h1>
         <p class="hfl24-hero-desc">
-          这版首页不再沿用普通博客卡片，而是按 GitHub 爆火 UI 的共同模式重做：深色 Command Center、Bento Grid、状态标签、Trace 面板、强对比 CTA 和项目证据卡。
+          设备售后诊断 Agentic RAG 平台 × 运营中台 Multi-Agent Runtime。每条回答有引用和 trace_id，每次工具调用过网关和审批，每个版本过质量门禁——不是聊天套壳，是可演示、可评测、可运维的工程系统。
         </p>
         <div class="hfl24-action-row">
-          <a class="hfl24-primary" href="/projects">进入 A/B 项目证据链</a>
-          <a class="hfl24-secondary" href="/content-map">查看内容地图</a>
+          <a class="hfl24-primary" href="/projects">查看两个项目</a>
+          <a class="hfl24-secondary" href="/about">关于我</a>
           <a class="hfl24-ghost" href="/note/Interview/">面试表达</a>
         </div>
         <div class="hfl24-proof-strip">
-          <span>2 Real Repos</span>
-          <span>RAG + Multi-Agent</span>
-          <span>Trace / Eval / Demo</span>
+          <span>185 Backend Tests</span>
+          <span>35 E2E Tests</span>
+          <span>v1.0.5 Release</span>
+          <span>265 篇工程内容</span>
         </div>
       </div>
 
@@ -93,24 +117,15 @@ const timeline = [
         <div class="hfl24-window-bar">
           <i></i><i></i><i></i>
           <strong>agent-portfolio.command</strong>
-          <span>LIVE</span>
         </div>
 
         <div class="hfl24-command-grid">
           <div class="hfl24-command-main">
-            <div class="hfl24-command-title">
-              <span>RUN STATUS</span>
-              <strong>Portfolio Evidence Graph</strong>
-            </div>
-            <div class="hfl24-signal-bars" aria-hidden="true">
-              <b style="height: 48%"></b>
-              <b style="height: 72%"></b>
-              <b style="height: 56%"></b>
-              <b style="height: 88%"></b>
-              <b style="height: 64%"></b>
-              <b style="height: 92%"></b>
-              <b style="height: 74%"></b>
-              <b style="height: 58%"></b>
+            <div class="hfl24-metric-grid">
+              <div v-for="metric in metrics" :key="metric[1]" class="hfl24-metric-cell">
+                <strong>{{ metric[0] }}</strong>
+                <span>{{ metric[1] }}</span>
+              </div>
             </div>
           </div>
 
@@ -136,14 +151,6 @@ const timeline = [
           </div>
         </div>
       </div>
-    </section>
-
-    <section class="hfl24-design-grid" aria-label="GitHub 热门 UI 调研落地">
-      <article v-for="signal in designSignals" :key="signal.tag" class="hfl24-design-card">
-        <span>{{ signal.tag }}</span>
-        <h3>{{ signal.title }}</h3>
-        <p>{{ signal.desc }}</p>
-      </article>
     </section>
 
     <section class="hfl24-project-grid" aria-label="Project A and Project B">
@@ -175,17 +182,95 @@ const timeline = [
     <section class="hfl24-evidence-board" aria-label="作品集证据看板">
       <div class="hfl24-board-copy">
         <p class="hfl24-kicker"><span></span>Evidence First</p>
-        <h2>不是“博客换皮”，而是把作品集做成可验证系统。</h2>
+        <h2>证据可以点开验证，而不只是名词。</h2>
         <p>
-          页面结构按招聘方阅读路径设计：第一眼看定位，第二屏看项目，第三屏看证据。每个入口都能继续跳到架构、评测、Demo 或面试表达。
+          页面按招聘方阅读路径组织：第一眼看定位，第二屏看项目，第三屏看证据。下面四张卡都能直接点开，分别对应架构 Trace、评测方案、Demo 脚本和真实仓库。
         </p>
       </div>
       <div class="hfl24-evidence-grid">
-        <div v-for="card in evidenceCards" :key="card[0]">
-          <strong>{{ card[0] }}</strong>
-          <span>{{ card[1] }}</span>
-        </div>
+        <a v-for="card in evidenceCards" :key="card.tag" :href="card.href">
+          <strong>{{ card.tag }}</strong>
+          <span>{{ card.desc }}</span>
+        </a>
       </div>
+    </section>
+
+    <section class="hfl24-path-grid" aria-label="三条阅读路径">
+      <a v-for="path in readingPaths" :key="path.tag" class="hfl24-path-card" :href="path.href">
+        <span class="hfl24-path-tag">{{ path.tag }}</span>
+        <strong class="hfl24-path-title">{{ path.title }}</strong>
+        <em class="hfl24-path-desc">{{ path.desc }}</em>
+        <b class="hfl24-path-arrow" aria-hidden="true">→</b>
+      </a>
+    </section>
+
+    <section class="hfl24-latest" aria-label="最近更新">
+      <div class="hfl24-latest-head">
+        <h2>最近更新</h2>
+        <a href="/articles">全部文章 →</a>
+      </div>
+      <LatestArticles :limit="6" />
     </section>
   </div>
 </template>
+
+<style>
+/* command center: real metric grid */
+.hfl24-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.hfl24-metric-cell {
+  padding: 14px 12px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 16px;
+  background: rgba(2, 6, 23, 0.42);
+}
+
+.hfl24-metric-cell strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 26px;
+  letter-spacing: -0.05em;
+}
+
+.hfl24-metric-cell span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(226, 232, 240, 0.6);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* evidence cards are now clickable links */
+.hfl24-evidence-grid a {
+  display: block;
+  min-height: 138px;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.48);
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.dark .hfl24-evidence-grid a {
+  background: rgba(2, 6, 23, 0.34);
+}
+
+.hfl24-evidence-grid a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.4);
+  text-decoration: none;
+}
+
+@media (max-width: 520px) {
+  .hfl24-metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+</style>

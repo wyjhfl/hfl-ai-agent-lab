@@ -2,7 +2,9 @@ node_modules
 package-lock.json
 **/.vitepress/cache
 **/.vitepress/dist
-docs/blogs/public/blog-index/
+
+# 内部规划文档：不进仓库、不进站点构建（config.mts srcExclude 同步排除）
+docs/superpowers/
 
 # 可以忽略个性化obsidian配置的同步
 # **/.obsidian

@@ -3,7 +3,7 @@ import { basename, relative, resolve } from 'node:path'
 
 const BLOG_ROOT = '/blog/'
 const NOTE_ROOT = '/note/'
-const PAGE_SIZE = 6
+const PAGE_SIZE = 20
 const REPO_ROOT = process.cwd()
 const DOCS_ROOT = resolve(REPO_ROOT, 'docs')
 const OUTPUT_ROOT = resolve(DOCS_ROOT, 'blogs', 'public', 'blog-index')
@@ -128,10 +128,36 @@ function resolveSection(url) {
   return parts[1] || OTHER_LABEL
 }
 
-function resolveTitle(filePath, frontmatter) {
+function stripInlineMarkdown(value) {
+  return value
+    .replace(/`([^`]*)`/g, '$1')
+    .replace(/!\[[^\]]*]\(([^)]+)\)/g, '')
+    .replace(/\[([^\]]+)]\(([^)]+)\)/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/<[^>]+>/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function extractFirstHeading(content) {
+  const match = content.match(/^#[ \t]+(.+?)[ \t]*$/mu)
+  if (!match) {
+    return null
+  }
+
+  const text = stripInlineMarkdown(match[1])
+  return text ? { text, raw: match[0] } : null
+}
+
+function resolveTitle(filePath, frontmatter, heading) {
   const rawTitle = frontmatter.title
   if (typeof rawTitle === 'string' && rawTitle.trim().length > 0) {
     return rawTitle.trim()
+  }
+
+  if (heading) {
+    return heading.text
   }
 
   const fileName = basename(filePath, '.md').trim()
@@ -327,16 +353,18 @@ function buildPosts() {
         return null
       }
 
-      const source = readFileSync(filePath, 'utf8')
+      const source = readFileSync(filePath, 'utf8').replace(/^\uFEFF/u, '')
       const { frontmatter, content } = extractFrontmatter(source)
+      const heading = extractFirstHeading(content)
+      const summarySource = heading ? content.replace(heading.raw, ' ') : content
       const stats = statSync(filePath)
       const section = resolveSection(url)
       const publishedAt = resolvePublished(frontmatter, stats)
       const updatedAt = resolveUpdated(frontmatter, stats) || publishedAt
 
       return {
-        title: resolveTitle(filePath, frontmatter),
-        summary: resolveSummary(frontmatter, content, section),
+        title: resolveTitle(filePath, frontmatter, heading),
+        summary: resolveSummary(frontmatter, summarySource, section),
         section,
         url,
         publishedAt,
