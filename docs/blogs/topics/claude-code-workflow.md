@@ -66,7 +66,7 @@
 只允许修改：
 - docs/blogs/topics/index.md
 - README.md
-- docs/blogs/home.md
+- docs/blogs/index.md
 - docs/blogs/about.md
 
 不要修改：
@@ -169,7 +169,7 @@ git push
 ## v3.0 修改总结
 - 是否新增 xxx 专题
 - 是否更新 topics/index.md
-- 是否同步 README/home/about
+- 是否同步 README、首页与 about
 - git diff --check 是否通过
 - npm run docs:build 是否通过
 - 文件行数

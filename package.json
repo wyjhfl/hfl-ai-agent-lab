@@ -9,6 +9,7 @@
     "docs:build:ci": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "links:check": "node scripts/check-external-links.mjs",
+    "links:check:strict": "node scripts/check-external-links.mjs --strict",
     "images:prepare": "node scripts/prepare-images.mjs",
     "images:push": "node scripts/push-image-repo.mjs"
   },

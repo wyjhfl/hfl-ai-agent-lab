@@ -7,6 +7,7 @@ const PAGE_SIZE = 20
 const REPO_ROOT = process.cwd()
 const DOCS_ROOT = resolve(REPO_ROOT, 'docs')
 const OUTPUT_ROOT = resolve(DOCS_ROOT, 'blogs', 'public', 'blog-index')
+const SSR_DATA_FILE = resolve(DOCS_ROOT, '.vitepress', 'data', 'blog-index-page-1.json')
 const ALL_LABEL = '\u5168\u90E8'
 const UNKNOWN_LABEL = '\u672A\u77E5\u65F6\u95F4'
 const BLOG_LABEL = '\u535A\u5BA2'
@@ -374,7 +375,7 @@ function buildPosts() {
       }
     })
     .filter(Boolean)
-    .sort((a, b) => b.publishedAt - a.publishedAt || b.updatedAt - a.updatedAt)
+    .sort((a, b) => b.updatedAt - a.updatedAt || b.publishedAt - a.publishedAt)
 }
 
 function writePagedItems(baseDir, key, items) {
@@ -422,6 +423,12 @@ function generateBlogIndex() {
   ensureDir(OUTPUT_ROOT)
 
   writePagedItems(resolve(OUTPUT_ROOT, 'all'), 'all', posts)
+  writeJson(SSR_DATA_FILE, {
+    key: 'all',
+    page: 1,
+    totalPages: Math.max(1, Math.ceil(posts.length / PAGE_SIZE)),
+    items: posts.slice(0, PAGE_SIZE),
+  })
   for (const entry of archiveEntries) {
     writePagedItems(resolve(OUTPUT_ROOT, 'archive', entry.key), entry.key, entry.items)
   }

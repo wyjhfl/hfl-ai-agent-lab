@@ -39,8 +39,8 @@
 
 - 主配置在 `docs/.vitepress/config.mts`。
 - 顶部导航和侧边栏主要维护在 `docs/.vitepress/config.mts`。
-- 首页内容在 `docs/blogs/home.md`。
-- 公开路径通过 `rewrites` 将 `docs/blogs/` 下页面映射到根路径，例如 `/home`、`/topics/`、`/projects`。
+- 首页内容在 `docs/blogs/index.md`。
+- 公开路径通过 `rewrites` 将 `docs/blogs/` 下页面映射到根路径，例如 `/`、`/topics/`、`/projects`；线上 `/home` 由 Vercel 永久重定向到 `/`。
 - 博客索引由 `scripts/generate-blog-index.mjs` 生成到 `docs/blogs/public/blog-index/`。
 - `docs/.vitepress/dist/` 和 `docs/.vitepress/cache/` 是构建产物 / 缓存，不要作为功能变更提交。
 

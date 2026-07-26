@@ -179,7 +179,7 @@ npm run docs:preview -- --host 127.0.0.1 --port 4173
 
 浏览器至少抽查：
 
-- `/home`
+- `/`
 - `/content-map`
 - `/projects`
 - `/topics/`

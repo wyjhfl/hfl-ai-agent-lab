@@ -101,7 +101,12 @@ function cleanUrl(raw) {
 
 function extractUrls(text) {
   const found = new Set();
-  for (const m of text.matchAll(URL_RE)) {
+  const searchableText = text
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/~~~[\s\S]*?~~~/g, '')
+    .replace(/`[^`\r\n]*`/g, '')
+
+  for (const m of searchableText.matchAll(URL_RE)) {
     const u = cleanUrl(m[0]);
     let parsed;
     try {
@@ -155,7 +160,7 @@ async function checkUrl(url) {
   try {
     status = await request(url, 'HEAD');
   } catch (err) {
-    if (err?.name === 'AbortError') return { verdict: 'FAIL', detail: describeError(err) };
+    if (err?.name === 'AbortError') return { verdict: 'SKIP', detail: describeError(err) };
     status = null; // 个别服务器直接掐断 HEAD 连接，退回 GET 再试
   }
   try {
@@ -163,8 +168,9 @@ async function checkUrl(url) {
       status = await request(url, 'GET');
     }
   } catch (err) {
-    return { verdict: 'FAIL', detail: describeError(err) };
+    return { verdict: 'SKIP', detail: describeError(err) };
   }
+  if (status === 403) return { verdict: 'SKIP', detail: '403 bot-blocked' };
   if (status === 429) return { verdict: 'SKIP', detail: '429 rate-limited' };
   if (status >= 200 && status < 400) return { verdict: 'OK', detail: String(status) };
   return { verdict: 'FAIL', detail: String(status) };

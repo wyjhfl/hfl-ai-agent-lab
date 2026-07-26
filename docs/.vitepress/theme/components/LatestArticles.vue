@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, ref } from 'vue'
 import { withBase } from 'vitepress'
+import initialPageData from '../../data/blog-index-page-1.json'
 
 interface BlogPost {
   title: string
@@ -39,6 +40,16 @@ const totalPages = ref(1)
 
 const skeletonCount = computed(() => (props.limit > 0 ? Math.min(props.limit, 6) : 6))
 const showPager = computed(() => props.paginated && !failed.value && totalPages.value > 1)
+const initialPage = initialPageData as BlogPage
+const initialItems = Array.isArray(initialPage.items) ? initialPage.items : []
+
+loading.value = false
+posts.value = props.limit > 0 ? initialItems.slice(0, props.limit) : initialItems
+page.value = Number.isFinite(initialPage.page) && initialPage.page > 0 ? initialPage.page : 1
+totalPages.value = Math.max(
+  1,
+  Number.isFinite(initialPage.totalPages) ? initialPage.totalPages : 1
+)
 
 function formatDate(post: BlogPost): string {
   const timestamp = post.updatedAt || post.publishedAt
@@ -79,9 +90,6 @@ function goTo(target: number) {
   loadPage(target)
 }
 
-onMounted(() => {
-  loadPage(1)
-})
 </script>
 
 <template>
